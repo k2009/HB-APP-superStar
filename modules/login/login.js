@@ -18,7 +18,7 @@ define(function(require, exports, module){
 	                   // // sys.fn_oauth();
                     // }
 					$.ajax({
-						url:host_domain+"/castle/app/user/wblogin",
+						url:host_domain+"castle/app/v1/user/wblogin",
 						type:"get",
 						data:oauth,
 						dataType:"json",
