@@ -1,0 +1,36 @@
+<header>
+	<h3 class="analyze-tit">我们将会在24小时后启动全面分析</h3>
+</header>
+<div class="wh-box">
+	你会不会是<p>下一个<span class="fbig">千万富翁</span>呢？</p>
+</div>
+
+    <div class="content">
+    	<p>这么重要的分析怎能错过！<br>可留下您的手机号，分析结果出来后我们会短信通知您！</p>
+    <ul>
+    	<li><input type="tel" class="input-text border-1px" data-validate="phone" value="<#if ( data.phone )>${data.phone}</#if>" placeholder="请输入手机号"></li>
+    	<li><a href="javascript:;" id="submit" class="input-btn" data-phone="${data.phone}">提交</a></li>
+    </ul>
+    </div>
+
+<!--默认-->
+<!-- <#if (data.platform == "weixin" )>
+<div class="de-txt">
+	<p>快去完善你的微博吧</p>
+	<p>分析结果将会在公众号里公布哟！</p>
+</div>
+<div class="erweima"><img src="http://${data._extra.domain}/modules/signup/plan/images/qrcode.png" /></div> -->
+<!-- <#elseif (data.platform == "weibo" )> -->
+<!--微博版-->
+<!-- <div class="de-txt">
+	<p>快去完善你的微博吧</p>
+	<p>分析结果将会在官方微博（网红城堡）里公布哟！</p>
+</div>
+<dl class="weibo-official">
+	<dd>
+		<img src="http://tva3.sinaimg.cn/crop.0.0.512.512.180/6c9d11fbjw8eikud8rfwij20e80e8q3l.jpg" /><i class="icon_approve_co">企业认证</i>
+	</dd>
+	<dt>网红城堡</dt>
+</dl>
+<a href="sinaweibo://userinfo?uid=5629525096" class="btn-step">一键关注</a>
+</#if> -->

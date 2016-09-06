@@ -1,0 +1,298 @@
+@charset "UTF-8";
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+.mui-content {
+  min-width: 1.6rem; }
+
+.topContainer {
+  padding: 0.05rem;
+  margin: 0;
+  background: white;
+  display: none;
+  text-align: center;
+  border-radius: 5px; }
+
+.scheduleList {
+  text-align: center;
+  overflow: hidden; }
+
+.scheduleChart {
+  margin: 0 auto; }
+
+.schedule {
+  width: 120px;
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  float: left; }
+
+.scheduleCard {
+  float: right;
+  width: 50%;
+  text-align: left;
+  padding: 3px;
+  margin-top: 35px; }
+
+.cardText {
+  white-space: all;
+  margin: 0.1rem auto; }
+
+.largeNumber {
+  color: #fbbd06;
+  vertical-align: baseline; }
+
+.scheduleText {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center; }
+
+.tc_text {
+  font-size: 0.1rem;
+  color: #555; }
+
+.tc_go {
+  font-size: 0.25rem;
+  font-weight: 900;
+  text-align: center;
+  font-style: italic;
+  margin: 0.05rem; }
+
+.lessonDescribe {
+  color: #888; }
+
+.lessonText {
+  font-size: 0.14rem;
+  margin-left: 1%;
+  text-align: left; }
+
+.mui-icon-help {
+  font-size: 0.14rem; }
+
+.mui-table-view {
+  overflow: hidden; }
+
+/* 右上角角标：待学习、学习中、已完成 */
+.mui-table-view-cell {
+  position: relative;
+  padding: 0;
+  background: white;
+  margin-top: 15px;
+  min-height: 70px;
+  overflow: hidden; }
+
+.mui-table-view-cell:after {
+  left: 0;
+  background: transparent; }
+
+.mui-table-view-cell > a:not(.mui-btn).mui-active {
+  background: transparent; }
+
+.mui-table-view-cell a.lessonInfo {
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  display: block;
+  padding: 0.05rem;
+  padding-top: 0.1rem;
+  -webkit-tap-highlight-color: transparent; }
+
+.doneText {
+  float: right;
+  margin-right: 70px;
+  font-size: 0.12rem;
+  color: #999; }
+
+.mui-subtitle {
+  text-align: left; }
+
+.table-img-box {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  margin: 0 auto; }
+
+.table-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0; }
+
+.box {
+  /* overflow: hidden; */
+  position: absolute;
+  margin: 0;
+  height: 30px;
+  line-height: 26px;
+  overflow: hidden;
+  font-size: 10px;
+  top: 2px;
+  right: -39px;
+  text-align: center;
+  color: #FFF;
+  width: 130px;
+  border: 2px solid black;
+  /*	border:3px solid rgba(255, 255, 255, 0.2);*/
+  box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.4);
+  transform: rotate(30deg);
+  -webkit-transform: rotate(30deg); }
+
+.wait {
+  border-color: #F58220;
+  color: #F58220; }
+
+.doing {
+  border-color: #ffb61e;
+  color: #ffb61e; }
+
+.done {
+  border-color: #96ce54;
+  color: #96ce54; }
+
+.forbidden {
+  border-color: #ff2121;
+  color: #ff2121; }
+
+.percentRate {
+  text-align: left;
+  color: #ea5504;
+  padding-left: 1%;
+  position: relative;
+  margin-bottom: 0.2rem; }
+
+.percentRateTip {
+  position: absolute;
+  background-position: 0 -73px;
+  display: inline-block;
+  width: 37px;
+  height: 25px;
+  right: 0;
+  text-align: center;
+  line-height: 20px;
+  color: #555;
+  font-size: 12px;
+  transition: left 0.5s;
+  -webkit-transition: left 0.5s;
+  color: #999; }
+
+.percentRate:before, .percentRateBar {
+  content: '';
+  height: 0.065rem;
+  border-radius: 0.05rem;
+  background: #e5e5e5;
+  position: absolute;
+  left: 1%; }
+
+.percentRate:before {
+  top: 5px;
+  right: 50px;
+  height: 0.07rem; }
+
+.percentRateBar {
+  top: 5px;
+  right: 100%;
+  background: #fbbd06;
+  transition: right 0.5s;
+  -webkit-transition: right 0.5s; }

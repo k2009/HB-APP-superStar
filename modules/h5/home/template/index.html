@@ -1,0 +1,102 @@
+<div class="user-info fix">
+	<div class="profile">
+		<img src="${data.user.profile_image}" alt="">
+	</div>
+	<div class="user-detail">
+		<div class="user-nick">微博昵称：${data.user.screen_name}</div>
+		<div class="user-detail-line">
+			<span>粉丝：${data.fans_count}</span>
+			<span>电商属性：${data.biz_score == null ? '未测试' : data.biz_score}</span>
+		</div>
+		<div class="user-detail-line">
+			<span>级别：${data.level}</span>
+			<span>课程进度：${data.progress}</span>
+		</div>
+	</div>
+</div>
+<#if (data.my_test < 2)>
+<div class="test-guide border-1px index-block">
+	<#if (data.my_test == 0)>
+	<div>学习基础知识之前，先测试一下你有多了解网红</div>
+	<div>免费测试，快来吧！</div>
+	</#if>
+	<#if (data.my_test == 1)>
+	<div>网红测试分为多种，每多测试一次都会有新的发现</div>
+	<div>快来测试吧</div>
+	</#if>
+	<a class="index-button" href="${data.test_url}" pjax="1">去测试</a>
+</div>
+</#if>
+<div class="today-news border-1px index-block">
+	<#list data.news as news>
+	<a href="${news.url}">${news.title}</a>
+	</#list>
+</div>
+<#if (data.my_lesson.length != 0 && data.my_lesson.current != null)>
+<div class="my-lesson border-1px index-block">
+	<header class="border-1px">
+		<span class="icon lesson"></span>
+		<span>我的课程</span>
+		<#if (data.my_lesson.current != 0)>
+		<span class="finished">已完成 <span class="current">${data.my_lesson.current}</span>/${data.my_lesson.total} 节</span>
+		</#if>
+	</header>
+	<content>
+		<a href="${data.my_lesson.url}" pjax="1">
+		<div class="lesson-title">${data.my_lesson.title}</div>
+		<div class="lesson-author">主讲教师：${data.my_lesson.author}</div>
+		<#if (data.my_lesson.current == 0)>
+		<div class="lesson-buttons">
+		<button class="index-button">开启本章课程</button>
+		</div>
+		<#else>
+		<div class="progress">
+			<div class="progress-bar">
+				<div class="progress-inner" style="width: ${ data.my_lesson.current / data.my_lesson.total * 100 }%"></div>
+			</div>
+			<div class="progress-percent">${ Math.ceil(data.my_lesson.current / data.my_lesson.total * 100) }%</div>
+		</div>
+		</#if>
+		</a>
+	</content>
+</div>
+</#if>
+<div class="my-grade border-1px index-block">
+	<header>
+		<span class="icon grade"></span>
+		<span>我的成绩</span>
+	</header>
+	<content>
+		<#if (data.my_score.finished == 0)>
+		<div class="no-grade">你还没有参加过课后作业，暂时没有成绩呦！</div>
+		<div class="homework-info">
+			<p class="homework-title">什么是课后作业？</p>
+			<p>课后作业是我们精心准备的课后自测，以帮助你检查学习成果。</p>
+			<p>在你学完相应的课程时就会见到它啦。</p>
+			<p>千万不要偷懒，说好的要做网红的呦！</p>
+		</div><br>
+		<#else>
+		<div class="grade-title">已经完成 ${data.my_score.finished} 次课后作业</div>
+		<div class="grade-friend">${data.my_score.friend} 等帮你完成评估</div>
+		<div class="grade-chart-title">每次作业的成绩曲线</div>
+		<div class="charts">
+			<div id="markform" class="markform">
+				<div node='outer' class="markOuter">
+					<canvas node="canvas" style="position: absolute;left:0;top:0;"></canvas>
+				</div>
+			</div>
+		</div>
+		</#if>
+	</content>
+</div>
+<div class="lesson-preview border-1px index-block">
+	<header>
+		<span class="icon preview"></span>
+		<span>课程预览</span>
+	</header>
+	<content>
+		<div class="charts" style="text-align:center;">
+			<img src="http://${data._extra.domain}/modules/h5/home/images/preview.jpg">
+		</div>
+	</content>
+</div>

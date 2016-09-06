@@ -1,0 +1,7 @@
+{
+  "modules/login/login-weibo.html": {
+    "href": "modules/login/login-weibo.html",
+    "resources": [],
+    "priority": 0
+  }
+}

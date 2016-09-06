@@ -1,0 +1,293 @@
+@charset "UTF-8";
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+.mui-text-center.linebar {
+  padding: 0.2rem 0.12rem 0.225rem; }
+
+.mui-text-center.linebar h5 {
+  text-align: left; }
+
+.bg-line {
+  background: #fff;
+  border-radius: 0.05rem;
+  height: 0.145rem;
+  border: 0.015rem solid #ddd;
+  padding: 0.015rem;
+  margin-top: 0.3rem; }
+
+.bg-line p {
+  width: 0;
+  background: #fd8181;
+  height: 0.1rem;
+  position: relative;
+  border-radius: 0.04rem; }
+
+.bg-line p span {
+  line-height: 0.1rem;
+  position: absolute;
+  top: -0.25rem;
+  right: -0.1rem;
+  background: #ffe974;
+  color: #787878;
+  border: 1px solid #f5d009;
+  border-radius: initial; }
+
+.bg-line p em {
+  position: absolute;
+  left: 50%;
+  bottom: -0.03rem;
+  margin-left: -0.025rem;
+  padding: 0.02rem;
+  background: #ffe974;
+  border: 1px solid #ffe974;
+  border-right: 1px solid #f5d009;
+  border-bottom: 1px solid #f5d009;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -moz-transform: rotate(45deg);
+  /* Firefox */
+  -webkit-transform: rotate(45deg);
+  /* Safari 和 Chrome */
+  -o-transform: rotate(45deg); }
+
+body, .mui-content {
+  background: #faf8d3; }
+
+.content-box {
+  margin: 0.075rem;
+  background: #fff;
+  border: 0.005rem solid #d5d3b1; }
+
+.content-box .title {
+  position: relative;
+  padding: 0.075rem 0.075rem 0.075rem 0.45rem;
+  margin-bottom: 0.15rem;
+  line-height: 0.2rem;
+  border-bottom: 0.005rem solid #d5d3b1; }
+
+.content-box span {
+  position: absolute;
+  left: 0.075rem;
+  top: 50%;
+  width: 0.325rem;
+  height: 0.47rem;
+  background: url(../images/ico_face_1.png) no-repeat center center;
+  background-size: 100% 100%;
+  margin-top: -0.295rem; }
+
+.check-status, .check-status-ok, .next_btn {
+  display: block;
+  margin: 0.175rem auto;
+  width: 2rem;
+  height: 0.35rem;
+  background: url(../images/btn_2.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  text-align: center;
+  line-height: 0.3rem;
+  color: #fff; }
+
+.check-status-ok, .next_btn {
+  background: url(../images/btn_1.png) no-repeat 0 0;
+  background-size: 100% 100%;
+  color: #412801; }
+
+.mui-radio input[type="radio"], .mui-checkbox input[type="checkbox"] {
+  top: 8px; }
+
+.mui-radio input[type="radio"]:before, .mui-checkbox input[type="checkbox"]:before {
+  font-size: 20px; }
+
+.mui-radio.mui-left label, .mui-checkbox.mui-left label {
+  padding-left: 44px; }
+
+.status-face-1, .status-face-0 {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin: 0.15rem auto;
+  background: url(../images/face_1.png) no-repeat 0 0;
+  background-size: 100% 100%; }
+
+.status-face-2 {
+  background: url(../images/face_2.png) no-repeat 0 0;
+  background-size: 100% 100%; }
+
+.status-face-0 {
+  background: url(../images/face_3.png) no-repeat 0 0;
+  background-size: 100% 100%; }
+
+.status-word {
+  text-align: center;
+  color: #ff5676;
+  font-size: 0.12rem; }
+
+p.status-word {
+  padding: 0.1rem 0.2rem 0;
+  color: #999;
+  line-height: 0.16rem;
+  text-align: left;
+  font-size: 0.11rem; }
+
+.explain {
+  padding: 0.1rem 0.2rem; }
+
+.mark {
+  text-align: center;
+  padding: 0.2rem 0;
+  line-height: 0.32rem; }
+
+.mark strong {
+  font-size: 0.3rem;
+  font-weight: normal;
+  color: #ff7245; }
+
+.mark p {
+  padding-top: 0.05rem; }
+
+.aboutInfo {
+  padding: 0 0.2rem 0.15rem;
+  line-height: 0.18rem; }
+
+.aboutInfo li {
+  padding-bottom: 0.075rem; }
+
+.aboutInfo h6 {
+  color: #ff5676;
+  font-size: 0.1rem; }
+
+.join {
+  line-height: 0.16rem;
+  font-size: 0.12rem;
+  text-align: center;
+  color: #ff5676;
+  padding: 0.15rem 0; }
+
+.mui-input-row p {
+  color: #333;
+  padding-bottom: 0.05rem; }
+
+.mui-input-row img {
+  max-width: 1.5rem; }
+
+#explainBox {
+  display: none; }
+
+#weiboShare {
+  display: block;
+  text-align: center;
+  font-size: 0.12rem;
+  padding: 0.1rem; }
+
+#questionBox {
+  padding-bottom: 0.15rem; }
+
+.mui-checkbox input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  /* Safari and Chrome */
+  width: 16px;
+  top: 5px; }
+
+.mui-checkbox input[type="checkbox"]:before {
+  content: ''; }
+
+.mui-checkbox input[type="checkbox"]:checked:before {
+  content: ''; }

@@ -1,0 +1,50 @@
+<!-- <header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">课程详情</h1>
+</header> -->
+
+<header class="mui-bar mui-bar-nav">	
+	<h1 class="mui-title">${data.name}</h1>
+</header>
+
+<div class="top-box">
+	<ul class="mui-table-view bgColor">
+		<li class="mui-table-view-cell">
+			<div class="subTitle"><#if (data.description)>${data.description}</#if></div>
+		</li>
+		<li class="mui-table-view-cell colorGray">
+			<span class="table-item">讲师：${data.lecturer}</span>
+			<div>
+				<span class="table-item" style="float:left;">进度：${data.percent}</span>
+				<span class="table-item" style="float:right;">建议 <font color="#ea5504">${data.days}</font> 天完成</span>
+			</div>
+			
+		</li>
+		<!-- <li style="display:none;" class="percentRate" id="percent" percent="${data.percent}">
+			当前进度：${data.percent} <span></span>
+		</li> -->
+	</ul>
+	<!-- <div class="top-img-box">
+		<img class="top-img" src="${data.cover_img}?imageView2/0/w/120/h/120">
+	</div> -->
+</div>
+
+	<#list data.chapters as chapter>
+
+		<li class="chapterItem mui-table-view-cell">
+			<a class="mui-navigate-right" href="${chapter.url}">
+				${chapter.name}
+				<div class="sectionIntro">${chapter.description}</div>
+				<#if (chapter.is_finished==1)><span class="chapterChecked">√</span></#if>
+			</a>
+			<!-- <a class="mui-navigate-right" href="${chapter.url}">
+				<div class="mui-collapse-content" >
+					<form class="mui-input-group">
+						<p class="sectionIntro" >
+							内容简介：${chapter.description}
+						</p>
+					</form>
+				</div>
+			</a> -->
+		</li>
+	</#list>

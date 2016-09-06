@@ -1,0 +1,202 @@
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+.mui-content-padded {
+  padding: 0;
+  margin: 0;
+  line-height: 0.24rem;
+  /*  background-image: url(../images/castle.png);
+  background-repeat: no-repeat;
+  background-position: center r(30);
+  background-size: 80%;*/
+  padding-top: 0.05rem; }
+
+.mui-content-padded p, .mui-content-padded li {
+  font-size: 0.12rem; }
+
+.mui-content-padded li {
+  padding-left: 0.2rem;
+  list-style-type: disc;
+  list-style-position: inside; }
+
+.mui-content-padded .title {
+  text-indent: 0.2rem;
+  font-size: 0.14rem;
+  padding: 0.15rem 0; }
+
+.mui-card {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  background-size: 100%;
+  position: relative; }
+
+.mui-card .text {
+  font-size: 0.12rem;
+  padding: 0.05rem 0.1rem;
+  box-shadow: 1px 2px 3px #eee;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  overflow: hidden;
+  font-size: 0.1rem;
+  color: #1c1c1c; }
+
+.mui-card .text .glass {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #fff;
+  opacity: 0.8;
+  -webkit-filter: blur(15px);
+  /* Chrome, Opera */
+  -moz-filter: blur(15px);
+  -ms-filter: blur(15px);
+  filter: blur(15px); }
+
+.card-1 {
+  background-image: url(../images/one.jpg);
+  background-size: 100%;
+  height: 2rem; }
+
+.card-2 {
+  background-image: url(../images/two.jpg);
+  background-size: 100%;
+  height: 2rem; }
+
+.card-3 {
+  background-image: url(../images/three.jpg);
+  background-size: 100%;
+  height: 2rem; }
+
+.desc {
+  padding: 0.1rem 0.2rem 0; }
+
+.mui-btn-block {
+  margin: 0.3rem auto;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  padding: 0;
+  font-size: 0.14rem;
+  width: 70%; }
+
+.mui-popup-backdrop {
+  background: rgba(0, 0, 0, 0.8); }
+
+.share_tips {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: block;
+  line-height: 4.5rem;
+  font-size: 0.15rem;
+  text-align: center;
+  color: #ddd;
+  background: url(../images/share_tips.png) no-repeat center 0.3rem;
+  background-size: 2.25rem 1.75rem;
+  overflow: hidden; }

@@ -1,0 +1,54 @@
+<div class="mui-content">
+	<div class="segmented-control">
+		<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a class="mui-control-item mui-active" href="#" onclick="return false;" action="tab" action-data="studying">待学习</a>
+			<a class="mui-control-item" href="#" onclick="return false;" action="tab" action-data="finished">已学习</a>
+		</div>
+	</div>
+
+	<#if ( data.lessons.studying.length == 0)>
+	<div class="studying">
+		<div class="empty"><div class="text">没有学习中的课程</div></div>
+	</div>
+	<#else>
+	<div class="studying">
+		<ul class="mui-table-view">
+			<#list data.lessons.studying as lesson>
+			<li class="mui-table-view-cell mui-media">
+				<#if (lesson.state == 4)>
+				<a href="#" onclick="return false"; action="lock">
+				<#else>
+				<a href="${lesson.url}" pjax="1">
+				</#if>
+					<div class="mui-media-body">
+						<div>${lesson.name}</div>
+						<p class='mui-ellipsis'>共 ${lesson.count} 节课，建议 ${lesson.days} 天完成</p>
+					</div>
+				</a>
+			</li>
+			</#list>
+		</ul>
+	</div>
+	</#if>
+
+	<#if ( data.lessons.finished.length == 0)>
+	<div class="finished" style="display:none;">
+		<div class="empty"><div class="text">没有已学习的课程</div></div>
+	</div>
+	<#else>
+	<div class="finished" style="display:none;">
+		<ul class="mui-table-view">
+			<#list data.lessons.finished as lesson>
+			<li class="mui-table-view-cell mui-media">
+				<a href="${lesson.url}" pjax="1">
+					<div class="mui-media-body">
+						<div>${lesson.name}</div>
+						<p class='mui-ellipsis'>共 ${lesson.count} 节课，建议 ${lesson.days} 天完成</p>
+					</div>
+				</a>
+			</li>
+			</#list>
+		</ul>
+	</div>
+	</#if>
+</div>

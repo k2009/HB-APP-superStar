@@ -1,0 +1,43 @@
+@media (max-width:319px){html{font-size:100px}
+}
+@media (min-width:320px) and (max-width:374px){html{font-size:100px}
+}
+@media (min-width:375px) and (max-width:413px){html{font-size:117.19px}
+}
+@media (min-width:414px){html{font-size:129.38px}
+}
+.border-1px{position:relative}
+.border-1px:after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);pointer-events:none}
+@media only screen and (-webkit-min-device-pixel-ratio:2){.border-1px:after{right:-100%;bottom:-100%;transform:scale(.5);-moz-transform:scale(.5);-webkit-transform:scale(.5)}
+}
+@media only screen and (-webkit-min-device-pixel-ratio:3){.border-1px:after{right:-200%;bottom:-200%;transform:scale(.3333);-moz-transform:scale(.3333);-webkit-transform:scale(.3333)}
+}
+body,dd,div,dl,dt,fieldset,figure,form,h1,h2,h3,h4,html,iframe,input,legend,li,ol,p,table,td,th,ul{margin:0;padding:0}
+footer,header,section{display:block}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed}
+img{border:0}
+li{list-style:none}
+em,i{font-style:normal}
+a{text-decoration:none;webkit-tap-highlight-color:transparent}
+a:focus{outline:0}
+textarea{resize:none;overflow-x:hidden;overflow-y:auto;outline:0}
+input[type=text],input[type=button],input[type=submit],input[type=tel]{-webkit-appearance:none;outline:0;-webkit-tap-highlight-color:transparent;border-radius:0}
+input,textarea{webkit-tap-highlight-color:transparent;-webkit-user-modify:read-write-plaintext-only}
+body{font:14px/20px "Microsoft YaHei","Hiragino Sans GB",stheitisclight,sans-serif;min-width:320px;word-wrap:break-word;-webkit-overflow-scrolling:touch;overflow-x:hidden}
+.container{height:100%}
+body{background-color:#b36bf3}
+#st_modules_signup_plan{background-color:#b36bf3;background-image:url(../images/head.png?v=f656f4af91);background-repeat:no-repeat;background-size:100% auto;color:#fff;height:100%;padding:.21333rem}
+#st_modules_signup_plan .header{text-align:center;padding-bottom:.21333rem}
+#st_modules_signup_plan .header .title{padding-top:.98987rem;font-size:.11093rem}
+#st_modules_signup_plan .header .desc{font-size:.11947rem;padding-top:.256rem}
+#st_modules_signup_plan .header .desc span{color:#fee322}
+#st_modules_signup_plan .content{font-size:.11093rem}
+#st_modules_signup_plan .weixin{font-size:.11093rem;padding-top:.256rem}
+#st_modules_signup_plan .weixin .qrcode{width:1.44213rem;height:1.44213rem;border:.01707rem solid #000;border-radius:.01707rem;margin:0 auto}
+.qrcode img{width:100%;height:100%}
+#st_modules_signup_plan .weixin .qrcode-icon{width:1.00267rem;height:.59733rem;background:url(../images/qrcode-icon.png?v=79b237b45b) no-repeat;background-size:1.00267rem .59733rem;margin:.05973rem auto}
+.profile{text-align:center;padding-top:.40107rem}
+.profile-image{width:.63147rem;height:.63147rem;border:.0256rem solid #000;border-radius:.34133rem}
+.profile-icon{display:inline-block;width:.17493rem;height:.17493rem;background:url(../images/v.png?v=8cd099a510) no-repeat;background-size:.17493rem .17493rem;margin-left:-.17067rem}
+.screen-name{text-align:center;font-size:.1024rem;padding:.10667rem 0 .14933rem}
+#st_modules_signup_plan .next-button{display:block;width:1.3568rem;height:.28587rem;background:url(../images/next-button.png?v=c4737d365c) no-repeat;background-size:1.3568rem .28587rem;font-size:.13653rem;line-height:.28587rem;text-align:center;margin:0 auto;padding-bottom:.17067rem}

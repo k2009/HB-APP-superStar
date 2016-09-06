@@ -1,0 +1,62 @@
+<!-- <header class="mui-bar mui-bar-nav">
+	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">课程列表</h1>
+</header> -->
+<div class="mui-content">
+	<div class="topContainer notStart" id="notStart">
+		<div  class="tc_text">
+			<div>hi 目前你的课程尚未开启，快来学习你的网红养成计划第一节课吧！</div>
+			<div class="tc_go">GO!</div>
+		</div>
+	</div>
+	<div class="mui-content topContainer scheduleList" id="schedule">
+		<div class="schedule" id="chapter">
+			<canvas class="scheduleChart" node="chart" ></canvas>
+		</div>
+		<div class="scheduleCard">
+			<div>
+				<div class="cardText">
+					距离小学毕业还有<span class="largeNumber"> ${data.left_days} </span> 天
+					 <span class="mui-icon mui-icon-help" action='leftDaysHelp'></span>
+				</div>
+				
+			</div>
+			<div>
+				<div class="cardText">
+					已完成作业数<span class="largeNumber"> ${data.finish_lessons} </span>个
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<ul class="mui-table-view">
+		<#if (data.lessons.length==0)>
+			<li class="mui-table-view-cell mui-media">
+				当前章节列表为空
+			</li>
+		<#else>
+			<#list data.lessons as lesson>
+				<li class="mui-table-view-cell mui-media-body mui-media" ${lesson.status_value!=2 && "scrollTarget=true"}>
+					<#if (lesson.status_value==3)><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
+							<#elseif (lesson.status_value==1)><span class="box doing" data-text="学习中" scrollTarget="true">学习中</span>
+							<#elseif (lesson.status_value==2)><span class="box done" data-text="已完成">已完成</span>
+							<#else><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
+							</#if>
+					<a class="lessonInfo" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"<#else>href="${lesson.url}"</#if> >
+						<div class="mui-subtitle lessonText">${lesson.name}
+							<span class="doneText">已完成 ${lesson.finish_count || 0}/${lesson.count} 节</span> 
+						</div>
+						<br>
+						<div class="lessonDescribe lessonText">主讲人：${lesson.teacher_name}</div>
+						<#if (lesson.status_value == 1 || lesson.status_value == 2)>
+							<div class="percentRate" node="percent" percent="${lesson.percent}％">	
+								<span class="percentRateBar" node="percentRateBar"></span>
+								<span class="percentRateTip" node="percentTip"></span>
+							</div>
+						</#if>
+					</a>
+				</li>
+			</#list>
+		</#if>		
+	</ul>
+</div>

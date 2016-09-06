@@ -1,0 +1,27 @@
+@import "../../../../sass/mobile-base";
+
+.bar { margin: r(20) r(20) 0; text-align: right; height: r(60); }
+.profile { text-align: center; margin-top: 0; padding-top: r(20); position: relative; min-height: r(280); }
+.profile img { width: r(180); border-radius: r(180); border: 1px solid #ddd; box-shadow: 0 r(5) r(10) rgba(0,0,0,0.2); }
+.profile .nick { font-size: r(32); padding: r(10); }
+
+.mui-card { border-radius: 0; margin: r(20) 0 0; border: none; text-align: center; }
+.mui-card .title { font-size: r(36); margin: r(30); color: #666; }
+.mui-card img { width: r(256); }
+.mui-card .price { font-size: r(48); height: r(100); line-height: r(100); color: #d00; }
+.mui-btn-block { margin: r(40) auto; width: 50%; padding: r(10) 0; }
+
+.head { width: 40%; position: absolute; }
+.info { width: 60%; position: absolute; left: 42%; text-align: left; line-height: r(60); }
+.info span { display: inline-block; min-width: r(90); }
+.info .mui-icon-help { font-size: r(28); color: #ccc; min-width: r(28); }
+.mui-table-view .mui-icon { width: r(60); height: r(60); background-repeat: no-repeat; background-size: r(60) r(60); }
+.mui-icon-lesson { background-image: url(../images/lesson.png); }
+.mui-icon-dna { background-image: url(../images/dna.png); }
+.mui-icon-pos { background-image: url(../images/pos.png);  }
+.mui-icon-invite { background-image: url(../images/invite.png);  }
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body { font-size: r(24); }
+
+/*.mui-table-view { position: fixed; bottom: 0; }*/
+footer {height: 60px;}

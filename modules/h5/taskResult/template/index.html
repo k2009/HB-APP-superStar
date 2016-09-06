@@ -1,0 +1,34 @@
+<div class="mui-content">
+<!-- 	<div class="bar">
+		<a id="icon-icon-contact"><span class="mui-icon mui-icon-contact"></span></a>
+	</div> -->
+    <div class="topContainer">
+        <div class="mui-text-center linebar">
+            <#if (data.percent >= 100 )>
+            <div class="tc_text">
+                <h4>棒棒哒~<br>恭喜你，完成作业~</h4>
+            </div>
+            </#if>
+
+            <h5>作业结果</h5>
+            <div class="bg-line">
+                <p id="scale" style="width:${data.percent}%"><span class="mui-badge mui-badge-purple">${data.percent}%</span></p>
+            </div>
+        </div>
+        <p>本节课需要获得${data.rule}个符合（1个很符合=2个符合）</p>
+    </div>
+    <div class="topContainer">
+        <p>目前共有<span>${data.total}</span>人参与</p>
+        <ul class="chartList" id="chartList">
+        </ul>
+    </div>
+	<div class="tc_text">
+            <a class="mui-btn mui-btn-primary mui-btn-block" href="JavaScript:;" id="run_share">寻找更多人帮助</a>
+            <a class="mui-btn mui-btn-white mui-btn-block" href="${data.next_url}">重新测试</a>
+<!--         <#if (data.percent < 100 )>
+        <#elseif (data.percent >= 100 )>
+            <p>棒棒哒~<br>恭喜你，完成任务~</p>
+            <a class="mui-btn mui-btn-primary mui-btn-block" href="${data.course_list_url}" pjax="1">继续学习</a>
+        </#if> -->
+    </div>
+</div>

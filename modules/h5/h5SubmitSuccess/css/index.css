@@ -1,0 +1,224 @@
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+.profile {
+  background: url(http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg) no-repeat;
+  width: 0.6rem;
+  height: 0.6rem;
+  background-size: 100%;
+  margin: 0.15rem auto 0;
+  border-radius: 0.3rem; }
+
+.desc {
+  margin: 0.15rem 0.2rem;
+  font-size: 0.12rem;
+  text-align: left; }
+
+.desc p, .mui-content-padded p, .qrcode_tip {
+  font-size: 0.12rem; }
+
+.desc span, .desc a {
+  color: #E88353;
+  display: inherit;
+  text-align: center; }
+
+.intro {
+  background-color: #fff;
+  padding: 0.15rem 0.1rem;
+  width: 80%;
+  margin: 0 auto; }
+
+.intro .title {
+  text-align: center;
+  font-size: 0.18rem;
+  margin: 0.1rem 0 0.1rem;
+  color: #E88353; }
+
+.intro .desc {
+  margin: 0.15rem 0rem 0; }
+
+.weixin {
+  width: 2.5rem;
+  height: 1.29rem;
+  background: #fff url(../images/finger.gif) no-repeat top right;
+  margin: 0.05rem auto;
+  background-size: 2.5rem;
+  text-align: left; }
+
+.weixin-account {
+  text-align: center;
+  padding: 0.2rem 0 0.1rem; }
+
+.weixin img {
+  width: 1.29rem;
+  height: 1.29rem; }
+
+.weibo {
+  text-align: center; }
+
+.weibo img {
+  width: 1.2rem;
+  border-radius: 0.9rem;
+  border: 1px solid #ddd; }
+
+.weibo button {
+  min-width: 1rem; }
+
+.qrcode_tip, .mui-content-padded {
+  text-align: center;
+  margin: 0.1rem 0 0.15rem; }
+
+.mui-btn-block {
+  margin: 0.2rem auto;
+  width: 70%;
+  padding: 0.05rem 0; }
+
+.oauth_preview {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  border: 1px solid #ddd;
+  box-shadow: 0 0.025rem 0.05rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.2rem; }
+
+.mui-btn-join {
+  margin: 0.3rem auto;
+  height: 0.3rem;
+  line-height: 0.3rem;
+  padding: 0;
+  font-size: 0.14rem;
+  width: 70%;
+  background-image: none;
+  text-shadow: none;
+  box-shadow: none; }
+
+.mui-popup-backdrop {
+  background: rgba(0, 0, 0, 0.8); }
+
+.mui-content .desc {
+  margin-top: 0.2rem; }
+
+.weibo-official {
+  text-align: center;
+  font-size: 0.12rem;
+  margin-bottom: 0.16rem; }
+  .weibo-official dd {
+    position: relative;
+    width: 0.77rem;
+    height: 0.77rem;
+    margin: 0.2rem auto 0.125rem; }
+  .weibo-official img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #1d1349; }
+
+.icon_approve_co {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0.205rem;
+  height: 0.205rem;
+  overflow: hidden;
+  line-height: 200px;
+  background-position: -0.6rem 0; }
+
+.mui-content {
+  text-align: center; }

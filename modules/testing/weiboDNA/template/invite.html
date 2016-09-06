@@ -1,0 +1,81 @@
+<a href="javascript:;" class="topTip">
+	<span class="topTipIcon"></span>网红城堡-帮你科学变红，优雅赚钱
+</a>
+
+<div class="topBox">
+	<img class="headpic" node="profile_img" src="${data.profile_image}">
+	<div class="headtext" node="screen_name">${data.screen_name}</div>
+</div>
+<!-- <div class="textBox">
+	<span class="text text-1">测试万一</span>
+	<span class="text text-2">测试万一</span>
+	<span class="text text-3">测试万一</span>
+	<span class="text text-4">测试万一</span>
+	<span class="text text-5">测试万一</span>
+	<span class="text text-6">测试万一</span>
+	<span class="text text-7">测试万一</span>
+	<span class="text text-8">测试万一</span>
+	<span class="text text-9">测试万一</span>
+</div> -->
+
+<div id="platform" class="platform"></div>
+
+
+<#if (data.is_share==1)>
+	<p class="mui-content" node="content" style="opacity:0;">
+		是不是觉得很意外呢？并没有想象中的那么了解我呢？
+		<br>
+		这就是人工智能+大数据的魅力所在
+		<br>
+		通过智能分析我的微博，将我的所有关注点展现出来
+		<br>
+		这么智能化的体验，你舍得就这么错过么？
+		<br>
+		别犹豫啦，赶紧去试试吧~~
+		<br>
+		也许你也会是下一个万众瞩目的网络红人哟~~
+	</p>
+	<div class="btnBox" node="btnBox" style="display: none;">
+		<a href="${data.next_url}" class="mui-btn">立即体验</a>
+	</div>
+<#else>
+	<p class="mui-content" node="content" style="opacity:0;">
+		看~这就是人工智能的魅力
+		<br>
+		当然，这只是冰山一角，更大的惊喜还在后面呢~
+		<br>
+		数百位行业顶尖大佬给你直达痛点的帮助
+		<br>
+		搭上这班车，带上你的朋友，开启你们的网红之旅吧~
+	</p>
+
+
+	<div class="btnBox" node="btnBox" style="display: none;">
+		<a action="invite" href="sinaweibo://compose?content=Guys，你确定真的了解我么？点开，也许你会发现不一样的我哟~ ${data.share_url}" class="mui-btn">邀请朋友来体验</a> <a href="javascript:;" reTest="true" class="mui-btn">重新测试</a>
+	</div>
+	<br>
+	<div class="btnBox" node="btnBox" style="display: none;">
+		<a href="${data.top_url}" class="topDNA">顶级网红DNA图谱&gt;&gt;</a>
+	</div>
+
+	<#if (!data.weibo_user_id)>
+		<div id="loadingCover">
+		<div class="orange-box" id="orange-box">    
+			<p>网红城堡正在分析你的微博DNA信息<br>请稍候...</p>       
+			<div id="orange-base">            
+				<div id="orange-bar" class="orangeBar"></div>
+				<div class="leafList leaf1"></div>        
+				<div class="leafList leaf2"></div>        
+				<div class="leafList leaf3"></div>        
+			</div>        
+			<div id="orange-right" class="orangeRight"></div>        
+			    </div>
+		<div class="mui-popup-backdrop mui-active" style="display: block;"></div>
+		</div>
+	</#if>
+
+</#if>
+
+
+
+

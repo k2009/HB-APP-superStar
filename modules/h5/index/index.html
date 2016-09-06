@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>网红城堡</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../../../libs/mui/css/mui.min.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<style type="text/css">
+			.mui-bar-tab .mui-tab-item.mui-active {
+			    color: #929292;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 容器 -->
+		<div class="container clearfix">
+			<!-- 模块 -->
+			<div id="st_modules_h5_home" class="module">
+				<div class="loading">加载中……</div>
+			</div>
+		</div>
+
+		<!-- <footer>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item" href="index.html">
+					<span class="mui-icon mui-icon-home"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a class="mui-tab-item" href="compose.html">
+					<span class="mui-icon mui-icon-chat"></span>
+					<span class="mui-tab-label">城堡</span>
+				</a>
+				<a class="mui-tab-item" href="html/setting.html">
+					<span class="mui-icon mui-icon-contact"></span>
+					<span class="mui-tab-label">我的</span>
+				</a>
+			</nav>
+		</footer> -->
+
+		<!-- 初始化加载 公共JS开始 --> 
+		<script type="text/javascript">
+		  var CONFIG = {
+		    'static_path' : '../../../'
+		  };
+		</script>
+		<script src="../../../libs/seajs/3.0.0/sea.js"></script>
+		<script src="../../../libs/jquery/3.0.0/jquery-3.0.0.min.js"></script>
+		<script src="../../../libs/mui/js/mui.min.js"></script>
+		<!-- 初始化加载 公共JS结束 --> 
+
+		
+		<script>
+			mui.plusReady(function(){
+				seajs.use("modules/h5/index/index");
+			})
+		</script>
+	</body>
+
+</html>
