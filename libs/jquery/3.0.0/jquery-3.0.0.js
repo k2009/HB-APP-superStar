@@ -9214,7 +9214,9 @@ jQuery.expr.pseudos.visible = function( elem ) {
 jQuery.ajaxSettings.xhr = function() {
 	try {
 		return new window.XMLHttpRequest();
-	} catch ( e ) {}
+	} catch ( e ) {
+		console.log('xhr新建失败')
+	}
 };
 
 var xhrSuccessStatus = {

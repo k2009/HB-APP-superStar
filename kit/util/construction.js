@@ -1,11 +1,12 @@
 define(function(require, exports, module) {
     "use strict";
 
-    var $tmp = require("kit/util/easyTemplate"); //模板处理方法载入
+    var $tmp = require("kit/util/easyTemplate");            //模板处理方法载入
     var $storage = require("kit/util/plus-storage");        //本地存储模块
-    var $urlToJson = require("kit/util/urlToJson");        //数组转json
+    var $urlToJson = require("kit/util/urlToJson");         //数组转json
 
-
+    var type_debug = false;                                  //debug开关
+    window.weixinTips = null;                               //兼容性代码
 
     
 
@@ -167,8 +168,10 @@ define(function(require, exports, module) {
                 try{
                     sys.initSomeThing(sys.id,sys.default_data[sys.id]);
                 }catch(e){
-                    console.log('模板引入发生错误'+sys.id+JSON.stringify(e)+"line:161");
-                    console.log(sys.id+JSON.stringify(sys.default_data[sys.id]));
+                    if(type_debug){
+                        console.log('模板引入发生错误'+sys.id+JSON.stringify(e)+"line:161");
+                        console.log(sys.id+JSON.stringify(sys.default_data[sys.id]));
+                    }
                 }
             }()
 
@@ -280,8 +283,10 @@ define(function(require, exports, module) {
                                 try{
                                     sys.initSomeThing(sys.id,sys.default_data[sys.id] );
                                 }catch(e){
-                                    console.log('模板引入发生错误'+JSON.stringify(e)+"line:273")
-                                    console.log(JSON.stringify(sys.default_data[sys.id]))
+                                    if(type_debug){
+                                        console.log('模板引入发生错误'+JSON.stringify(e)+"line:273");
+                                        console.log(JSON.stringify(sys.default_data[sys.id]));
+                                    }
                                 }
                             }()
                         }else{
@@ -292,16 +297,24 @@ define(function(require, exports, module) {
                 },
                 error: function(e) {
                     sys.closeLoading('网络错误'+"line:283")
-                    console.log('请求错误,下面打印错误代码'+"line:283")
-                    console.log(sys.ajax_url)
-                    console.log(JSON.stringify($.extend({pjax:1},sys.ajax_data)))
-                    console.log(JSON.stringify(e));
+                    if(e.statusText == "timeout"){
+                        mui.toast('请求超时')
+                    }else{
+                        mui.toast("网络错误,请检查您的网络")
+
+                        if(type_debug){
+                            console.log('请求错误,下面打印错误代码'+"line:283")
+                            console.log(sys.ajax_url)
+                            console.log(JSON.stringify($.extend({pjax:1},sys.ajax_data)))
+                            console.log(JSON.stringify(e));   
+                        }
+                    }
                 }
             });
         },
         initSomeThing:function (id,data){
             if(!data){
-                console.log('数据传入出错,跳出执行区'+"line:293")
+                if(type_debug)console.log('数据传入出错,跳出执行区'+"line:293")
                 return;
             }
             window.page_data.real_data[id] = data;
@@ -315,8 +328,10 @@ define(function(require, exports, module) {
                 "signature": "必填，签名，见附录1"
             }
             data.jssdk = jssdk;
-            console.log(JSON.stringify(data))
-            console.log($tmp(sys.tmp,data))
+            if(type_debug){
+                console.log(JSON.stringify(data))
+                console.log($tmp(sys.tmp,data))
+            }
             document.getElementById(id).innerHTML = $tmp(sys.tmp,data);
             $('.mui-bar').remove();
             $('.container').css('top', '0');

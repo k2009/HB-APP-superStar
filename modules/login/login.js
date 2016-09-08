@@ -6,26 +6,28 @@ define(function(require, exports, module){
 	var $oauth = require("kit/util/plus-oauth");			//第三方登录模块
 
 
-	var host_domain='http://30681.biz.dev.social-touch.com'
+	var host_domain='http://30681.biz.dev.social-touch.com';
+	var loginURL = "/castle/app/v1/user/wblogin"
 
     var sys = {
     	init:function($){
 			$.plusReady(function(){
 				var oauth = $storage('oauth_weibo');
+				console.log(host_domain+loginURL)
 				if(oauth){
                     // if(oauth.outTime<new Date().getTime()){
                     //     console.log('执行后补微博登录!')
 	                   // // sys.fn_oauth();
                     // }
 					$.ajax({
-						url:host_domain+"castle/app/v1/user/wblogin",
+						url:host_domain+loginURL,
 						type:"get",
 						data:oauth,
 						dataType:"json",
 						success:function(d){
 							console.log("打印登录接口数据")
 							console.log(JSON.stringify(d))
-							if(d.code == 200){
+							if(d.code == 0){
 								$storage('st_modules_h5_home',d.data);
 								sys.fn_next();
 							}else{
@@ -72,14 +74,14 @@ define(function(require, exports, module){
 					if(btn){
 						console.log('尝试登录服务')
 						$.ajax({
-							url:host_domain+"/castle/app/user/wblogin",
+							url:host_domain+loginURL,
 							type:"get",
 							data:data,
 							dataType:"json",
 							success:function(d){
 								console.log("打印登录接口数据")
 								console.log(JSON.stringify(d))
-								if(d.code == 200){
+								if(d.code == 0){
 									$storage('st_modules_h5_home',d.data);
 									sys.fn_next();
 								}else{
@@ -103,14 +105,14 @@ define(function(require, exports, module){
 						// if(btn){
 							console.log('尝试登录服务')
 							$.ajax({
-								url:host_domain+"/castle/app/user/wblogin",
+								url:host_domain+loginURL,
 								type:"post",
 								data:data,
 								dataType:"json",
 								success:function(d){
 									console.log("打印登录接口数据")
 									console.log(JSON.stringify(d.data))
-									if(d.code == 200){
+									if(d.code == 0){
 										$storage('st_modules_h5_home',d.data);
 										sys.fn_next();
 									}else{
