@@ -10032,6 +10032,25 @@ jQuery.noConflict = function( deep ) {
 // and CommonJS for browser emulators (#13566)
 if ( !noGlobal ) {
 	window.jQuery = window.$ = jQuery;
+
+	+function(){
+		var ajax = jQuery.ajax;
+		jQuery.ajax = function(opt){
+			var error = opt.error;
+			if(opt.dataType == "json"){
+
+			}
+			opt.error = function(e){
+		        if(e.statusText == "timeout"){
+		            mui.toast('请求超时');
+		        }else{
+		            mui.toast("网络错误,请检查您的网络");
+		        }
+			}
+
+			return ajax(opt);
+		}
+	}()
 }
 
 

@@ -297,17 +297,11 @@ define(function(require, exports, module) {
                 },
                 error: function(e) {
                     sys.closeLoading('网络错误'+"line:283")
-                    if(e.statusText == "timeout"){
-                        mui.toast('请求超时')
-                    }else{
-                        mui.toast("网络错误,请检查您的网络")
-
-                        if(type_debug){
-                            console.log('请求错误,下面打印错误代码'+"line:283")
-                            console.log(sys.ajax_url)
-                            console.log(JSON.stringify($.extend({pjax:1},sys.ajax_data)))
-                            console.log(JSON.stringify(e));   
-                        }
+                    if((e.statusText != "timeout")&&type_debug){
+                        console.log('请求错误,下面打印错误代码'+"line:283")
+                        console.log(sys.ajax_url)
+                        console.log(JSON.stringify($.extend({pjax:1},sys.ajax_data)))
+                        console.log(JSON.stringify(e));
                     }
                 }
             });
