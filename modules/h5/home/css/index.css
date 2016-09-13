@@ -260,9 +260,8 @@ body, .module {
   padding-bottom: 0.128rem; }
   .my-grade content .no-grade {
     color: #333;
-    font-size: 0.11947rem;
-    padding: 0.08533rem 0;
-    text-align: center; }
+    font-size: 0.11093rem;
+    padding: 0.08533rem 0.128rem; }
   .my-grade content .homework-info {
     background: #fff5e4;
     margin: 0 0.13653rem;
@@ -339,7 +338,8 @@ body, .module {
   display: inline-block;
   font-size: 12px;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg); }
+  -webkit-transform: rotate(45deg);
+  white-space: nowrap; }
 
 .markXPicker:after {
   content: '';

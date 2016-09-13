@@ -134,9 +134,10 @@ body {
   padding: 0.04267rem 0; }
 
 .content-box {
-  margin: 0.064rem;
+  margin: 0.08533rem 0;
   background: #fff;
-  border: 0.00427rem solid #d5d3b1; }
+  border-top: 1px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8; }
 
 .status-face-1, .status-face-0 {
   width: 0.64rem;
@@ -154,7 +155,7 @@ p.status-word {
 
 .status-word {
   text-align: center;
-  color: #ff5676;
+  color: #f5d009;
   font-size: 0.13653rem;
   line-height: 0.512rem; }
 
@@ -180,13 +181,12 @@ p.status-word {
   .comment-box h4 {
     line-height: 0.256rem;
     font-size: 0.1792rem;
-    text-align: center;
-    color: #ff5676;
+    color: #f5d009;
     padding: 0.128rem 0;
     font-weight: normal; }
 
 .comment-box h6 {
-  color: #ff5676;
+  color: #f5d009;
   font-size: 0.13653rem;
   line-height: 0.256rem; }
 
@@ -539,3 +539,18 @@ p.status-word {
 
 #testData {
   height: 2.13333rem; }
+
+.btn_com, .btn_com_grey {
+  display: block;
+  width: 1.36533rem;
+  height: 0.34133rem;
+  margin: 0.08533rem auto;
+  text-align: center;
+  font-size: 0.13653rem;
+  line-height: 0.34133rem;
+  background: #fbbd06;
+  border-radius: 0.04267rem;
+  color: #fff; }
+
+.btn_com_grey {
+  background: #bfbfbf; }

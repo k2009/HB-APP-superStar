@@ -119,6 +119,7 @@ define(function(require, exports, module) {
         },
         WXshare: function( data ){
             var title = this.title();
+            var title_2 = this.title_2();
 
             wx.onMenuShareTimeline({
                 title: title, // 分享标题
@@ -135,9 +136,8 @@ define(function(require, exports, module) {
                     SCRM.pjax( data.next_url, '课后作业-测试验收' );
                 }
             });
-
             wx.onMenuShareAppMessage({
-                title: title, // 分享标题
+                title: title_2, // 分享标题
                 desc: title, // 分享描述
                 link: window.location.origin + data.share_url, // 分享链接
                 imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
@@ -226,6 +226,7 @@ define(function(require, exports, module) {
         },
         WBshare: function( data ){
             var title = this.title();
+            var title_2 = this.title_2();
             // Alert(title + '：' + window.location.origin + data.share_url)
             var items = {
                 shareToWeibo: {
@@ -246,9 +247,9 @@ define(function(require, exports, module) {
             // 设置分享的文案
             WeiboJS.setSharingContent({
                 external:{
-                    title: "课后作业-测试验收",
+                    title: title_2,
                     icon: "http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg",
-                    desc: runImage.title()
+                    desc: title
                 }
             });
             // 选择菜单的时候，触发相应的菜单行为
@@ -279,13 +280,24 @@ define(function(require, exports, module) {
         },
         title: function(){
             var title = [
-				'我在参加网红培养计划，课后作业必须你来点评！别隐藏潜质，你也被发现了！',
-				'我在参加百万网红培养计划，作业你来点评！美美的星梦，你也必须有！',
-				'梦想的道路需要指引！我在参加百万网红培养计划快来点评，带你一起燃梦！',
-				'我们缺一个有梦想敢拼的妹纸！百万网红计划—我在参加，你快来点评，一起燃梦！',
-				'只想走捷径，那就不配红！互联网大咖助力百万网红培养计划，我在参加快来评！'
+                '拿出你追求完美的精神来帮我点评网红培养课后作业！别隐藏潜质，你是最棒的！',
+                '作为我的网红梦想导师，课后作业怎能缺少你的点评！快来，点评小能手！',
+                '年轻怎能没有梦想！我在参加百万网红培养计划，作业点评，非你莫属！',
+                '互联网大咖助力百万网红培养计划，我在参加快来点评！你就是下一个最牛网红星探！',
+                '才华横溢但又默默无闻的你，网红培养课后作业点评，非你莫属！'
             ];
             return title[ Math.floor( Math.random() * title.length ) ];
+        },
+        title_2: function(){
+            var title = [
+                '追求完美的你怎会错过这场点评！',
+                '神助般的建议，我特别需要你！',
+                '点燃梦想的圣火，非你莫属！',
+                '你的网红星探潜质被我发现啦，快来！',
+                '不想抛头露面，也可以做网红幕后操盘手！'
+            ];
+            return title[ Math.floor( Math.random() * title.length ) ];
+
         }
     };
 
@@ -299,6 +311,7 @@ define(function(require, exports, module) {
         jssdk.init(platform, opts.jssdk, function(){
             if(platform == 'weibo'){
                 WeiboJS = jssdk.getJssdkObject();
+                //alert( JSON.stringify( WeiboJS ) );
                 //share.WBshare();
                 return;
             }
@@ -311,6 +324,7 @@ define(function(require, exports, module) {
 
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
+            ret.setData(opts.tabbar);
             ret.setActiveTab(1);
             tabbar = ret;
         });
@@ -378,10 +392,6 @@ define(function(require, exports, module) {
         $('#st_modules_h5_task').off();
         $( '.alert_close' ).off();
         $( '.alert_dom' ).remove();
-        Alert = null;
-        runImage = null;
-        platform = null;
-        serverIds = null;
         dialogTips.destroy();
         if(tabbar){
             tabbar.destroy();

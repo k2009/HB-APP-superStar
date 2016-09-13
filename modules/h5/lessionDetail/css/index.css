@@ -99,6 +99,9 @@ body {
 .container {
   height: 100%; }
 
+body {
+  background: white; }
+
 .topTitle {
   position: static;
   width: auto; }
@@ -106,7 +109,6 @@ body {
 .subTitle {
   font-size: 0.12rem;
   color: #555;
-  text-shadow: 0 0 1px #d3a85f;
   white-space: normal;
   display: -webkit-box;
   overflow: hidden;
@@ -117,11 +119,8 @@ body {
 .table-item {
   display: inline-block; }
 
-.mui-table-view-cell {
-  margin: 0.1rem; }
-
 .mui-table-view-cell:after {
-  left: 0; }
+  display: none; }
 
 .mui-table-view-cell.mui-collapse .mui-collapse-content {
   margin-top: 0; }
@@ -152,6 +151,16 @@ body {
   color: #ea5504;
   padding: 10px 15px;
   position: relative; }
+
+.sectionTitle {
+  font-size: r24;
+  color: #555;
+  line-height: 0.25rem; }
+
+.arrowRight {
+  float: right;
+  margin-right: 0.05rem;
+  color: #CCC; }
 
 .mui-table-view-cell .sectionIntro {
   line-height: 0.15rem;
@@ -187,16 +196,15 @@ body {
 
 .chapterItem {
   padding: 0;
-  background: #ffe; }
+  color: #CCC;
+  border-top: 10px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0; }
 
-.chapterItem.done {
-  background: #aca5b0; }
+.chapterItem.done .sectionTitle {
+  color: #BBB; }
 
-.chapterItem.doing {
-  background: #c1b16f; }
-
-.chapterItem.wait {
-  background: #b7a899; }
+.chapterItem.done .sectionIntro {
+  color: #DDD; }
 
 .chapterItem a {
   text-align: left;
@@ -216,13 +224,17 @@ body {
   position: absolute; }
 
 .mui-table-view {
-  margin: 0.1rem;
+  background: white;
   overflow: hidden; }
 
 .top-box {
   overflow: hidden;
-  position: relative;
-  margin-top: 60px; }
+  position: relative; }
+
+.top-title {
+  margin: 0.1rem;
+  font-weight: normal;
+  color: #555; }
 
 .top-img-box {
   width: 30%;

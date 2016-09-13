@@ -1,34 +1,71 @@
-<div class="mui-content">
-<!-- 	<div class="bar">
-		<a id="icon-icon-contact"><span class="mui-icon mui-icon-contact"></span></a>
-	</div> -->
-    <div class="topContainer">
-        <div class="mui-text-center linebar">
-            <#if (data.percent >= 100 )>
-            <div class="tc_text">
-                <h4>棒棒哒~<br>恭喜你，完成作业~</h4>
-            </div>
-            </#if>
-
-            <h5>作业结果</h5>
+    <div class="mainBox">
+        <h5>本节作业需要收集10个赞同</h5>
+        <div class="bg-line-box">
+            <span>${data.percent}%</span>
             <div class="bg-line">
-                <p id="scale" style="width:${data.percent}%"><span class="mui-badge mui-badge-purple">${data.percent}%</span></p>
+                <p id="scale" style="width:${data.percent}%"></p>
             </div>
         </div>
-        <p>本节课需要获得${data.rule}个符合（1个很符合=2个符合）</p>
+        <#if (data.percent >= 100 )>
+            <h6 class="pass_box">棒棒哒~<br>恭喜你，完成作业~</h6>
+        </#if>
     </div>
-    <div class="topContainer">
-        <p>目前共有<span>${data.total}</span>人参与</p>
-        <ul class="chartList" id="chartList">
+
+    <div class="mainBox">
+        <h5>目前共有${data.total}人参与评估</h5>
+        <ul class="chartList">
+        <#if (data.vote_type == 1)>
+            <li></li>
+            <li>
+                <div class="block" style="height:${data.result[0] / data.total * 100 }%">
+                    <p>${data.result[0]}</p>
+                </div>
+                <h6>符合</h6>
+            </li>
+            <li></li>
+            <li class="grey">
+                <div class="block" style="height:${data.result[1] / data.total * 100 }%">
+                    <p>${data.result[1]}</p>
+                </div>
+                <h6>不符合</h6>
+            </li>
+            <li></li>
+        <#else if(data.vote_type == 0)>
+            <li>
+                <div class="block" style="height:${data.result[0] / data.total * 100 }%">
+                    <p>${data.result[0]}</p>
+                </div>
+                <h6>很符合</h6>
+            </li>
+            <li>
+                <div class="block" style="height:${data.result[1] / data.total * 100 }%">
+                    <p>${data.result[1]}</p>
+                </div>
+                <h6>符合</h6>
+            </li>
+            <li>
+                <div class="block" style="height:${data.result[2] / data.total * 100 }%">
+                    <p>${data.result[2]}</p>
+                </div>
+                <h6>一般</h6>
+            </li>
+            <li>
+                <div class="block" style="height:${data.result[3] / data.total * 100 }%">
+                    <p>${data.result[3]}</p>
+                </div>
+                <h6>不符合</h6>
+            </li>
+            <li>
+                <div class="block" style="height:${data.result[4] / data.total * 100 }%">
+                    <p>${data.result[4]}</p>
+                </div>
+                <h6>很不符合</h6>
+            </li>
+        </#if>
         </ul>
+        <div class="btn_box">
+            <a href="JavaScript:;" id="run_share">在找人看看</a>
+            <a href="${data.next_url}">再做一次</a>
+        </div>
+
     </div>
-	<div class="tc_text">
-            <a class="mui-btn mui-btn-primary mui-btn-block" href="JavaScript:;" id="run_share">寻找更多人帮助</a>
-            <a class="mui-btn mui-btn-white mui-btn-block" href="${data.next_url}">重新测试</a>
-<!--         <#if (data.percent < 100 )>
-        <#elseif (data.percent >= 100 )>
-            <p>棒棒哒~<br>恭喜你，完成任务~</p>
-            <a class="mui-btn mui-btn-primary mui-btn-block" href="${data.course_list_url}" pjax="1">继续学习</a>
-        </#if> -->
-    </div>
-</div>

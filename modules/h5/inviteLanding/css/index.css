@@ -99,7 +99,7 @@ body {
 .container {
   height: 100%; }
 
-.topBack {
+.top-back {
   width: 100%;
   padding-top: 9%;
   padding-bottom: 22%;
@@ -112,18 +112,21 @@ body {
   color: white;
   font-size: 0.13rem; }
 
-.redTitle {
+.red-title {
   color: #fe5252;
-  font-size: 0.18rem; }
+  font-size: 0.18rem;
+  padding-top: 0.25rem; }
 
 .mui-content {
   text-align: center;
-  line-height: 30px; }
+  line-height: 30px;
+  background: #f2f2f2; }
 
 .empty {
-  margin: 0.25rem 0.2rem 0.2rem;
+  padding: 0.2rem 0.2rem 0;
   font-size: 0.14rem;
-  text-align: center; }
+  text-align: center;
+  background: none; }
 
 .count, .source {
   color: #e88353; }

@@ -15,9 +15,9 @@ define(function(require){
 
     var getColor=function(){
         return [
-            parseInt(50+Math.random()*180).toString(16),
-            parseInt(50+Math.random()*180).toString(16),
-            parseInt(50+Math.random()*180).toString(16)
+            parseInt(70+Math.random()*180).toString(16),
+            parseInt(70+Math.random()*180).toString(16),
+            parseInt(70+Math.random()*180).toString(16)
         ].join('');
     }
 

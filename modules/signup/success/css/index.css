@@ -1,47 +1,226 @@
-@media (max-width:319px){html{font-size:100px}
-}
-@media (min-width:320px) and (max-width:374px){html{font-size:100px}
-}
-@media (min-width:375px) and (max-width:413px){html{font-size:117.19px}
-}
-@media (min-width:414px){html{font-size:129.38px}
-}
-.border-1px{position:relative}
-.border-1px:after{content:'';position:absolute;top:0;right:0;bottom:0;left:0;transform-origin:0 0;-moz-transform-origin:0 0;-webkit-transform-origin:0 0;transform:scale(1);-moz-transform:scale(1);-webkit-transform:scale(1);pointer-events:none}
-@media only screen and (-webkit-min-device-pixel-ratio:2){.border-1px:after{right:-100%;bottom:-100%;transform:scale(.5);-moz-transform:scale(.5);-webkit-transform:scale(.5)}
-}
-@media only screen and (-webkit-min-device-pixel-ratio:3){.border-1px:after{right:-200%;bottom:-200%;transform:scale(.3333);-moz-transform:scale(.3333);-webkit-transform:scale(.3333)}
-}
-body,dd,div,dl,dt,fieldset,figure,form,h1,h2,h3,h4,html,iframe,input,legend,li,ol,p,table,td,th,ul{margin:0;padding:0}
-footer,header,section{display:block}
-table{border-collapse:collapse;border-spacing:0;table-layout:fixed}
-img{border:0}
-li{list-style:none}
-em,i{font-style:normal}
-a{text-decoration:none;webkit-tap-highlight-color:transparent}
-a:focus{outline:0}
-textarea{resize:none;overflow-x:hidden;overflow-y:auto;outline:0}
-input[type=text],input[type=button],input[type=submit],input[type=tel]{-webkit-appearance:none;outline:0;-webkit-tap-highlight-color:transparent;border-radius:0}
-input,textarea{webkit-tap-highlight-color:transparent;-webkit-user-modify:read-write-plaintext-only}
-body{font:14px/20px "Microsoft YaHei","Hiragino Sans GB",stheitisclight,sans-serif;min-width:320px;word-wrap:break-word;-webkit-overflow-scrolling:touch;overflow-x:hidden}
-.container{height:100%}
-html{min-height:100%}
-body{background-color:#b36bf3;background-image:linear-gradient(to bottom,#ff4c8e 0,#b36bf3 60%);min-height:100%;color:#fff}
-body:before{content:"";position:absolute;z-index:0;left:0;top:0;width:100%;min-height:1.13493rem;background:url(../images/bg_header.png?v=00f37cda0a) no-repeat;background-size:100% auto}
-.analyze-tit:before,.btn-step:before,.erweima:after,.icon_approve_co{background:url(../images/bg.png?v=12) no-repeat;background-size:1.00267rem auto}
-.analyze-tit{position:relative;z-index:2;text-align:center;font-size:.128rem;font-weight:400;padding:.23893rem 0 .17067rem}
-.analyze-tit:before{content:"";display:block;width:.448rem;height:.4096rem;margin:0 auto .08533rem}
-.wh-box{width:2.70507rem;height:.59733rem;padding:.32427rem 0 0 .15787rem;margin:0 auto .17067rem;font-size:.18773rem;line-height:.22187rem;white-space:nowrap;background:url(../images/bg_wh.png?v=fe9cce6aef) no-repeat;background-size:100% auto}
-.wh-box p{margin-left:.384rem}
-.fbig{font-size:.29867rem}
-.de-txt{font-size:.128rem;line-height:.22187rem;text-align:center}
-.erweima{border:2px solid #1d1349;width:1.44213rem;height:1.44213rem;margin:.11093rem auto}
-.erweima img{width:100%;vertical-align:top}
-.erweima:after{content:"";display:block;width:1.00267rem;height:.59733rem;margin:.05973rem auto;background-position:0 -.46933rem}
-.weibo-official{text-align:center;font-size:.1024rem;margin-bottom:.13653rem}
-.weibo-official dd{position:relative;width:.65707rem;height:.65707rem;margin:.17067rem auto .10667rem}
-.weibo-official img{width:100%;border-radius:50%;border:2px solid #1d1349}
-.icon_approve_co{position:absolute;right:0;bottom:0;width:.17493rem;height:.17493rem;overflow:hidden;line-height:200px;background-position:-.512rem 0}
-.btn-step{position:relative;display:block;margin:0 auto;width:1.3312rem;border:.0128rem solid #1d1349;border-radius:.128rem;line-height:.26027rem;font-size:.13653rem;font-weight:700;text-align:center;color:#472d88;background-color:#ffff01;box-shadow:0 -.0256rem 0 #ffde01 inset}
-.btn-step:before{position:absolute;left:.0256rem;top:.0256rem;content:"";width:.11093rem;height:.11947rem;background-position:-.512rem -.21333rem}
-.btn-step.none{background-color:#999;color:#fff;box-shadow:0 -.0256rem 0 grey inset}
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+html {
+  min-height: 100%; }
+
+body {
+  background-color: #b36bf3;
+  background-image: linear-gradient(to bottom, #ff4c8e 0%, #b36bf3 60%);
+  min-height: 100%;
+  color: #fff; }
+
+body:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-height: 1.13493rem;
+  background: url(../images/bg_header.png) no-repeat;
+  background-size: 100% auto; }
+
+.analyze-tit:before, .erweima:after, .btn-step:before, .icon_approve_co {
+  background: url(../images/bg.png?v=12) no-repeat;
+  background-size: 1.00267rem auto; }
+
+.analyze-tit {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-size: 0.128rem;
+  font-weight: normal;
+  padding: 0.23893rem 0 0.17067rem; }
+  .analyze-tit:before {
+    content: "";
+    display: block;
+    width: 0.448rem;
+    height: 0.4096rem;
+    margin: 0 auto 0.08533rem; }
+
+.wh-box {
+  width: 2.70507rem;
+  height: 0.59733rem;
+  padding: 0.32427rem 0 0 0.15787rem;
+  margin: 0 auto 0.17067rem;
+  font-size: 0.18773rem;
+  line-height: 0.22187rem;
+  white-space: nowrap;
+  background: url(../images/bg_wh.png) no-repeat;
+  background-size: 100% auto; }
+  .wh-box p {
+    margin-left: 0.384rem; }
+
+.fbig {
+  font-size: 0.29867rem; }
+
+.de-txt {
+  font-size: 0.128rem;
+  line-height: 0.22187rem;
+  text-align: center; }
+
+.erweima {
+  border: 2px solid #1d1349;
+  width: 1.44213rem;
+  height: 1.44213rem;
+  margin: 0.11093rem auto; }
+  .erweima img {
+    width: 100%;
+    vertical-align: top; }
+  .erweima:after {
+    content: "";
+    display: block;
+    width: 1.00267rem;
+    height: 0.59733rem;
+    margin: 0.05973rem auto;
+    background-position: 0 -0.46933rem; }
+
+.weibo-official {
+  text-align: center;
+  font-size: 0.1024rem;
+  margin-bottom: 0.13653rem; }
+  .weibo-official dd {
+    position: relative;
+    width: 0.65707rem;
+    height: 0.65707rem;
+    margin: 0.17067rem auto 0.10667rem; }
+  .weibo-official img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #1d1349; }
+
+.icon_approve_co {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0.17493rem;
+  height: 0.17493rem;
+  overflow: hidden;
+  line-height: 200px;
+  background-position: -0.512rem 0; }
+
+.btn-step {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1.3312rem;
+  border: 0.0128rem solid #1d1349;
+  border-radius: 0.128rem;
+  line-height: 0.26027rem;
+  font-size: 0.13653rem;
+  font-weight: bold;
+  text-align: center;
+  color: #472d88;
+  background-color: #ffff01;
+  box-shadow: 0 -0.0256rem 0 #ffde01 inset; }
+  .btn-step:before {
+    position: absolute;
+    left: 0.0256rem;
+    top: 0.0256rem;
+    content: "";
+    width: 0.11093rem;
+    height: 0.11947rem;
+    background-position: -0.512rem -0.21333rem; }
+  .btn-step.none {
+    background-color: #999;
+    color: #fff;
+    box-shadow: 0 -0.0256rem 0 #808080 inset; }

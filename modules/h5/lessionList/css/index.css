@@ -120,18 +120,19 @@ body {
 
 .schedule {
   width: 120px;
-  height: 150px;
+  height: 120px;
   position: relative;
   display: inline-block;
   margin: 10px;
   float: left; }
 
 .scheduleCard {
-  float: right;
-  width: 50%;
+  float: left;
+  margin-left: 20px;
   text-align: left;
   padding: 3px;
-  margin-top: 35px; }
+  margin-top: 35px;
+  color: #333; }
 
 .cardText {
   white-space: all;
@@ -139,7 +140,8 @@ body {
 
 .largeNumber {
   color: #fbbd06;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  font-weight: bolder; }
 
 .scheduleText {
   position: absolute;
@@ -160,7 +162,10 @@ body {
   margin: 0.05rem; }
 
 .lessonDescribe {
-  color: #888; }
+  color: #888;
+  text-align: left;
+  font-size: 0.1rem;
+  margin-left: 1%; }
 
 .lessonText {
   font-size: 0.14rem;

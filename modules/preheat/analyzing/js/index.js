@@ -12,7 +12,7 @@ define(function(require, exports, module) {
 	var swiperIndex = 0, swiperCount = 0, swiperData = [];
 	var loopDelay = 3000, loopTimer;
 	var loopUrl = null;
-	var maxTry = 30, tryTimes = 0;
+	var maxTry = 10, tryTimes = 0;
 
 	var SWPIE_HTML =
 	'<ul>' +

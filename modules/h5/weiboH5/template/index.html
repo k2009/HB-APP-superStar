@@ -1,101 +1,129 @@
-<div class="mui-content">
-<!-- 	<div class="bar">
-		<a id="icon-icon-contact"><span class="mui-icon mui-icon-contact"></span></a>
-	</div> -->
+	<p class="topTips">帮忙看看下边内容是否符合后边所描述的中心思想。</p>
 
-	<div class="topContainer">
-		<div class="face">
-			<p>我正在参加电商网红养成计划，以下是我刻苦学习过程中需要完成的课后作业，求点评，求指导。</p>
+	<div class="mainBox">
+		<div class="owner">
+			<div class="headPic"><img src="${data.userInfo.profile_image}"></div>
+			<h5>${data.userInfo.screen_name}</h5>
 		</div>
-	</div>
-
-	<div class="topContainer tl_text">
-		<div class="tips_title"><span>作业内容</span></div>
-		<div class="profile fix">
-			<div class="head"><img src="${data.userInfo.profile_image}" class="border-1px">
-			</div>
-			<ul class="info">
-				<li><span class="nick">${data.userInfo.screen_name}</span></li>
-				<li><span id="time"></span></li>
-			</ul>
-		</div>
-
-		<p>${data.content}</p>
-
-		<!--<ul class="mui-table-view mui-grid-view img-line-3" id="imgList">
-		<#list data.images as list>
-	        <li class="mui-table-view-cell mui-media mui-col-xs-6">
-                <img class="mui-media-object" src="${list}">
-	        </li>
-      	</#list>
-	    </ul> -->
-
-		<ul class="mui-flex-container" id="imgList">
-<#if (data.images.length ==1)>
-			<li class="img_auto">
+		<p class="word">${data.content}</p>
+		<ul class="mui-flex-container imgList" id="imgList">
+			<#if (data.images.length ==1)>
+				<li class="img_auto">
 					<i class="img-container">
 						<span class="cnt">
 							<img src="${data.images[0]}" data-bigimg="${data.images[0]}">
 						</span>
 					</i>
 				</li>
-<#else>
-			<#list data.images as list>
-			<li>
-					<i class="img-container">
-						<span class="cnt">
-							<img src="${list}?imageView2/0/w/90/h/90" data-bigimg="${list}">
-						</span>
-					</i>
-				</li>
-	      	</#list>
-</#if>
+			<#else>
+				<#list data.images as list>
+					<li>
+						<i class="img-container">
+							<span class="cnt">
+								<img src="${list}?imageView2/0/w/90/h/90" data-bigimg="${list}">
+							</span>
+						</i>
+					</li>
+		      	</#list>
+			</#if>
 	    </ul>
+	    <p class="time" id="time"></p>
 	</div>
-
-<#if (data.onself)>
-    <div class="topContainer">
-        <p>目前共有<span>${data.homework.total}</span>人参与</p>
-        <ul class="chartList" id="chartList">
-        </ul>
-    </div>
-	<div class="tc_text">
-        <a class="btn_com" href="JavaScript:;" id="run_share">再找人看看</a>
-        <a class="btn_com btn_com_g" href="${data.homework.course_list_url}">查看课程</a>
-    </div>
-<#else>
-	<div class="topContainer ask tl_text">
-		<h5 style="padding:5px 0 10px">${data.question}</h5>
-
-		<div class="mui-input-row mui-radio mui-left">
-			<label>很符合
-				<input name="question" type="radio" value="0" <#if (data.current_choice === '0')>checked="checked"</#if> />
-			</label>
-		</div>
-		<div class="mui-input-row mui-radio mui-left">
-			<label>符合
-				<input name="question" type="radio" value="1" <#if (data.current_choice == '1')>checked="checked"</#if> />
-			</label>
-		</div>
-		<div class="mui-input-row mui-radio mui-left">
-			<label>一般
-				<input name="question" type="radio" value="2" <#if (data.current_choice == '2')>checked="checked"</#if> />
-			</label>
-		</div>
-		<div class="mui-input-row mui-radio mui-left">
-			<label>不符合
-				<input name="question" type="radio" value="3" <#if (data.current_choice == '3')>checked="checked"</#if> />
-			</label>
-		</div>
-		<div class="mui-input-row mui-radio mui-left">
-			<label>很不符合
-				<input name="question" type="radio" value="4" <#if (data.current_choice == '4')>checked="checked"</#if> />
-			</label>
-		</div>
+	<div class="mainBox mainBox_t2">
+		<#if (data.onself)>
+		    <p>目前共有<span>${data.homework.total}</span>人参与</p>
+		    <p class="tips <#if (data.is_pass)>pass</#if>">${data.tips}</p>
+		    <ul class="chartList">
+			<#if (data.vote_type == 1)>
+				<li></li>
+				<li>
+	                <div class="block" style="height:${data.homework.result[0] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[0]}</p>
+	                </div>
+	                <h6>符合</h6>
+	            </li>
+	            <li></li>
+	            <li class="grey">
+	                <div class="block" style="height:${data.homework.result[1] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[1]}</p>
+	                </div>
+	                <h6>不符合</h6>
+	            </li>
+	            <li></li>
+			<#else if (data.vote_type == 0)>
+				<li>
+	                <div class="block" style="height:${data.homework.result[0] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[0]}</p>
+	                </div>
+	                <h6>很符合</h6>
+	            </li>
+	            <li>
+	                <div class="block" style="height:${data.homework.result[1] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[1]}</p>
+	                </div>
+	                <h6>符合</h6>
+	            </li>
+	            <li>
+	                <div class="block" style="height:${data.homework.result[2] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[2]}</p>
+	                </div>
+	                <h6>一般</h6>
+	            </li>
+	            <li>
+	                <div class="block" style="height:${data.homework.result[3] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[3]}</p>
+	                </div>
+	                <h6>不符合</h6>
+	            </li>
+	            <li>
+	                <div class="block" style="height:${data.homework.result[4] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[4]}</p>
+	                </div>
+	                <h6>很不符合</h6>
+	            </li>
+			</#if>
+		    </ul>
+			<div class="btn_box">
+		        <a href="JavaScript:;" id="run_share">再找人看看</a>
+		        <a href="${data.homework.course_list_url}">查看课程</a>
+		    </div>
+		<#else>
+			<p>${data.question}</p>
+			<#if (data.vote_type == 1)>
+				<div class="agree_box">
+					<a href="JavaScript:;" <#if (!data.current_choice)>choose="5"</#if> <#if (data.current_choice == 5)>class="done"</#if>>${data.homework.result[0]}</a>
+					<a href="JavaScript:;" <#if (!data.current_choice)>choose="6"</#if> <#if (data.current_choice == 6)>class="done"</#if>>${data.homework.result[1]}</a>
+				</div>
+			<#else if(data.vote_type == 0)>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>很符合
+						<input name="question" type="radio" value="0" <#if (data.current_choice === '0')>checked="checked"</#if> />
+					</label>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>符合
+						<input name="question" type="radio" value="1" <#if (data.current_choice == '1')>checked="checked"</#if> />
+					</label>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>一般
+						<input name="question" type="radio" value="2" <#if (data.current_choice == '2')>checked="checked"</#if> />
+					</label>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>不符合
+						<input name="question" type="radio" value="3" <#if (data.current_choice == '3')>checked="checked"</#if> />
+					</label>
+				</div>
+				<div class="mui-input-row mui-radio mui-left">
+					<label>很不符合
+						<input name="question" type="radio" value="4" <#if (data.current_choice == '4')>checked="checked"</#if> />
+					</label>
+				</div>
+				<div class="btn_box">
+			        <!-- <a href="JavaScript:;" id="<#if (!data.current_choice)>help_submit<#else>help_submit_end</#if>">帮<#if (data.userInfo.sex == 'm')>他<#else>她</#if>成长</a> -->
+			        <a href="JavaScript:;" id="help_submit">提交</a>
+				</div>
+			</#if>
+		</#if>
 	</div>
-	<div class="tc_text">
-        <a class="btn_com" href="JavaScript:;" id="<#if (!data.current_choice)>help_submit<#else>help_submit_end</#if>">帮<#if (data.userInfo.sex == 'm')>他<#else>她</#if>成长</a>
-	</div>
-</#if>
-
-</div>

@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     var header = require('common/slogon/js/index');
     var initData;
     var finishTip;
-    var tabbar;
+    var tabbbar;
     
 
     lazyload.load("common/share/tips/js/index", function(dialog){
@@ -33,6 +33,7 @@ define(function(require, exports, module) {
         opts.biz.finished && mark.draw(opts.biz.chat);
 
         lazyload.load("common/tabbar/js/index", function(ret){
+            ret.setData(opts.tabbar);
             tabbar = ret;
             tabbar.setActiveTab(2);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });

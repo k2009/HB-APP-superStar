@@ -40,11 +40,13 @@ define(function(require, exports, module) {
         initDifficulty();
         //initPercent();
          lazyload.load("common/tabbar/js/index", function(tabbar){
+            ret.setData(opts.tabbar);
             tabbar.setActiveTab(1);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });
     }
 
     function destroy(opts) {
+        
     }
     var that = {
         init: init,

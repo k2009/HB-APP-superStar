@@ -1,0 +1,22 @@
+<#if (data.homeworkList.length)>
+	<ul class="homeworkList" id="homeworkList" data-maxpage="${data.max_page}">
+		<#list data.homeworkList as list>
+			<li>
+				<h6><a href="${list.url}">${list.center}</a></h6>
+				<p>课程：${list.lesson}</p>
+				<p>小节：${list.part}</p>
+				<p class="bottom"><span>${list.times}</span>已有${list.num}人参与评估</p>
+			</li>
+		</#list>
+		<!-- <li>
+			<h6><a href="#">中心思想：我是一个热的孩子呢</a></h6>
+			<p>课程：你所从事职业的多种能力的综你的职业能力</p>
+			<p>小节：多种能力的综合，可以理解为你的职业能力</p>
+			<p class="bottom"><span>时间</span>已有8人参与评估</p>
+		</li> -->
+	</ul>
+<#else>
+	<div class="statusImg"></div>
+	<p class="tipsInfo">还没有做作业呦，请先去学习课程吧～</p>
+	<a href="${data.lessonList_url}" class="btnIndex" pjax="1">课程列表</a>
+</#if>

@@ -42,12 +42,12 @@
 							<#elseif (lesson.status_value==2)><span class="box done" data-text="已完成">已完成</span>
 							<#else><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
 							</#if>
-					<a class="lessonInfo" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"<#else>href="${lesson.url}"</#if> >
+					<a class="lessonInfo" pjax="1" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"<#else>href="${lesson.url}"</#if> >
 						<div class="mui-subtitle lessonText">${lesson.name}
 							<span class="doneText">已完成 ${lesson.finish_count || 0}/${lesson.count} 节</span> 
 						</div>
 						<br>
-						<div class="lessonDescribe lessonText">主讲人：${lesson.teacher_name}</div>
+						<div class="lessonDescribe">主讲人：${lesson.teacher_name}</div>
 						<#if (lesson.status_value == 1 || lesson.status_value == 2)>
 							<div class="percentRate" node="percent" percent="${lesson.percent}％">	
 								<span class="percentRateBar" node="percentRateBar"></span>

@@ -8,23 +8,26 @@ define(function(require, exports, module){
 	var sys = {
 		silent:true,								// 是否静默检查
 		init : function(){
+			console.log("开始检测版本更新")
 			sys.getAppVersion(function(v){
 				sys.checkUpdate(function(json){			//fn_hasUpDate
+					console.log("检测完成")
+					console.log(JSON.stringify(json))
                     sys.alert("有新版本"+json.version);
-                    sys.downWgt(json.wgtUrl);  // 下载升级包
+                    // sys.downWgt(json.wgtUrl);  // 下载升级包
 				},function(){						//fn_noUpDate
                     sys.alert("无新版本可更新！");
-				},function(errorCode){						//fn_err
-		            sys.alert("检测更新失败！"+errorCode);
+				},function(e){						//fn_err
+		            sys.alert("检测更新失败！"+e.status);
 				});
 			});
 		},
 		waiting :function(msg){
-			// console.log(msg);
+			console.log(msg);
 			sys.silent||plus.nativeUI.showWaiting(msg);
 		},
 		alert : function(msg,fn){
-			// console.log(msg);
+			console.log(msg);
 			sys.silent||plus.nativeUI.alert(msg);
 			fn&&fn();
 		},
@@ -52,32 +55,33 @@ define(function(require, exports, module){
 			});
 		},
 		checkUpdate : function(fn_hasUpDate,fn_noUpDate,fn_err){						// 检测更新
-			var checkUrl="http://xiaok.org/socialtouch/version.json";
+    		var checkUrl = plus.storage.getItem("domain")+"/castle/app/v1/api/check-version";
 		    sys.waiting("检测更新...");
-		    var xhr=new XMLHttpRequest();
-		    xhr.onreadystatechange=function(){
-		        switch(xhr.readyState){
-		            case 4:
-		            plus.nativeUI.closeWaiting();
-		            if(xhr.status==200){
-		            	var config = JSON.parse(xhr.responseText);
-		            	console.log(xhr.responseText);
+		    $.ajax({
+		    	type:"get",
+                url:checkUrl,
+                data: {
+                	channel_id:(mui.os.ios?16:20),
+                	version:sys.appVersion
+                },
+                error:function(e) {
+			    	fn_err(e);
+			    },
+			    success:function(e){
+			    	if(e.code == 0){
+			            plus.nativeUI.closeWaiting();
+		            	var config = e.data;
 		                var newVer= config.version;
 		                if(newVer!=sys.appVersion){
 		                	fn_hasUpDate(config);
 		                }else{
 		                	fn_noUpDate();
-		                }
-		            }else{
-		            	fn_err(xhr.status);
-		            }
-		            break;
-		            default:
-		            break;
-		        }
-		    }
-		    xhr.open('GET',checkUrl);
-		    xhr.send();
+		                }	
+			    	}
+			    },
+                dataType: 'json', //服务器返回json格式数据
+                timeout: 10000, //超时时间设置为10秒；
+		    });
 		},
 		downWgt:function(wgtUrl){
 		    sys.waiting("下载wgt文件...");

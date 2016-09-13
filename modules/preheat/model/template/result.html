@@ -24,9 +24,11 @@
 			</li>
 		</#if>
 		<li>
-			<h6>需要进步的能力</h6>
+			<h6><#if (data.isAllone)>建议<#else>需要进步的能力</#if></h6>
 			<p>${data.bad_abilitys.title}</p>
-			<p>理由：</p>
+			<#if ( !data.bad_abilitys.details.length )>
+				<p>理由：</p>
+			</#if>
 			<#list data.bad_abilitys.details as list>
 				<p>${list}</p>
 	      	</#list>

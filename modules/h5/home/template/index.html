@@ -6,7 +6,7 @@
 		<div class="user-nick">微博昵称：${data.user.screen_name}</div>
 		<div class="user-detail-line">
 			<span>粉丝：${data.fans_count}</span>
-			<span>电商属性：${data.biz_score == null ? '未测试' : data.biz_score}</span>
+			<span>电商属性：${data.biz_score == null ? '未评测' : data.biz_score}</span>
 		</div>
 		<div class="user-detail-line">
 			<span>级别：${data.level}</span>
@@ -17,14 +17,14 @@
 <#if (data.my_test < 2)>
 <div class="test-guide border-1px index-block">
 	<#if (data.my_test == 0)>
-	<div>学习基础知识之前，先测试一下你有多了解网红</div>
-	<div>免费测试，快来吧！</div>
+	<div>学习基础知识之前，先评测一下你有多了解网红</div>
+	<div>免费评测，快来吧！</div>
 	</#if>
 	<#if (data.my_test == 1)>
-	<div>网红测试分为多种，每多测试一次都会有新的发现</div>
-	<div>快来测试吧</div>
+	<div>网红评测分为多种，每多评测一次都会有新的发现</div>
+	<div>快来评测吧</div>
 	</#if>
-	<a class="index-button" href="${data.test_url}" pjax="1">去测试</a>
+	<a class="index-button" href="${data.test_url}" pjax="1">去评测</a>
 </div>
 </#if>
 <div class="today-news border-1px index-block">
@@ -68,13 +68,7 @@
 	</header>
 	<content>
 		<#if (data.my_score.finished == 0)>
-		<div class="no-grade">你还没有参加过课后作业，暂时没有成绩呦！</div>
-		<div class="homework-info">
-			<p class="homework-title">什么是课后作业？</p>
-			<p>课后作业是我们精心准备的课后自测，以帮助你检查学习成果。</p>
-			<p>在你学完相应的课程时就会见到它啦。</p>
-			<p>千万不要偷懒，说好的要做网红的呦！</p>
-		</div><br>
+		<div class="no-grade">课程君已经跟大家见面了，先别着急看成绩，作业君会马上跟你见面，敬请期待哦~</div>
 		<#else>
 		<div class="grade-title">已经完成 ${data.my_score.finished} 次课后作业</div>
 		<div class="grade-friend">${data.my_score.friend} 等帮你完成评估</div>
@@ -92,7 +86,7 @@
 <div class="lesson-preview border-1px index-block">
 	<header>
 		<span class="icon preview"></span>
-		<span>课程预览</span>
+		<span>电商网红数据揭秘</span>
 	</header>
 	<content>
 		<div class="charts" style="text-align:center;">

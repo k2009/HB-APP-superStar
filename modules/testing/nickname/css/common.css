@@ -1,0 +1,43 @@
+body {
+  padding-bottom: 60px; }
+
+.mui-title {
+  position: static;
+  color: #555;
+  margin: 0; }
+
+.btnBox {
+  text-align: center;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: space-around;
+  flex-direction: row;
+  -webkit-flex-direction: row; }
+
+.mui-btn {
+  background: #fbbd06;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+  -webkit-flex: 1;
+  flex: 1;
+  margin: auto 10px; }
+
+.topTip {
+  display: inline-block;
+  line-height: r(52);
+  width: 100%;
+  height: r(52);
+  font-size: r(24);
+  background: #fff5e4;
+  color: #d6a44c; }
+
+.topTipIcon {
+  display: inline-block;
+  background: url(../images/icon.png) no-repeat;
+  background-size: r(36);
+  float: left;
+  width: r(36);
+  height: r(39);
+  background-position: 0 r(-40);
+  margin: 0 r(20); }

@@ -115,10 +115,11 @@ body {
   line-height: 0.32427rem; }
   .topText a {
     font-size: 0.11093rem;
-    color: #808080;
+    color: #065ceb;
+    text-decoration: underline;
     position: relative;
     top: 0.064rem;
-    left: 0.08533rem; }
+    left: 0.256rem; }
 
 .textItem {
   display: inline-block;

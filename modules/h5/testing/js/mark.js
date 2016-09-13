@@ -10,12 +10,17 @@ define(function(require){
 	var markerTipNode=document.createElement('span');
 		markerTipNode.className='markerTip';
 
-	var fixNumber=function(n){
+	var fixNumber=function(rn){
+		var n=parseInt(rn, 10);
 		var level=parseInt((n.toString().length-1)/3);
 		return (n/Math.pow(10,level*3)).toString().replace(/\.(\d).*$/,'.$1') + (['','K','M','B'])[level];
 	}
 
 	var initXY=function(){
+		var ctx=$canvas[0].getContext('2d');
+		ctx.beginPath();
+		ctx.strokeStyle='#faf4eb';
+		ctx.lineWidth=1;
 		stepX=w/rdata.x.length;
 		for(var i=0,len=rdata.x.length;i<len;i++){
 			var span=document.createElement('span');
@@ -24,6 +29,9 @@ define(function(require){
 			span.style.left=i*stepX+'px';
 			$outer.append(span);
 			maxY=Math.max(rdata.y[i],maxY);
+			ctx.moveTo(i*stepX,0);
+			ctx.lineTo(i*stepX,h);
+			ctx.stroke();
 		}
 		var f=maxY.toString().split('').length-1;
 		maxY=parseInt(maxY/Math.pow(10,f)+1)*Math.pow(10,f);
@@ -33,8 +41,11 @@ define(function(require){
 			var span=document.createElement('span');
 			span.className='markYPicker';
 			span.innerHTML=(maxY/4)*(i+1);
-			span.style.bottom=(i+1)*stepY-13+'px';
+			span.style.bottom=(i+1)*stepY-9+'px';
 			$outer.append(span);
+			ctx.moveTo(0,(i+1)*stepY-4);
+			ctx.lineTo(w,(i+1)*stepY-4);
+			ctx.stroke();
 		}
 	}
 
@@ -46,7 +57,7 @@ define(function(require){
 		ctx.lineWidth=1;		
 		for(var i =0,len=rdata.x.length;i<len;i++){
 			if(i==0){
-				ctx.moveTo(0,h-rdata.y[0]);
+				ctx.moveTo(0,h-rdata.y[0]/ratioY);
 			}
 			(function(k){
 				var x=stepX*k,y=h-rdata.y[k]/ratioY;
@@ -69,6 +80,7 @@ define(function(require){
 	}
 
 	var markerTip=function(e){		
+		e && e.preventDefault();
 		markerTipNode.innerHTML=fixNumber($(this).attr('markerTip'));
 		$(this).append(markerTipNode);
 	}

@@ -10,6 +10,7 @@ define(function(require, exports, module) {
 	var runImage = {
 		WXshare: function(){
 			var title = this.title();
+            var title_2 = this.title_2();
 
 			wx.onMenuShareTimeline({
 				title: title, // 分享标题
@@ -25,7 +26,7 @@ define(function(require, exports, module) {
 				}
 			});
 			wx.onMenuShareAppMessage({
-				title: "每个人都能当网红 关键是找到好方法", // 分享标题
+				title: title_2, // 分享标题
 				desc: title, // 分享描述
 				link: share_url, // 分享链接
 				imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
@@ -50,6 +51,7 @@ define(function(require, exports, module) {
         },
 		WBshare: function(){
 			var title = this.title();
+            var title_2 = this.title_2();
 			var items = {
 				shareToWeibo: {
 					title: "分享到微博",
@@ -64,9 +66,9 @@ define(function(require, exports, module) {
 			// 设置分享的文案
 			WeiboJS.setSharingContent({
 				external:{
-					title: "课后作业-测试验收",
+					title: title_2,
 					icon: "http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg",
-					desc: runImage.title()
+					desc: title
 				}
 			});
 			// 选择菜单的时候，触发相应的菜单行为
@@ -84,67 +86,26 @@ define(function(require, exports, module) {
 				fail: function(msg, code) {}
 			});
 		},
-		title: function(){
-			var title = [
-				'我在参加网红培养计划，课后作业必须你来点评！别隐藏潜质，你也被发现了！',
-				'我在参加百万网红培养计划，作业你来点评！美美的星梦，你也必须有！',
-				'网红收入甩小明星几条街！我在参加百万网红培养计划快来点评，带你一起燃梦',
-				'我们缺一个有梦想敢拼的妹纸！百万网红计划—我在参加，你快来点评，一起燃梦！',
-				'只想走捷径，那就不配红！互联网大咖助力百万网红培养计划，我在参加快来评！'
-			];
-			return title[ Math.floor( Math.random() * title.length ) ];
-		},
-		// 创建一个 iframe 来获取微博的 signed_request 信息，这是个临时方案
-		createAgentIframe: function() {
-			var appkey = appid;
-			var iframeId = "__lightapp_agent_iframe";
-			var iframe = document.createElement("iframe");
-			var _loadLock = false;
-			var _loadHandler = function(type) {
-				if (_loadLock) {
-					return;
-				}
-				_loadLock = true;
-				runImage.iframeWin = document.getElementById(iframeId).contentWindow;
-			};
-			iframe.addEventListener("load", function() {
-				_loadHandler("event");
-				runImage.getSignedRequest();
-			});
-			iframe.src = "http://apps.weibo.com/liteblank.php?appkey=" + appkey;
-			iframe.id = iframeId;
-			iframe.style.display = "none";
-			setTimeout(function() {
-				_loadHandler("timeout");
-			}, 300);
-			document.body.appendChild(iframe);
-			window.addEventListener("message", runImage.receiveMessage, false);
-		},
-		// 发出 postMessage 给 iframe
-		getSignedRequest: function(){
-			try{
-			var uuid = new Date().getTime() + ("000000" + Math.floor(Math.random() * 99999)).replace(/\d+(\d{6})$/, "$1");
-			var key = "getSignedRequest#@#" + uuid;
-			runImage.iframeWin.postMessage(key + ":::{}", "*");
-			} catch(e) {
-				// alert(e);
-			}
-		},
-		// 解析收到的 signed_request 参数，并存下来
-		receiveMessage: function(evt) {
-			if (/^getSignedRequest/i.test(evt.data)) {
-				var data = evt.data.split(":::");
-				if(data.length == 2){
-					data = data[1];
-				}
-				try{
-					data = JSON.parse(data);
-					signedRequest = data.signed_request;
-				}catch(e){
-					signedRequest = null;
-				}
-			}
-		}
+        title: function(){
+            var title = [
+                '拿出你追求完美的精神来帮我点评网红培养课后作业！别隐藏潜质，你是最棒的！',
+                '作为我的网红梦想导师，课后作业怎能缺少你的点评！快来，点评小能手！',
+                '年轻怎能没有梦想！我在参加百万网红培养计划，作业点评，非你莫属！',
+                '互联网大咖助力百万网红培养计划，我在参加快来点评！你就是下一个最牛网红星探！',
+                '才华横溢但又默默无闻的你，网红培养课后作业点评，非你莫属！'
+            ];
+            return title[ Math.floor( Math.random() * title.length ) ];
+        },
+        title_2: function(){
+            var title = [
+                '追求完美的你怎会错过这场点评！',
+                '神助般的建议，我特别需要你！',
+                '点燃梦想的圣火，非你莫属！',
+                '你的网红星探潜质被我发现啦，快来！',
+                '不想抛头露面，也可以做网红幕后操盘手！'
+            ];
+            return title[ Math.floor( Math.random() * title.length ) ];
+        }
 	};
 
     //美化alert start
@@ -200,36 +161,6 @@ define(function(require, exports, module) {
         })
     };
     //时间转化end
-
-
-    var blockList = '<li>\
-                <div class="block" style="height:${data.heightList[0]}%">\
-                    <p>很符合<br>${data.result[0]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[1]}%">\
-                    <p>符合<br>${data.result[1]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[2]}%">\
-                    <p>一般<br>${data.result[2]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[3]}%">\
-                    <p>不符合<br>${data.result[3]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[4]}%">\
-                    <p>很不符合<br>${data.result[4]}</p>\
-                </div>\
-            </li>';
-
-
-
 	function init(opts) {
 		platform = opts.platform;
 		appid = opts.jssdk.appid;
@@ -246,23 +177,9 @@ define(function(require, exports, module) {
 				return;
 			}
 		});
-
 		if( platform === 'weibo' ){
 			runImage.createAgentIframe();
 		}
-
-		if( opts.onself ){
-	        var data = opts.homework,
-	            total = opts.homework.total;//eval(data.result.join('+'));
-	            data.heightList = [];
-	        for( var i=0; i<data.result.length; i++ ){
-	            //$( '#chartList .block' ).eq( i ).height( data.result[i]/total * 100 + '%' );
-	            data.heightList.push( +data.result[i]/total * 100 );
-	        };
-	        var blockListHtml = SCRM.easyTemplate( blockList, data ).toString();
-	        $( '#chartList' ).html( blockListHtml );
-		};
-
         var time = dateFormat( opts.time, 'yy-MM-DD hh:mm');
         $( '#time' ).html( time );
         //Alert( JSON.stringify( opts ) );
@@ -276,8 +193,15 @@ define(function(require, exports, module) {
 
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
-            // ret.setActiveTab(0);
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(3);
             // tabbar = ret;
+            // if( opts.next_url ){
+            // 	$( '.tabbar a' ).attr({
+            // 		'href': opts.next_url,
+            // 		'pjax': ""
+            // 	})
+            // }
         });
 
         header.init();
@@ -314,6 +238,33 @@ define(function(require, exports, module) {
                     Alert( '网络错误，请刷新页面或稍后重试' );
                 }
             });
+        }).on('touchend', '[choose]', function(){
+            var submit_url = opts.submit_url,
+                $this = $(this),
+                choose = $this.attr('choose'),
+                num = +$this.html()+1,
+                data = { vote: choose };
+            if(platform == 'weibo'){
+                data.shouquanid = signedRequest || "";
+            }
+            $.ajax({
+                type: 'get',
+                url: submit_url,
+                data: data,
+                dataType: 'json',
+                success: function(msg) {
+                    if( msg.code != 0 ){
+                        Alert( msg.message );
+                        return;
+                    }
+                    $this.addClass( 'done' ).html( num );
+                    $('[choose]').removeAttr('choose');
+                    SCRM.pjax( msg.data.next_url );
+                },
+                error: function(){
+                    Alert( '网络错误，请刷新页面或稍后重试' );
+                }
+            });
         }).on('click', '#imgList img', function(){
             var thisSrc = $( this ).data( 'bigimg' ),
                 url = thisSrc,
@@ -345,16 +296,10 @@ define(function(require, exports, module) {
         $( '.alert_close' ).off();
         $( '.lightBox' ).off().remove();
         dialogTips.destroy();
-		platform = null;
-		share_url = null;
-		signedRequest = null;
-		WeiboJS = null;
-		wx = null;
-		Alert = null;
 		if(tabbar){
 			tabbar.destroy();
 		}
-        header.destroy(); 
+        header.destroy();
     }
     var that = {
         init: init,

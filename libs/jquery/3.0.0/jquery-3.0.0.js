@@ -10043,8 +10043,6 @@ if ( !noGlobal ) {
 			opt.error = function(e){
 		        if(e.statusText == "timeout"){
 		            mui.toast('请求超时');
-		        }else{
-		            mui.toast("网络错误,请检查您的网络");
 		        }
 			}
 

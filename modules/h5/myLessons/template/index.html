@@ -8,7 +8,10 @@
 
 	<#if ( data.lessons.studying.length == 0)>
 	<div class="studying">
-		<div class="empty"><div class="text">没有学习中的课程</div></div>
+		<div class="empty">
+			<div class="text">还没有学习中的课程，快去参加学习呦~</div>
+			<a href="${data.tabbar[1].url}" pjax="1" class="button">课程列表</a>
+		</div>
 	</div>
 	<#else>
 	<div class="studying">
@@ -16,13 +19,13 @@
 			<#list data.lessons.studying as lesson>
 			<li class="mui-table-view-cell mui-media">
 				<#if (lesson.state == 4)>
-				<a href="#" onclick="return false"; action="lock">
+				<a href="#" onclick="return false;" action="lock" class="mui-navigate-right">
 				<#else>
-				<a href="${lesson.url}" pjax="1">
+				<a href="${lesson.url}" pjax="1" class="mui-navigate-right">
 				</#if>
 					<div class="mui-media-body">
-						<div>${lesson.name}</div>
-						<p class='mui-ellipsis'>共 ${lesson.count} 节课，建议 ${lesson.days} 天完成</p>
+						<div class="title">${lesson.name}</div>
+						<p class='mui-ellipsis'>共 ${lesson.count} 节课 <span class="suggest">建议 ${lesson.days} 天完成</span></p>
 					</div>
 				</a>
 			</li>
@@ -33,17 +36,21 @@
 
 	<#if ( data.lessons.finished.length == 0)>
 	<div class="finished" style="display:none;">
-		<div class="empty"><div class="text">没有已学习的课程</div></div>
+		<div class="empty">
+			<div class="text">还没有已学完的课程，快去参加学习呦~</div>
+			<a href="${data.tabbar[1].url}" pjax="1" class="button">课程列表</a>
+		</div>
+
 	</div>
 	<#else>
 	<div class="finished" style="display:none;">
 		<ul class="mui-table-view">
 			<#list data.lessons.finished as lesson>
 			<li class="mui-table-view-cell mui-media">
-				<a href="${lesson.url}" pjax="1">
+				<a href="${lesson.url}" pjax="1" class="mui-navigate-right">
 					<div class="mui-media-body">
-						<div>${lesson.name}</div>
-						<p class='mui-ellipsis'>共 ${lesson.count} 节课，建议 ${lesson.days} 天完成</p>
+						<div class="title">${lesson.name}</div>
+						<p class='mui-ellipsis'>共 ${lesson.count} 节课 <span class="suggest">建议 ${lesson.days} 天完成</span></p>
 					</div>
 				</a>
 			</li>

@@ -135,7 +135,6 @@ define(function(require, exports, module) {
     }
 
     var scrollTo=function(){
-        return;
         var top=$('[scrollTarget=true]').eq(0).position().top;
         $(document.body).animate({
             scrollTop:top+'px'
@@ -166,6 +165,7 @@ define(function(require, exports, module) {
         $body.delegate('[action=leftDaysHelp]','tap',leftDaysHelp);
         $body.delegate('[action=forbidden]','tap',forbidden);
         lazyload.load("common/tabbar/js/index", function(tabbar){
+            tabbar.setData(opts.tabbar);
             tabbar.setActiveTab(1);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });
 

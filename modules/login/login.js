@@ -4,16 +4,20 @@ define(function(require, exports, module){
 
 	var $storage = require("kit/util/plus-storage");		//本地存储模块
 	var $oauth = require("kit/util/plus-oauth");			//第三方登录模块
+	var $update = require("kit/util/plus-update");
 
 
 	var host_domain='http://30681.biz.dev.social-touch.com';
 	var loginURL = "/castle/app/v1/user/wblogin"
 
+
     var sys = {
     	init:function($){
 			$.plusReady(function(){
 				var oauth = $storage('oauth_weibo');
-				console.log(host_domain+loginURL)
+
+				$update.init();
+
 				if(oauth){
                     // if(oauth.outTime<new Date().getTime()){
                     //     console.log('执行后补微博登录!')

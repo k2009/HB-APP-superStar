@@ -4,31 +4,6 @@ define(function(require, exports, module) {
     var platform, tabbar;
     var share_url;
     var dialogTips;
-    var blockList = '<li>\
-                <div class="block" style="height:${data.heightList[0]}%">\
-                    <p>很符合<br>${data.result[0]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[1]}%">\
-                    <p>符合<br>${data.result[1]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[2]}%">\
-                    <p>一般<br>${data.result[2]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[3]}%">\
-                    <p>不符合<br>${data.result[3]}</p>\
-                </div>\
-            </li>\
-            <li>\
-                <div class="block" style="height:${data.heightList[4]}%">\
-                    <p>很不符合<br>${data.result[4]}</p>\
-                </div>\
-            </li>';
     //美化alert start
     var Alert = function( str ){
         var dom = '<div class="alert_dom mui-popup mui-popup-in" style="display: block;">\
@@ -50,6 +25,7 @@ define(function(require, exports, module) {
     var share = {
         WXshare: function(){
             var title = this.title();
+            var title_2 = this.title_2();
             wx.onMenuShareTimeline({
                 title: title, // 分享标题
                 link: share_url, // 分享链接
@@ -61,9 +37,8 @@ define(function(require, exports, module) {
                     // 用户取消分享后执行的回调函数
                 }
             });
-
             wx.onMenuShareAppMessage({
-                title: title, // 分享标题
+                title: title_2, // 分享标题
                 desc: title, // 分享描述
                 link: share_url, // 分享链接
                 imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
@@ -80,6 +55,7 @@ define(function(require, exports, module) {
         },
         WBshare: function(){
             var title = this.title();
+            var title_2 = this.title_2();
             var items = {
                 shareToWeibo: {
                     title: "分享到微博",
@@ -99,7 +75,7 @@ define(function(require, exports, module) {
             // 设置分享的文案
             WeiboJS.setSharingContent({
                 external:{
-                    title: "课后作业-测试验收",
+                    title: title_2,
                     icon: "http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg",
                     desc: title
                 }
@@ -121,30 +97,29 @@ define(function(require, exports, module) {
         },
         title: function(){
             var title = [
-                '我在参加网红培养计划，课后作业必须你来点评！别隐藏潜质，你也被发现了！',
-                '我在参加百万网红培养计划，作业你来点评！美美的星梦，你也必须有！',
-                '加入网红，甩宝强几条街！我在参加百万网红培养计划快来点评，带你一起燃梦',
-                '我们缺一个有梦想敢拼的妹纸！百万网红计划—我在参加，你快来点评，一起燃梦！',
-                '只想走捷径，那就不配红！互联网大咖助力百万网红培养计划，我在参加快来评！'
+                '拿出你追求完美的精神来帮我点评网红培养课后作业！别隐藏潜质，你是最棒的！',
+                '作为我的网红梦想导师，课后作业怎能缺少你的点评！快来，点评小能手！',
+                '年轻怎能没有梦想！我在参加百万网红培养计划，作业点评，非你莫属！',
+                '互联网大咖助力百万网红培养计划，我在参加快来点评！你就是下一个最牛网红星探！',
+                '才华横溢但又默默无闻的你，网红培养课后作业点评，非你莫属！'
             ];
             return title[ Math.floor( Math.random() * title.length ) ];
+        },
+        title_2: function(){
+            var title = [
+                '追求完美的你怎会错过这场点评！',
+                '神助般的建议，我特别需要你！',
+                '点燃梦想的圣火，非你莫属！',
+                '你的网红星探潜质被我发现啦，快来！',
+                '不想抛头露面，也可以做网红幕后操盘手！'
+            ];
+            return title[ Math.floor( Math.random() * title.length ) ];
+
         }
     }
-
     function init(opts) {
         platform = opts.platform;
         share_url = window.location.origin + opts.share_url;
-
-        var data = opts,
-            total = eval(data.result.join('+'));
-            data.heightList = [];
-        for( var i=0; i<data.result.length; i++ ){
-            //$( '#chartList .block' ).eq( i ).height( data.result[i]/total * 100 + '%' );
-            data.heightList.push( data.result[i]/total * 100 );
-        }
-        var blockListHtml = SCRM.easyTemplate( blockList, data ).toString();
-            //$( '#chartList' )[0].innerHTML = blockListHtml;
-            $( '#chartList' ).html( blockListHtml );
 
         // 初始化 JSSDK
         jssdk.init(platform, opts.jssdk, function(){
@@ -162,7 +137,8 @@ define(function(require, exports, module) {
 
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
-            ret.setActiveTab(1);
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(3);
             tabbar = ret;
         });
 
@@ -182,11 +158,7 @@ define(function(require, exports, module) {
         $( '#st_modules_h5_taskResult' ).off();
         $( '.alert_close' ).off();
         $( '.alert_dom' ).remove();
-        platform = null;
-        share_url = null;
-        blockList = null;
-        Alert = null;
-        if(dialogTips)dialogTips.destroy();
+        dialogTips.destroy();
         if(tabbar){
             tabbar.destroy();
         }

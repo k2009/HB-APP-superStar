@@ -1,32 +1,41 @@
 <div class="box">
 	<li class="chapterItem" id="DNA">
-		<div class="title">
-			微博DNA测试
-		</div>
-		<div class="sectionIntro" node="describe">
-			大数据+人工智能系统将全方位分析你的微博，给你一次前所未有的智能化体验。
-		</div>
+		
 		<#if (data.dna.finished)>
 			<a href="<#if (data.dna.result_url)>${data.dna.result_url}<#else >javascript:;</#if>">
+				<div class="title">
+					微博DNA测试<span class="arrowRight">&gt;</span>
+				</div>
+			
+				<div class="sectionIntro" node="describe">
+					大数据+人工智能系统将全方位分析你的微博，给你一次前所未有的智能化体验。
+				</div>
 				<div id="platform" class="platform"></div>			
 				<div class="lastUpdate">最近更新于 ${data.dna.last_updated}</div>
 			</a>
 		<#else>
+			<div class="title">
+					微博DNA测试
+				</div>
+			<div class="sectionIntro" node="describe">
+				大数据+人工智能系统将全方位分析你的微博，给你一次前所未有的智能化体验。
+			</div>
 			<div class="btnBox">
 				<a class="mui-btn" href="${data.dna.url}">立即测试</a>
 			</div>
 		</#if>
 	</li>
 
-	<li class="chapterItem" id="mark">
-		<div class="title">
-			电商网红指数测试
-		</div>
-		<div class="sectionIntro" node="describe">
-			最专业，最科学的网红潜力值测试，想看看你的网红潜力值有多高吗？快来测一下吧！
-		</div>
+	<li class="chapterItem" id="mark">		
 		<#if (data.biz.finished)>
 			<a href="<#if (data.biz.result_url)>${data.biz.result_url}<#else >javascript:;</#if>">
+				<div class="title">
+					电商网红指数测试<span class="arrowRight">&gt;</span>
+				</div>
+			
+				<div class="sectionIntro" node="describe">
+					最专业，最科学的网红潜力值测试，想看看你的网红潜力值有多高吗？快来测一下吧！
+				</div>
 				<div id="markform" class="markform">
 					<div node='outer' class="markOuter">
 						<canvas node="canvas" style="position: absolute;left:0;top:0;"></canvas>
@@ -35,6 +44,12 @@
 				<div class="lastUpdate">最近更新于 ${data.biz.last_updated}</div>
 			</a>
 		<#else>
+			<div class="title">
+				电商网红指数测试
+			</div>
+			<div class="sectionIntro" node="describe">
+				最专业，最科学的网红潜力值测试，想看看你的网红潜力值有多高吗？快来测一下吧！
+			</div>
 			<div class="btnBox">
 				<a class="mui-btn" href="${data.biz.url}">立即测试</a>
 			</div>
@@ -43,7 +58,7 @@
 
 	<li class="chapterItem" id="nickname">
 		<div class="title">
-			网红微博昵称测试
+			网红微博昵称测试<span class="arrowRight">&gt;</span>
 		</div>
 		<div class="sectionIntro" node="describe">
 			成功的网红从好名字开始，快来测一下你的微博昵称有多大的潜力值吧！
@@ -57,6 +72,7 @@
 			<div class="btnBox">
 				<a class="mui-btn mui-btn-disable" href="javascript:;">敬请期待</a>
 			</div>
+			<div class="lastUpdate">暂无更新</div>
 		</#if>
 	</li>
 </div>

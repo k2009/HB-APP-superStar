@@ -114,11 +114,16 @@ body {
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0; }
 
+.arrowRight {
+  float: right;
+  line-height: 0.36rem;
+  color: #CCC;
+  margin-right: 0.125rem; }
+
 .chapterItem {
   margin: 0;
   margin-top: 10px;
   padding: 0;
-  padding-bottom: 20px;
   background: white; }
 
 .chapterItem.done {
@@ -220,7 +225,8 @@ body {
   display: inline-block;
   font-size: 12px;
   transform: rotate(45deg);
-  -webkit-transform: rotate(45deg); }
+  -webkit-transform: rotate(45deg);
+  white-space: nowrap; }
 
 .markXPicker:after {
   content: '';
@@ -286,9 +292,12 @@ body {
   margin: 0 0.1rem; }
 
 .lastUpdate {
-  text-align: right;
+  margin-top: 10px;
+  text-align: left;
   color: #666666;
-  margin: 0 15px; }
+  padding: 0 15px;
+  border-top: 1px solid #f0f0f0;
+  line-height: 38px; }
 
 .nicknameScore {
   text-align: center;

@@ -4,7 +4,7 @@
 		"iPhone",
 		"iPad"
 	],
-	"id": "H5DC5FD2A",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"id": "com.st.wanghong",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "网红城堡预览版",/*应用名称，程序桌面图标名称*/
 	"version": {
 		"name": "1.1.1",/*应用版本名称*/
@@ -119,16 +119,16 @@
 			"plugins": {
 				"share": {
 					"sina": {
-						"appkey": "1744413761",
-						"appsecret": "c528c16edc4640cef773b2cd1a368fe4",
+						"appkey": "1702650425",
+						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
 						"redirect_uri": "https://api.weibo.com/oauth2/default.html",
 						"description": "可选，新浪微博分享"
 					}
 				},
 				"oauth": {
 					"sina": {
-						"appkey": "1744413761",
-						"appsecret": "c528c16edc4640cef773b2cd1a368fe",
+						"appkey": "1702650425",
+						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
 						"redirect_uri": "https://api.weibo.com/oauth2/default.html"
 					}
 				}
@@ -214,12 +214,12 @@
 			"splashscreen": {
 				"ios": {
 					"iphone": {
-						"default": "/Users/xiaok/Desktop/下载.png", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
-						"retina47": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
-						"retina55": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
-						"retina55l": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png"
+						"default": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/320x568pt@2x.png", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png"
 					},
 					"ipad": {
 						"portrait": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad竖屏启动图片，分辨率：768x1004*/
@@ -233,11 +233,11 @@
 					}
 				},
 				"android": {
-					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
-					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"mdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png"
 				}
 			}
 		}

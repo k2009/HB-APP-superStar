@@ -8,7 +8,7 @@ define(function(require, exports, module) {
 
     var TITLE='Guys，你确定真的了解我么？点开，也许你会发现不一样的我哟~';
     var SHARE_URL = "";
-    var initData,weixinTips;
+    var initData;
     var dueTime=3600*24*7*1000;//7days
 
     var Tools = {
@@ -123,7 +123,7 @@ define(function(require, exports, module) {
             $body.find('[node=content]').css('opacity','1');
         },500);
         setTimeout(function(){
-            $body.find('[node=btnBox]').css('display','block');
+            $body.find('[node=btnBox]').css('display','');
         },1000);
     }
 

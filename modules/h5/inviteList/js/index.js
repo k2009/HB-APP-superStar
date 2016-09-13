@@ -7,6 +7,7 @@ define(function(require, exports, module) {
     function init(opts) {
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
+            ret.setData(opts.tabbar);
             ret.setActiveTab(0);
             tabbar = ret;
         });

@@ -117,14 +117,14 @@ html, body, .container, .module {
     font-size: 0.11947rem;
     margin-top: 0.06827rem; }
 
-.header .progress {
+.progress {
   width: 50%;
   height: 0.10667rem;
   border-radius: 0.04267rem;
   margin: 0.128rem auto;
   background: #c2c2c2;
   position: relative; }
-  .header .progress .progress-bar {
+  .progress .progress-bar {
     background: #fbbd06;
     height: 100%;
     border-radius: 0.04267rem;
@@ -136,7 +136,7 @@ html, body, .container, .module {
     -moz-transition-property: width;
     -o-transition-property: width;
     transition-property: width; }
-  .header .progress .percent {
+  .progress .percent {
     font-size: 0.08533rem;
     position: absolute;
     width: 100%;
@@ -145,10 +145,9 @@ html, body, .container, .module {
     line-height: 0.10667rem;
     color: #fff; }
 
-.header .buttons {
-  text-align: center;
-  padding-top: 0.08533rem; }
-  .header .buttons a {
+.buttons {
+  text-align: center; }
+  .buttons a {
     display: inline-block;
     width: 1.09227rem;
     height: 0.2816rem;
@@ -299,15 +298,48 @@ html, body, .container, .module {
       -webkit-box-shadow: 0 0 0 2.13333rem rgba(0, 0, 0, 0.6);
       -moz-box-shadow: 0 0 0 2.13333rem rgba(0, 0, 0, 0.6);
       box-shadow: 0 0 0 2.13333rem rgba(0, 0, 0, 0.6); }
+      .pop-container .pop .content ul {
+        padding-top: 0.04267rem; }
       .pop-container .pop .content li {
-        width: 1.72373rem;
+        width: 1.87733rem;
         height: 0.2688rem;
         font-size: 0.11093rem;
         line-height: 0.2688rem;
         text-align: center;
-        margin: 0.17067rem auto 0;
-        background: url(../images/item-bg.png) no-repeat;
-        background-size: 100%; }
+        margin: 0.128rem auto 0;
+        /*background: url(../images/item-bg.png) no-repeat;*/
+        background-size: 100%;
+        position: relative; }
+        .pop-container .pop .content li .sprite {
+          display: inline-block;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-image: url(../images/icon.png);
+          background-size: 0.27307rem 1.09227rem;
+          vertical-align: middle;
+          position: absolute;
+          left: 0.08533rem;
+          top: 0.04267rem; }
+        .pop-container .pop .content li .icon-1 {
+          width: 0.21333rem;
+          height: 0.21333rem;
+          background-position: 0 0; }
+        .pop-container .pop .content li .icon-2 {
+          width: 0.21333rem;
+          height: 0.21333rem;
+          background-position: 0 -0.21333rem; }
+        .pop-container .pop .content li .icon-3 {
+          width: 0.21333rem;
+          height: 0.21333rem;
+          background-position: 0 -0.42667rem; }
+        .pop-container .pop .content li .icon-4 {
+          width: 0.21333rem;
+          height: 0.21333rem;
+          background-position: 0 -0.64rem; }
+        .pop-container .pop .content li .icon-5 {
+          width: 0.21333rem;
+          height: 0.21333rem;
+          background-position: 0 -0.85333rem; }
   .pop-container .pop-error {
     width: 2.2912rem;
     margin: 1.10933rem auto 0; }
@@ -332,7 +364,7 @@ html, body, .container, .module {
       margin: 0 auto 0.128rem;
       width: 1.49333rem;
       height: 0.29867rem;
-      line-height: 0.21333rem; }
+      line-height: 0.17067rem; }
     .pop-container .pop-error .mui-btn-secondary {
       background: #bfbfbf; }
   .pop-container .buttons {
