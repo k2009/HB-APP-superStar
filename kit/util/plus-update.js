@@ -14,7 +14,7 @@ define(function(require, exports, module){
 					console.log("检测完成")
 					console.log(JSON.stringify(json))
                     sys.alert("有新版本"+json.version);
-                    // sys.downWgt(json.wgtUrl);  // 下载升级包
+                    sys.downWgt(json.full_url);  // 下载升级包	//暂时先这样
 				},function(){						//fn_noUpDate
                     sys.alert("无新版本可更新！");
 				},function(e){						//fn_err

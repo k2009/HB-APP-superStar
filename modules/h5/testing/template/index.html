@@ -63,16 +63,9 @@
 		<div class="sectionIntro" node="describe">
 			成功的网红从好名字开始，快来测一下你的微博昵称有多大的潜力值吧！
 		</div>
-		<#if (data.test.finished)>
-			<div class="nicknameScore">微博昵称得分：<span style="color:#ea5504;">${data.test.score}</span> 分</div>
-			<div class="btnBox">
-				<a href="${data.test.url}" class="nicknameDetail">查看详情</a>
-			</div>
-		<#else>
-			<div class="btnBox">
-				<a class="mui-btn mui-btn-disable" href="javascript:;">敬请期待</a>
-			</div>
-			<div class="lastUpdate">暂无更新</div>
-		</#if>
+		<div class="btnBox">
+			<a class="mui-btn mui-btn-disable" href="javascript:;">敬请期待</a>
+		</div>
+		<div class="lastUpdate">暂无更新</div>
 	</li>
 </div>

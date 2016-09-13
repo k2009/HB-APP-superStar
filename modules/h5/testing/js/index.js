@@ -7,7 +7,7 @@ define(function(require, exports, module) {
     var header = require('common/slogon/js/index');
     var initData;
     var finishTip;
-    var tabbbar;
+    var tabbar;
     
 
     lazyload.load("common/share/tips/js/index", function(dialog){

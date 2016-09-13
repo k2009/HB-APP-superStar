@@ -17,25 +17,31 @@ define(function(require, exports, module) {
         });
     });
 
-    var ids = [{
-            id: "weixin",
-            ex: "WXSceneSession"
-        }, {
-            id: "weixin",
-            ex: "WXSceneTimeline"
-        }, {
+    // var ids = [{
+    //         id: "weixin",
+    //         ex: "WXSceneSession"
+    //     }, {
+    //         id: "weixin",
+    //         ex: "WXSceneTimeline"
+    //     }, {
+    //         id: "sinaweibo"
+    //     }, {
+    //         id: "qq"
+    //     }],
+    //     bts = [{
+    //         title: "发送给微信好友"
+    //     }, {
+    //         title: "分享到微信朋友圈"
+    //     }, {
+    //         title: "分享到新浪微博"
+    //     }, {
+    //         title: "分享到QQ"
+    //     }];
+    var ids = [ {
             id: "sinaweibo"
-        }, {
-            id: "qq"
         }],
-        bts = [{
-            title: "发送给微信好友"
-        }, {
-            title: "分享到微信朋友圈"
-        }, {
+        bts = [ {
             title: "分享到新浪微博"
-        }, {
-            title: "分享到QQ"
         }];
 
     function shareMessage(share, ex,msg,success,error) {

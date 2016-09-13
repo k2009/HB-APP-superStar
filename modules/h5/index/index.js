@@ -3,25 +3,7 @@
 
 define(function(require, exports, module) {
 	"use strict";
-	var $upDate = require("kit/util/plus-update"); //应用更新模块
-	var $netChange = require("kit/util/plus-netChange"); //网络监测模块
 	var $storage = require("kit/util/plus-storage"); //本地存储模块
-	mui.plusReady(function() { //超出24小时进行一次检查更新
-		return;
-		$netChange.NetChange(fn_upDate());
-
-		function fn_upDate() {
-			if ($netChange.getNetType() == 1) {
-				var lastUpDate = $storage('lastUpDate');
-				if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
-					$storage('lastUpDate', mui.now());
-					$upDate.silent = true;
-					$upDate.init();
-				}
-			}
-			return fn_upDate;
-		}
-	})
 	mui.init({
 		swipeBack:false
 	})

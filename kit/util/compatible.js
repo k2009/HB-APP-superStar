@@ -487,5 +487,5 @@ window.SCRM = {
 		}
 	},
 	// 暴露 easyTemplate
-	// 'easyTemplate': easyTemplate
+	'easyTemplate': window.$tmp
 };

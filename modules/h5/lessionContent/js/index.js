@@ -51,9 +51,9 @@ define(function(require, exports, module) {
         $body.undelegate('[action=stop]','click',stop);
         $share.destroy();
         header.destroy();
-        if(finishTip){
-            finishTip.hide();
-        }
+        // if(finishTip){
+        //     finishTip.hide();
+        // }
     }
     var that = {
         init: init,

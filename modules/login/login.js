@@ -4,8 +4,8 @@ define(function(require, exports, module){
 
 	var $storage = require("kit/util/plus-storage");		//本地存储模块
 	var $oauth = require("kit/util/plus-oauth");			//第三方登录模块
-	var $update = require("kit/util/plus-update");
-
+	var $upDate = require("kit/util/plus-update"); //应用更新模块
+	var $netChange = require("kit/util/plus-netChange"); //网络监测模块
 
 	var host_domain='http://30681.biz.dev.social-touch.com';
 	var loginURL = "/castle/app/v1/user/wblogin"
@@ -15,9 +15,8 @@ define(function(require, exports, module){
     	init:function($){
 			$.plusReady(function(){
 				var oauth = $storage('oauth_weibo');
-
-				$update.init();
-
+				sys.app_update();
+				host_domain = plus.storage.getItem("domain")||host_domain;
 				if(oauth){
                     // if(oauth.outTime<new Date().getTime()){
                     //     console.log('执行后补微博登录!')
@@ -39,8 +38,9 @@ define(function(require, exports, module){
 							}
 						},
 						error:function(e){
-							console.log('请求失败')
-							console.log(JSON.stringify(e))
+							console.log('请求失败');
+							console.log(JSON.stringify(e));
+							$('.fakeloader')[0].remove();
 						}
 					});
 					// sys.fn_next();
@@ -51,7 +51,7 @@ define(function(require, exports, module){
 				//测试代码,用于获得权限
 				var $sq = require('kit/util/deBug-setCookie');
 				// $sq('http://30681.biz.dev.social-touch.com');
-				plus.storage.setItem('domain',host_domain)
+				if( !plus.storage.getItem("domain") )plus.storage.setItem('domain',host_domain)
 
 				$.ajax({
 					url:host_domain+'/castle/wap/route/list',
@@ -62,6 +62,22 @@ define(function(require, exports, module){
 					}
 				})
 			})
+    	},
+    	app_update:function(){
+
+			$netChange.NetChange(fn_upDate());
+
+			function fn_upDate() {
+				if ($netChange.getNetType() == 1) {
+					var lastUpDate = $storage('lastUpDate');
+					if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
+						$storage('lastUpDate', mui.now());
+						$upDate.silent = true;
+						$upDate.init();
+					}
+				}
+				return fn_upDate;
+			}
     	},
     	event:function(){
 			mui('body').on('tap','#weibo_login',function(){
@@ -89,7 +105,7 @@ define(function(require, exports, module){
 									$storage('st_modules_h5_home',d.data);
 									sys.fn_next();
 								}else{
-									mui.toast(d.msg)
+									mui.toast(d.msg);
 								}
 							},
 							error:function(e){
@@ -102,35 +118,6 @@ define(function(require, exports, module){
 				error:function(data){
 					if(data)console.log('err'+JSON.stringify(data));
 					mui.toast('微博登录失败');
-					+function(){
-                        return;
-						var data = {"uid":"1867372137","expires_in":2624410,"access_token":"2.008nS4CCnpUszD8289348174SgTrED"}
-						$storage('oauth_weibo',data);
-						// if(btn){
-							console.log('尝试登录服务')
-							$.ajax({
-								url:host_domain+loginURL,
-								type:"post",
-								data:data,
-								dataType:"json",
-								success:function(d){
-									console.log("打印登录接口数据")
-									console.log(JSON.stringify(d.data))
-									if(d.code == 0){
-										$storage('st_modules_h5_home',d.data);
-										sys.fn_next();
-									}else{
-										mui.toast(d.msg)
-									}
-								},
-								error:function(e){
-									console.log('请求失败')
-									console.log(JSON.stringify(e))
-								}
-							});
-						// }
-
-					}();
 				}
 			});
     	},

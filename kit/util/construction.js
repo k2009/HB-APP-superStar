@@ -5,9 +5,9 @@ define(function(require, exports, module) {
     var $storage = require("kit/util/plus-storage");        //本地存储模块
     var $urlToJson = require("kit/util/urlToJson");         //数组转json
 
-    var type_debug = false;                                  //debug开关
+    var type_debug = true;                                  //debug开关
     window.weixinTips = null;                               //兼容性代码
-
+    window.$tmp = $tmp;                                     //兼容性代码
     
 
     var sys = {
