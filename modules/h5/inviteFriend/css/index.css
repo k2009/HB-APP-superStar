@@ -176,11 +176,7 @@ body {
 
 .mui-btn-block {
   margin: 0.3rem auto;
-  height: 0.4rem;
-  line-height: 0.4rem;
-  padding: 0;
-  font-size: 0.14rem;
-  width: 70%; }
+  display: block; }
 
 .mui-popup-backdrop {
   background: rgba(0, 0, 0, 0.8); }

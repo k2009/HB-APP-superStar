@@ -69,14 +69,15 @@ define(function(require, exports, module){
 			$netChange.NetChange(fn_upDate());
 
 			function fn_upDate() {
-				// if ($netChange.getNetType() == 1) {
+				if ($netChange.getNetType() == 1) {
 					var lastUpDate = $storage('lastUpDate');
 					// if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
+					if (!lastUpDate || ($.now() - lastUpDate >= 300000)) { //如果上次检查更新时间大于5分钟,开始更新检查
 						$storage('lastUpDate', mui.now());
 						$upDate.silent = true;
 						$upDate.init();
-					// }
-				// }
+					}
+				}
 				return fn_upDate;
 			}
     	},

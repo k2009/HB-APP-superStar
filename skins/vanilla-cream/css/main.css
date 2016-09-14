@@ -454,14 +454,16 @@ header.mui-bar h1.mui-title {
   width: 1.35rem;
   height: 0.425rem;
   line-height: 0.425rem;
-  text-align: center; }
+  text-align: center;
+  font-size: 0.17rem; }
 
 .mui-btn.mui-btn-350 {
   width: 1.75rem;
   height: 0.33rem;
-  line-height: 0.33rem; }
+  line-height: 0.33rem;
+  font-size: 0.13rem; }
 
-.mui-btn.mui-btn-primary {
+.mui-btn.mui-btn-secondary {
   background: #bfbfbf;
   color: #ffffff;
   font-size: 0.13rem; }

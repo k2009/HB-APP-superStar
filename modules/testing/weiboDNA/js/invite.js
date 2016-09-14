@@ -161,6 +161,7 @@ define(function(require, exports, module) {
                         success:function(json){
                             var data=json.data.real_data.st_modules_testing_weiboDNAinvite;
                             if(parseInt(data.weibo_user_id)){
+                                initData.next_time=data.next_time;
                                 clearInterval(check);
                                 $('#loadingCover').remove();
                                 wordCloud.draw(data.tags,showUnder);
@@ -211,7 +212,7 @@ define(function(require, exports, module) {
 
         lazyload.load("common/tabbar/js/index", function(dialog){
             dialog.setData(opts.tabbar);
-            dialog.setActiveTab(1);
+            dialog.setActiveTab(2);
         });   
     }
 

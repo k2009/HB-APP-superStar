@@ -154,11 +154,11 @@ define(function(require, exports, module) {
 				Alert( '请输入正确微博昵称' );
 				return false;
 			};
-			if (testNum > -2) {
+			if (testNum > 2) {
 				Alert('亲，每天只能免费测试三次哟，请明天再来吧~');
 				return;
 			};
-            SCRM.pjax( opts.next_url + weibo_nick_name );
+            SCRM.pjax( opts.pk_url + weibo_nick_name );
         })
     }
     function destroy(opts) {

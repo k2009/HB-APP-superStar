@@ -14,6 +14,9 @@
 		<script src="../libs/jquery/3.0.0/jquery-3.0.0.js"></script>
 		<script>
 
+			mui.init({
+				swipeBack:false
+			});
 			var CONFIG = {
 				'static_path' : '../'
 			};
@@ -116,10 +119,8 @@
 					},
 					init: function() {
 
-						mui.init({
-							swipeBack:false
-						})
 						mui.plusReady(function() {
+							plus.webview.currentWebview().setStyle({popGesture:'none'});	//禁止侧滑关闭
 			            	sys.route = $storage('route');
 							sys.listener();
 							mui('body').on('tap', 'a', sys.a_click)

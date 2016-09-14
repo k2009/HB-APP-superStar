@@ -1,6 +1,9 @@
 define(function(require, exports, module) {
 
-	var loadMUI = require("common/util/loadMUI");
+	var lazyload = require("kit/util/asyncModule");
+    var header = require('common/slogon/js/index');
+    var tabbar;
+    var loadMUI = require("common/util/loadMUI");
 
 	var MAX_SELECT = 2;
 
@@ -69,9 +72,9 @@ define(function(require, exports, module) {
 		// 激活保存按钮
 		"activeSubmit": function(status){
 			if(status == true){
-				$("#st_modules_h5_weiboTags").find("[action=submit]").removeClass("mui-btn-disable").addClass("mui-btn-primary");
+				$("#st_modules_h5_weiboTags").find("[action=submit]").removeClass("mui-btn-disable");
 			} else {
-				$("#st_modules_h5_weiboTags").find("[action=submit]").removeClass("mui-btn-primary").addClass("mui-btn-disable");
+				$("#st_modules_h5_weiboTags").find("[action=submit]").addClass("mui-btn-disable");
 			}
 		},
 		// 提交数据
@@ -150,11 +153,23 @@ define(function(require, exports, module) {
 		// if(opts.can_edit == true){
 			Tools.bindEvent();
 		// }
+		// 延迟加载 tabbar
+        lazyload.load("common/tabbar/js/index", function(ret){
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(3);
+            tabbar = ret;
+        });
+        // 公共头部
+        header.init();
 	}
 
 	function destroy(opts) {
 		console.log("destroy 微博定位");
 		Tools.releaseEvent();
+		if(tabbar){
+            tabbar.destroy();
+        }
+        header.destroy();
 	}
 	var that = {
 		init: init,

@@ -30,7 +30,7 @@ define(function(require, exports, module) {
 		var html = SCRM.easyTemplate('<#macro userlist data>' +  this.template, {
 			id:  this.dialog_id,
 			title: TITLE,
-			text: TEXT
+			text: typeof opts.text=='string' && opts.text || TEXT
 		}).toString();
 
 		$('body').append(html);

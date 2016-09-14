@@ -262,8 +262,8 @@ body {
 
 .mui-table-view-cell .td1 {
   display: inline-block;
-  font-size: 0.16rem;
-  width: 30%;
+  font-size: 0.12rem;
+  width: 20%;
   text-align: left; }
 
 .stars {
@@ -275,15 +275,13 @@ body {
   margin-left: 20px; }
 
 .diffStar {
-  margin: 0 0.05rem;
+  margin: 0 0.02rem;
   display: inline-block;
   width: 0.15rem;
   height: 0.14rem;
   background: url(../images/star.png) no-repeat;
   background-size: 0.15rem;
-  vertical-align: middle;
-  transform: scale(1.5);
-  -webkit-transform: scale(1.5); }
+  vertical-align: middle; }
 
 .diffStar.empty {
   background-position: 0 -0.15rem; }

@@ -114,7 +114,8 @@ define(function(require, exports, module) {
         // 延迟加载微信分享的 tips
         lazyload.load("common/share/tips/js/index", function(dialog){
             dialogTips = new dialog({
-                title: "请点击右上角，选择分享至好友或朋友圈，就可以让好友看到这个测试啦"
+                title: "请点击右上角，选择分享至好友或朋友圈，就可以让好友看到这个测试啦",
+                text:" "
             });
         });
         header.init();

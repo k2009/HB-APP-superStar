@@ -132,7 +132,7 @@ body {
     font-family: '微软雅黑'; }
 
 .owner {
-  padding: 0.46933rem 0.128rem 0.512rem; }
+  padding: 0.46933rem 0.128rem 0.46933rem; }
   .owner .headPic {
     height: 0.72533rem;
     width: 0.72533rem;
@@ -146,8 +146,8 @@ body {
   .owner h5 {
     text-align: center;
     font-weight: normal;
-    font-size: 0.11093rem;
-    line-height: 0.17067rem;
+    font-size: 0.13653rem;
+    line-height: 0.2048rem;
     padding: 0.064rem 0;
     margin: 0;
     color: #1a1a1a; }

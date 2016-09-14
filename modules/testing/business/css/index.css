@@ -164,6 +164,5 @@ body, .mui-content {
   padding: 0.03413rem 0; }
 
 .mui-btn-block {
-  width: 94%;
-  margin: 0.064rem auto;
-  padding: 0.04267rem 0; }
+  margin: 0.128rem auto;
+  display: block; }

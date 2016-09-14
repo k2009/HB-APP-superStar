@@ -7,11 +7,13 @@ define(function(require, exports, module) {
     var finishTip;
 
     lazyload.load("common/share/tips/js/index", function(dialog){
+        alert(dialog)
         finishTip = new dialog({});           
     });
 
     // 王硕，你先别改这个了
     var showDialog=function(){
+        alert(1)
         finishTip.show({
             content:'<div class="title">' + (initData.next_lesson_url == null ? '恭喜你成功学习完此课程！请继续关注我们后续的课程。': '成功学习完本节课，肯定收获不小吧！再加把劲儿，很快就学完本章了呢。') + '</div>'
                     +'<div class="content">'
@@ -28,6 +30,13 @@ define(function(require, exports, module) {
 
     var stop=function(){
         var status=$(this).attr('data');
+        if(initData.is_finished==1){
+            if(status=='empty'){
+                mui.alert('恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦','','我知道了');
+            }else{
+                
+            }
+        }
         mui.alert((status=='empty'?
             '恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦'
             :'别着急，本章中有尚未完成的作业或课程，请先去完成吧'),'','我知道了');

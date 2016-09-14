@@ -177,6 +177,18 @@ body {
   color: #333;
   max-width: 96px; }
 
+body {
+  padding-bottom: 110px; }
+
+.btnBox.fixedBottom {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  border-top: 1px solid #d8dde6;
+  background: white; }
+
 .topBox {
   text-align: center; }
 

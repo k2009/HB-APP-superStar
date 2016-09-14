@@ -21,7 +21,7 @@
 				大数据+人工智能系统将全方位分析你的微博，给你一次前所未有的智能化体验。
 			</div>
 			<div class="btnBox">
-				<a class="mui-btn" href="${data.dna.url}">立即评测</a>
+				<a class="mui-btn mui-btn-350" href="${data.dna.url}">立即评测</a>
 			</div>
 		</#if>
 	</li>
@@ -51,28 +51,37 @@
 				最专业，最科学的网红潜力值评测，想看看你的网红潜力值有多高吗？快来测一下吧！
 			</div>
 			<div class="btnBox">
-				<a class="mui-btn" href="${data.biz.url}">立即评测</a>
+				<a class="mui-btn mui-btn-350" href="${data.biz.url}">立即评测</a>
 			</div>
 		</#if>
 	</li>
 
 	<li class="chapterItem" id="nickname">
-		<div class="title">
-			网红微博昵称评测<span class="arrowRight">&gt;</span>
-		</div>
-		<div class="sectionIntro" node="describe">
-			成功的网红从好名字开始，快来测一下你的微博昵称有多大的潜力值吧！
-		</div>
+		
+		
 		<#if (data.nickname.finished)>
+			<div class="title">
+				网红微博昵称评测<span class="arrowRight">&gt;</span>
+			</div>
+			<div class="sectionIntro" node="describe">
+				成功的网红从好名字开始，快来测一下你的微博昵称有多大的潜力值吧！
+			</div>
 			<div class="nicknameScore">微博昵称得分：<span style="color:#ea5504;">${data.nickname.score}</span> 分</div>
 			<div class="btnBox">
 				<a href="${data.nickname.url}" class="nicknameDetail">查看详情</a>
 			</div>
-		<#else>
-			<div class="btnBox">
-				<a class="mui-btn" href="${data.nickname.url}">立即评测</a>
-			</div>
 			<div class="lastUpdate">最近更新于 ${data.nickname.last_updated}</div>
+		<#else>
+			<div class="title">
+				网红微博昵称评测
+			</div>
+			<div class="sectionIntro" node="describe">
+				成功的网红从好名字开始，快来测一下你的微博昵称有多大的潜力值吧！
+			</div>
+			<div class="btnBox">
+				<a class="mui-btn mui-btn-350" href="${data.nickname.url}">立即评测</a>
+			</div>
+			
 		</#if>
 	</li>
 </div>

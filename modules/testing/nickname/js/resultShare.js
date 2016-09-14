@@ -148,7 +148,7 @@ define(function(require, exports, module) {
         lazyload.load("common/share/tips/js/index", function(Dialog){
             weixinTips = new Dialog({
                 'title': '请点击右上角，选择分享至好友或朋友圈，就可以让好友看到这个测试啦',
-                'text': '点击右上角，分享给 TA 吧'
+                'text': ''
             });
         });
     }

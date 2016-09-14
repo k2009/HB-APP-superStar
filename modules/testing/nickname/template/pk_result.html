@@ -61,9 +61,9 @@
 	<p class="tips">${data.tips}</p>
 <#if (data.victory)>
 	<#if (data.platform == "weibo")>
-		<a href="sinaweibo://compose?content="天啦噜，我竟然这么有网红范儿，想想都很开心呢！${data.share_url}" class="btn_common">分享给朋友1</a>
+		<a href="sinaweibo://compose?content=天啦噜，我竟然这么有网红范儿，想想都很开心呢！${data.share_url}" class="btn_common">分享给朋友</a>
 	<#else>
-		<a href="JavaScript:;" class="btn_common" id="run_share">分享给朋友2</a>
+		<a href="JavaScript:;" class="btn_common" id="run_share">分享给朋友</a>
 	</#if>
 	<a href="${data.again_url}" pjax="1" class="btn_grey">重新PK</a>
 <#else>
