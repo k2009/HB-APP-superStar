@@ -22,8 +22,9 @@ define(function(require, exports, module){
                     //     console.log('执行后补微博登录!')
 	                   // // sys.fn_oauth();
                     // }
+                    console.log(JSON.stringify(oauth))
 					$.ajax({
-						url:host_domain+loginURL,
+						url:(host_domain+loginURL),
 						type:"get",
 						data:oauth,
 						dataType:"json",
@@ -68,14 +69,14 @@ define(function(require, exports, module){
 			$netChange.NetChange(fn_upDate());
 
 			function fn_upDate() {
-				if ($netChange.getNetType() == 1) {
+				// if ($netChange.getNetType() == 1) {
 					var lastUpDate = $storage('lastUpDate');
-					if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
+					// if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
 						$storage('lastUpDate', mui.now());
 						$upDate.silent = true;
 						$upDate.init();
-					}
-				}
+					// }
+				// }
 				return fn_upDate;
 			}
     	},
@@ -94,7 +95,7 @@ define(function(require, exports, module){
 					if(btn){
 						console.log('尝试登录服务')
 						$.ajax({
-							url:host_domain+loginURL,
+							url:(host_domain+loginURL),
 							type:"get",
 							data:data,
 							dataType:"json",

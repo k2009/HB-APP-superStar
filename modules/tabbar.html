@@ -116,6 +116,9 @@
 					},
 					init: function() {
 
+						mui.init({
+							swipeBack:false
+						})
 						mui.plusReady(function() {
 			            	sys.route = $storage('route');
 							sys.listener();
