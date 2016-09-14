@@ -1,0 +1,174 @@
+@charset "UTF-8";
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+body {
+  background: #f2f2f2; }
+
+.mainBox {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; }
+  .mainBox p {
+    color: #1a1a1a;
+    font-size: 0.11947rem;
+    line-height: 0.21333rem;
+    text-align: center; }
+  .mainBox .p2 {
+    color: #919191; }
+  .mainBox span {
+    color: #fbbd06;
+    font-size: 0.2048rem;
+    padding: 0 0.02133rem; }
+  .mainBox .nicknameInput {
+    display: block;
+    margin: 0.08533rem auto 0.21333rem;
+    color: #919191;
+    width: 1.49333rem;
+    height: 0.29867rem;
+    line-height: 0.29867rem;
+    font-size: 0.1024rem;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    border-radius: 0.04267rem;
+    padding: 0 0.04267rem;
+    font-family: '微软雅黑'; }
+
+.owner {
+  padding: 0.46933rem 0.128rem 0.512rem; }
+  .owner .headPic {
+    height: 0.72533rem;
+    width: 0.72533rem;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%; }
+  .owner img {
+    display: block;
+    width: 100%; }
+  .owner h5 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.11093rem;
+    line-height: 0.17067rem;
+    padding: 0.064rem 0;
+    margin: 0;
+    color: #1a1a1a; }
+
+.btn_box {
+  text-align: center; }
+  .btn_box .btn {
+    display: block;
+    width: 1.49333rem;
+    height: 0.29867rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.128rem;
+    line-height: 0.29867rem;
+    background: #fbbd06;
+    border-radius: 0.04267rem;
+    color: #fff; }
+  .btn_box .link {
+    display: inline-block;
+    font-size: 0.1024rem;
+    line-height: 0.1536rem;
+    margin-top: 0.08533rem;
+    color: #065ceb;
+    text-decoration: underline; }

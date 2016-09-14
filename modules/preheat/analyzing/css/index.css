@@ -177,7 +177,23 @@ html, body, .container, .module {
     position: absolute;
     top: 0;
     left: 11.5%;
-    transform: scale(1); }
+    transform: scale(1);
+    overflow: hidden; }
+    .swiper .card .corner {
+      background: #ff3b33;
+      color: #fff;
+      position: absolute;
+      top: 0.128rem;
+      right: -0.34133rem;
+      height: 0.256rem;
+      width: 1.19467rem;
+      line-height: 0.256rem;
+      font-size: 0.128rem;
+      text-align: center;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg); }
     .swiper .card .title {
       height: 0.448rem;
       line-height: 0.448rem;
@@ -364,7 +380,7 @@ html, body, .container, .module {
       margin: 0 auto 0.128rem;
       width: 1.49333rem;
       height: 0.29867rem;
-      line-height: 0.17067rem; }
+      line-height: 0.29867rem; }
     .pop-container .pop-error .mui-btn-secondary {
       background: #bfbfbf; }
   .pop-container .buttons {

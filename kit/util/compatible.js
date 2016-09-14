@@ -1,5 +1,6 @@
 var DEBUG_MODE = null;
 var useIDBCache = null;
+var $pjax = null;
 var pageInfo = {
 		id: null
 	}
@@ -446,23 +447,7 @@ window.SCRM = {
 	 * @param  {String} title 可选，标题
 	 * @param  {Object} opts  可选，选项
 	 */
-	'pjax': function(url, title, opts) {
-		historyManager.pushState({
-			'title': title,
-			'url': url
-		});
-
-		if (!pjaxManager.hasContentUnsave() || (pjaxManager.hasContentUnsave() && window.confirm(MSG.UNSAVE))) {
-			// 重置所有未保存的状态
-			pageStatus.unsave = {};
-			window.onbeforeunload = null;
-			if (historyManager.isPushStateEnabled) {
-				pageManager.loadModulesInfoFromAJAX(url);
-			}
-			// 开始 pjax 跳转处理
-			pjaxManager.jump(title, url);
-		}
-	},
+	'pjax': window.$pjax,
 	// 加载资源
 	'load': function(url, type, callback, opts) {
 		// TODO type 类型检查

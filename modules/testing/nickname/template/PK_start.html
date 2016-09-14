@@ -1,0 +1,13 @@
+	<div class="mainBox">
+		<div class="owner">
+			<div class="headPic"><img src="<#if (data.shareinfo.profile_image)>${data.shareinfo.profile_image}<#else>http://${data._extra.domain}/modules/testing/nickname/images/deafult_headpic.png</#if>"></div>
+			<h5>${data.shareinfo.screen_name}</h5>
+		</div>
+		<p class="p2">天啦噜，我的网红范儿得分竟然是<span>${data.info}</span>分！</p>
+		<p class="p2">敢不敢跟我一比高低～</p>
+		<input type="text" class="nicknameInput" placeholder="请输入微博昵称">
+		<div class="btn_box">
+			<a href="JavaScript:;" class="btn" id="startPK">开始PK</a>
+			<a href="${data.study_url}" class="link">学习顶级网红如何取昵称>></a>
+		</div>
+	</div>

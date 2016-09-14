@@ -7,6 +7,14 @@ define(function(require, exports, module) {
 	// 根据有没有 MUI，决定绑定的事件是什么
 	var event_type = window.mui ? 'tap' : 'click';
 	// TODO 记录所有 dialog 实例，当所有实例都销毁了的时候，整个组件销毁
+	var tabbarArray = [];
+	var TAB_HTML = 
+	'<#list data.tabs as tab>' +
+	'<a href="${tab.url}" pjax="1" class="tabbar-item ${tab.isCurrent ? \'current\' : \'\' }" data-index="0">' +
+		'<span class="tabbar-icon ${tab.icon}"></span>' +
+		'<span class="tabbar-text">${tab.name}</span>' +
+	'</a>' +
+	'</#list>';
 
 	var Tabbar = {
 		"current": 0,	// 默认第 0 个选中
@@ -24,6 +32,37 @@ define(function(require, exports, module) {
 		"active": function(){
 			var id = $(this).attr("data-index");
 			Tabbar.setActiveTab(id);
+		},
+		"setData": function (tabbar) {
+			tabbarArray = [];
+			for(var i = 0, count = tabbar.length; i < count; i ++){
+				var tab = tabbar[i];
+				var tabInfo = {
+					"name" : tab.name,
+					"url": tab.url,
+					"isCurrent": Tabbar.current == i
+				};
+				switch(i) {
+					case 0:
+						tabInfo.icon = "icon-home";
+						break;
+					case 1:
+						tabInfo.icon = "icon-lesson";
+						break;
+					case 2:
+						tabInfo.icon = "icon-test";
+						break;
+					case 3:
+						tabInfo.icon = "icon-me";
+						break;
+				}
+				tabbarArray.push(tabInfo);
+			}
+			var html = SCRM.easyTemplate(TAB_HTML, {
+				"tabs": tabbarArray
+			}).toString();
+			$(".tabbar").html(html);
+			Tabbar.currentTab = $(".tabbar").find(".current");
 		},
 		"setActiveTab": function(index){
 			index = parseInt(index);

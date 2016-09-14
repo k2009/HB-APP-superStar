@@ -3,12 +3,11 @@ define(function(require, exports, module) {
 
     var $tmp = require("kit/util/easyTemplate");            //模板处理方法载入
     var $storage = require("kit/util/plus-storage");        //本地存储模块
-    var $urlToJson = require("kit/util/urlToJson");         //数组转json
+    var $pjax = require("kit/util/plus-pjax");              //数组转json
 
     var type_debug = true;                                  //debug开关
     window.weixinTips = null;                               //兼容性代码
     window.$tmp = $tmp;                                     //兼容性代码
-    
 
     var sys = {
         cacheTime:300000,
@@ -30,7 +29,6 @@ define(function(require, exports, module) {
                 window.CONFIG = $.extend(cfg,window.CONFIG);
             }
 
-            sys.route = $storage('route');
 
             sys.ajax_url = config.url;
             sys.id = config.id;
@@ -60,69 +58,8 @@ define(function(require, exports, module) {
             a_click:function(event) {
                 var url = this.getAttribute('href');
                 var title = $(this).html();
-                sys.urlJump(url,title);
+                $pjax(url,title);
             }
-        },
-        urlJump:function(url,title){
-            var d = $urlToJson(url);
-            var data = sys.getLocalPath(d.url);
-            if(!data){
-                return;
-            }
-            var pageData={
-                id: data.module_id,
-                url: '_www/modules/index_content.html',
-                extras:{
-                    ajax_data:d.data,
-                    ajax_url:plus.storage.getItem("domain")+d.url,
-                    pageData:data.module_data
-                },
-                styles: {
-                    top: '45px',
-                    bottom: 0,
-                    bounce: 'vertical'
-                },
-                title:data.title||title
-
-            }
-            var view_data = {
-                id: data.module_id,
-                url: '_www/modules/index.html',
-                show:{
-                    autoShow:true,//页面loaded事件发生后自动显示，默认为true
-                    aniShow:'slide-in-right',//页面显示动画，默认为”slide-in-right“；
-                },
-                // styles: {
-                //     top: "0px",
-                //     bottom: '56px', //新页面底部位置
-                // },
-                extras: {
-                    pageData: pageData
-                }
-            };
-
-            //数据重载来规避多页面打开的事儿
-            if (data.module_id == "st_modules_h5_home") {
-                mui.openWindow({
-                    id: 'index.html',
-                    url: '_www/modules/h5/index/index.html',
-                    // styles: {
-                    //     top: "0px",
-                    //     bottom: '56px', //新页面底部位置
-                    // },
-                    show: {
-                        autoShow: true, //页面loaded事件发生后自动显示，默认为true
-                        aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
-                    }
-                });
-                return;
-            }
-            var other_this_view = plus.webview.getWebviewById( data.module_id.replace('st_modules_','') );
-            if(other_this_view&&(!$.isEmptyObject(d.data))){
-                mui.fire(other_this_view,'viewReload',{ajax_data:d.data});  //数据重载方法,可多页面调用
-            }
-            mui.openWindow(view_data);
-
         },
         listener:function(){
             window.addEventListener('viewReload',function(e){
@@ -131,22 +68,6 @@ define(function(require, exports, module) {
                 sys.ajax_data = e.detail.ajax_data;
                 sys.storage_init();
             });
-        },
-        getLocalPath:function(path){
-            var a = sys.route;
-            var data;
-            for (var i = 0; i < a.length; i++) {
-                if($.trim(a[i].path)==$.trim(path)){
-                    data = a[i].data.default_data.modules[0];
-                    return {
-                        path:data.template[0].replace('template/index.html','')+data.id.replace('st_modules_h5_','')+'.html',
-                        module_id:data.id,
-                        title:data.title,
-                        module_data:data
-                    };
-                }
-            }
-            return null;
         },
         storage_init:function(){
             var id_data = $storage(sys.id);
@@ -265,6 +186,7 @@ define(function(require, exports, module) {
                 type: 'get', //HTTP请求类型
                 timeout: 10000, //超时时间设置为10秒；
                 success: function(data) {
+                    console.log(JSON.stringify(data))
                     if(data.code == 0){ //有bug
                         var d = data.data.real_data[sys.id];
                         var code = null;
@@ -289,10 +211,11 @@ define(function(require, exports, module) {
                                     }
                                 }
                             }()
-                        }else{
                         }
                         if(callback)callback();
                         sys.closeLoading()
+                    }else{
+                        mui.toast(data.message||data.msg)
                     }
                 },
                 error: function(e) {

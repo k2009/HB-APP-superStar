@@ -30,7 +30,7 @@ define(function(require, exports, module) {
         var status=$(this).attr('data');
         mui.alert((status=='empty'?
             '恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦'
-            :'你学习得太快了，请先去复习一下之前的内容'),'','我知道了');
+            :'别着急，本章中有尚未完成的作业或课程，请先去完成吧'),'','我知道了');
     }
 
     function init(opts) {
@@ -42,7 +42,7 @@ define(function(require, exports, module) {
         // 公共头部
         header.init();          
         lazyload.load("common/tabbar/js/index", function(dialog){
-            ret.setData(opts.tabbar);
+            dialog.setData(opts.tabbar);
             dialog.setActiveTab(1);
         });       
     }
@@ -51,9 +51,9 @@ define(function(require, exports, module) {
         $body.undelegate('[action=stop]','click',stop);
         $share.destroy();
         header.destroy();
-        // if(finishTip){
-        //     finishTip.hide();
-        // }
+        if(finishTip){
+            finishTip.hide();
+        }
     }
     var that = {
         init: init,

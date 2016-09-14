@@ -1,23 +1,12 @@
-<div class="mui-content">
-<!-- 	<div class="bar">
-		<a id="icon-icon-contact"><span class="mui-icon mui-icon-contact"></span></a>
-	</div> -->
-
-	<div class="topContainer">
-		<div class="tl_text">
-			<h3>恭喜你学完本节课程</h3>
-			<p>${data.topic}</p>
-		</div>
-	</div>
-	<div class="topContainer ask tl_text">
-		<h5>1、作业内容：</h5>
-	</div>
-	<div class="topContainer">
-		<div class="mui-input-row words-box">
-			<textarea id="contentWords" rows="5" placeholder="分享新鲜事"></textarea>
-		</div>
+    <div class="mainBox">
+        <h5>恭喜你学完本节课程</h5>
+		<p>${data.topic}</p>
+    </div>
+    <div class="mainBox">
+        <h4>作业内容：</h4>
+		<textarea id="contentWords" placeholder="分享新鲜事"></textarea>
 		<ul class="mui-flex-container" id="imageList">
-<!-- 			<li>
+	<!-- 		<li>
 				<i class="img-container">
 					<span class="cnt">
 						<img src="http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg">
@@ -27,16 +16,11 @@
 			</li> -->
 			<li id="chooseImageBox"><span class="plus" id="chooseImage"><span class="mui-icon mui-icon-plusempty"></span></span></li>
 	    </ul>
-	</div>
-	<div class="topContainer ask tl_text">
-		<h5>2、以上内容希望给读者留下的印象？</h5>
-		<p>例如：我希望读者认为我在办公室健身方面是一个专家</p>
-	</div>
-
-	<div class="mui-input-row" style="margin: 10px 5px;">
+    </div>
+    <div class="mainBox">
+        <h4>以上内容希望给读者留下怎样的印象呢？</h4>
 		<textarea id="question" rows="2" placeholder="请输入">${data.questions}</textarea>
-	</div>
-	<div class="tc_text">
-		<a class="mui-btn mui-btn-primary mui-btn-block" href="JavaScript:;" id="submit">问问朋友的意见</a>
-	</div>
-</div>
+    </div>
+    <div class="btn_box">
+        <a href="JavaScript:;" id="submit">请好友看看</a>
+    </div>

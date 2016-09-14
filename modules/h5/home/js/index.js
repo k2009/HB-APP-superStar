@@ -7,6 +7,9 @@ define(function(require, exports, module) {
 	var tabbar;
 
 	function showCharts(data){
+		if(data == null){
+			return;
+		}
 		var result = [];
 		for (var i = 0, count = data.length; i < count; i++) {
 			var item = data[i];

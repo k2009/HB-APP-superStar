@@ -10,10 +10,14 @@ define(function(require){
     var rdata;
     var callbackTimer;
     var $plat;
+    var opts;
 
     var inPlat=[];
 
     var getColor=function(){
+        if(opts.colorBase){
+            return opts.colorBase[parseInt(Math.random()*opts.colorBase.length)]
+        }
         return [
             parseInt(70+Math.random()*180).toString(16),
             parseInt(70+Math.random()*180).toString(16),
@@ -31,7 +35,7 @@ define(function(require){
         span.style.color='#'+getColor();
         span.style.opacity=0;
         span.style.lineHeight=Math.max(size,minWordSize)*1.28+'px';//乘以1.28是因为避免字母g的下半部分超出边缘
-        $('#platform').append(span);
+        $plat.append(span);
         setTimeout(function(){
             span.style.opacity=1;
         },Math.random()*duringTime);
@@ -92,10 +96,13 @@ define(function(require){
         }
     }
 
-    var initPlatform=function(data,callback){
+    var initPlatform=function(data,callback,oOpts){
+        opts=oOpts||{};
         inPlat=[];
         rdata=data;
-        $plat=$('#platform');    
+        $plat=$(opts.node || '#platform');  
+        wordSize=opts.maxFontSize || wordSize;
+        minWordSize=opts.minFontSize||minWordSize;  
         var w=pw=$plat.width(),h=ph=$plat.height();
         for(var i=0;i<rdata.length;i++){
             maxWeight=Math.max(rdata[i].weight,maxWeight);

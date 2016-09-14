@@ -26,6 +26,7 @@ define(function(require, exports, module) {
 		'<#if ( wanghong.showIndex == 1 ) >' +
 		'<li class="card zoom">' +
 		'</#if>' +
+			'<div class="corner">榜 样</div>' +
 			'<div class="title">${wanghong.screen_name}</div>' +
 			'<div class="profile-image"><img src="${wanghong.profile_image}"></div>' +
 			'<div class="opacity-bg"></div>' +

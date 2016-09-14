@@ -1,9 +1,12 @@
 	<p class="topTips">帮忙看看下边内容是否符合后边所描述的中心思想。</p>
 
-	<div class="mainBox">
+	<div class="mainBox mainBox_t3">
 		<div class="owner">
 			<div class="headPic"><img src="${data.userInfo.profile_image}"></div>
-			<h5>${data.userInfo.screen_name}</h5>
+			<div class="info">
+				<h5>${data.userInfo.screen_name}</h5>
+				<p class="time" id="time"></p>
+			</div>
 		</div>
 		<p class="word">${data.content}</p>
 		<ul class="mui-flex-container imgList" id="imgList">
@@ -27,27 +30,27 @@
 		      	</#list>
 			</#if>
 	    </ul>
-	    <p class="time" id="time"></p>
+	    
 	</div>
 	<div class="mainBox mainBox_t2">
 		<#if (data.onself)>
 		    <p>目前共有<span>${data.homework.total}</span>人参与</p>
-		    <p class="tips <#if (data.is_pass)>pass</#if>">${data.tips}</p>
+		    <!-- <p class="tips <#if (data.is_pass)>pass</#if>">${data.tips}</p> -->
 		    <ul class="chartList">
 			<#if (data.vote_type == 1)>
 				<li></li>
 				<li>
-	                <div class="block" style="height:${data.homework.result[0] / data.homework.total * 100 }%">
-	                    <p>${data.homework.result[0]}</p>
+	                <div class="block" style="height:${data.homework.result[5] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[5]}</p>
 	                </div>
-	                <h6>符合</h6>
+	                <h6>赞同</h6>
 	            </li>
 	            <li></li>
 	            <li class="grey">
-	                <div class="block" style="height:${data.homework.result[1] / data.homework.total * 100 }%">
-	                    <p>${data.homework.result[1]}</p>
+	                <div class="block" style="height:${data.homework.result[6] / data.homework.total * 100 }%">
+	                    <p>${data.homework.result[6]}</p>
 	                </div>
-	                <h6>不符合</h6>
+	                <h6>不赞同</h6>
 	            </li>
 	            <li></li>
 			<#else if (data.vote_type == 0)>
@@ -85,14 +88,14 @@
 		    </ul>
 			<div class="btn_box">
 		        <a href="JavaScript:;" id="run_share">再找人看看</a>
-		        <a href="${data.homework.course_list_url}">查看课程</a>
+		        <a href="${data.homework.course_list_url}" pjax="1">查看课程</a>
 		    </div>
 		<#else>
 			<p>${data.question}</p>
 			<#if (data.vote_type == 1)>
 				<div class="agree_box">
-					<a href="JavaScript:;" <#if (!data.current_choice)>choose="5"</#if> <#if (data.current_choice == 5)>class="done"</#if>>${data.homework.result[0]}</a>
-					<a href="JavaScript:;" <#if (!data.current_choice)>choose="6"</#if> <#if (data.current_choice == 6)>class="done"</#if>>${data.homework.result[1]}</a>
+					<a href="JavaScript:;" <#if (!data.current_choice)>choose="5"</#if> <#if (data.current_choice == 5)>class="done"</#if>>${data.homework.result[5]}</a>
+					<a href="JavaScript:;" <#if (!data.current_choice)>choose="6"</#if> <#if (data.current_choice == 6)>class="done"</#if>>${data.homework.result[6]}</a>
 				</div>
 			<#else if(data.vote_type == 0)>
 				<div class="mui-input-row mui-radio mui-left">

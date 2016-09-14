@@ -127,10 +127,9 @@ body {
 
 .mui-btn-block {
   margin: 0.2rem auto;
-  width: 70%;
-  padding: 0.05rem 0;
-  font-size: 0.14rem;
-  z-index: 999; }
+  padding: 0;
+  z-index: 999;
+  display: block; }
 
 .mui-content-padded {
   text-align: center; }

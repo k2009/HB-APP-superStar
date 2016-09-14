@@ -22,6 +22,10 @@ define(function(require, exports, module) {
         mui.alert('别着急，请按建议时间学习前面的课程并完成课程作业，就可以解锁这一课啦','提示');
     }
 
+    var empty=function(){
+        mui.alert('该章课程即将开启，敬请期待','提示');
+    }
+
     var drawChapter=function (rate) {
         var $node=$('#chapter').find('canvas');
         var ctx=$node[0].getContext('2d');
@@ -164,6 +168,7 @@ define(function(require, exports, module) {
         }
         $body.delegate('[action=leftDaysHelp]','tap',leftDaysHelp);
         $body.delegate('[action=forbidden]','tap',forbidden);
+        $body.delegate('[action=empty]','tap',empty);
         lazyload.load("common/tabbar/js/index", function(tabbar){
             tabbar.setData(opts.tabbar);
             tabbar.setActiveTab(1);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始

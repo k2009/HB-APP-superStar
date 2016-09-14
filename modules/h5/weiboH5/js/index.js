@@ -7,6 +7,7 @@ define(function(require, exports, module) {
 	var signedRequest = null;
 	var WeiboJS, wx, appid;
 	var tabbar;
+    var dialogTips;
 	var runImage = {
 		WXshare: function(){
 			var title = this.title();
@@ -15,7 +16,7 @@ define(function(require, exports, module) {
 			wx.onMenuShareTimeline({
 				title: title, // 分享标题
 				link: share_url, // 分享链接
-				imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
+				imgUrl: 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg', // 分享图标
 				success: function () {
 					// 用户确认分享后执行的回调函数
 					$( '.mui-popup-backdrop' ).remove();
@@ -29,7 +30,7 @@ define(function(require, exports, module) {
 				title: title_2, // 分享标题
 				desc: title, // 分享描述
 				link: share_url, // 分享链接
-				imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
+				imgUrl: 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg', // 分享图标
 				type: '', // 分享类型,music、video或link，不填默认为link
 				dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 				success: function () {
@@ -67,7 +68,7 @@ define(function(require, exports, module) {
 			WeiboJS.setSharingContent({
 				external:{
 					title: title_2,
-					icon: "http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg",
+					icon: "http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg",
 					desc: title
 				}
 			});
@@ -195,7 +196,7 @@ define(function(require, exports, module) {
         lazyload.load("common/tabbar/js/index", function(ret){
             ret.setData(opts.tabbar);
             ret.setActiveTab(3);
-            // tabbar = ret;
+            tabbar = ret;
             // if( opts.next_url ){
             // 	$( '.tabbar a' ).attr({
             // 		'href': opts.next_url,
@@ -214,7 +215,7 @@ define(function(require, exports, module) {
             if( !val ){
                 Alert( '选项不能为空！' );
                 return;
-            };
+            }
 
             var data = { vote: val };
             if(platform == 'weibo'){
@@ -259,7 +260,8 @@ define(function(require, exports, module) {
                     }
                     $this.addClass( 'done' ).html( num );
                     $('[choose]').removeAttr('choose');
-                    SCRM.pjax( msg.data.next_url );
+                    window.location.href = msg.data.next_url;
+                    //SCRM.pjax( msg.data.next_url );
                 },
                 error: function(){
                     Alert( '网络错误，请刷新页面或稍后重试' );
@@ -295,7 +297,9 @@ define(function(require, exports, module) {
         $( '.alert_dom' ).remove();
         $( '.alert_close' ).off();
         $( '.lightBox' ).off().remove();
-        dialogTips.destroy();
+        if(dialogTips){
+            dialogTips.destroy();
+        }
 		if(tabbar){
 			tabbar.destroy();
 		}

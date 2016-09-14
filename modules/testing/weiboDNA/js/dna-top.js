@@ -38,7 +38,7 @@ define(function(require, exports, module) {
             WeiboJS.setSharingContent({
                 external:{
                     title: "一起炫酷",
-                    icon: "http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg",
+                    icon: "http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg",
                     desc: TITLE
                 }
             });

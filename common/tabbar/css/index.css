@@ -99,6 +99,11 @@ body {
 .container {
   height: 100%; }
 
+.container:after {
+  content: "";
+  height: 0.5rem;
+  display: block; }
+
 .tabbar {
   position: fixed !important;
   bottom: 0;
@@ -111,7 +116,7 @@ body {
   .tabbar .tabbar-item {
     flex: 1;
     text-align: center;
-    color: #333;
+    color: #c5c5c5;
     display: inline-block;
     box-sizing: content-box;
     width: 24%; }

@@ -118,7 +118,7 @@ body {
   padding: 0.128rem; }
   .mainBox p {
     color: #1a1a1a;
-    font-size: 0.11093rem;
+    font-size: 0.11947rem;
     line-height: 0.17067rem; }
   .mainBox .imgList {
     padding: 0.04267rem 0; }
@@ -137,27 +137,40 @@ body {
   padding: 0.128rem 0.04267rem;
   margin: 0; }
   .mainBox_t2 p {
-    padding: 0 0.08533rem; }
+    padding: 0 0.08533rem;
+    text-align: center; }
 
-.owner .headPic {
-  height: 0.68267rem;
-  width: 0.68267rem;
-  display: block;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 50%; }
+.mainBox_t3 {
+  padding: 0.128rem 0; }
+  .mainBox_t3 p {
+    padding: 0 0.128rem; }
 
-.owner img {
-  display: block;
-  width: 100%; }
-
-.owner h5 {
-  text-align: center;
-  font-weight: normal;
-  font-size: 0.11093rem;
-  line-height: 0.17067rem;
-  padding: 0.064rem 0;
-  margin: 0; }
+.owner {
+  height: 0.59733rem;
+  padding: 0 0.128rem 0.1024rem;
+  margin-bottom: 0.08533rem;
+  border-bottom: 1px solid #e8e8e8; }
+  .owner .headPic {
+    height: 0.512rem;
+    width: 0.512rem;
+    display: block;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left; }
+  .owner img {
+    display: block;
+    width: 100%; }
+  .owner .info {
+    height: 0.512rem;
+    padding: 0.04267rem 0;
+    margin-left: 0.59733rem; }
+    .owner .info h5, .owner .info p {
+      font-weight: normal;
+      margin: 0;
+      font-size: 0.11093rem;
+      line-height: 0.21333rem; }
+    .owner .info p {
+      color: #bfbfbf; }
 
 .btn_box {
   padding: 0.064rem 0;

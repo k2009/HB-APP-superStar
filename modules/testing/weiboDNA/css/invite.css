@@ -127,6 +127,9 @@ body {
 body {
   background: white; }
 
+.mui-content {
+  padding: 10px; }
+
 .topTip {
   display: inline-block;
   line-height: 0.26rem;

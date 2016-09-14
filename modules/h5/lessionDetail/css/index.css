@@ -102,6 +102,9 @@ body {
 body {
   background: white; }
 
+.mui-active {
+  background: white !important; }
+
 .topTitle {
   position: static;
   width: auto; }

@@ -87,56 +87,6 @@ define(function(require, exports, module) {
                 success: function(ret) {},
                 fail: function(msg, code) {}
             });
-        },
-        // 创建一个 iframe 来获取微博的 signed_request 信息，这是个临时方案
-        createAgentIframe: function() {
-            var appkey = appid;
-            var iframeId = "__lightapp_agent_iframe";
-            var iframe = document.createElement("iframe");
-            var _loadLock = false;
-            var _loadHandler = function(type) {
-                if (_loadLock) {
-                    return;
-                }
-                _loadLock = true;
-                runShare.iframeWin = document.getElementById(iframeId).contentWindow;
-            };
-            iframe.addEventListener("load", function() {
-                _loadHandler("event");
-                runShare.getSignedRequest();
-            });
-            iframe.src = "http://apps.weibo.com/liteblank.php?appkey=" + appkey;
-            iframe.id = iframeId;
-            iframe.style.display = "none";
-            setTimeout(function() {
-                _loadHandler("timeout");
-            }, 300);
-            document.body.appendChild(iframe);
-            window.addEventListener("message", runShare.receiveMessage, false);
-        },
-        // 发出 postMessage 给 iframe
-        getSignedRequest: function(){
-            try{
-                var uuid = new Date().getTime() + ("000000" + Math.floor(Math.random() * 99999)).replace(/\d+(\d{6})$/, "$1");
-                var key = "getSignedRequest#@#" + uuid;
-                runShare.iframeWin.postMessage(key + ":::{}", "*");
-            } catch(e) {
-            }
-        },
-        // 解析收到的 signed_request 参数，并存下来
-        receiveMessage: function(evt) {
-            if (/^getSignedRequest/i.test(evt.data)) {
-                var data = evt.data.split(":::");
-                if(data.length == 2){
-                    data = data[1];
-                }
-                try{
-                    data = JSON.parse(data);
-                    signedRequest = data.signed_request;
-                }catch(e){
-                    signedRequest = null;
-                }
-            }
         }
     };
 
@@ -311,14 +261,11 @@ define(function(require, exports, module) {
                 return;
             }
         });
-        if( platform === 'weibo' ){
-            runShare.createAgentIframe();
-        };
 
         if( !opts.weibo_user_id ){
             waitHandle(opts.query_url);
             return;
-        };
+        }
 
         score( opts );//得分轴
 

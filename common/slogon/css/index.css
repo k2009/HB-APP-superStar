@@ -106,11 +106,11 @@ body {
   line-height: 0.3rem;
   font-size: 0.12rem;
   color: #1c1c1c;
-  padding-left: 0.15rem; }
+  padding-left: 0.05rem; }
   .wanghong-standard-header .logo {
     display: inline-block;
     width: 0.18rem;
     height: 0.18rem;
     vertical-align: top;
     border-radius: 100%;
-    margin-top: 0.07rem; }
+    margin: 0.07rem 0.05rem 0; }

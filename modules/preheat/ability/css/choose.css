@@ -177,15 +177,6 @@ body {
   color: #333;
   max-width: 96px; }
 
-.mui-btn {
-  border: 1px solid #fbbd06;
-  background: #fbbd06;
-  padding: 7px 25px; }
-
-.mui-btn-disable {
-  border: 1px solid #f0f0f0;
-  background: #f0f0f0; }
-
 .topBox {
   text-align: center; }
 

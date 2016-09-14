@@ -1,5 +1,5 @@
     <div class="mainBox">
-        <h5>本节作业需要收集10个赞同</h5>
+        <h5>本节作业需要收集${data.rule}个赞同</h5>
         <div class="bg-line-box">
             <span>${data.percent}%</span>
             <div class="bg-line">
@@ -17,17 +17,17 @@
         <#if (data.vote_type == 1)>
             <li></li>
             <li>
-                <div class="block" style="height:${data.result[0] / data.total * 100 }%">
-                    <p>${data.result[0]}</p>
+                <div class="block" style="height:${data.result[5] / data.total * 100 }%">
+                    <p>${data.result[5]}</p>
                 </div>
-                <h6>符合</h6>
+                <h6>赞同</h6>
             </li>
             <li></li>
             <li class="grey">
-                <div class="block" style="height:${data.result[1] / data.total * 100 }%">
-                    <p>${data.result[1]}</p>
+                <div class="block" style="height:${data.result[6] / data.total * 100 }%">
+                    <p>${data.result[6]}</p>
                 </div>
-                <h6>不符合</h6>
+                <h6>不赞同</h6>
             </li>
             <li></li>
         <#else if(data.vote_type == 0)>
@@ -64,7 +64,7 @@
         </#if>
         </ul>
         <div class="btn_box">
-            <a href="JavaScript:;" id="run_share">在找人看看</a>
+            <a href="JavaScript:;" id="run_share">再找人看看</a>
             <a href="${data.next_url}">再做一次</a>
         </div>
 
