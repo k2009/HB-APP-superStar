@@ -128,7 +128,7 @@ define(function(require, exports, module){
 			   url:'../h5/index/index.html',
 				styles:{
 					top:"0px",
-				  bottom:'49px',//新页面底部位置
+				  bottom:'56px',//新页面底部位置
 				},
 			});
     		mui.openWindow({
@@ -136,7 +136,7 @@ define(function(require, exports, module){
 			   	url:'../tabbar.html',
 			    styles:{
 			      bottom:'0px',//新页面底部位置
-			      height:'49px',//新页面高度，默认为100%
+			      height:'56px',//新页面高度，默认为100%
 			    },
 			    show:{
 			      autoShow:true,//页面loaded事件发生后自动显示，默认为true
