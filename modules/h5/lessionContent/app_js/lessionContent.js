@@ -33,16 +33,7 @@ define(function(require, exports, module) {
     var stop=function(){
         var status=$(this).attr('data');
         $("#div1").remove();
-        if(initData.is_finished==1){
-            if(status=='empty'){
-                mui.alert('恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦','','我知道了');
-            }else{
-                mui.alert((status=='empty'?
-                    '恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦'
-                    :'别着急，本章中有尚未完成的作业或课程，请先去完成吧'),'','我知道了');
-                
-            }
-        }
+        mui.alert(initData.next_lesson_status_info,'','我知道了');
     }
 
     function init(opts) {

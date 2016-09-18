@@ -46,6 +46,7 @@ define(function(require, exports, module) {
 
     function shareMessage(share, ex,msg,success,error) {
 
+        mui.toast("分享到\"" + share.description + "\"中...请稍后");
         msg.extra = {
             scene: ex
         }
@@ -54,10 +55,10 @@ define(function(require, exports, module) {
         }
         share.send(msg, function() {
             success(msg);
-            console.log("分享到\"" + share.description + "\"成功！ ");
+            mui.toast("分享到\"" + share.description + "\"成功！ ");
         }, function(e) {
             error(msg);
-            console.log("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
+            mui.toast("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
         });
     }
 

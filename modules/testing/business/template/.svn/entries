@@ -1,7 +1,7 @@
 10
 
 dir
-253872
+253988
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev/modules/testing/business/template
 svn://yinkai@211.151.70.29/svn
 
@@ -62,20 +62,15 @@ has-props
 
 topList.html
 file
+253990
 
 
 
-
-2016-09-14T08:40:53.000000Z
-e89b0bcaf25bb6e3d7007af98da6b180
-2016-09-14T08:40:02.019403Z
-253755
-liming
-
-
-
-
-
+2016-09-18T05:52:33.000000Z
+8193958cb716e757e55a788d509598ae
+2016-09-18T10:18:36.653487Z
+253990
+yinkai
 
 
 
@@ -92,7 +87,12 @@ liming
 
 
 
-877
+
+
+
+
+
+895
 
 authorization.html
 file

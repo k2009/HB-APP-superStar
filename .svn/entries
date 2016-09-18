@@ -1,16 +1,16 @@
 10
 
 dir
-253872
+253990
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev
 svn://yinkai@211.151.70.29/svn
 
 
 
-2016-09-18T04:56:57.946417Z
-253872
-liming
-
+2016-09-18T10:18:36.653487Z
+253990
+yinkai
+has-props
 
 
 
@@ -49,7 +49,7 @@ dir
 
 README.md
 file
-
+253988
 
 
 
@@ -89,7 +89,7 @@ dir
 
 manifest.json
 file
-
+253988
 
 
 

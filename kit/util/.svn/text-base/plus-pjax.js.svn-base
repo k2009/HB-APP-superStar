@@ -22,6 +22,10 @@ define(function(require, exports, module) {
 			return null;
 		},
 		jumpToWebView:function(url,title){
+			console.log("pjax-URL"+url)
+	        if(url.substr(0, 4).indexOf("http")<0){
+	        	return;
+	        }
 			var pageData = {
 				id: "webview:"+url,
 				url: url,
@@ -56,6 +60,7 @@ define(function(require, exports, module) {
 			if (!data) {
 				sys.jumpToWebView(url,title);
 			}
+			console.log(data.module_id)
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',
