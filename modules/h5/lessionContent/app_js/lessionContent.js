@@ -37,12 +37,12 @@ define(function(require, exports, module) {
             if(status=='empty'){
                 mui.alert('恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦','','我知道了');
             }else{
+                mui.alert((status=='empty'?
+                    '恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦'
+                    :'别着急，本章中有尚未完成的作业或课程，请先去完成吧'),'','我知道了');
                 
             }
         }
-        mui.alert((status=='empty'?
-            '恭喜你，成功学完本章，后续课程敬请期待，接下来你可以去评测呦'
-            :'别着急，本章中有尚未完成的作业或课程，请先去完成吧'),'','我知道了');
     }
 
     function init(opts) {
@@ -68,6 +68,8 @@ define(function(require, exports, module) {
 
     function destroy(opts) {
         $body.undelegate('[action=stop]','tap',stop);
+        $body.unbind();
+        $('#finish').unbind();
         $share.destroy();
         header.destroy();
         if(finishTip){

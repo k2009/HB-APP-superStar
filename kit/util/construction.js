@@ -98,7 +98,13 @@ define(function(require, exports, module) {
 
             if(sys.loading){
                 $(".mui-content").css('position','relative')
-                $('body').prepend('<div id="pageLoading" class="mui-content" style="position: relative;height: 50px;overflow: hidden;transition:all .4s;-webkit-transition: all .4s; "><div class="mui-block mui-visibility"><div class="mui-pull"><div class="mui-pull-loading mui-icon mui-spinner" style="transition: -webkit-transform 0.3s ease-in; transform: rotate(180deg); animation: spinner-spin 1s step-end infinite;"></div><div class="mui-pull-caption">数据更新...</div></div></div></div>')
+                
+                if ($('#pageLoading').length) {
+                    $('#pageLoading').css('margin-top',0)
+                } else {
+
+                    $('body').prepend('<div id="pageLoading" class="mui-content" style="position: relative;height: 50px;overflow: hidden;transition:all .4s;-webkit-transition: all .4s; "><div class="mui-block mui-visibility"><div class="mui-pull"><div class="mui-pull-loading mui-icon mui-spinner" style="transition: -webkit-transform 0.3s ease-in; transform: rotate(180deg); animation: spinner-spin 1s step-end infinite;"></div><div class="mui-pull-caption">数据更新...</div></div></div></div>')
+                }
             }
 
             if(btn){
