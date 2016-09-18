@@ -1,0 +1,26 @@
+<!-- <header class="mui-bar mui-bar-nav">
+	<a href="javascript:history.back();" node="DOCUMENT_REFERRER" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	<h1 class="mui-title">课程内容</h1>
+</header> -->
+<header class="mui-bar mui-bar-nav">	
+	<h1 class="mui-title">${data.name}</h1>
+</header>
+	<!-- <div class="mui-media-body subTitle">帮助网红快速学会独立创作微博，找准定位</div> -->
+<div class="mui-content content">
+	${data.content}
+</div>
+<div  class="tc_text">
+	<#if (data.is_test!=0)>
+		<a href="${data.next_url}" class="mui-btn tc_go">				
+			<#if (data.is_test==2)>查看课后作业<#else>我学完了,去做作业</#if>
+		</a>
+		<div class="bottomNotice">学完每节课程，成长值<span style="color:#ea5504;">+10</span>;完成每节作业，成长值<span style="color:#ea5504;">+20</span></div>
+	<#else>
+		<!-- <a href="${data.prev_url}" class="mui-btn tc_go">	 -->			
+		<a href="javascript:;" class="mui-btn tc_go" id="finish">	
+			我学完了
+		</a>
+		<div class="bottomNotice">学完每节课程，成长值<span style="color:#ea5504;">+10</span></div>
+	</#if>
+	
+</div>

@@ -298,6 +298,7 @@ define(function(require, exports, module) {
                 Alert( '亲，你最近才测试过，短时间内微博电商属性变化不大，建议24小时后再来测试！' );
                 return;
             }
+            
             SCRM.pjax( opts.retry_url );
         });
     }

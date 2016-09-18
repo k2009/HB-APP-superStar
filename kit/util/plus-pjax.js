@@ -21,12 +21,46 @@ define(function(require, exports, module) {
 			}
 			return null;
 		},
+		jumpToWebView:function(url,title){
+			console.log("pjax-URL"+url)
+	        if(url.substr(0, 4).indexOf("http")<0){
+	        	return;
+	        }
+			var pageData = {
+				id: "webview:"+url,
+				url: url,
+				styles: {
+					top: '45px',
+					bottom: 0,
+					bounce: 'vertical'
+				},
+				title: title
+
+			}
+			var view_data = {
+				id: url,
+				url: '_www/modules/webView.html',
+				show: {
+					autoShow: true, //页面loaded事件发生后自动显示，默认为true
+					aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+				},
+				// styles: {
+				//     top: "0px",
+				//     bottom: '56px', //新页面底部位置
+				// },
+				extras: {
+					pageData: pageData
+				}
+			};
+			mui.openWindow(view_data);
+		},
 		urlJump: function(url, title) {
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
 			if (!data) {
-				return;
+				sys.jumpToWebView(url,title);
 			}
+			console.log(data.module_id)
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',

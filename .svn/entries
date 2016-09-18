@@ -1,0 +1,123 @@
+10
+
+dir
+253872
+svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev
+svn://yinkai@211.151.70.29/svn
+
+
+
+2016-09-18T04:56:57.946417Z
+253872
+liming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5e209b29-4666-47e1-8dfc-d676ec2cbe28
+
+layouts
+dir
+
+kit
+dir
+
+skins
+dir
+
+common
+dir
+
+modules
+dir
+
+css
+dir
+
+libs
+dir
+
+README.md
+file
+
+
+
+
+2016-09-14T08:39:43.000000Z
+1543874b5d8990bbd1f4f5f3a71a346b
+2016-09-14T08:37:29.166571Z
+253753
+liming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+19
+
+socialtouch
+dir
+
+unpackage
+dir
+
+manifest.json
+file
+
+
+
+
+2016-09-14T08:39:43.000000Z
+776b72f11942234c98f4c937f96c3933
+2016-09-14T08:37:29.166571Z
+253753
+liming
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+27874
+

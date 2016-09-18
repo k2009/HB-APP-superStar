@@ -1,0 +1,36 @@
+<div class="mui-content">
+	<ul>
+		<li>
+			<p class="title">我们是做什么的？</p>
+			<p class="desc">联合产业链各环节顶尖人才，顶级机构为电商网红提供全生命周期服务，帮助百万中国女性科学变红，优雅赚钱</p>
+		</li>
+		<li>
+			<p class="title">谁能成为网红？</p>
+			<ol class="desc">
+				<li><p>有在微博平台上售卖商品的意愿</p></li>
+				<li><p>愿意长期经营自己的粉丝</p></li>
+				<li><p>有一定的粉丝量</p></li>
+				<li><p>有一颗成为网红的心</p></li>
+			</ol>
+		</li>
+		<li>
+			<p class="title">我们的优势</p>
+			<ol class="desc">
+				<li><p>10 年社交平台实战经验，微博创始团队成员主导</p></li>
+				<li><p>丰富的行业资源，能够及时掌握业界最新社交经营方法</p></li>
+				<li><p>具有多位一线网红成功案例</p></li>
+				<li><p>微博最早的商业数据合作伙伴</p></li>
+				<li><p>具有丰富的广告优化经验</p></li>
+			</ol>
+		</li>
+	</ul>
+	<div class="mui-content-padded">
+		<p><a class="mui-btn mui-btn-block" href="${data.next_url}">我要加入</a></p>
+		<p>或关注公众号，获得更多关于网红城堡资讯</p>
+		<span class="mui-icon mui-icon-arrowthindown"></span>
+		<div class="desc">微信账号：<span>shiquweidianshang</span></div>
+		<div class="weixin"><img src="http://${data._extra.domain}/modules/h5/introduce/images/qrcode.jpg"></div>
+		<div class="qrcode_tip">长按识别上方二维码</div>
+		<div class="desc">微博账号：<span><a href="sinaweibo://userinfo?uid=5629525096">网红城堡</a></span></div>
+	</div>
+</div>

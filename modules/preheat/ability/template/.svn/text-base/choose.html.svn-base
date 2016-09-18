@@ -1,0 +1,45 @@
+<div class="topText" id="topText">
+	<span class="textItem">你</span>
+	<span class="textItem">的</span>
+	<span class="textItem">洪</span>
+	<span class="textItem">荒</span>
+	<span class="textItem">之</span>
+	<span class="textItem">力</span>
+</div>
+
+<div class="bottomTitle mui-title">
+从以下分类中选出与自己相匹配的标签，让系统更好的分析你的能力模型~可以多选呦~</div>
+<!-- <div class="textBox">
+	<span class="text text-1">测试万一</span>
+	<span class="text text-2">测试万一</span>
+	<span class="text text-3">测试万一</span>
+	<span class="text text-4">测试万一</span>
+	<span class="text text-5">测试万一</span>
+	<span class="text text-6">测试万一</span>
+	<span class="text text-7">测试万一</span>
+	<span class="text text-8">测试万一</span>
+	<span class="text text-9">测试万一</span>
+</div> -->
+
+<div class="selectBox">
+	<div class="selectTitle">职业</div>
+	<div class="selector">
+		<#list data.job as cls>
+			<span selectItem class="selectItem" cid="${cls.id}">${cls.class}</span>	
+		</#list>		
+	</div>
+</div>
+
+<div class="selectBox">
+	<div class="selectTitle">爱好</div>
+	<div class="selector">
+		<#list data.hobby as cls>
+			<span selectItem class="selectItem" cid="${cls.id}">${cls.class}</span>	
+		</#list>		
+	</div>
+</div>
+
+<br>
+<div class="btnBox">
+	<a id="done" href="javascript:;" class="mui-btn-disable mui-btn">选好了</a>
+</div>

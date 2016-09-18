@@ -1,0 +1,38 @@
+<div class="topText">
+	<span class="textItem t1">能</span>
+	<span class="textItem t2">力</span>
+	<span class="textItem t3">得</span>
+	<span class="textItem t4">分</span>
+	<a href="${data.introduction_url}" pjax="1">什么是能力得分？</a>
+</div>
+<div class="modelCharts" id="modelCharts">
+</div>
+	<h3 class="analyticalTit">能力得分解析：</h3>
+	<ul class="resultList">
+		<li>
+			<h6>整体能力评估</h6>
+			<p>${data.total}</p>
+		</li>
+		<#if ( data.good_abilitys.details.length )>
+			<li>
+				<h6>具有优势的能力</h6>
+				<p>${data.good_abilitys.title}</p>
+				<p>理由：</p>
+				<#list data.good_abilitys.details as list>
+					<p>${list}</p>
+		      	</#list>
+			</li>
+		</#if>
+		<li>
+			<h6><#if (data.isAllone)>建议<#else>需要进步的能力</#if></h6>
+			<p>${data.bad_abilitys.title}</p>
+			<#if ( !data.bad_abilitys.details.length )>
+				<p>理由：</p>
+			</#if>
+			<#list data.bad_abilitys.details as list>
+				<p>${list}</p>
+	      	</#list>
+		</li>
+	</ul>
+	<p class="tipsInfo">通过这些内容，是不是对自己有了更深一步的了解<br>现在开启你的网红之旅去完善自己吧</p>
+	<a href="${data.next_url}" class="start" pjax="1">开启网红城堡之旅</a>

@@ -1,0 +1,65 @@
+<div class="section section-1">
+	<div class="inner clearfix">
+		<div class="logo">网红城堡</div>
+		<div class="introduce">
+			<p>2016年10月，敬请期待</p>
+			<p>我们的口号：科学变红，优雅赚钱</p>
+		</div>
+		<div class="download-area">
+			<ul>
+				<li><a href="#" onclick="return false;" action="ios" class="download border-1px icon-ios">AppStore 下载</a></li>
+				<li><a href="#" onclick="return false;" action="android" class="download border-1px icon-android">Android 下载</a></li>
+			</ul>
+			<!-- <div class="qrcode" style="display: none;">
+				<a href="#" onclick="return false;"><img src="//${data._extra.domain}/modules/app/landing/images/qrcode.png"></a>
+				<span class="text">或者扫描二维码安装</span>
+			</div> -->
+		</div>
+		<div class="phone">
+			<div class="preview"><img src="http://${data._extra.domain}/modules/app/landing/images/launch.jpg"></div>
+		</div>
+	</div>
+</div>
+<div class="section section-2">
+	<div class="inner">
+		<div class="desc">
+			<h2>网红城堡</h2>
+			<ul>
+				<li>依托十年的社交平台操盘经验</li>
+				<li>依托两年的网红实际运营经验</li>
+				<li>依托我们的丰富业界合作资源</li>
+			</ul>
+		</div>
+		<div class="desc">
+			<h2>免费为你提供</h2>
+			<ul>
+				<li>个性化的网红培训教程</li>
+				<li>数据驱动的测试工具</li>
+				<li>自动化的运营软件</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="section section-3">
+	<div class="inner">
+		<div class="weibo">
+			<a href="http://weibo.com/u/5629525096" target="_blank">
+			<img src="http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg">
+			</a>
+			<p><a href="http://weibo.com/u/5629525096" target="_blank"><span class="title">官方微博</span></a></p>
+			<p><a href="http://weibo.com/u/5629525096" target="_blank" class="nick">@时趣网红城堡</a></p>
+		</div>
+		<div class="weixin">
+			<img src="http://${data._extra.domain}/modules/h5/introduce/images/qrcode.jpg">
+			<p><span class="title">微信服务号</span></p>
+			<p><span class="nick">时趣微电商</span></p>
+		</div>
+	</div>
+</div>
+<!-- <div class="section section-4"></div>
+<div class="section section-5"></div> -->
+<div class="section section-6 clearfix">
+	<div class="inner">
+		<div class="copy-right">&copy; 2016 时趣网红团队</div>
+	</div>
+</div>

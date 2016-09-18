@@ -1,0 +1,315 @@
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+.box, body {
+  background: #f6f6f6;
+  padding-bottom: 60px; }
+
+.btnBox {
+  text-align: center;
+  padding-bottom: 20px; }
+
+.title {
+  color: #333;
+  font-size: 0.18rem;
+  text-align: center;
+  line-height: 0.36rem;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0; }
+
+.arrowRight {
+  float: right;
+  line-height: 0.36rem;
+  color: #CCC;
+  margin-right: 0.125rem; }
+
+.chapterItem {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+  background: white; }
+
+.chapterItem.done {
+  background: #aca5b0; }
+
+.chapterItem.doing {
+  background: #c1b16f; }
+
+.chapterItem.wait {
+  background: #b7a899; }
+
+.chapterItem .mui-btn {
+  position: relative;
+  color: white !important;
+  margin: 0 !important; }
+
+.chapterChecked {
+  float: right;
+  font-size: 18px;
+  color: white;
+  right: 0.05rem;
+  top: 0.025rem;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute; }
+
+.mui-table-view {
+  margin: 0.1rem;
+  overflow: hidden; }
+
+.colorGray {
+  font-size: 10px;
+  color: #888; }
+
+.sectionIntro {
+  color: #666666;
+  margin: 0.15rem; }
+
+.platform {
+  width: 100%;
+  position: relative;
+  height: 180px;
+  background: white; }
+
+.platItem {
+  overflow: hidden;
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  /* line-height: 0; */
+  /* vertical-align: middle; */
+  font-size: 10px;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s; }
+
+.markform {
+  width: 100%;
+  background: white;
+  position: relative;
+  height: 200px;
+  overflow: hidden; }
+
+.markOuter {
+  border: 2px solid #ecd7b4;
+  border-top: none;
+  border-right: none;
+  width: 80%;
+  height: 120px;
+  margin: 15px auto;
+  margin-left: 45px;
+  position: relative;
+  background: white; }
+
+.markYPicker {
+  color: #9e6401;
+  text-align: left;
+  position: absolute;
+  left: -35px;
+  width: 35px;
+  display: inline-block;
+  font-size: 12px; }
+
+.markYPicker:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: inline-block;
+  width: 8px;
+  border-bottom: 1px solid #c2b8a4; }
+
+.markXPicker {
+  color: #9e6401;
+  position: absolute;
+  bottom: -40px;
+  display: inline-block;
+  font-size: 12px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  white-space: nowrap; }
+
+.markXPicker:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -9px;
+  display: inline-block;
+  height: 6px;
+  border-left: 1px solid #c2b8a4;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg); }
+
+.marker {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #f9784b;
+  display: inline-block; }
+
+.marker:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 5px;
+  background: white;
+  /* 	background-image: -webkit-linear-gradient(to bottom, #d9e8c5, #93c364); Chrome 10-25, iOS 5+, Safari 5.1+
+  	background-image:         linear-gradient(to bottom, #d9e8c5, #93c364); Chrome 26, Firefox 16+, IE 10+, Opera */
+  top: 2px;
+  left: 2px; }
+
+.markerTip {
+  position: absolute;
+  display: inline-block;
+  width: 36px;
+  height: 22px;
+  text-align: center;
+  line-height: 20px;
+  color: #555;
+  background: url(../images/icon.png) no-repeat;
+  font-size: 12px;
+  top: -24px;
+  left: -13px; }
+
+.topTip {
+  display: inline-block;
+  line-height: 0.26rem;
+  width: 100%;
+  height: 0.26rem;
+  font-size: 0.12rem;
+  background: #fff5e4;
+  color: #d6a44c; }
+
+.topTipIcon {
+  display: inline-block;
+  background: url(../images/icon.png) no-repeat;
+  background-size: 0.18rem;
+  float: left;
+  width: 0.18rem;
+  height: 0.195rem;
+  background-position: 0 -0.2rem;
+  margin: 0 0.1rem; }
+
+.lastUpdate {
+  margin-top: 10px;
+  text-align: left;
+  color: #666666;
+  padding: 0 15px;
+  border-top: 1px solid #f0f0f0;
+  line-height: 38px; }
+
+.nicknameScore {
+  text-align: center;
+  margin: 0.25rem;
+  font-size: 0.18rem; }
+
+.nicknameDetail {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 0.12rem;
+  border: 1px solid #9e6401;
+  padding: 5px 15px;
+  border-radius: 5px;
+  color: #9e6401; }

@@ -5,12 +5,14 @@ define(function(require, exports, module) {
 	"use strict";
 	var $storage = require("kit/util/plus-storage"); //本地存储模块
 	mui.init({
-		swipeBack:false
+		swipeBack:false,
+		keyEventBind: {
+			backbutton: false  //关闭back按键监听
+		}
 	})
 	plus.webview.currentWebview().setStyle({popGesture:'none'});	//禁止侧滑关闭
 	var tmp = require("modules/h5/index/template/index.html"); //模板载入
 	var $get = require("kit/util/construction"); //数据处理
-
 	+ function() {
 	    var cfg = {
 	        id:'st_modules_h5_home',
@@ -61,15 +63,14 @@ define(function(require, exports, module) {
 		// $upDate.init();
 		$.plusReady(function() {
 
-			$('body').on('tap', 'footer a', function() {
-				if (this.getAttribute('href') == 'html/setting.html') {
-					mui.openWindow({
-						id: 'memberCenter',
-						url: '../memberCenter/memberCenter.html'
-					});
-				}
-			})
-
+			// $('body').on('tap', 'footer a', function() {
+			// 	if (this.getAttribute('href') == 'html/setting.html') {
+			// 		mui.openWindow({
+			// 			id: 'memberCenter',
+			// 			url: '../memberCenter/memberCenter.html'
+			// 		});
+			// 	}
+			// })
 		})
 	}(mui)
 
