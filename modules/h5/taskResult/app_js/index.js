@@ -23,24 +23,23 @@ define(function(require, exports, module) {
 		},
 		click_fn:{
 			shareThis:function(){
-				console.log(JSON.stringify(pageData));
-                // $share({
-                //     msg: {
-                //         href: plus.storage.getItem("domain") + msg.data.share_url,
-                //         title: runImage.title(),
-                //         desc: runImage.title(),
-                //         content: runImage.title(),
-                //         imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
-                //         thumbs: ['http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg']
-                //     },
-                //     success: function(e) {
-                //         window.APP_construction.urlJump(msg.data.next_url)
-                //     },
-                //     error: function(e) {
-                //         window.APP_construction.urlJump(msg.data.next_url)
-                //         console.log(JSON.stringify(e))
-                //     }
-                // });
+                $share({
+                    msg: {
+                        href: plus.storage.getItem("domain") + msg.data.share_url,
+                        title: runImage.title(),
+                        desc: runImage.title(),
+                        content: runImage.title(),
+                        imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
+                        thumbs: ['http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg']
+                    },
+                    success: function(e) {
+                        window.APP_construction.urlJump(msg.data.next_url)
+                    },
+                    error: function(e) {
+                        window.APP_construction.urlJump(msg.data.next_url)
+                        console.log(JSON.stringify(e))
+                    }
+                });
 			}
 		},
 		init:function(){

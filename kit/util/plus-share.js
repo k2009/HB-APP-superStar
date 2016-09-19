@@ -38,9 +38,19 @@ define(function(require, exports, module) {
     //         title: "分享到QQ"
     //     }];
     var ids = [ {
+            id: "weixin",
+            ex: "WXSceneSession"
+        }, {
+            id: "weixin",
+            ex: "WXSceneTimeline"
+        }, {
             id: "sinaweibo"
         }],
         bts = [ {
+            title: "发送给微信好友"
+        }, {
+            title: "分享到微信朋友圈"
+        }, {
             title: "分享到新浪微博"
         }];
 
@@ -67,7 +77,7 @@ define(function(require, exports, module) {
 
         var cfg = {
             msg:{
-                href : "http://douban.com",
+                href : "",
                 title : "这是一段示例文案",
                 content : "测试看看这个到底能不能用",
                 thumbs : ["_www/images/logo.png"]

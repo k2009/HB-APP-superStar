@@ -2,7 +2,7 @@ define(function(require, exports, module) {
     "use strict";
     var $share = require("kit/util/plus-share"); //分享
     mui.ready(function() {
-
+        
         mui('.container').on('tap','.mui-btn-block', function() {
             $share({
                 msg:{

@@ -4,12 +4,15 @@ define(function(require, exports, module) {
     mui.ready(function() {
 
         $('body').on('tap',"[action=invite]", function() {
-            $share({
-                href : "http://douban.com",
-                title : "调试中",
-                content : "调试中....",
-                thumbs : ["_www/images/logo.png"]
-            });
+            // alert(1);
+            // $share({
+            //     msg:{
+            //         href : "http://douban.com",
+            //         title : "调试中",
+            //         content : "调试中....",
+            //         thumbs : ["_www/images/logo.png"]
+            //     }
+            // });
         })
 
     })

@@ -24,70 +24,6 @@ define(function(require, exports, module) {
                 title: title[ Math.floor( random*title.length ) ],
                 ico: ico[ Math.floor( random*title.length ) ]
             }
-        },
-        WXshare: function(){
-            var titleIco = this.titleIco();
-            wx.onMenuShareTimeline({
-                title: titleIco.title, // 分享标题
-                link: share_url, // 分享链接
-                imgUrl: titleIco.ico, // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-            wx.onMenuShareAppMessage({
-                title: titleIco.title, // 分享标题
-                desc: titleIco.title, // 分享描述
-                link: share_url, // 分享链接
-                imgUrl: titleIco.ico, // 分享图标
-                type: '', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                }
-            });
-        },
-        WBshare: function(){
-            var titleIco = this.titleIco();
-            var items = {
-                shareToWeibo: {
-                    title: "分享到微博",
-                    scheme: "sinaweibo://compose?content=" + titleIco.title + '：' + share_url,
-                    code: 1001
-                }
-            };
-            var itemArray = [];
-            for( var key in items ){
-                itemArray.push( items[key] );
-            }
-            // 设置分享的文案
-            WeiboJS.setSharingContent({
-                external:{
-                    title: titleIco.title,
-                    icon: titleIco.ico,
-                    desc: titleIco.title
-                }
-            });
-            // 选择菜单的时候，触发相应的菜单行为
-            WeiboJS.on("menuItemSelected", {
-                trigger: function(res) {
-                    if (res.selected_code != "1001" && Number(res.selected_code) < 3000) {
-                        WeiboJS.invokeMenuItem({ code: res.selected_code });
-                    }
-                }
-            });
-            // 设置右上角菜单
-            WeiboJS.setMenuItems({
-                items: itemArray,
-                success: function(ret) {},
-                fail: function(msg, code) {}
-            });
         }
     };
 
@@ -280,10 +216,12 @@ define(function(require, exports, module) {
         }).on('touchend', '#shareTips', function(){
             // 分享接口
             $share({
-                href : "http://douban.com",
-                title : "调试中",
-                content : "调试中....",
-                thumbs : ["_www/images/logo.png"]
+                msg:{
+                    href : share_url,
+                    title : runShare.titleIco().title,
+                    content : runShare.titleIco().title,
+                    thumbs : [runShare.titleIco().ico]
+                }
             });
         }).on('touchend', '#retry', function(){
             if( opts.next_test_time > +((new Date()).getTime().toString().substr(0,10)) ){

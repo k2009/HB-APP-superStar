@@ -60,6 +60,10 @@ define(function(require, exports, module) {
 				sys.jumpToWebView(url,title);
 				return;
 			}
+			if(!data.module_data){
+				data.module_data = {};
+			}
+			data.module_data.pageURL = plus.storage.getItem("domain") + url;
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',
