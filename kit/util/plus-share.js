@@ -53,10 +53,14 @@ define(function(require, exports, module) {
         }, {
             title: "分享到新浪微博"
         }];
-
+    var reg = /https?\:\/\//i;
     function shareMessage(share, ex,msg,success,error) {
-
+        if(!ex&&(!reg.test(msg.content))){
+            console.log('检测到是微博分享,增加url')
+            msg.content += msg.href;
+        }
         mui.toast("分享到\"" + share.description + "\"中...请稍后");
+
         msg.extra = {
             scene: ex
         }
@@ -68,7 +72,8 @@ define(function(require, exports, module) {
             mui.toast("分享到\"" + share.description + "\"成功！ ");
         }, function(e) {
             error(msg);
-            mui.toast("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
+            mui.toast("分享到\"" + share.description + "\"失败 ");
+            console.log(JSON.stringify(e))
         });
     }
 

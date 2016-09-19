@@ -123,7 +123,7 @@
 						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
 						"redirect_uri": "https://api.weibo.com/oauth2/default.html",
 						"description": "可选，新浪微博分享"
-					}
+					},"weixin":{"appid":"wxf3a784e270495bcb","appsecret":"c30ad3b50145ede63955fb72182578ba","description":"可选，微信分享"}
 				},
 				"oauth": {
 					"sina": {

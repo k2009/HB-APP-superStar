@@ -22,7 +22,6 @@ define(function(require, exports, module) {
 			return null;
 		},
 		jumpToWebView:function(url,title){
-			console.log("pjax-URL"+url)
 	        if(url.substr(0, 4).indexOf("http")<0){
 	        	return;
 	        }
@@ -59,8 +58,12 @@ define(function(require, exports, module) {
 			var data = sys.getLocalPath(d.url);
 			if (!data) {
 				sys.jumpToWebView(url,title);
+				return;
 			}
-			console.log(data.module_id)
+			if(!data.module_data){
+				data.module_data = {};
+			}
+			data.module_data.pageURL = plus.storage.getItem("domain") + url;
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',

@@ -93,6 +93,7 @@ define(function(require, exports, module) {
         },
         // 微信显示蒙层
         'showMask': function(e){
+            alert('invite.js')
             e.preventDefault();
             if(weixinTips != null){
                 weixinTips.show();
@@ -117,7 +118,6 @@ define(function(require, exports, module) {
     var render=function(data){
 
     }
-
     var showUnder=function(){
         setTimeout(function(){
             $body.find('[node=content]').css('opacity','1');

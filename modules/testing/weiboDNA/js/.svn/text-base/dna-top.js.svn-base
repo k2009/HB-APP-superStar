@@ -91,6 +91,7 @@ define(function(require, exports, module) {
         },
         // 微信显示蒙层
         'showMask': function(e){
+            alert('dna-top.js')
             e.preventDefault();
             if(weixinTips != null){
                 weixinTips.show();

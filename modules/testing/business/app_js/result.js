@@ -158,6 +158,8 @@ define(function(require, exports, module) {
                 url: '/castle/wap/share/biz-result' + '?islook=1&pjax=1',
                 dataType: 'json',
                 success: function(msg) {
+                    console.log("轮询数据接收成功")
+                    console.log(JSON.stringify(msg))
                     if( msg.code != 0 ){
                         //alert( msg.message );
                         return;
@@ -172,8 +174,9 @@ define(function(require, exports, module) {
 
 
                 },
-                error: function(){
-                    //alert( '网络错误，请刷新页面或稍后重试' );
+                error: function(e){
+                    console.log(JSON.stringify(e))
+                    mui.toast( '网络错误，请刷新页面或稍后重试' );
                 }
             });
         },5000);

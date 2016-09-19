@@ -38,14 +38,25 @@ define(function(require, exports, module) {
     //         title: "分享到QQ"
     //     }];
     var ids = [ {
+            id: "weixin",
+            ex: "WXSceneSession"
+        }, {
+            id: "weixin",
+            ex: "WXSceneTimeline"
+        }, {
             id: "sinaweibo"
         }],
         bts = [ {
+            title: "发送给微信好友"
+        }, {
+            title: "分享到微信朋友圈"
+        }, {
             title: "分享到新浪微博"
         }];
 
     function shareMessage(share, ex,msg,success,error) {
 
+        mui.toast("分享到\"" + share.description + "\"中...请稍后");
         msg.extra = {
             scene: ex
         }
@@ -54,10 +65,10 @@ define(function(require, exports, module) {
         }
         share.send(msg, function() {
             success(msg);
-            console.log("分享到\"" + share.description + "\"成功！ ");
+            mui.toast("分享到\"" + share.description + "\"成功！ ");
         }, function(e) {
             error(msg);
-            console.log("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
+            mui.toast("分享到\"" + share.description + "\"失败: " + e.code + " - " + e.message);
         });
     }
 
@@ -66,7 +77,7 @@ define(function(require, exports, module) {
 
         var cfg = {
             msg:{
-                href : "http://douban.com",
+                href : "",
                 title : "这是一段示例文案",
                 content : "测试看看这个到底能不能用",
                 thumbs : ["_www/images/logo.png"]
