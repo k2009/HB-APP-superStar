@@ -36,7 +36,7 @@ define(function(require, exports, module) {
             // 设置分享的文案
             WeiboJS.setSharingContent({
                 external:{
-                    title: opts.dialog_title || "一起炫酷",
+                    title: opts.dialog_title,
                     icon: "http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg",
                     desc: TITLE
                 }
@@ -72,7 +72,7 @@ define(function(require, exports, module) {
                 }
             });
             wx.onMenuShareAppMessage({
-                title: TITLE_2 || "一起炫酷", // 分享标题
+                title: TITLE_2, // 分享标题
                 desc: '昵称不仅仅是一个符号，也会有更深刻的寓意，看看你的昵称会有网红范儿吗……', // 分享描述
                 link: url, // 分享链接
                 imgUrl: 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg', // 分享图标
@@ -139,6 +139,7 @@ define(function(require, exports, module) {
             if(platform == 'weibo'){
                 var WeiboJS = jssdk.getJssdkObject();
                 Tools.setWeiboShareMenu(WeiboJS,opts);
+                $('[action=share]').attr('href','sinaweibo://compose?content='+TITLE_2+' '+SHARE_URL);
                 return;
             }
             if(platform == 'weixin'){

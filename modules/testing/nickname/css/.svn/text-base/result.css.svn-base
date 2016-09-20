@@ -332,7 +332,10 @@ body {
 .slideItem .follower {
   text-align: left;
   font-size: 0.14rem;
-  color: #888; }
+  color: #888 !important; }
+
+.slideItem .follower a {
+  color: #888 !important; }
 
 .slideItem .describe {
   line-height: 0.14rem;

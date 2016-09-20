@@ -4,6 +4,7 @@ define(function(require, exports, module) {
     var header = require('common/slogon/js/index');
     var dialogTips;
     var tabbar;
+    var share_url;
     //美化alert end
     var share = {
         WXshare: function(){
@@ -102,7 +103,21 @@ define(function(require, exports, module) {
     }
 	function init(opts) {
 		var platform = opts.platform;
+        share_url = opts.share_url;
 
+        // 初始化 JSSDK
+        jssdk.init(platform, opts.jssdk, function(){
+            if(platform == 'weibo'){
+                WeiboJS = jssdk.getJssdkObject();
+                share.WBshare();
+                return;
+            }
+            if(platform == 'weixin'){
+                wx = jssdk.getJssdkObject();
+                share.WXshare();
+                return;
+            }
+        });
 
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){

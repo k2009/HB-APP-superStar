@@ -6,7 +6,7 @@ define(function(require, exports, module){
 	var $upDate = require("kit/util/plus-update"); //应用更新模块
 	var $netChange = require("kit/util/plus-netChange"); //网络监测模块
 
-	var host_domain='http://30681.biz.dev.social-touch.com';
+	var host_domain='http://91hong.com.cn';
 	var loginURL = "/castle/app/v1/user/wblogin"
     var sys = {
     	init:function($){

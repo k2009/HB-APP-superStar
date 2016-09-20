@@ -15,7 +15,7 @@ define(function(require, exports, module) {
             var cfg = {
                 'static_path': '../../../',
                 "time": new Date().getTime(),
-                "domain": "static.star.code4js.com",
+                "domain": "static.91hong.com.cn",
                 "version": 100
             };
             var fn1 = {
@@ -86,6 +86,10 @@ define(function(require, exports, module) {
                 sys.default_data[sys.id] = $.extend(true,sys.default_data[sys.id],id_data);
             }
             +function(){
+                if(sys.default_data[sys.id].pretreatment === false){
+                    btn = true;
+                    return;
+                }
                 try{
                     sys.initSomeThing(sys.id,sys.default_data[sys.id]);
                 }catch(e){

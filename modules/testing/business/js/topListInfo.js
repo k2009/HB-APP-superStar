@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
     var jssdk = require("common/share/jssdk");
+    var lazyload = require("kit/util/asyncModule");
+    var header = require('common/slogon/js/index');
     var platform;
     var share_url;
     var signedRequest = null;
@@ -159,6 +161,7 @@ define(function(require, exports, module) {
         platform = opts.platform;
         appid = opts.jssdk.appid;
         staticDomain = opts._extra.domain;
+        header.init();
         // 初始化 JSSDK
         jssdk.init(platform, opts.jssdk, function(){
             if(platform == 'weibo'){
@@ -175,6 +178,13 @@ define(function(require, exports, module) {
         if( platform === 'weibo' ){
             runShare.createAgentIframe();
         };
+
+        // 延迟加载 tabbar
+        lazyload.load("common/tabbar/js/index", function(ret){
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(2);
+            tabbar = ret;
+        });
 
         seajs.use( 'http://' + opts._extra.domain + '/libs/echarts/3.1.10/echarts.min.js',function(weixinSDK){
             // 基于准备好的dom，初始化echarts实例
@@ -218,7 +228,10 @@ define(function(require, exports, module) {
         $( '#st_modules_h5_businessTopListInfo' ).off();
         $( '.alert_dom' ).remove();
         $( '.alert_close' ).off().remove();
-        Alert = null;
+        header.destroy();
+        if(tabbar){
+            tabbar.destroy();
+        }
     }
     var that = {
         init: init,

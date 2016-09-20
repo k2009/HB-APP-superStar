@@ -1,14 +1,14 @@
 10
 
 dir
-253988
+254419
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev/modules/testing/weiboDNA/template
 svn://yinkai@211.151.70.29/svn
 
 
 
-2016-09-14T08:40:02.019403Z
-253755
+2016-09-20T05:14:05.562877Z
+254419
 liming
 
 
@@ -32,10 +32,10 @@ file
 
 
 
-2016-09-14T08:40:52.000000Z
-717cdcc14c8cbfa98e250b355fc46c5f
-2016-09-14T08:40:02.019403Z
-253755
+2016-09-20T05:14:49.000000Z
+6453ffad507be01474dad714dfb4cde4
+2016-09-20T05:14:05.562877Z
+254419
 liming
 has-props
 
@@ -58,7 +58,7 @@ has-props
 
 
 
-2924
+2795
 
 show.html
 file

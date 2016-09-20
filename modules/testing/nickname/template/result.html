@@ -1,6 +1,3 @@
-<a href="javascript:;" class="topTip">
-	<span class="topTipIcon"></span>网红城堡-帮你科学变红，优雅赚钱
-</a>
 <div class="topText" id="topText">
 	<span class="textItem">网</span>
 	<span class="textItem">红</span>
@@ -43,7 +40,7 @@
 					<li class="slideItem">
 						<img src="${item.avatar_hd}" class="headImg">
 						<span class="nickname">${item.screen_name}</span>
-						<div class="follower">粉丝数：${item.followers_count}</div>
+						<div class="follower">粉丝数：<span num="${item.followers_count}" node="fCount" style="display:none;">${item.followers_count}</span></div>
 						<div class="describe">
 							${item.description}
 						</div>

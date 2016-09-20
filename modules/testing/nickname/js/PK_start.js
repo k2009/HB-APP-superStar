@@ -158,7 +158,8 @@ define(function(require, exports, module) {
 				Alert('亲，每天只能免费测试三次哟，请明天再来吧~');
 				return;
 			};
-            SCRM.pjax( opts.pk_url + weibo_nick_name );
+            //SCRM.pjax( opts.pk_url + weibo_nick_name );
+            window.location.href = opts.pk_url + weibo_nick_name;
         })
     }
     function destroy(opts) {

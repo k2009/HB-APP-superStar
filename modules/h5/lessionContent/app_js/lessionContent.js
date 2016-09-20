@@ -38,12 +38,11 @@ define(function(require, exports, module) {
 
     function init(opts) {
         $("#div1").remove();
-        $body.delegate('[action=stop]','tap',stop);
+        $body.on('tap','a[action=stop]',stop);
         $body.on('tap',".mui-icon-closeempty" ,function(){
             $("#div1").remove();
         }).on('tap',".back-webview",function(){
-            pageID = "st_modules_h5_lessionContent";
-            plus.webview.close( pageID,"auto")
+            plus.webview.close( ("st_modules_"+plus.webview.currentWebview().id),"auto")
         })
         $('#finish').bind('tap',showDialog);
         initData=opts;

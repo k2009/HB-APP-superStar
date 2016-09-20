@@ -1,14 +1,14 @@
 10
 
 dir
-253988
+254419
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev/modules/testing/nickname/css
 svn://yinkai@211.151.70.29/svn
 
 
 
-2016-09-18T04:23:10.510969Z
-253868
+2016-09-20T05:14:05.562877Z
+254419
 liming
 
 
@@ -100,10 +100,10 @@ file
 
 
 
-2016-09-18T04:32:54.000000Z
-6976cb7fe010494f1ed9577f97543b35
-2016-09-18T04:23:10.510969Z
-253868
+2016-09-20T05:14:49.000000Z
+908d130bc4d3221cfac8fc3b27b0ada1
+2016-09-20T05:14:05.562877Z
+254419
 liming
 
 
@@ -126,7 +126,7 @@ liming
 
 
 
-6751
+6816
 
 test.css
 file

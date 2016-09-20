@@ -2,6 +2,7 @@ define(function(require, exports, module) {
     require("common/util/loadMUI");
     var lazyload = require("kit/util/asyncModule");
     var $share=require('modules/testing/nickname/js/resultShare');
+    var header = require('common/slogon/js/index');
     var $body=$(document.body);
     var $window=$(window);
     var pageData;
@@ -89,11 +90,23 @@ define(function(require, exports, module) {
     }
 
     var initSimular=function(opts){
+        if (!opts.top || !opts.top.length) {return;}
         var $inner=$('#slideInner');
-        console.log($inner.find('li').eq(0).width());
         $inner
             .css('display','')
             .css('width',opts.top.length*($inner.find('li').eq(0).outerWidth()+20));
+    }
+
+    var parseCounts=function(){
+        $body.find('[node=fCount]').each(function(index,item){
+            var $this=$(item);
+            var num=$this.attr('num');
+            var pnum=num;
+            if(num.toString().split('').length>4){
+                pnum= parseInt(num/10000)+'万';
+            }
+            $this.html(pnum).css('display','');
+        });
     }
 
     function init(opts) {
@@ -107,8 +120,12 @@ define(function(require, exports, module) {
         initCanvas(opts);
         initStar(opts);
         initSimular(opts);
+        parseCounts();
         $share.init(opts);
         $body.delegate('[action=retest]','click',retest);
+
+        // 公共头部
+        header.init();
     }
 
     function destroy(opts) {

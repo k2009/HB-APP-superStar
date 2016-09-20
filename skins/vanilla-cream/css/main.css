@@ -452,21 +452,21 @@ header.mui-bar h1.mui-title {
   color: white;
   padding: 0;
   width: 1.35rem;
-  height: 0.425rem;
-  line-height: 0.425rem;
+  height: 0.33rem;
+  line-height: 0.33rem;
   text-align: center;
-  font-size: 0.17rem; }
+  font-size: 0.14rem; }
 
 .mui-btn.mui-btn-350 {
   width: 1.75rem;
   height: 0.33rem;
   line-height: 0.33rem;
-  font-size: 0.13rem; }
+  font-size: 0.14rem; }
 
 .mui-btn.mui-btn-secondary {
   background: #bfbfbf;
   color: #ffffff;
-  font-size: 0.13rem; }
+  font-size: 0.14rem; }
 
 .mui-btn.mui-btn-disabled, .mui-btn.mui-btn-disable {
   color: #999;

@@ -15,7 +15,7 @@ define(function(require, exports, module) {
             var cfg = {
                 'static_path': '../../../',
                 "time": new Date().getTime(),
-                "domain": "static.star.code4js.com",
+                "domain": "static.91hong.com.cn",
                 "version": 100
             };
             var fn1 = {

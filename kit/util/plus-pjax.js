@@ -54,6 +54,7 @@ define(function(require, exports, module) {
 			mui.openWindow(view_data);
 		},
 		urlJump: function(url, title) {
+			if(!url)return;
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
 			if (!data) {

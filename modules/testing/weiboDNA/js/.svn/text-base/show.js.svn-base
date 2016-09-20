@@ -92,7 +92,6 @@ define(function(require, exports, module) {
         },
         // 微信显示蒙层
         'showMask': function(e){
-            alert('show.js')
             e.preventDefault();
             if(weixinTips != null){
                 weixinTips.show();

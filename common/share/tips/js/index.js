@@ -35,8 +35,10 @@ define(function(require, exports, module) {
 
 		$('body').append(html);
 		var $this=$('#' + this.dialog_id)
-		$this.on(event_type, '.mui-icon-closeempty',function(){
+		$this.on(event_type, '.mui-icon-closeempty',function(e){
 			$this.off().remove();
+			//e.stopPropagation();
+			return false;//阻止移动端事件穿透
 		});
 		if(opts.content){
 			$this.find('[node=content]').html(opts.content);
@@ -44,7 +46,10 @@ define(function(require, exports, module) {
 	};
 	Tips.prototype.hide = function() {
 		console.log("dialog destroy");
-		$('#' + this.dialog_id).off().remove();
+		var did=this.dialog_id;
+		setTimeout(function(){
+			$('#' + did).off().remove();
+		},50);
 	};
 	Tips.prototype.destroy = Tips.prototype.hide;
 

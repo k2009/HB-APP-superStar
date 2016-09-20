@@ -4,6 +4,7 @@ define(function(require, exports, module) {
     var $window=$(window);
     var wordCloud=require('modules/testing/weiboDNA/js/wordCloud');
     var divideWindowSize=380;
+    var header = require('common/slogon/js/index');
     var structColors=[
         '#2ec7c9','#b7a3df','#5ab1ef','#ffb981','#d97a81'
     ]
@@ -117,6 +118,9 @@ define(function(require, exports, module) {
         setTimeout(function(){
             initKey(opts);
         },1000);
+
+        // 公共头部
+        header.init();
     }
 
     function destroy(opts) {

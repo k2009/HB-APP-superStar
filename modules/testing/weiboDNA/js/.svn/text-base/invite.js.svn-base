@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     var lazyload = require("kit/util/asyncModule");
     var jssdk = require("common/share/jssdk");
     var wordCloud=require('modules/testing/weiboDNA/js/wordCloud');
+    var header = require('common/slogon/js/index');
 
     var TITLE='Guys，你确定真的了解我么？点开，也许你会发现不一样的我哟~';
     var SHARE_URL = "";
@@ -93,7 +94,6 @@ define(function(require, exports, module) {
         },
         // 微信显示蒙层
         'showMask': function(e){
-            alert('invite.js')
             e.preventDefault();
             if(weixinTips != null){
                 weixinTips.show();
@@ -118,6 +118,7 @@ define(function(require, exports, module) {
     var render=function(data){
 
     }
+
     var showUnder=function(){
         setTimeout(function(){
             $body.find('[node=content]').css('opacity','1');
@@ -213,11 +214,13 @@ define(function(require, exports, module) {
         lazyload.load("common/tabbar/js/index", function(dialog){
             dialog.setData(opts.tabbar);
             dialog.setActiveTab(2);
-        });   
+        });
+
+        // 公共头部
+        header.init();
     }
 
     function destroy(opts) {
-        console.log("destroy 邀请好友");
         $('#loadingCover').remove();
         Tools.hideMask();
         Tools.releaseEvent();

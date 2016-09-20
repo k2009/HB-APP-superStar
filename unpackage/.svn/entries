@@ -1,15 +1,15 @@
 10
 
 dir
-253988
+254419
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev/unpackage
 svn://yinkai@211.151.70.29/svn
 
 
 
-2016-09-14T08:37:29.166571Z
-253753
-liming
+2016-09-19T09:19:47.716905Z
+254238
+yinkai
 
 
 
@@ -31,7 +31,7 @@ dir
 
 .dependencies
 file
-254236
+
 
 
 
@@ -68,7 +68,7 @@ dir
 
 .confirmed_dependencies
 file
-254236
+
 
 
 

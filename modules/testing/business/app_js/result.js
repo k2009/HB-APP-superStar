@@ -9,6 +9,7 @@ define(function(require, exports, module) {
     var signedRequest = null;
     var WeiboJS, wx, appid;
     var staticDomain;
+    var request;
 
     var runShare = {
         titleIco: function(){
@@ -149,28 +150,37 @@ define(function(require, exports, module) {
 
     var waitHandle = function(ajaxUrl){
         $( '.mui-popup-backdrop, #orange-box' ).show();
+        var startDate = mui.now();
         setTimeout(function(){
             $( '#orange-box' ).find('p').html('正在分析你发表过的微博内容...');
         },3000);
-        var request = setInterval(function(){
+        request = setInterval(function(){
             $.ajax({
                 type: 'get',
-                url: '/castle/wap/share/biz-result' + '?islook=1&pjax=1',
+                url: (plus.storage.getItem("domain")+'/castle/wap/share/biz-result' + '?islook=1&pjax=1'),
                 dataType: 'json',
                 success: function(msg) {
-                    console.log("轮询数据接收成功")
-                    console.log(JSON.stringify(msg))
+                    console.log("轮询数据接收成功");
+                    console.log(JSON.stringify(msg));
                     if( msg.code != 0 ){
                         //alert( msg.message );
                         return;
                     }
-                if( msg.data.real_data.st_modules_h5_businessResult.weibo_user_id ){
-                    clearInterval(request );
 
-                    $('.orange-box, .mui-popup-backdrop').remove();
-                    SCRM.pjax( '/castle/wap/share/biz-result' );
+                    if( msg.data.real_data.st_modules_h5_businessResult.weibo_user_id ){
+                        clearInterval(request );
 
-                }
+                        $('.orange-box, .mui-popup-backdrop').remove();
+                        SCRM.pjax( '/castle/wap/share/biz-result' );
+
+                    }else{
+
+                        var time = mui.now()-startDate;
+                        console.log(time)
+                        if(time > 300000){
+                            mui.toast( '您的数据太多了,正在紧张运算中,过段时间再来吧!' );
+                        }
+                    }
 
 
                 },
@@ -183,6 +193,7 @@ define(function(require, exports, module) {
     };
 
     function init(opts) {
+        clearInterval(request );
         staticDomain = opts._extra.domain;
         share_url = opts.share_url;
         platform = opts.platform;
