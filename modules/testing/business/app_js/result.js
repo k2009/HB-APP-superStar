@@ -155,6 +155,7 @@ define(function(require, exports, module) {
             $( '#orange-box' ).find('p').html('正在分析你发表过的微博内容...');
         },3000);
         request = setInterval(function(){
+            console.log((plus.storage.getItem("domain")+'/castle/wap/share/biz-result' + '?islook=1&pjax=1'))
             $.ajax({
                 type: 'get',
                 url: (plus.storage.getItem("domain")+'/castle/wap/share/biz-result' + '?islook=1&pjax=1'),
