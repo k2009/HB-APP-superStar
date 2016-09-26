@@ -1,7 +1,12 @@
 define(function(require, exports, module) {
 	"use strict";
 	var $oauth = require("kit/util/plus-oauth"); //第三方登录模块
-	var number = 0
+	var number = 0;
+	var appVersion;
+    plus.runtime.getProperty(plus.runtime.appid,function(inf){
+        appVersion=inf.version;
+        if(callback)callback(sys.appVersion);
+    });
 	function getTest(type){
 		plus.nativeUI.prompt((type==1?"请输入端口号":"请输入host地址"), function(e) {
 			if(e.index == 0){
@@ -33,7 +38,7 @@ define(function(require, exports, module) {
 					title: "直接更改host"
 				}];
 				plus.nativeUI.actionSheet({
-					title: "测试端口修改",
+					title: ("测试端口修改"+appVersion),
 					cancel: "取消",
 					buttons: a
 				}, function(b) {

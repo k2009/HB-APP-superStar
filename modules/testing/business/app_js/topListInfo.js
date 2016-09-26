@@ -162,7 +162,7 @@ define(function(require, exports, module) {
         appid = opts.jssdk.appid;
         staticDomain = opts._extra.domain;
 
-        seajs.use('libs/echarts/3.1.10/echarts.min.js',function(weixinSDK){
+        seajs.use( 'libs/echarts/3.1.10/echarts.min.js',function(weixinSDK){
             // 基于准备好的dom，初始化echarts实例
             var myChart = echarts.init(document.getElementById('detail-echarts'));
             // 指定图表的配置项和数据

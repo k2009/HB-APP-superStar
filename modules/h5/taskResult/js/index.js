@@ -158,7 +158,7 @@ define(function(require, exports, module) {
         $( '#st_modules_h5_taskResult' ).off();
         $( '.alert_close' ).off();
         $( '.alert_dom' ).remove();
-        dialogTips.destroy();
+        if(dialogTips)dialogTips.destroy();
         if(tabbar){
             tabbar.destroy();
         }

@@ -65,7 +65,7 @@ define(function(require, exports, module) {
             window.addEventListener('viewReload',function(e){
                 $(window).scrollTop(0);
                 $('#'+sys.id).html('<div class="fakeloader"><div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><div class="text">数据加载中...</div></div>');
-                sys.ajax_data = e.detail.ajax_data;
+                if(e.detail.ajax_data)sys.ajax_data = e.detail.ajax_data;
                 sys.storage_init();
             });
         },
@@ -86,6 +86,10 @@ define(function(require, exports, module) {
                 sys.default_data[sys.id] = $.extend(true,sys.default_data[sys.id],id_data);
             }
             +function(){
+                if(sys.default_data[sys.id].pretreatment === false){
+                    btn = true;
+                    return;
+                }
                 try{
                     sys.initSomeThing(sys.id,sys.default_data[sys.id]);
                 }catch(e){
@@ -206,13 +210,22 @@ define(function(require, exports, module) {
                             code = 1;
                         }
                         if(code == 1){
-                            if(sys.fn_index.destroy)sys.fn_index.destroy(d);
+                            +function(){
+                                try{
+                                    if(sys.fn_index.destroy)sys.fn_index.destroy(d);
+                                }catch(e){
+                                    if(type_debug){
+                                        console.log('js销毁发生错误'+JSON.stringify(e)+"line:218");
+                                        console.log(JSON.stringify(sys.default_data[sys.id]));
+                                    }
+                                }
+                            }()
                             +function(){
                                 try{
                                     sys.initSomeThing(sys.id,sys.default_data[sys.id] );
                                 }catch(e){
                                     if(type_debug){
-                                        console.log('模板引入发生错误'+JSON.stringify(e)+"line:273");
+                                        console.log('模板引入发生错误'+JSON.stringify(e)+"line:228");
                                         console.log(JSON.stringify(sys.default_data[sys.id]));
                                     }
                                 }
@@ -237,7 +250,7 @@ define(function(require, exports, module) {
         },
         initSomeThing:function (id,data){
             if(!data){
-                if(type_debug)console.log('数据传入出错,跳出执行区'+"line:293")
+                if(type_debug)console.log('数据传入出错,跳出执行区'+"line:253");
                 return;
             }
             window.page_data.real_data[id] = data;

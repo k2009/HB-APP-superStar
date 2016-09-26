@@ -210,13 +210,22 @@ define(function(require, exports, module) {
                             code = 1;
                         }
                         if(code == 1){
-                            if(sys.fn_index.destroy)sys.fn_index.destroy(d);
+                            +function(){
+                                try{
+                                    if(sys.fn_index.destroy)sys.fn_index.destroy(d);
+                                }catch(e){
+                                    if(type_debug){
+                                        console.log('js销毁发生错误'+JSON.stringify(e)+"line:218");
+                                        console.log(JSON.stringify(sys.default_data[sys.id]));
+                                    }
+                                }
+                            }()
                             +function(){
                                 try{
                                     sys.initSomeThing(sys.id,sys.default_data[sys.id] );
                                 }catch(e){
                                     if(type_debug){
-                                        console.log('模板引入发生错误'+JSON.stringify(e)+"line:273");
+                                        console.log('模板引入发生错误'+JSON.stringify(e)+"line:228");
                                         console.log(JSON.stringify(sys.default_data[sys.id]));
                                     }
                                 }
@@ -241,7 +250,7 @@ define(function(require, exports, module) {
         },
         initSomeThing:function (id,data){
             if(!data){
-                if(type_debug)console.log('数据传入出错,跳出执行区'+"line:293")
+                if(type_debug)console.log('数据传入出错,跳出执行区'+"line:253");
                 return;
             }
             window.page_data.real_data[id] = data;

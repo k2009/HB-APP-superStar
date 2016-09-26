@@ -1,7 +1,7 @@
 10
 
 dir
-254419
+254905
 svn://yinkai@211.151.70.29/svn/socialstar/source/ria/app/HBuilder/dev/modules/h5
 svn://yinkai@211.151.70.29/svn
 
@@ -32,10 +32,10 @@ dir
 updatePhoneNumber
 dir
 
-inviteFriend
+scoreRules
 dir
 
-scoreRules
+inviteFriend
 dir
 
 homeworkList
@@ -53,22 +53,22 @@ dir
 inviteLanding
 dir
 
-introduce
+myLessons
 dir
 
-myLessons
+introduce
 dir
 
 survey
 dir
 
-lessionShare
+personalInfo
 dir
 
 lessionDetail
 dir
 
-personalInfo
+lessionShare
 dir
 
 DNAResult

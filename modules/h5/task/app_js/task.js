@@ -44,16 +44,8 @@ define(function(require, exports, module) {
             });
         }
         platform = opts.platform;
-        submit_url = opts.submit_url
-
-        // 延迟加载微信分享的 tips
-        lazyload.load("common/share/tips/js/index", function(dialog) {
-            dialogTips = new dialog({
-                title: '好了，现在招呼你的朋友帮你提提意见!'
-            });
-        });
-
-        $('#st_modules_h5_task').on('tap', '#chooseImage', function() {
+        submit_url = opts.submit_url;
+        $('#st_modules_h5_task').off().on('tap', '#chooseImage', function() {
             var length = $('#imageList .img-container').length;
             if (length < 9) {
 
@@ -112,10 +104,10 @@ define(function(require, exports, module) {
                             thumbs: ['http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg']
                         },
                         success: function(e) {
-                            window.APP_construction.urlJump(msg.data.next_url)
+                            window.SCRM.pjax(msg.data.next_url)
                         },
                         error: function(e) {
-                            window.APP_construction.urlJump(msg.data.next_url)
+                            window.SCRM.pjax(msg.data.next_url)
                             console.log(JSON.stringify(e))
                         }
                     });
@@ -128,6 +120,7 @@ define(function(require, exports, module) {
             });
 
         }).on('tap', '.imgRemove', function() {
+            console.log(1);
             var index = $('.imgRemove').index(this);
             $('#imageList li').eq(index).remove();
             $('#chooseImageBox').show();
@@ -156,11 +149,8 @@ define(function(require, exports, module) {
     }
 
     function destroy(opts) {
-        $('#st_modules_h5_task').off();
         $('.alert_close').off();
         $('.alert_dom').remove();
-        console.log(dialogTips)
-        if (dialogTips) dialogTips.destroy();
     }
     var that = {
         init: init,

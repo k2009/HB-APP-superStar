@@ -29,6 +29,7 @@ define(function(require, exports, module){
 							console.log("打印登录接口数据")
 							console.log(JSON.stringify(d))
 							if(d.code == 0){
+								sys.ajax_push_clientID(d.data.user.uid);
 								$storage('st_modules_h5_home',d.data);
 								sys.fn_next();
 							}else{
@@ -69,11 +70,11 @@ define(function(require, exports, module){
 				if ($netChange.getNetType() == 1) {
 					var lastUpDate = $storage('lastUpDate');
 					// if (!lastUpDate || ($.now() - lastUpDate >= 86400000)) { //如果上次检查更新时间大于24小时,开始更新检查
-					if (!lastUpDate || ($.now() - lastUpDate >= 300000)) { //如果上次检查更新时间大于5分钟,开始更新检查
+					// if (!lastUpDate || ($.now() - lastUpDate >= 300000)) { //如果上次检查更新时间大于5分钟,开始更新检查
 						$storage('lastUpDate', mui.now());
 						$upDate.silent = true;
 						$upDate.init();
-					}
+					// }
 				}
 				return fn_upDate;
 			}
@@ -101,6 +102,7 @@ define(function(require, exports, module){
 								console.log("打印登录接口数据")
 								console.log(JSON.stringify(d))
 								if(d.code == 0){
+									sys.ajax_push_clientID(d.data.user.uid);
 									$storage('st_modules_h5_home',d.data);
 									sys.fn_next();
 								}else{
@@ -121,6 +123,25 @@ define(function(require, exports, module){
 			});
     	},
     	ajax_login:function(){
+    	},
+    	ajax_push_clientID:function(uid){
+    		if(!plus.push.getClientInfo())return;
+    		$.ajax({
+				url:(host_domain+"/castle/app/v1/api/save-device"),
+				type:"get",
+				data:{
+					uid:uid,
+					device_id:plus.push.getClientInfo().clientid
+				},
+				dataType:"json",
+				success:function(d){
+
+				},
+				error:function(e){
+
+				}
+
+    		})
     	},
     	fn_next:function(){
     		mui.openWindow({
