@@ -19,6 +19,7 @@
 		<script src="../libs/mui/js/mui.js"></script>
 		<script src="../libs/jquery/3.0.0/jquery-3.0.0.js"></script>
 		<script src="../kit/util/compatible.js"></script>
+		<script src="../kit/util/plus_ajax_hack.js"></script>
 		<script src="../socialtouch/app_seed.js"></script>
 		<!-- 初始化加载 公共JS结束 -->
 	</head>
@@ -32,23 +33,10 @@
 		</div>
 		<script>
 			mui.plusReady(function(){
-				+function(){
-					var old_ajax = $.ajax;
-				    $.ajax = function(e){
-				    		if(!e)return;
-				    		if(!e.url)return;
-				    		// console.log("开始执行劫持函数")
-				        if(e.url.indexOf("http")<0&&e.data){
-				            e.url = plus.storage.getItem("domain")+e.url;
-				        }
-				        // console.log(JSON.stringify(e))
-				        old_ajax(e);
-				    }
-				}();
 				var this_view,pageData,ajax_url,ajax_data,data;
 
 				this_view = plus.webview.currentWebview();
-
+				plus.navigator.setStatusBarBackground("#f7f7f7");
 				pageData = this_view.pageData;
 				ajax_url = this_view.ajax_url;
 				ajax_data = this_view.ajax_data;
