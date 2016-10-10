@@ -12,13 +12,24 @@ define(function(require, exports, module) {
     //美化alert end
     var runImage = {
         uploadIndex: 0,
+        title_2: function(){
+            var title = [
+                '追求完美的你怎会错过这场点评！',
+                '神助般的建议，我特别需要你！',
+                '点燃梦想的圣火，非你莫属！',
+                '你的网红星探潜质被我发现啦，快来！',
+                '不想抛头露面，也可以做网红幕后操盘手！'
+            ];
+            return title[ Math.floor( Math.random() * title.length ) ];
+
+        },
         title: function() {
             var title = [
-                '我在参加百万网红培养计划，毫无尿点的作业必须你来点评！别隐藏潜质，你也被发现了！',
-                '比扑倒汉子更让你高潮！我在参加百万网红培养计划，作业你来点评！湿湿的星梦，你也必须有！',
-                '你能火的原因只有一个！我在参加百万网红培养计划快来点评，带你一起燃梦！',
-                '只想裸露身体，那你就不配红！互联网大咖助力百万网红培养计划，我在参加快来点评！',
-                '我们缺一个口活好手指巧的妹纸！百万网红计划——我在参加，你快来点评，一起燃梦！'
+                '拿出你追求完美的精神来帮我点评网红培养课后作业！别隐藏潜质，你是最棒的！',
+                '作为我的网红梦想导师，课后作业怎能缺少你的点评！快来，点评小能手！',
+                '年轻怎能没有梦想！我在参加百万网红培养计划，作业点评，非你莫属！',
+                '互联网大咖助力百万网红培养计划，我在参加快来点评！你就是下一个最牛网红星探！',
+                '才华横溢但又默默无闻的你，网红培养课后作业点评，非你莫属！'
             ];
             return title[Math.floor(Math.random() * 5)];
         }
@@ -75,7 +86,7 @@ define(function(require, exports, module) {
                 var base64 = (img.eq(i).attr('src')); //substr.( 23 );
                 base64s.push(base64);
             }
-            console.log(JSON.stringify(base64s));
+            console.log(submit_url);
             $.ajax({
                 type: 'post',
                 url: submit_url,
@@ -97,7 +108,7 @@ define(function(require, exports, module) {
                     $share({
                         msg: {
                             href: plus.storage.getItem("domain") + msg.data.share_url,
-                            title: runImage.title(),
+                            title: runImage.title_2(),
                             desc: runImage.title(),
                             content: runImage.title(),
                             imgUrl: 'http://tva2.sinaimg.cn/crop.0.1.794.794.180/0068YUDSgw1f56ewslbcqj30m80m7wgt.jpg', // 分享图标
@@ -113,7 +124,8 @@ define(function(require, exports, module) {
                     });
                     //window.location.href = opts.next_url;
                 },
-                error: function() {
+                error: function(e) {
+                    console.log(JSON.stringify(e))
                     $('#submit').removeClass('ing').text('问问朋友的意见');
                     Alert('网络错误，请刷新页面或稍后重试');
                 }

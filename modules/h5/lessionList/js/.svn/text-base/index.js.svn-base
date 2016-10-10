@@ -139,10 +139,6 @@ define(function(require, exports, module) {
     }
 
     var scrollTo=function(){
-        var top=$('[scrollTarget=true]').eq(0).position().top;
-        $(document.body).animate({
-            scrollTop:top+'px'
-        })
     }
 
     function init(opts) {

@@ -56,12 +56,20 @@ define(function(require, exports, module){
 		},
 		checkUpdate : function(fn_hasUpDate,fn_noUpDate,fn_err){						// 检测更新
     		var checkUrl = plus.storage.getItem("domain")+"/castle/app/v1/api/check-version";
+    		var appID = plus.runtime.appid;
+    		var channel_id;
 		    sys.waiting("检测更新...");
+
+    		if(appID == "com.91hong.wanghong"){
+    			channel_id=(mui.os.ios?16:20)
+    		}else{
+    			channel_id=(mui.os.ios?1:2)
+    		}
 		    $.ajax({
 		    	type:"get",
                 url:checkUrl,
                 data: {
-                	channel_id:(mui.os.ios?16:20),
+                	channel_id:channel_id,
                 	version:sys.appVersion
                 },
                 error:function(e) {

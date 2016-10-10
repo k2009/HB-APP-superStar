@@ -45,7 +45,9 @@ define(function(require, exports, module) {
 			if(isPopShow == true){
 				return;
 			}
-			isPopShow = true;
+			if(!window.plus){
+				isPopShow = true;
+			}
 			if(window.mui ){
 				mui.alert(LOCK_MSG);
 			} else {

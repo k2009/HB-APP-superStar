@@ -14,8 +14,6 @@ define(function(require, exports, module) {
 
 
 				// 
-
-
 				    plus.push.addEventListener( "receive", function( msg ) {
 				        if ( msg.aps ) {  // Apple APNS message
 				            alert(JSON.stringify(msg))
@@ -128,7 +126,7 @@ define(function(require, exports, module) {
 		ajax_login: function() {},
 		ajax_push_clientID: function(uid) {
 			if (!plus.push.getClientInfo()) return;
-			alert(JSON.stringify(plus.push.getClientInfo()))
+			// alert(JSON.stringify(plus.push.getClientInfo()))
 			$.ajax({
 				url: (host_domain + "/castle/app/v1/api/save-device"),
 				type: "get",
@@ -174,6 +172,50 @@ define(function(require, exports, module) {
 	sys.init(mui);
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

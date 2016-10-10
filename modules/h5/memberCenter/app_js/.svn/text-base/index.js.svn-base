@@ -3,10 +3,6 @@ define(function(require, exports, module) {
 	var $oauth = require("kit/util/plus-oauth"); //第三方登录模块
 	var number = 0;
 	var appVersion;
-    plus.runtime.getProperty(plus.runtime.appid,function(inf){
-        appVersion=inf.version;
-        if(callback)callback(sys.appVersion);
-    });
 	function getTest(type){
 		plus.nativeUI.prompt((type==1?"请输入端口号":"请输入host地址"), function(e) {
 			if(e.index == 0){
@@ -25,6 +21,9 @@ define(function(require, exports, module) {
 	}
 	mui.plusReady(function() {
 
+	    plus.runtime.getProperty(plus.runtime.appid,function(inf){
+	        appVersion=inf.version;
+	    });
 		//更换头像
 		mui("body").on("tap", "img.border-1px", function(e) {
 			if (number < 20) {
