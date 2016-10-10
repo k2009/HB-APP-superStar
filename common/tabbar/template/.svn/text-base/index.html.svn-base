@@ -1,6 +1,0 @@
-<nav class="border-1px tabbar">
-	<a href="/castle/wap/user/index" pjax="1" class="tabbar-item current" data-index="0"><span class="tabbar-icon icon-home"></span><span class="tabbar-text">首页</span></a>
-	<a href="/castle/wap/course/course-list" pjax="1" class="tabbar-item" data-index="1"><span class="tabbar-icon icon-lesson"></span><span class="tabbar-text">课程</span></a>
-	<a href="/castle/wap/exam/list" pjax="1" class="tabbar-item" data-index="2"><span class="tabbar-icon icon-test"></span><span class="tabbar-text">评测</span></a>
-	<a href="/castle/wap/user/show" pjax="1" class="tabbar-item" data-index="3"><span class="tabbar-icon icon-me"></span><span class="tabbar-text">我</span></a>
-</nav>

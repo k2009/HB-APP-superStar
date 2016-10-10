@@ -1,5 +1,0 @@
-<div class="mui-content">
-	<div class="banner"></div>
-		<a href="${data.next_url}" class="next_btn">测一测</a>
-		<!-- <a href="${data.next_url}" class="next_btn">查看测试结果</a> -->
-</div>
