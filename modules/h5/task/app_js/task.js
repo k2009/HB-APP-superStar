@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-    var $share = require("kit/util/plus-share");
+    var $share = require("kit/util/plus-share/shareUI");
     var lazyload = require("kit/util/asyncModule");
     var dialogTips;
     var platform;

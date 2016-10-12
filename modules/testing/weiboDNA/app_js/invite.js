@@ -4,7 +4,7 @@ define(function(require, exports, module) {
     var check;
     var lazyload = require("kit/util/asyncModule");
     var jssdk = require("common/share/jssdk");
-    var $share = require("kit/util/plus-share"); //分享
+    var $share = require("kit/util/plus-share/shareUI"); //分享
     var wordCloud=require('modules/testing/weiboDNA/js/wordCloud');
 
     var TITLE='Guys，你确定真的了解我么？点开，也许你会发现不一样的我哟~';

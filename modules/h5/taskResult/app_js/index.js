@@ -1,6 +1,6 @@
 
 define(function(require, exports, module) {
-    var $share = require("kit/util/plus-share");
+    var $share = require("kit/util/plus-share/shareUI");
     var runImage = {
         uploadIndex: 0,
         title: function() {

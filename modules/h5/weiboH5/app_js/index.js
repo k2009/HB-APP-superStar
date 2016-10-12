@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
     "use strict";
-    var $share = require("kit/util/plus-share"); //分享
+    var $share = require("kit/util/plus-share/shareUI"); //分享
     mui.ready(function() {
         var runImage = {
             title: function(){

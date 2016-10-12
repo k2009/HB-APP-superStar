@@ -1,7 +1,7 @@
 define(function(require, exports, module) {
     var jssdk = require("common/share/jssdk");
     var lazyload = require("kit/util/asyncModule");
-    var $share = require("kit/util/plus-share"); //分享
+    var $share = require("kit/util/plus-share/shareUI"); //分享
     var dialogTips;
     var chartTips;
     var platform;

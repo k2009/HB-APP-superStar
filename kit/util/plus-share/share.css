@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*
+*  html5 doctor css reset | http://html5doctor.com/html-5-reset-stylesheet
+*/
+.plus-bottom-share {
+  height: 160px;
+  width: 100%;
+  background-color: #1a1a1a;
+  position: fixed;
+  bottom: 0;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  /* Firefox 4 */
+  -webkit-transition: all 0.4s;
+  /* Safari 和 Chrome */
+  -o-transition: all 0.4s;
+  /* Opera */
+  overflow: hidden; }
+  .plus-bottom-share.plus-share-hide {
+    height: 0; }
+  .plus-bottom-share .plus-bottom-bar {
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid #303030;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+  .plus-bottom-share .plus-share-list {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: nowrap; }
+  .plus-bottom-share .plus-share-box {
+    flex: 1;
+    flex-grow: 2;
+    width: 50px;
+    background-color: #1a1a1a;
+    height: 110px;
+    background-size: auto 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 20px;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+    .plus-bottom-share .plus-share-box.plus-share-weixin {
+      background-image: url(./img/icon_weixin.png); }
+    .plus-bottom-share .plus-share-box.plus-share-wxFriend {
+      background-image: url(./img/icon_weixin_friend.png); }
+    .plus-bottom-share .plus-share-box.plus-share-weibo {
+      background-image: url(./img/icon_weibo.png); }
