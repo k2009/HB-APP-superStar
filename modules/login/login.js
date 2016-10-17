@@ -145,26 +145,34 @@ define(function(require, exports, module) {
 			})
 		},
 		fn_next: function() {
+			// mui.openWindow({
+			// 	id: 'index.html',
+			// 	url: '../h5/index/index.html',
+			// 	styles: {
+			// 		top: "0px",
+			// 		bottom: '56px', //新页面底部位置
+			// 	},
+			// });
+			// mui.openWindow({
+			// 	id: 'tabbar',
+			// 	url: '../tabbar.html',
+			// 	styles: {
+			// 		bottom: '0px', //新页面底部位置
+			// 		height: '56px', //新页面高度，默认为100%
+			// 	},
+			// 	show: {
+			// 		autoShow: true, //页面loaded事件发生后自动显示，默认为true
+			// 		// aniShow:,//页面显示动画，默认为”slide-in-right“；
+			// 	},
+
+			// });
 			mui.openWindow({
-				id: 'index.html',
-				url: '../h5/index/index.html',
+				id: 'index_box.html',
+				url: '../h5/index/index_box.html',
 				styles: {
 					top: "0px",
-					bottom: '56px', //新页面底部位置
-				},
-			});
-			mui.openWindow({
-				id: 'tabbar',
-				url: '../tabbar.html',
-				styles: {
 					bottom: '0px', //新页面底部位置
-					height: '56px', //新页面高度，默认为100%
 				},
-				show: {
-					autoShow: true, //页面loaded事件发生后自动显示，默认为true
-					// aniShow:,//页面显示动画，默认为”slide-in-right“；
-				},
-
 			});
 		}
 	}

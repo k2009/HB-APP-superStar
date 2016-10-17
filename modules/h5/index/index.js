@@ -10,7 +10,6 @@ define(function(require, exports, module) {
 			backbutton: false  //关闭back按键监听
 		}
 	})
-	plus.webview.currentWebview().setStyle({popGesture:'none'});	//禁止侧滑关闭
 	var tmp = require("modules/h5/index/template/index.html"); //模板载入
 	var $get = require("kit/util/construction"); //数据处理
 	+ function() {

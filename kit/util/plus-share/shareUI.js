@@ -58,8 +58,8 @@ define(function(require, exports, module) {
 
         },
 
-        shareMessage(share, ex,msg,success,error) {
-            if(!ex&&(!reg.test(msg.content))){
+        shareMessage:function(share, ex, msg, success, error) {
+            if (!ex && (!reg.test(msg.content))) {
                 console.log('检测到是微博分享,增加url')
                 msg.content += msg.href;
             }

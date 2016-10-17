@@ -31,7 +31,8 @@ define(function(require, exports, module) {
 				styles: {
 					top: '45px',
 					bottom: 0,
-					bounce: 'vertical'
+					bounce: 'vertical',
+					background:'transparent'
 				},
 				title: title
 
@@ -76,7 +77,8 @@ define(function(require, exports, module) {
 				styles: {
 					top: '45px',
 					bottom: 0,
-					bounce: 'vertical'
+					bounce: 'vertical',
+					background:'transparent'
 				},
 				title: data.title || title
 
@@ -100,8 +102,8 @@ define(function(require, exports, module) {
 			//数据重载来规避多页面打开的事儿
 			if (data.module_id == "st_modules_h5_home") {
 				mui.openWindow({
-					id: 'index.html',
-					url: '_www/modules/h5/index/index.html',
+					id: 'index_box.html',
+					url: '_www/modules/h5/index/index_box.html',
 					// styles: {
 					//     top: "0px",
 					//     bottom: '56px', //新页面底部位置

@@ -221,429 +221,549 @@
 		}
 	},
 	"dependencies": {
-	  "pages": {
-	    "index.html": {
-	      "resources": [
-	        "css/index.css",
-	        "mui_css/mui.min.css",
-	        "img/1.png",
-	        "js/mui.min.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [
-	        "compose.html",
-	        "html/setting.html"
-	      ],
-	      "priority": 0
-	    },
-	    "compose.html": {
-	      "resources": [
-	        "mui_css/mui.min.css",
-	        "css/compose.css",
-	        "js/mui.min.js",
-	        "fonts/mui.ttf"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "html/setting.html": {
-	      "resources": [
-	        "images/logo.png",
-	        "js/feedback.js",
-	        "js/mui.view.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/setting/setting.html": {
-	      "resources": [
-	        "libs/mui/css/mui.min.css",
-	        "libs/mui/js/mui.view.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/mui/js/feedback.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/login/login-weibo.html": {
-	      "resources": [
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-oauth.js",
-	        "kit/util/plus-storage.js",
-	        "libs/mui/js/mui.min.js",
-	        "modules/login/login.js",
-	        "modules/index/css/index.css",
-	        "kit/util/deBug-setCookie.js",
-	        "libs/mui/js/mui.js",
-	        "modules/h5/index/css/index.css",
-	        "libs/jquery/3.0.0/jquery-3.0.0.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/index/images/lesson.png",
-	        "modules/h5/index/images/dna.png",
-	        "modules/h5/index/images/pos.png",
-	        "modules/h5/index/images/invite.png"
-	      ],
-	      "refer": [
-	        "modules/index/index.html",
-	        "modules/h5/index/index.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/index/index.html": {
-	      "resources": [
-	        "modules/index/images/dna.png",
-	        "modules/index/index.js",
-	        "modules/index/images/pos.png",
-	        "kit/util/plus-update.js",
-	        "modules/index/images/lesson.png",
-	        "kit/util/plus-netChange.js",
-	        "libs/mui/fonts/mui.ttf"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/weiboTags/weiboTags.html": {
-	      "resources": [
-	        "modules/h5/weiboTags/js/index.js",
-	        "modules/h5/weiboTags/css/index.css",
-	        "modules/h5/weiboTags/template/index.html",
-	        "modules/h5/weiboTags/js/weiboTags.js",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/index/index.html": {
-	      "resources": [
-	        "modules/h5/index/images/dna.png",
-	        "modules/h5/index/images/lesson.png",
-	        "kit/util/plus-update.js",
-	        "modules/h5/index/images/invite.png",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "kit/util/plus-netChange.js",
-	        "modules/h5/index/images/pos.png",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/index/index.js",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js",
-	        "modules/h5/index/template/index.html"
-	      ],
-	      "refer": [
-	        "modules/h5/weiboTags/weiboTags.html",
-	        "modules/h5/lessionList/lessionList.html",
-	        "modules/h5/signup/signup.html",
-	        "modules/h5/memberCenter/memberCenter.html",
-	        "modules/h5/inviteLanding/inviteLanding.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/h5/lessionDetail/lessionDetail.html": {
-	      "resources": [
-	        "modules/h5/lessionDetail/js/index.js",
-	        "modules/h5/lessionDetail/template/index.html",
-	        "modules/h5/lessionDetail/js/lessionDetail.js",
-	        "modules/h5/lessionDetail/images/icon.png",
-	        "modules/h5/lessionDetail/css/index.css",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [
-	        "modules/h5/lessionContent/lessionContent.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/h5/lessionContent/lessionContent.html": {
-	      "resources": [
-	        "modules/h5/lessionContent/template/index.html",
-	        "modules/h5/lessionContent/css/index.css",
-	        "modules/h5/lessionContent/js/index.js",
-	        "modules/h5/lessionContent/js/lessionContent.js",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/lessionList/lessionList.html": {
-	      "resources": [
-	        "modules/h5/lessionList/js/lessionList.js",
-	        "modules/h5/lessionList/template/index.html",
-	        "modules/h5/lessionList/css/index.css",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/lessionList/images/icon.png",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "modules/h5/lessionList/js/index.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [
-	        "modules/h5/lessionDetail/lessionDetail.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/h5/signup/signup.html": {
-	      "resources": [
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/js/mui.min.js",
-	        "kit/util/construction.js",
-	        "modules/h5/signup/images/bg_btn.png",
-	        "modules/h5/signup/images/bg.png",
-	        "kit/util/easyTemplate.js",
-	        "modules/h5/signup/images/bg_wh.png",
-	        "libs/mui/css/mui.min.css",
-	        "modules/h5/signup/js/index.js",
-	        "modules/h5/signup/images/bg_header.png",
-	        "kit/util/plus-storage.js",
-	        "modules/h5/signup/css/index.css",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/signup/template/index.html",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "modules/h5/signup/js/signup.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/personalInfo/personalInfo.html": {
-	      "resources": [
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "modules/h5/personalInfo/js/personalInfo.js",
-	        "libs/mui/js/mui.min.js",
-	        "modules/h5/personalInfo/css/index.css",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "modules/h5/personalInfo/js/index.js",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/personalInfo/template/index.html",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/memberCenter/memberCenter.html": {
-	      "resources": [
-	        "modules/h5/memberCenter/template/index.html",
-	        "modules/h5/memberCenter/css/index.css",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "modules/h5/memberCenter/js/index.js",
-	        "libs/mui/js/mui.min.js",
-	        "modules/h5/memberCenter/js/memberCenter.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [
-	        "modules/h5/personalInfo/personalInfo.html",
-	        "modules/h5/myLessons/myLessons.html",
-	        "modules/h5/inviteList/inviteList.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/h5/inviteLanding/inviteLanding.html": {
-	      "resources": [
-	        "modules/h5/inviteLanding/js/inviteLanding.js",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "modules/h5/inviteLanding/js/index.js",
-	        "modules/h5/inviteLanding/template/index.html",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "modules/h5/inviteLanding/css/index.css",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/myLessons/myLessons.html": {
-	      "resources": [
-	        "modules/h5/myLessons/js/index.js",
-	        "modules/h5/myLessons/css/index.css",
-	        "modules/h5/myLessons/template/index.html",
-	        "modules/h5/myLessons/js/myLessons.js",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [
-	        "modules/h5/lessionDetail/lessionDetail.html"
-	      ],
-	      "priority": 0
-	    },
-	    "modules/h5/inviteFriend/inviteFriend.html": {
-	      "resources": [
-	        "modules/h5/inviteFriend/template/index.html",
-	        "modules/h5/inviteFriend/js/inviteFriend.js",
-	        "modules/h5/inviteFriend/js/index.js",
-	        "modules/h5/inviteFriend/css/index.css"
-	      ],
-	      "refer": [],
-	      "priority": 0
-	    },
-	    "modules/h5/inviteList/inviteList.html": {
-	      "resources": [
-	        "modules/h5/inviteList/css/index.css",
-	        "modules/h5/inviteList/js/index.js",
-	        "modules/h5/inviteList/template/index.html",
-	        "libs/seajs/3.0.0/sea.js",
-	        "libs/mui/css/mui.min.css",
-	        "kit/util/plus-storage.js",
-	        "kit/util/construction.js",
-	        "libs/mui/js/mui.min.js",
-	        "libs/mui/fonts/mui.ttf",
-	        "modules/h5/inviteList/js/inviteList.js",
-	        "libs/jquery/3.0.0/jquery-3.0.0.min.js",
-	        "kit/util/easyTemplate.js"
-	      ],
-	      "refer": [
-	        "modules/h5/inviteFriend/inviteFriend.html"
-	      ],
-	      "priority": 0
-	    }
-	  },
-	  "idle": {
-	    "resources": [
-	      "modules/h5/index/images/price.png",
-	      "libs/mui/css/mui.picker.all.css",
-	      "modules/h5/task/template/index.html",
-	      "libs/mui/js/95516.js",
-	      "modules/h5/lessionContent/sass/index.css",
-	      "modules/setting/images/60x60.gif",
-	      "libs/mui/js/mui.pullToRefresh.js",
-	      "kit/util/urlToJson.js",
-	      "modules/h5/lessionContent/html/index.html",
-	      "modules/h5/memberCenter/html/index.html",
-	      "modules/h5/memberCenter/sass/index.css",
-	      "modules/h5/inviteFriend/images/share_tips.png",
-	      "libs/mui/css/mui.poppicker.css",
-	      "libs/mui/js/mui.picker.all.js",
-	      "libs/mui/js/update.js",
-	      "libs/mui/css/mui.picker.css",
-	      "modules/h5/myLessons/html/index.html",
-	      "modules/h5/inviteFriend/sass/index.css",
-	      "libs/mui/js/city.data.js",
-	      "modules/h5/index/js/index.js",
-	      "modules/h5/task/images/share_tips.png",
-	      "libs/mui/css/mui.listpicker.css",
-	      "libs/mui/js/arttmpl.js",
-	      "modules/h5/contactUs/css/index.css",
-	      "modules/h5/task/sass/index.css",
-	      "libs/mui/js/mui.imageViewer.js",
-	      "modules/h5/contactUs/template/index.html",
-	      "libs/mui/css/app.css",
-	      "modules/h5/signup/sass/index.css",
-	      "modules/index.html",
-	      "modules/h5/contactUs/sass/index.css",
-	      "sass/_include-media.scss",
-	      "modules/h5/contactUs/images/finger.gif",
-	      "libs/mui/js/beecloud.js",
-	      "modules/h5/lessionList/html/index.html",
-	      "libs/mui/js/mui.pullToRefresh.material.js",
-	      "modules/h5/lessionContent/images/icon.png",
-	      "libs/mui/js/city.data-3.js",
-	      "modules/h5/task/js/index.js",
-	      "modules/h5/index/sass/index.css",
-	      "modules/h5/signup/images/erweima.gif",
-	      "kit/util/plus-share.js",
-	      "modules/h5/lessionList/html/schedule.html",
-	      "modules/compose/compose.css",
-	      "libs/mui/css/login.css",
-	      "libs/vue/vue.min.js",
-	      "libs/mui/js/mui.previewimage.js",
-	      "modules/h5/myLessons/sass/index.css",
-	      "modules/h5/inviteLanding/sass/index.scss",
-	      "modules/h5/contactUs/images/qrcode.jpg",
-	      "modules/h5/index/html/index.html",
-	      "libs/mui/css/mui.indexedlist.css",
-	      "sass/mobile-base.scss",
-	      "libs/mui/css/mui.imageviewer.css",
-	      "modules/h5/inviteList/html/index.html",
-	      "modules/h5/inviteFriend/html/index.html",
-	      "modules/h5/task/html/index.html",
-	      "libs/mui/img/1.png",
-	      "libs/mui/js/mui.dtpicker.js",
-	      "libs/mui/css/feedback.css",
-	      "modules/h5/weiboTags/html/index.html",
-	      "libs/mui/js/mui.poppicker.js",
-	      "modules/setting/images/iconfont-tianjia.png",
-	      "modules/h5/inviteLanding/html/index.html",
-	      "libs/mui/js/mui.zoom.js",
-	      "modules/h5/personalInfo/html/index.html",
-	      "modules/login/login.html",
-	      "modules/h5/personalInfo/sass/index.css",
-	      "modules/h5/signup/images/share_tips.png",
-	      "libs/mui/js/mui.listpicker.js",
-	      "modules/compose/compose.html",
-	      "modules/h5/signup/html/index.html",
-	      "modules/h5/weiboTags/sass/index.scss",
-	      "modules/h5/contactUs/contactUs.html",
-	      "modules/h5/contactUs/js/contactUs.js",
-	      "libs/mui/js/mui.lazyload.js",
-	      "modules/h5/signup/sass/index.scss",
-	      "modules/h5/contactUs/html/index.html",
-	      "libs/mui/js/mui.lazyload.img.js",
-	      "modules/setting/images/muwu.jpg",
-	      "libs/mui/css/mui.dtpicker.css",
-	      "modules/h5/lessionList/sass/index.scss",
-	      "modules/h5/task/task.html",
-	      "modules/h5/contactUs/js/index.js",
-	      "libs/mui/css/mui.picker.min.css",
-	      "libs/mui/js/ad.js",
-	      "modules/h5/lessionDetail/sass/index.scss",
-	      "modules/h5/lessionDetail/html/index.html",
-	      "css/mobile-base.css",
-	      "modules/compose/compose.scss",
-	      "libs/mui/js/mui.picker.js",
-	      "libs/vue/vue.js",
-	      "modules/h5/task/js/task.js",
-	      "untitled.css",
-	      "libs/mui/js/app.js",
-	      "libs/mui/js/mui.indexedlist.js",
-	      "modules/h5/task/css/index.css",
-	      "modules/h5/weiboTags/html/ajax.json",
-	      "libs/mui/js/mui.enterfocus.js",
-	      "modules/h5/inviteList/sass/index.css",
-	      "libs/mui/js/mui.locker.js",
-	      "libs/mui/js/mui.picker.min.js"
-	    ]
-	  }
+		"pages": {
+			"index.html": {
+				"resources": [
+					"css/index.css",
+					"mui_css/mui.min.css",
+					"img/1.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"compose.html",
+					"html/setting.html"
+				],
+				"priority": 0
+			},
+			"compose.html": {
+				"resources": [
+					"mui_css/mui.min.css",
+					"css/compose.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/setting.html": {
+				"resources": [
+					"images/logo.png",
+					"js/feedback.js",
+					"js/mui.view.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/setting/setting.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"libs/mui/js/mui.view.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/mui/js/feedback.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/login/login-weibo.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-oauth.js",
+					"kit/util/plus-storage.js",
+					"libs/mui/js/mui.min.js",
+					"modules/login/login.js",
+					"modules/index/css/index.css",
+					"kit/util/deBug-setCookie.js",
+					"libs/mui/js/mui.js",
+					"modules/h5/index/css/index.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/index/images/lesson.png",
+					"modules/h5/index/images/dna.png",
+					"modules/h5/index/images/pos.png",
+					"modules/h5/index/images/invite.png",
+					"kit/util/plus-update.js",
+					"kit/util/plus-netChange.js",
+					"modules/login/login.css",
+					"libs/seajs/app_3.0/sea.js"
+				],
+				"refer": [
+					"modules/index/index.html",
+					"modules/h5/index/index.html",
+					"modules/tabbar.html"
+				],
+				"priority": 0
+			},
+			"modules/index/index.html": {
+				"resources": [
+					"modules/index/images/dna.png",
+					"modules/index/index.js",
+					"modules/index/images/pos.png",
+					"kit/util/plus-update.js",
+					"modules/index/images/lesson.png",
+					"kit/util/plus-netChange.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/weiboTags/weiboTags.html": {
+				"resources": [
+					"modules/h5/weiboTags/js/index.js",
+					"modules/h5/weiboTags/css/index.css",
+					"modules/h5/weiboTags/template/index.html",
+					"modules/h5/weiboTags/js/weiboTags.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/index/index.html": {
+				"resources": [
+					"modules/h5/index/images/dna.png",
+					"modules/h5/index/images/lesson.png",
+					"kit/util/plus-update.js",
+					"modules/h5/index/images/invite.png",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"kit/util/plus-netChange.js",
+					"modules/h5/index/images/pos.png",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/index/index.js",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js",
+					"modules/h5/index/template/index.html",
+					"modules/h5/index/images/today-news.png",
+					"modules/h5/index/css/index.css",
+					"kit/util/plus-pjax.js",
+					"modules/h5/index/images/icons.png"
+				],
+				"refer": [
+					"modules/h5/weiboTags/weiboTags.html",
+					"modules/h5/lessionList/lessionList.html",
+					"modules/h5/signup/signup.html",
+					"modules/h5/memberCenter/memberCenter.html",
+					"modules/h5/inviteLanding/inviteLanding.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/lessionDetail/lessionDetail.html": {
+				"resources": [
+					"modules/h5/lessionDetail/js/index.js",
+					"modules/h5/lessionDetail/template/index.html",
+					"modules/h5/lessionDetail/js/lessionDetail.js",
+					"modules/h5/lessionDetail/images/icon.png",
+					"modules/h5/lessionDetail/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionContent/lessionContent.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/lessionContent/lessionContent.html": {
+				"resources": [
+					"modules/h5/lessionContent/template/index.html",
+					"modules/h5/lessionContent/css/index.css",
+					"modules/h5/lessionContent/js/index.js",
+					"modules/h5/lessionContent/js/lessionContent.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/lessionList/lessionList.html": {
+				"resources": [
+					"modules/h5/lessionList/js/lessionList.js",
+					"modules/h5/lessionList/template/index.html",
+					"modules/h5/lessionList/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/lessionList/images/icon.png",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/lessionList/js/index.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionDetail/lessionDetail.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/signup/signup.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/js/mui.min.js",
+					"kit/util/construction.js",
+					"modules/h5/signup/images/bg_btn.png",
+					"modules/h5/signup/images/bg.png",
+					"kit/util/easyTemplate.js",
+					"modules/h5/signup/images/bg_wh.png",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/signup/js/index.js",
+					"modules/h5/signup/images/bg_header.png",
+					"kit/util/plus-storage.js",
+					"modules/h5/signup/css/index.css",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/signup/template/index.html",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/signup/js/signup.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/personalInfo/personalInfo.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/personalInfo/js/personalInfo.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/personalInfo/css/index.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/personalInfo/js/index.js",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/personalInfo/template/index.html",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/memberCenter/memberCenter.html": {
+				"resources": [
+					"modules/h5/memberCenter/template/index.html",
+					"modules/h5/memberCenter/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"modules/h5/memberCenter/js/index.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/memberCenter/js/memberCenter.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/personalInfo/personalInfo.html",
+					"modules/h5/myLessons/myLessons.html",
+					"modules/h5/inviteList/inviteList.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/inviteLanding/inviteLanding.html": {
+				"resources": [
+					"modules/h5/inviteLanding/js/inviteLanding.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/inviteLanding/js/index.js",
+					"modules/h5/inviteLanding/template/index.html",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/inviteLanding/css/index.css",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/myLessons/myLessons.html": {
+				"resources": [
+					"modules/h5/myLessons/js/index.js",
+					"modules/h5/myLessons/css/index.css",
+					"modules/h5/myLessons/template/index.html",
+					"modules/h5/myLessons/js/myLessons.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionDetail/lessionDetail.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/inviteFriend/inviteFriend.html": {
+				"resources": [
+					"modules/h5/inviteFriend/template/index.html",
+					"modules/h5/inviteFriend/js/inviteFriend.js",
+					"modules/h5/inviteFriend/js/index.js",
+					"modules/h5/inviteFriend/css/index.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/inviteList/inviteList.html": {
+				"resources": [
+					"modules/h5/inviteList/css/index.css",
+					"modules/h5/inviteList/js/index.js",
+					"modules/h5/inviteList/template/index.html",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/inviteList/js/inviteList.js",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/inviteFriend/inviteFriend.html"
+				],
+				"priority": 0
+			},
+			"modules/tabbar.html": {
+				"resources": [
+					"kit/util/urlToJson.js",
+					"common/tabbar/css/index.css",
+					"common/tabbar/fonts/iconfont.woff"
+				],
+				"refer": [
+					"modules/index.html"
+				],
+				"priority": 0
+			},
+			"modules/index.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"modules/index_content.html",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/index_content.html": {
+				"resources": [
+					"modules/h5/memberCenter/css/index.css",
+					"modules/h5/memberCenter/app_js/index.js",
+					"kit/util/plus-pjax.js",
+					"modules/h5/testing/images/icon.png",
+					"kit/util/construction.js",
+					"modules/h5/testing/js/mark.js",
+					"modules/h5/testing/js/index.js",
+					"common/tabbar/js/index.js",
+					"libs/seajs/app_3.0/sea.js",
+					"kit/util/easyTemplate.js",
+					"common/slogon/js/index.js",
+					"kit/util/urlToJson.js",
+					"modules/h5/memberCenter/template/index.html",
+					"kit/util/plus-oauth.js",
+					"kit/util/asyncModule.js",
+					"kit/util/plus_ajax_hack.js",
+					"modules/h5/memberCenter/js/index.js",
+					"kit/util/plus-storage.js",
+					"libs/mui/js/mui.js",
+					"socialtouch/app_seed.js",
+					"modules/h5/testing/css/index.css",
+					"kit/util/compatible.js",
+					"modules/h5/testing/template/index.html",
+					"modules/testing/weiboDNA/js/wordCloud.js",
+					"skins/vanilla-cream/css/main.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.js",
+					"common/share/tips/js/index.js",
+					"modules/h5/lessionList/css/index.css",
+					"common/util/loadMUI.js",
+					"modules/h5/lessionList/template/index.html",
+					"modules/h5/lessionList/js/index.js",
+					"modules/h5/task/app_js/task.js",
+					"kit/util/plus-share/shareUI.js",
+					"kit/util/plus-image.js",
+					"modules/h5/taskResult/app_js/index.js",
+					"modules/h5/task/template/index.html",
+					"modules/h5/lessionDetail/template/index.html",
+					"modules/h5/task/app_js/index.js",
+					"modules/h5/taskResult/css/index.css",
+					"common/share/jssdk.js",
+					"modules/h5/lessionDetail/css/index.css",
+					"modules/h5/task/css/index.css",
+					"modules/h5/taskResult/js/index.js",
+					"modules/h5/lessionDetail/js/index.js",
+					"modules/h5/taskResult/template/index.html",
+					"modules/h5/inviteFriend/template/index.html",
+					"modules/h5/homeworkList/css/index.css",
+					"modules/h5/personalInfo/css/index.css",
+					"modules/h5/inviteFriend/app_js/index.js",
+					"modules/h5/homeworkList/js/index.js",
+					"modules/h5/inviteFriend/js/index.js",
+					"modules/h5/homeworkList/template/index.html",
+					"modules/h5/inviteFriend/css/index.css",
+					"modules/h5/personalInfo/template/index.html",
+					"modules/h5/personalInfo/js/index.js",
+					"modules/h5/inviteFriend/images/two.jpg",
+					"modules/h5/inviteFriend/images/three.jpg",
+					"modules/h5/inviteFriend/images/one.jpg",
+					"libs/mui/fonts/mui.ttf",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/weiboTags/css/index.css",
+					"modules/h5/weiboTags/js/index.js",
+					"modules/h5/weiboTags/template/index.html",
+					"modules/testing/business/images/ico_king.png",
+					"modules/testing/business/images/leaf.png",
+					"modules/testing/business/images/orangeRight.png",
+					"modules/testing/business/css/result.css",
+					"modules/testing/business/template/result.html",
+					"modules/testing/business/app_js/result.js",
+					"modules/testing/business/template/topList.html",
+					"modules/testing/business/css/topList.css",
+					"kit/util/plus-share/img/icon_weixin_friend.png",
+					"kit/util/plus-share/img/icon_weibo.png",
+					"kit/util/plus-share/share.css",
+					"kit/util/plus-share/img/icon_weixin.png",
+					"kit/util/plus-share/share.html"
+				],
+				"refer": [
+					"modules/index.html",
+					"modules/webView.html"
+				],
+				"priority": 0
+			},
+			"modules/webView.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"modules/h5/index/images/price.png",
+				"libs/mui/css/mui.picker.all.css",
+				"libs/mui/js/95516.js",
+				"modules/h5/lessionContent/sass/index.css",
+				"modules/setting/images/60x60.gif",
+				"libs/mui/js/mui.pullToRefresh.js",
+				"modules/h5/lessionContent/html/index.html",
+				"modules/h5/memberCenter/html/index.html",
+				"modules/h5/memberCenter/sass/index.css",
+				"modules/h5/inviteFriend/images/share_tips.png",
+				"libs/mui/css/mui.poppicker.css",
+				"libs/mui/js/mui.picker.all.js",
+				"libs/mui/js/update.js",
+				"libs/mui/css/mui.picker.css",
+				"modules/h5/myLessons/html/index.html",
+				"modules/h5/inviteFriend/sass/index.css",
+				"libs/mui/js/city.data.js",
+				"modules/h5/index/js/index.js",
+				"modules/h5/task/images/share_tips.png",
+				"libs/mui/css/mui.listpicker.css",
+				"libs/mui/js/arttmpl.js",
+				"modules/h5/contactUs/css/index.css",
+				"modules/h5/task/sass/index.css",
+				"libs/mui/js/mui.imageViewer.js",
+				"modules/h5/contactUs/template/index.html",
+				"libs/mui/css/app.css",
+				"modules/h5/signup/sass/index.css",
+				"modules/h5/contactUs/sass/index.css",
+				"sass/_include-media.scss",
+				"modules/h5/contactUs/images/finger.gif",
+				"libs/mui/js/beecloud.js",
+				"modules/h5/lessionList/html/index.html",
+				"libs/mui/js/mui.pullToRefresh.material.js",
+				"modules/h5/lessionContent/images/icon.png",
+				"libs/mui/js/city.data-3.js",
+				"modules/h5/task/js/index.js",
+				"modules/h5/index/sass/index.css",
+				"modules/h5/signup/images/erweima.gif",
+				"kit/util/plus-share.js",
+				"modules/h5/lessionList/html/schedule.html",
+				"modules/compose/compose.css",
+				"libs/mui/css/login.css",
+				"libs/vue/vue.min.js",
+				"libs/mui/js/mui.previewimage.js",
+				"modules/h5/myLessons/sass/index.css",
+				"modules/h5/inviteLanding/sass/index.scss",
+				"modules/h5/contactUs/images/qrcode.jpg",
+				"modules/h5/index/html/index.html",
+				"libs/mui/css/mui.indexedlist.css",
+				"sass/mobile-base.scss",
+				"libs/mui/css/mui.imageviewer.css",
+				"modules/h5/inviteList/html/index.html",
+				"modules/h5/inviteFriend/html/index.html",
+				"modules/h5/task/html/index.html",
+				"libs/mui/img/1.png",
+				"libs/mui/js/mui.dtpicker.js",
+				"libs/mui/css/feedback.css",
+				"modules/h5/weiboTags/html/index.html",
+				"libs/mui/js/mui.poppicker.js",
+				"modules/setting/images/iconfont-tianjia.png",
+				"modules/h5/inviteLanding/html/index.html",
+				"libs/mui/js/mui.zoom.js",
+				"modules/h5/personalInfo/html/index.html",
+				"modules/login/login.html",
+				"modules/h5/personalInfo/sass/index.css",
+				"modules/h5/signup/images/share_tips.png",
+				"libs/mui/js/mui.listpicker.js",
+				"modules/compose/compose.html",
+				"modules/h5/signup/html/index.html",
+				"modules/h5/weiboTags/sass/index.scss",
+				"modules/h5/contactUs/contactUs.html",
+				"modules/h5/contactUs/js/contactUs.js",
+				"libs/mui/js/mui.lazyload.js",
+				"modules/h5/signup/sass/index.scss",
+				"modules/h5/contactUs/html/index.html",
+				"libs/mui/js/mui.lazyload.img.js",
+				"modules/setting/images/muwu.jpg",
+				"libs/mui/css/mui.dtpicker.css",
+				"modules/h5/lessionList/sass/index.scss",
+				"modules/h5/task/task.html",
+				"modules/h5/contactUs/js/index.js",
+				"libs/mui/css/mui.picker.min.css",
+				"libs/mui/js/ad.js",
+				"modules/h5/lessionDetail/sass/index.scss",
+				"modules/h5/lessionDetail/html/index.html",
+				"css/mobile-base.css",
+				"modules/compose/compose.scss",
+				"libs/mui/js/mui.picker.js",
+				"libs/vue/vue.js",
+				"modules/h5/task/js/task.js",
+				"untitled.css",
+				"libs/mui/js/app.js",
+				"libs/mui/js/mui.indexedlist.js",
+				"modules/h5/weiboTags/html/ajax.json",
+				"libs/mui/js/mui.enterfocus.js",
+				"modules/h5/inviteList/sass/index.css",
+				"libs/mui/js/mui.locker.js",
+				"libs/mui/js/mui.picker.min.js"
+			]
+		}
 	},
 	"unpackage": [
 		"css/compose.scss",

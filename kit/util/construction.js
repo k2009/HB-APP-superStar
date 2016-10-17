@@ -249,6 +249,7 @@ define(function(require, exports, module) {
             });
         },
         initSomeThing:function (id,data){
+            var $loding = $('.fakeloader');
             if(!data){
                 if(type_debug)console.log('数据传入出错,跳出执行区'+"line:253");
                 return;
@@ -269,6 +270,10 @@ define(function(require, exports, module) {
                 console.log($tmp(sys.tmp,data))
             }
             document.getElementById(id).innerHTML = $tmp(sys.tmp,data);
+            $loding.addClass('hide');
+            setTimeout(function(){
+                $loding.remove();
+            },400)
             $('.mui-bar').remove();
             $('.container').css('top', '0');
             sys.fn_index.init(data);

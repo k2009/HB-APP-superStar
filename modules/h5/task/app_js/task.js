@@ -125,7 +125,7 @@ define(function(require, exports, module) {
                     //window.location.href = opts.next_url;
                 },
                 error: function(e) {
-                    console.log(JSON.stringify(e))
+                    console.log(JSON.stringify(e)+submit_url)
                     $('#submit').removeClass('ing').text('问问朋友的意见');
                     Alert('网络错误，请刷新页面或稍后重试');
                 }
