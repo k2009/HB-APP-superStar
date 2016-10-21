@@ -35,7 +35,7 @@ define(function(require, exports, module) {
             // 设置分享的文案
             WeiboJS.setSharingContent({
                 external:{
-                    title: opts.dialog_title || "一起炫酷",
+                    title: opts.dialog_title || opts.name,
                     icon: "http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg",
                     desc: TITLE
                 }
@@ -71,7 +71,7 @@ define(function(require, exports, module) {
                 }
             });
             wx.onMenuShareAppMessage({
-                title: opts.dialog_title || "一起炫酷", // 分享标题
+                title: opts.dialog_title || opts.name, // 分享标题
                 desc: TITLE, // 分享描述
                 link: url, // 分享链接
                 imgUrl: 'http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg', // 分享图标
@@ -106,7 +106,7 @@ define(function(require, exports, module) {
         },
         // 释放事件
         "releaseEvent": function(){
-            $body.off("touchend", "[action=invite]", Tools.showMask);
+            $body.off("touchend", "[action=invite]", Tools.hideMask);
         }
     };
     function init(opts) {

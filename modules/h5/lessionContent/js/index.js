@@ -7,11 +7,12 @@ define(function(require, exports, module) {
     var initData;
     var finishTip;
 
+    var ID = "#st_modules_h5_lessionContent";
+
     lazyload.load("common/share/tips/js/index", function(dialog){
         finishTip = new dialog({});           
     });
 
-    // 王硕，你先别改这个了
     var showDialog=function(){
         if(initData.next_lesson_status == 0){
             finishTip.show({
@@ -34,12 +35,28 @@ define(function(require, exports, module) {
             });
             //mui.alert(initData.next_lesson_status_info,'','我知道了'); 
         }        
+    };
+
+    // 展开收起导师区域
+    function folder(){
+        $(ID).find(".tutor-intro").toggleClass("tutor-show");
+        $(ID).find(".tutor-folder").toggleClass("tutor-on");
+    }
+
+    function bindEvent(){
+        $(ID).on('click','.tutor-folder', folder);
+    }
+
+    function releaseEvent(){
+        $(ID).off('click','.tutor-folder', folder);
     }
 
     function init(opts) {
         $('#finish').bind('click',showDialog);
+        
         initData=opts;
         $share.init(opts);
+        bindEvent();
 
         // 公共头部
         header.init();          
@@ -52,6 +69,7 @@ define(function(require, exports, module) {
     function destroy(opts) {
         $share.destroy();
         header.destroy();
+        releaseEvent();
         if(finishTip){
             finishTip.hide();
         }

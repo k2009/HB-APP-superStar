@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -108,7 +108,7 @@ body {
   margin: 0; }
 
 .btnBox {
-  margin-top: 0.1rem;
+  margin-top: 0.08533rem;
   text-align: center;
   display: flex;
   display: -webkit-flex;
@@ -124,22 +124,22 @@ body {
 
 .topTip {
   display: inline-block;
-  line-height: 0.26rem;
+  line-height: 0.22187rem;
   width: 100%;
-  height: 0.26rem;
-  font-size: 0.12rem;
+  height: 0.22187rem;
+  font-size: 0.1024rem;
   background: #fff5e4;
   color: #d6a44c; }
 
 .topTipIcon {
   display: inline-block;
   background: url(../images/icon.png) no-repeat;
-  background-size: 0.18rem;
+  background-size: 0.1536rem;
   float: left;
-  width: 0.18rem;
-  height: 0.195rem;
-  background-position: 0 -0.2rem;
-  margin: 0 0.1rem; }
+  width: 0.1536rem;
+  height: 0.1664rem;
+  background-position: 0 -0.17067rem;
+  margin: 0 0.08533rem; }
 
 .topText {
   width: 100%;
@@ -215,7 +215,7 @@ body {
   top: 40%;
   left: 0;
   right: 0;
-  font-size: 0.18rem; }
+  font-size: 0.1536rem; }
 
 .headPicImg {
   background: url(../images/headpic.jpg) no-repeat;
@@ -227,7 +227,7 @@ body {
   right: 0; }
 
 .mui-content {
-  padding: 0.075rem; }
+  padding: 0.064rem; }
 
 .scoreBox {
   color: #fbbd06;
@@ -237,14 +237,14 @@ body {
   left: 0;
   right: 0;
   text-align: center;
-  font-size: 0.16rem; }
+  font-size: 0.13653rem; }
 
 .scoreNumber {
-  font-size: 0.35rem; }
+  font-size: 0.29867rem; }
 
 .nickname {
   text-align: center;
-  font-size: 0.16rem;
+  font-size: 0.13653rem;
   color: #333;
   margin: 25px; }
 
@@ -262,7 +262,7 @@ body {
 
 .mui-table-view-cell .td1 {
   display: inline-block;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   width: 20%;
   text-align: left; }
 
@@ -275,28 +275,28 @@ body {
   margin-left: 20px; }
 
 .diffStar {
-  margin: 0 0.02rem;
+  margin: 0 0.01707rem;
   display: inline-block;
-  width: 0.15rem;
-  height: 0.14rem;
+  width: 0.128rem;
+  height: 0.11947rem;
   background: url(../images/star.png) no-repeat;
-  background-size: 0.15rem;
+  background-size: 0.128rem;
   vertical-align: middle; }
 
 .diffStar.empty {
-  background-position: 0 -0.15rem; }
+  background-position: 0 -0.128rem; }
 
 .mui-content {
   text-align: center;
-  line-height: 0.3rem; }
+  line-height: 0.256rem; }
 
 .slideBox {
-  margin: 0 auto 0.4rem;
-  height: 2.3rem;
+  margin: 0 auto 0.34133rem;
+  height: 1.96267rem;
   position: relative;
   background: #f2f2f2;
   overflow-x: scroll;
-  padding: 0.1rem 0; }
+  padding: 0.08533rem 0; }
 
 .slideInner {
   position: absolute;
@@ -309,40 +309,40 @@ body {
   background: white;
   border-radius: 5px;
   box-shadow: 0 2px 2px #999;
-  width: 1.575rem;
-  height: 2.05rem;
-  padding-bottom: 0.05rem;
+  width: 1.344rem;
+  height: 1.74933rem;
+  padding-bottom: 0.04267rem;
   overflow: hidden;
-  padding: 0.1rem;
+  padding: 0.08533rem;
   text-align: center;
-  margin: 0.05rem; }
+  margin: 0.04267rem; }
 
 .slideItem .headImg {
-  margin: 0.05rem auto;
+  margin: 0.04267rem auto;
   border-radius: 50px;
-  width: 0.6rem;
-  height: 0.6rem; }
+  width: 0.512rem;
+  height: 0.512rem; }
 
 .slideItem .nickname {
   margin: 0;
   display: block;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   color: #333; }
 
 .slideItem .follower {
   text-align: left;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   color: #888 !important; }
 
 .slideItem .follower a {
   color: #888 !important; }
 
 .slideItem .describe {
-  line-height: 0.14rem;
+  line-height: 0.11947rem;
   text-align: left;
-  font-size: 0.13rem;
+  font-size: 0.11093rem;
   color: #CCC;
   overflow: hidden;
   text-overflow: ellipsis;
   padding-bottom: 10px;
-  height: 0.425rem; }
+  height: 0.36267rem; }

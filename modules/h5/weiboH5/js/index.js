@@ -178,9 +178,7 @@ define(function(require, exports, module) {
 				return;
 			}
 		});
-		if( platform === 'weibo' ){
-			runImage.createAgentIframe();
-		}
+		
         var time = dateFormat( opts.time, 'yy-MM-DD hh:mm');
         $( '#time' ).html( time );
         //Alert( JSON.stringify( opts ) );
@@ -195,7 +193,7 @@ define(function(require, exports, module) {
         // 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
             ret.setData(opts.tabbar);
-            ret.setActiveTab(3);
+            ret.setActiveTab(1);
             tabbar = ret;
             // if( opts.next_url ){
             // 	$( '.tabbar a' ).attr({

@@ -1,0 +1,175 @@
+@charset "UTF-8";
+@media (max-width: 319px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 100px; } }
+
+@media (min-width: 375px) and (max-width: 413px) {
+  html {
+    font-size: 117.1875px; } }
+
+@media (min-width: 414px) {
+  html {
+    font-size: 129.375px; } }
+
+.border-1px {
+  position: relative; }
+  .border-1px:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    pointer-events: none; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .border-1px:after {
+      right: -100%;
+      bottom: -100%;
+      transform: scale(0.5);
+      -moz-transform: scale(0.5);
+      -webkit-transform: scale(0.5); } }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    .border-1px:after {
+      right: -200%;
+      bottom: -200%;
+      transform: scale(0.3333);
+      -moz-transform: scale(0.3333);
+      -webkit-transform: scale(0.3333); } }
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, form, fieldset, legend, p, table, th, td, iframe, input, figure {
+  margin: 0;
+  padding: 0; }
+
+header, section, footer {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; }
+
+img {
+  border: 0; }
+
+li {
+  list-style: none; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent; }
+
+a:focus {
+  outline: 0; }
+
+textarea {
+  resize: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none; }
+
+input[type="text"], input[type="button"], input[type="submit"], input[type="tel"] {
+  -webkit-appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-modify: read-write-plaintext-only; }
+
+body {
+  font: 14px/20px "Microsoft YaHei","Hiragino Sans GB","stheitisclight","sans-serif";
+  min-width: 320px;
+  word-wrap: break-word;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; }
+
+.container {
+  height: 100%; }
+
+body {
+  background: #f2f2f2; }
+
+.mainBox {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  margin-bottom: 0.128rem; }
+  .mainBox p {
+    color: #1a1a1a;
+    font-size: 0.11093rem;
+    line-height: 0.1536rem;
+    padding: 0.128rem; }
+  .mainBox ul {
+    padding: 0.128rem;
+    border-top: 1px solid #f2f2f2; }
+    .mainBox ul li {
+      padding: 0.03413rem 0; }
+      .mainBox ul li span {
+        width: 0.72533rem;
+        float: left;
+        color: #fbbd06;
+        line-height: 0.1536rem; }
+      .mainBox ul li p {
+        margin-left: 0.72533rem;
+        padding: 0; }
+
+.mainBox_2 {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 0;
+  padding: 0.128rem 0; }
+
+.input_list li {
+  height: 0.40107rem; }
+  .input_list li input {
+    width: 2.4064rem;
+    display: block;
+    margin: 0 auto 0.128rem;
+    color: #919191;
+    height: 0.2816rem;
+    line-height: 0.2816rem;
+    font-size: 0.1024rem;
+    border: 1px solid #eeeeec;
+    box-shadow: 1px 1px #eeeeec;
+    background: #fff;
+    border-radius: 0.04267rem;
+    padding: 0 0.04267rem 0 0.256rem;
+    font-family: '微软雅黑'; }
+  .input_list li .name {
+    background: url(../images/ico_1.png) #fff no-repeat 0.08533rem center;
+    background-size: 0.128rem 0.128rem; }
+  .input_list li .tel {
+    background: url(../images/ico_2.png) #fff no-repeat 0.08533rem center;
+    background-size: 0.128rem 0.128rem; }
+  .input_list li .job {
+    background: url(../images/ico_3.png) #fff no-repeat 0.08533rem center;
+    background-size: 0.128rem 0.128rem; }
+
+.btn_box {
+  text-align: center;
+  padding: 0.21333rem 0 0; }
+  .btn_box .btn {
+    display: block;
+    width: 1.49333rem;
+    height: 0.29867rem;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 0.128rem;
+    line-height: 0.29867rem;
+    background: #fbbd06;
+    border-radius: 0.04267rem;
+    color: #fff; }

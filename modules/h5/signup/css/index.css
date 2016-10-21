@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -115,77 +115,77 @@ body:before {
   left: 0;
   top: 0;
   width: 100%;
-  min-height: 1.33rem;
+  min-height: 1.13493rem;
   background: url(../images/bg_header.png) no-repeat;
   background-size: 100% auto; }
 
 .analyze-tit:before, .erweima:after, .btn-step:before, .icon_approve_co {
   background: url(../images/bg.png?v=12) no-repeat;
-  background-size: 1.175rem auto; }
+  background-size: 1.00267rem auto; }
 
 .analyze-tit {
   position: relative;
   z-index: 2;
   text-align: center;
-  font-size: 0.15rem;
+  font-size: 0.128rem;
   font-weight: normal;
-  padding: 0.28rem 0 0.2rem; }
+  padding: 0.23893rem 0 0.17067rem; }
   .analyze-tit:before {
     content: "";
     display: block;
-    width: 0.525rem;
-    height: 0.48rem;
-    margin: 0 auto 0.1rem; }
+    width: 0.448rem;
+    height: 0.4096rem;
+    margin: 0 auto 0.08533rem; }
 
 .wh-box {
-  width: 3.17rem;
-  height: 0.7rem;
-  padding: 0.38rem 0 0 0.185rem;
-  margin: 0 auto 0.2rem;
-  font-size: 0.16rem;
-  line-height: 0.26rem;
+  width: 2.70507rem;
+  height: 0.59733rem;
+  padding: 0.32427rem 0 0 0.15787rem;
+  margin: 0 auto 0.17067rem;
+  font-size: 0.13653rem;
+  line-height: 0.22187rem;
   white-space: nowrap;
   background: url(../images/bg_wh.png) no-repeat;
   background-size: 100% auto; }
   .wh-box p {
-    margin-left: 0.45rem;
+    margin-left: 0.384rem;
     display: inline;
     margin: 0;
     color: #fff; }
 
 .fbig {
-  font-size: 0.25rem; }
+  font-size: 0.21333rem; }
 
 .de-txt {
-  font-size: 0.15rem;
-  line-height: 0.26rem;
+  font-size: 0.128rem;
+  line-height: 0.22187rem;
   text-align: center; }
 
 .erweima {
   border: 2px solid #1d1349;
-  width: 1.69rem;
-  height: 1.69rem;
-  margin: 0.13rem auto; }
+  width: 1.44213rem;
+  height: 1.44213rem;
+  margin: 0.11093rem auto; }
   .erweima img {
     width: 100%;
     vertical-align: top; }
   .erweima:after {
     content: "";
     display: block;
-    width: 1.175rem;
-    height: 0.7rem;
-    margin: 0.07rem auto;
-    background-position: 0 -0.55rem; }
+    width: 1.00267rem;
+    height: 0.59733rem;
+    margin: 0.05973rem auto;
+    background-position: 0 -0.46933rem; }
 
 .weibo-official {
   text-align: center;
-  font-size: 0.12rem;
-  margin-bottom: 0.16rem; }
+  font-size: 0.1024rem;
+  margin-bottom: 0.13653rem; }
   .weibo-official dd {
     position: relative;
-    width: 0.77rem;
-    height: 0.77rem;
-    margin: 0.2rem auto 0.125rem; }
+    width: 0.65707rem;
+    height: 0.65707rem;
+    margin: 0.17067rem auto 0.10667rem; }
   .weibo-official img {
     width: 100%;
     border-radius: 50%;
@@ -195,47 +195,47 @@ body:before {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 0.205rem;
-  height: 0.205rem;
+  width: 0.17493rem;
+  height: 0.17493rem;
   overflow: hidden;
   line-height: 200px;
-  background-position: -0.6rem 0; }
+  background-position: -0.512rem 0; }
 
 .btn-step {
   position: relative;
   display: block;
   margin: 0 auto;
-  width: 1.56rem;
-  border: 0.015rem solid #1d1349;
-  border-radius: 0.15rem;
-  line-height: 0.305rem;
-  font-size: 0.16rem;
+  width: 1.3312rem;
+  border: 0.0128rem solid #1d1349;
+  border-radius: 0.128rem;
+  line-height: 0.26027rem;
+  font-size: 0.13653rem;
   font-weight: bold;
   text-align: center;
   color: #472d88;
   background-color: #ffff01;
-  box-shadow: 0 -0.03rem 0 #ffde01 inset; }
+  box-shadow: 0 -0.0256rem 0 #ffde01 inset; }
   .btn-step:before {
     position: absolute;
-    left: 0.03rem;
-    top: 0.03rem;
+    left: 0.0256rem;
+    top: 0.0256rem;
     content: "";
-    width: 0.13rem;
-    height: 0.14rem;
-    background-position: -0.6rem -0.25rem; }
+    width: 0.11093rem;
+    height: 0.11947rem;
+    background-position: -0.512rem -0.21333rem; }
   .btn-step.none {
     background-color: #999;
     color: #fff;
-    box-shadow: 0 -0.03rem 0 #808080 inset; }
+    box-shadow: 0 -0.0256rem 0 #808080 inset; }
 
 .content p {
   text-align: center;
   color: #fff;
-  font-size: 0.12rem;
-  line-height: 0.3rem; }
+  font-size: 0.1024rem;
+  line-height: 0.256rem; }
 
 .content ul {
-  padding-top: 0.5rem;
+  padding-top: 0.42667rem;
   display: block;
   width: 80%;
   margin: 0 auto; }
@@ -243,26 +243,26 @@ body:before {
 .content ul li {
   text-align: center;
   color: #fff;
-  line-height: 0.3rem;
-  margin-bottom: 0.2rem; }
+  line-height: 0.256rem;
+  margin-bottom: 0.17067rem; }
 
 .content .input-text {
   display: block;
   width: 100%;
-  height: 0.3rem;
+  height: 0.256rem;
   border: none;
-  border-radius: 0.015rem;
+  border-radius: 0.0128rem;
   color: #666;
-  font-size: 0.11rem; }
+  font-size: 0.09387rem; }
 
 .content .input-btn {
   display: block;
   width: 100%;
-  height: 0.3rem;
+  height: 0.256rem;
   border: none;
-  border-radius: 0.015rem;
+  border-radius: 0.0128rem;
   color: #666;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   background: url(../images/bg_btn.png) no-repeat;
   background-size: 100% 100%;
   text-align: center; }

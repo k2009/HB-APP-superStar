@@ -9,9 +9,16 @@
 <div class="mui-content content">
 	${data.content}
 </div>
+<#if (data.iswhusr != 1) >
+<div class="not-user">
+	<div class="buttons">
+	<a href="${data.join_url}" pjax="1" class="mui-btn">立即加入</a>
+	</div>
+</div>
+<#else>
 <div  class="tc_text">
 	<a href="javascript:;" class="mui-btn tc_go" id="finish">	
 			学习下一节
-		</a>
-	
+	</a>
 </div>
+</#if>

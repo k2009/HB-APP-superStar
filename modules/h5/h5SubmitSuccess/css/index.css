@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -101,19 +101,19 @@ body {
 
 .profile {
   background: url(http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg) no-repeat;
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.512rem;
+  height: 0.512rem;
   background-size: 100%;
-  margin: 0.15rem auto 0;
-  border-radius: 0.3rem; }
+  margin: 0.128rem auto 0;
+  border-radius: 0.256rem; }
 
 .desc {
-  margin: 0.15rem 0.2rem;
-  font-size: 0.12rem;
+  margin: 0.128rem 0.17067rem;
+  font-size: 0.1024rem;
   text-align: left; }
 
 .desc p, .mui-content-padded p, .qrcode_tip {
-  font-size: 0.12rem; }
+  font-size: 0.1024rem; }
 
 .desc span, .desc a {
   color: #E88353;
@@ -122,69 +122,69 @@ body {
 
 .intro {
   background-color: #fff;
-  padding: 0.15rem 0.1rem;
+  padding: 0.128rem 0.08533rem;
   width: 80%;
   margin: 0 auto; }
 
 .intro .title {
   text-align: center;
-  font-size: 0.18rem;
-  margin: 0.1rem 0 0.1rem;
+  font-size: 0.1536rem;
+  margin: 0.08533rem 0 0.08533rem;
   color: #E88353; }
 
 .intro .desc {
-  margin: 0.15rem 0rem 0; }
+  margin: 0.128rem 0rem 0; }
 
 .weixin {
-  width: 2.5rem;
-  height: 1.29rem;
+  width: 2.13333rem;
+  height: 1.1008rem;
   background: #fff url(../images/finger.gif) no-repeat top right;
-  margin: 0.05rem auto;
-  background-size: 2.5rem;
+  margin: 0.04267rem auto;
+  background-size: 2.13333rem;
   text-align: left; }
 
 .weixin-account {
   text-align: center;
-  padding: 0.2rem 0 0.1rem; }
+  padding: 0.17067rem 0 0.08533rem; }
 
 .weixin img {
-  width: 1.29rem;
-  height: 1.29rem; }
+  width: 1.1008rem;
+  height: 1.1008rem; }
 
 .weibo {
   text-align: center; }
 
 .weibo img {
-  width: 1.2rem;
-  border-radius: 0.9rem;
+  width: 1.024rem;
+  border-radius: 0.768rem;
   border: 1px solid #ddd; }
 
 .weibo button {
-  min-width: 1rem; }
+  min-width: 0.85333rem; }
 
 .qrcode_tip, .mui-content-padded {
   text-align: center;
-  margin: 0.1rem 0 0.15rem; }
+  margin: 0.08533rem 0 0.128rem; }
 
 .mui-btn-block {
-  margin: 0.2rem auto;
+  margin: 0.17067rem auto;
   width: 70%;
-  padding: 0.05rem 0; }
+  padding: 0.04267rem 0; }
 
 .oauth_preview {
   width: 90%;
   margin: 0 auto;
   display: block;
   border: 1px solid #ddd;
-  box-shadow: 0 0.025rem 0.05rem rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.2rem; }
+  box-shadow: 0 0.02133rem 0.04267rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.17067rem; }
 
 .mui-btn-join {
-  margin: 0.3rem auto;
-  height: 0.3rem;
-  line-height: 0.3rem;
+  margin: 0.256rem auto;
+  height: 0.256rem;
+  line-height: 0.256rem;
   padding: 0;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   width: 70%;
   background-image: none;
   text-shadow: none;
@@ -194,17 +194,17 @@ body {
   background: rgba(0, 0, 0, 0.8); }
 
 .mui-content .desc {
-  margin-top: 0.2rem; }
+  margin-top: 0.17067rem; }
 
 .weibo-official {
   text-align: center;
-  font-size: 0.12rem;
-  margin-bottom: 0.16rem; }
+  font-size: 0.1024rem;
+  margin-bottom: 0.13653rem; }
   .weibo-official dd {
     position: relative;
-    width: 0.77rem;
-    height: 0.77rem;
-    margin: 0.2rem auto 0.125rem; }
+    width: 0.65707rem;
+    height: 0.65707rem;
+    margin: 0.17067rem auto 0.10667rem; }
   .weibo-official img {
     width: 100%;
     border-radius: 50%;
@@ -214,11 +214,28 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 0.205rem;
-  height: 0.205rem;
+  width: 0.17493rem;
+  height: 0.17493rem;
   overflow: hidden;
   line-height: 200px;
-  background-position: -0.6rem 0; }
+  background-position: -0.512rem 0; }
 
 .mui-content {
   text-align: center; }
+
+.btn_link, .btn_link_s {
+  display: block;
+  width: 2.13333rem;
+  height: 0.29867rem;
+  margin: 0.128rem auto;
+  text-align: center;
+  font-size: 0.128rem;
+  line-height: 0.29867rem;
+  background: #fbbd06;
+  border-radius: 0.04267rem;
+  color: #fff;
+  border: none; }
+
+.btn_link_s {
+  width: 1.36533rem;
+  margin: 0.21333rem auto; }

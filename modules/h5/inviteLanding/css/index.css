@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -110,12 +110,12 @@ body {
   line-height: 49%;
   overflow: hidden;
   color: white;
-  font-size: 0.13rem; }
+  font-size: 0.11093rem; }
 
 .red-title {
   color: #fe5252;
-  font-size: 0.18rem;
-  padding-top: 0.25rem; }
+  font-size: 0.1536rem;
+  padding-top: 0.21333rem; }
 
 .mui-content {
   text-align: center;
@@ -123,8 +123,8 @@ body {
   background: #f2f2f2; }
 
 .empty {
-  padding: 0.2rem 0.2rem 0;
-  font-size: 0.14rem;
+  padding: 0.17067rem 0.17067rem 0;
+  font-size: 0.11947rem;
   text-align: center;
   background: none; }
 
@@ -132,11 +132,11 @@ body {
   color: #e88353; }
 
 .mui-btn-block {
-  margin: 0.5rem auto;
-  height: 0.4rem;
-  line-height: 0.4rem;
+  margin: 0.42667rem auto;
+  height: 0.34133rem;
+  line-height: 0.34133rem;
   padding: 0;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   color: white;
   width: 70%;
   background: #fe5252; }

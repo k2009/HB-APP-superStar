@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -112,21 +112,21 @@ body {
   overflow: hidden; }
 
 .section {
-  padding: 0.1rem;
-  min-height: 0.5rem; }
+  padding: 0.08533rem;
+  min-height: 0.42667rem; }
   .section .inner {
     width: 80%;
     height: 100%;
     margin: 0 auto;
     position: relative; }
     .section .inner .logo {
-      padding: 0.25rem 0 0;
-      font-size: 0.3rem;
+      padding: 0.21333rem 0 0;
+      font-size: 0.256rem;
       color: #444;
-      height: 0.6rem; }
+      height: 0.512rem; }
     .section .inner .introduce {
       /*float: left;*/
-      min-height: 4rem;
+      min-height: 3.41333rem;
       width: 60%; }
       .section .inner .introduce p {
         width: 100%;
@@ -136,7 +136,7 @@ body {
         word-break: break-all; }
     .section .inner .download-area {
       position: absolute;
-      bottom: 0.3rem; }
+      bottom: 0.256rem; }
       .section .inner .download-area li {
         display: inline-block; }
         .section .inner .download-area li a:link, .section .inner .download-area li a:active, .section .inner .download-area li a:visited, .section .inner .download-area li a:hover {
@@ -144,49 +144,49 @@ body {
           text-decoration: none; }
         .section .inner .download-area li .download {
           display: inline-block;
-          width: 1.35rem;
-          height: 0.45rem;
-          line-height: 0.45rem;
+          width: 1.152rem;
+          height: 0.384rem;
+          line-height: 0.384rem;
           background: #eee;
-          margin-right: 0.1rem;
-          padding-left: 0.3rem;
+          margin-right: 0.08533rem;
+          padding-left: 0.256rem;
           text-align: center;
           border: 1px solid #999;
-          border-radius: 0.05rem;
+          border-radius: 0.04267rem;
           color: #333; }
         .section .inner .download-area li .icon-ios {
-          background: #fff url(../images/ios.png) no-repeat 0.1rem 0.1rem;
-          background-size: 0.25rem; }
+          background: #fff url(../images/ios.png) no-repeat 0.08533rem 0.08533rem;
+          background-size: 0.21333rem; }
         .section .inner .download-area li .icon-android {
-          background: #fff url(../images/android.png) no-repeat 0.1rem 0.1rem;
-          background-size: 0.25rem; }
+          background: #fff url(../images/android.png) no-repeat 0.08533rem 0.08533rem;
+          background-size: 0.21333rem; }
       .section .inner .download-area .qrcode {
-        padding: 0.15rem 0; }
+        padding: 0.128rem 0; }
         .section .inner .download-area .qrcode img {
-          width: 1rem;
-          height: 1rem;
-          padding: 0.1rem;
+          width: 0.85333rem;
+          height: 0.85333rem;
+          padding: 0.08533rem;
           background: #fff;
           vertical-align: middle; }
         .section .inner .download-area .qrcode .text {
-          padding-left: 0.15rem; }
+          padding-left: 0.128rem; }
     .section .inner .phone {
-      width: 1.615rem;
-      height: 3.235rem;
+      width: 1.37813rem;
+      height: 2.76053rem;
       background: url(../images/iphone.png) no-repeat;
-      background-size: 1.615rem;
+      background-size: 1.37813rem;
       position: absolute;
       right: 0;
       bottom: 0;
       /*float: right;*/
-      margin: 0.5rem 0.3rem; }
+      margin: 0.42667rem 0.256rem; }
       .section .inner .phone .preview {
-        width: 1.415rem;
-        height: 2.5rem;
+        width: 1.20747rem;
+        height: 2.13333rem;
         background: #fbbf06;
         position: absolute;
-        left: 0.1rem;
-        top: 0.365rem; }
+        left: 0.08533rem;
+        top: 0.31147rem; }
         .section .inner .phone .preview img {
           width: 100%;
           height: 100%; }
@@ -201,10 +201,10 @@ body {
     display: inline-block;
     width: 50%; }
     .section-2 .desc h2 {
-      font-size: 0.18rem;
-      padding-top: 0.15rem; }
+      font-size: 0.1536rem;
+      padding-top: 0.128rem; }
     .section-2 .desc ul li {
-      margin: 0.1rem 0;
+      margin: 0.08533rem 0;
       /*padding-left: r(30);*/ }
 
 .section-3 {
@@ -216,26 +216,26 @@ body {
     .section-3 .weibo a, .section-3 .weixin a {
       color: #444; }
     .section-3 .weibo img, .section-3 .weixin img {
-      width: 0.9rem;
-      height: 0.9rem; }
+      width: 0.768rem;
+      height: 0.768rem; }
     .section-3 .weibo p .title,
     .section-3 .weibo p .nick, .section-3 .weixin p .title,
     .section-3 .weixin p .nick {
       display: inline-block;
-      width: 0.9rem;
+      width: 0.768rem;
       text-align: center; }
     .section-3 .weibo p .title, .section-3 .weixin p .title {
       color: #999;
-      font-size: 0.1rem; }
+      font-size: 0.08533rem; }
   .section-3 .weibo {
     text-align: right;
-    padding-right: 0.5rem; }
+    padding-right: 0.42667rem; }
     .section-3 .weibo img {
       border-radius: 100%; }
     .section-3 .weibo p {
       /*float: right;*/ }
   .section-3 .weixin {
-    padding-left: 0.5rem; }
+    padding-left: 0.42667rem; }
 
 .section-4 {
   background: #f1c40f; }
@@ -244,7 +244,7 @@ body {
   background: #d8af0c; }
 
 .section-6 {
-  height: 0.2rem;
+  height: 0.17067rem;
   background: #f8f8f8;
   /*#0084b8;*/
   color: #666;
@@ -258,7 +258,7 @@ body {
       .section .inner .introduce p {
         width: auto; }
     .section .inner .phone {
-      margin: 0.25rem 0rem; } }
+      margin: 0.21333rem 0rem; } }
 
 @media (max-width: 700px) {
   .section .inner {
@@ -269,33 +269,33 @@ body {
         width: auto; }
     .section .inner .download-area li {
       display: block;
-      margin-bottom: 0.15rem; }
+      margin-bottom: 0.128rem; }
       .section .inner .download-area li:last-child {
         margin-bottom: 0; }
     .section .inner .download-area .qrcode .text {
       display: block;
       text-align: left;
-      padding: 0.1rem 0 0; }
+      padding: 0.08533rem 0 0; }
     .section .inner .phone {
-      margin: 0.25rem 0rem; } }
+      margin: 0.21333rem 0rem; } }
 
 @media (max-width: 414px) {
   .section .inner {
     width: 90%; }
     .section .inner .logo {
       text-align: center;
-      margin: 0.15rem 0; }
+      margin: 0.128rem 0; }
     .section .inner .introduce {
       width: 100%;
-      min-height: 0.5rem;
-      padding-bottom: 0.15rem; }
+      min-height: 0.42667rem;
+      padding-bottom: 0.128rem; }
       .section .inner .introduce p {
         width: auto; }
     .section .inner .download-area {
       position: static; }
       .section .inner .download-area li {
         display: block;
-        margin-bottom: 0.15rem; }
+        margin-bottom: 0.128rem; }
         .section .inner .download-area li .download {
           width: 80%;
           display: block;
@@ -305,19 +305,19 @@ body {
       .section .inner .download-area .text {
         display: block;
         text-align: center;
-        padding: 0.1rem 0 0; }
+        padding: 0.08533rem 0 0; }
       .section .inner .download-area .qrcode {
         display: none; }
         .section .inner .download-area .qrcode a {
           display: block;
           margin: 0 auto;
-          width: 1rem; }
+          width: 0.85333rem; }
         .section .inner .download-area .qrcode .text {
           display: block;
           text-align: center;
-          padding: 0.1rem 0 0; }
+          padding: 0.08533rem 0 0; }
     .section .inner .phone {
-      margin: 0.15rem auto;
+      margin: 0.128rem auto;
       position: relative;
       bottom: 0; }
   .section-2 .desc {
@@ -329,4 +329,4 @@ body {
     padding: 0;
     text-align: center; }
   .section-3 .weibo {
-    padding-bottom: 0.15rem; } }
+    padding-bottom: 0.128rem; } }

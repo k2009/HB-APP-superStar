@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -140,7 +140,7 @@ body {
   top: 40%;
   left: 0;
   right: 0;
-  font-size: 0.18rem; }
+  font-size: 0.1536rem; }
 
 .headPicImg {
   background: url(../images/headpic.jpg) no-repeat;
@@ -152,5 +152,5 @@ body {
   right: 0; }
 
 .mui-content {
-  padding: 0.075rem;
+  padding: 0.064rem;
   background: white; }

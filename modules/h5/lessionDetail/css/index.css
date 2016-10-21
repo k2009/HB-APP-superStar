@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -100,7 +100,7 @@ body {
   height: 100%; }
 
 body {
-  background: white; }
+  background: #f2f2f2; }
 
 .mui-active {
   background: white !important; }
@@ -110,8 +110,8 @@ body {
   width: auto; }
 
 .subTitle {
-  font-size: 0.12rem;
-  color: #555;
+  font-size: 0.11947rem;
+  color: #1a1a1a;
   white-space: normal;
   display: -webkit-box;
   overflow: hidden;
@@ -121,7 +121,7 @@ body {
 
 .table-item {
   display: inline-block;
-  font-size: 0.12rem; }
+  font-size: 0.1024rem; }
 
 .mui-table-view-cell:after {
   display: none; }
@@ -131,46 +131,46 @@ body {
 
 .diffStar, .taskIcon {
   display: inline-block;
-  width: 0.15rem;
-  height: 0.14rem;
+  width: 0.128rem;
+  height: 0.11947rem;
   background: url(../images/icon.png) no-repeat;
-  background-size: 0.15rem;
+  background-size: 0.128rem;
   vertical-align: sub;
-  margin: 0 0.015rem; }
+  margin: 0 0.0128rem; }
 
 .taskIcon {
-  background-position: 0 -0.52rem;
-  width: 0.25rem;
-  height: 0.25rem;
-  background-size: 0.25rem;
+  background-position: 0 -0.44373rem;
+  width: 0.21333rem;
+  height: 0.21333rem;
+  background-size: 0.21333rem;
   position: absolute;
-  top: 0.075rem;
-  right: 0.05rem; }
+  top: 0.064rem;
+  right: 0.04267rem; }
 
 .diffStar.empty {
-  background-position: 0 -0.15rem; }
+  background-position: 0 -0.128rem; }
 
 .section {
-  font-size: 0.1rem;
+  font-size: 0.08533rem;
   color: #ea5504;
   padding: 10px 15px;
   position: relative; }
 
 .sectionTitle {
-  font-size: 0.13rem;
+  font-size: 0.11093rem;
   color: #555;
-  line-height: 0.25rem; }
+  line-height: 0.21333rem; }
 
 .arrowRight {
   float: right;
-  margin-right: 0.05rem;
+  margin-right: 0.04267rem;
   color: #CCC; }
 
 .mui-table-view-cell .sectionIntro {
-  line-height: 0.15rem;
+  line-height: 0.128rem;
   margin: 0;
   padding: 0px;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   white-space: normal;
   display: -webkit-box;
   overflow: hidden;
@@ -193,7 +193,7 @@ body {
   float: left;
   width: 100%;
   text-align: center;
-  line-height: 0.35rem; }
+  line-height: 0.29867rem; }
 
 .mui-btn {
   width: 80%; }
@@ -202,7 +202,11 @@ body {
   padding: 0;
   color: #CCC;
   border-top: 10px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0; }
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff; }
+
+.chapterItem:last-child {
+  margin-bottom: 0.08533rem; }
 
 .chapterItem.done .sectionTitle {
   color: #BBB; }
@@ -214,14 +218,14 @@ body {
   text-align: left;
   position: relative;
   margin: 0 !important;
-  padding: 0.1rem !important; }
+  padding: 0.08533rem 0.128rem !important; }
 
 .chapterChecked {
   float: right;
   font-size: 18px;
   color: white;
-  right: 0.05rem;
-  top: 0.025rem;
+  right: 0.04267rem;
+  top: 0.02133rem;
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -236,15 +240,17 @@ body {
   position: relative; }
 
 .top-title {
-  margin: 0.1rem;
+  padding: 0.128rem;
   font-weight: normal;
-  color: #555; }
+  color: #1a1a1a;
+  background: #fff;
+  font-size: 0.13653rem; }
 
 .top-img-box {
   width: 30%;
   padding-bottom: 30%;
   position: absolute;
-  top: 0.2rem;
+  top: 0.17067rem;
   right: 6%; }
 
 .top-img {
@@ -254,20 +260,29 @@ body {
   left: 0;
   top: 0; }
 
+.description {
+  padding: 0 0.128rem; }
+
 .colorGray {
-  font-size: 10px;
-  color: #888; }
+  font-size: 0.11947rem;
+  color: #646464; }
+  .colorGray .percent {
+    padding: 0.04267rem 0 0.08533rem;
+    font-size: 0.1024rem;
+    color: #a3a1a2; }
+    .colorGray .percent .count {
+      color: #ea5504; }
 
 .percentRate {
   text-align: center;
-  margin: 0.1rem;
+  margin: 0.08533rem;
   position: relative;
-  margin-bottom: 0.2rem; }
+  margin-bottom: 0.17067rem; }
 
 .percentRate:before, .percentRate:after {
   content: '';
-  height: 0.05rem;
-  border-radius: 0.05rem;
+  height: 0.04267rem;
+  border-radius: 0.04267rem;
   background: white;
   position: absolute;
   top: 24px;

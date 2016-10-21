@@ -69,7 +69,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -87,7 +87,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -111,12 +111,12 @@ html, body, .container, .module, .fullpage {
     width: 100%;
     height: 100%;
     text-align: center;
-    padding-top: 0.05rem;
+    padding-top: 0.04267rem;
     background: #ddd;
     /*display: none;*/
-    font-size: 0.3rem; }
+    font-size: 0.256rem; }
     .fullpage article .cover {
-      height: 0.6rem;
+      height: 0.512rem;
       /*background: #ff0;*/ }
   .fullpage :nth-child(1) {
     background: #f00; }
@@ -131,14 +131,14 @@ html, body, .container, .module, .fullpage {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 0.3rem;
+  height: 0.256rem;
   text-align: center; }
   .arrow-container .arrow-ani {
     display: inline-block;
-    width: 0.18rem;
-    height: 0.11rem;
-    margin-top: 0.17rem;
-    background-size: 0.18rem 0.11rem;
+    width: 0.1536rem;
+    height: 0.09387rem;
+    margin-top: 0.14507rem;
+    background-size: 0.1536rem 0.09387rem;
     -webkit-animation: 1.5s rainbow infinite alternate;
     animation: 1.5s rainbow infinite alternate;
     position: relative;
@@ -146,18 +146,18 @@ html, body, .container, .module, .fullpage {
     overflow: hidden; }
     .arrow-container .arrow-ani .arrow1 {
       display: inline-block;
-      width: 0.09rem;
-      height: 0.09rem;
+      width: 0.0768rem;
+      height: 0.0768rem;
       position: absolute;
       z-index: 1;
-      left: 0.03rem;
-      top: 0.02rem; }
+      left: 0.0256rem;
+      top: 0.01707rem; }
       .arrow-container .arrow-ani .arrow1:before {
         content: "";
         border-color: #999;
         border-style: solid;
-        border-top-width: 0.09rem;
-        border-left-width: 0.09rem;
+        border-top-width: 0.0768rem;
+        border-left-width: 0.0768rem;
         position: absolute;
         top: 0;
         left: 0;
@@ -174,10 +174,10 @@ html, body, .container, .module, .fullpage {
         content: "";
         border-color: #ddd;
         border-style: solid;
-        border-top-width: 0.09rem;
-        border-left-width: 0.09rem;
+        border-top-width: 0.0768rem;
+        border-left-width: 0.0768rem;
         position: absolute;
-        top: 0.01rem;
+        top: 0.00853rem;
         left: 0rem;
         -ms-transform: rotate(45deg);
         /* IE 9 */
@@ -190,18 +190,18 @@ html, body, .container, .module, .fullpage {
         transform: rotate(45deg); }
     .arrow-container .arrow-ani .arrow2 {
       display: inline-block;
-      width: 0.07rem;
-      height: 0.07rem;
+      width: 0.05973rem;
+      height: 0.05973rem;
       position: absolute;
       z-index: 2;
-      left: 0.04rem;
-      top: 0.06rem; }
+      left: 0.03413rem;
+      top: 0.0512rem; }
       .arrow-container .arrow-ani .arrow2:before {
         content: "";
         border-color: #999;
         border-style: solid;
-        border-top-width: 0.07rem;
-        border-left-width: 0.07rem;
+        border-top-width: 0.05973rem;
+        border-left-width: 0.05973rem;
         position: absolute;
         top: 0rem;
         left: 0rem;
@@ -218,10 +218,10 @@ html, body, .container, .module, .fullpage {
         content: "";
         border-color: #ddd;
         border-style: solid;
-        border-top-width: 0.07rem;
-        border-left-width: 0.07rem;
+        border-top-width: 0.05973rem;
+        border-left-width: 0.05973rem;
         position: absolute;
-        top: 0.01rem;
+        top: 0.00853rem;
         left: 0rem;
         -ms-transform: rotate(45deg);
         /* IE 9 */

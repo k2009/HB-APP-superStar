@@ -5,6 +5,7 @@ define(function(require, exports, module) {
     var wordCloud=require('modules/testing/weiboDNA/js/wordCloud');
     var divideWindowSize=380;
     var header = require('common/slogon/js/index');
+    var lazyload = require("kit/util/asyncModule");
     var structColors=[
         '#2ec7c9','#b7a3df','#5ab1ef','#ffb981','#d97a81'
     ]
@@ -119,6 +120,12 @@ define(function(require, exports, module) {
             initKey(opts);
         },1000);
 
+        // 延迟加载 tabbar
+        lazyload.load("common/tabbar/js/index", function(ret) {
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(1);
+            tabbar = ret;
+        });
         // 公共头部
         header.init();
     }

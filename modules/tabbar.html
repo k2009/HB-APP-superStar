@@ -139,21 +139,30 @@
 	</head>
 
 	<body>
-		<nav class="border-1px tabbar">
-			<a onclick="return false" href="" pjax="1" class="tabbar-item current" data-index="0">
+		<style type="text/css">
+			.tabbar .tabbar-item ,nav.tabbar{
+			    height: 48px !important;
+			}
+		</style>
+		<nav class="border-1px tabbar" style="font-size: 0;">
+			<a href="#" onclick="return false" pjax="1" class="tabbar-item current" data-index="0">
 				<span class="tabbar-icon icon-home"></span>
-				<span class="tabbar-text">首页</span>
+				<span class="tabbar-text">开始</span>
 			</a>
-			<a onclick="return false" href="/castle/wap/course/course-list" pjax="1" class="tabbar-item" data-index="1">
-				<span class="tabbar-icon icon-lesson"></span>
-				<span class="tabbar-text">课程</span>
+			<a href="/castle/wap/course/course-list" pjax="1" class="tabbar-item" data-index="1">
+				<span class="tabbar-icon icon-learn"></span>
+				<span class="tabbar-text">学习</span>
 			</a>
-			<a onclick="return false" href="/castle/wap/exam/list" pjax="1" class="tabbar-item" data-index="2">
-				<span class="tabbar-icon icon-test"></span>
-				<span class="tabbar-text">评测</span>
+			<a href="/castle/wap/speedup/index" pjax="1" class="tabbar-item" data-index="2">
+				<span class="tabbar-icon icon-jiasu"></span>
+				<span class="tabbar-text">加速</span>
 			</a>
-			<a onclick="return false" href="/castle/wap/user/show" pjax="1" class="tabbar-item" data-index="3">
-				<span class="tabbar-icon icon-me"></span>
+			<a href="/castle/wap/works/index" pjax="1" class="tabbar-item" data-index="3">
+				<span class="tabbar-icon icon-money"></span>
+				<span class="tabbar-text">赚钱</span>
+			</a>
+			<a href="/castle/wap/user/show" pjax="1" class="tabbar-item" data-index="3">
+				<span class="tabbar-icon icon-mine"></span>
 				<span class="tabbar-text">我</span>
 			</a>
 		</nav>

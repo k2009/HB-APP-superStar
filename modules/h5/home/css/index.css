@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -204,7 +204,7 @@ body, .module {
 .my-lesson header, .my-grade header, .lesson-preview header {
   height: 0.36267rem;
   line-height: 0.36267rem;
-  font-size: 0.11947rem;
+  font-size: 0.13653rem;
   color: #1c1c1c;
   border-bottom: 1px solid #eee;
   padding-left: 0.128rem;

@@ -16,9 +16,9 @@ define(function(require, exports, module) {
 				// 
 				    plus.push.addEventListener( "receive", function( msg ) {
 				        if ( msg.aps ) {  // Apple APNS message
-				            alert(JSON.stringify(msg))
+				            // alert(JSON.stringify(msg))
 				        } else {
-				            alert(JSON.stringify(msg))
+				            // alert(JSON.stringify(msg))
 
 				        }
 				    }, false );

@@ -1,0 +1,92 @@
+<div class="head">
+	<img src="${data.banner}" alt="" class="background">
+	<div class="playButton" style="display: none;"></div>
+</div>
+<div class="headInfo">
+	<h4 class="title">
+		${data.name}
+	</h4>
+	<span class="endDate">${data.time_start} - ${data.time_end}</span>
+	<span class="partner">${data.work_type}</span>
+</div>
+
+<ul class="detailBox">
+	<#if (data.offical.length != 0) >
+		<li class="mui-table-view-cell sponserTitle">主办方</li>
+		<li class="mui-table-view-cell">
+			<#list data.offical as item>
+				<div class="sponser">
+					<img src="${item.image_bg}" alt="${item.name}" class="headpic">
+					<div class="sponserInfo">
+						<span class="sponserName">${item.name}</span>
+						<br>
+						<span class="sponserDescribe">${item.intro}</span>
+					</div>
+				</div>
+			</#list>
+		</li>
+	</#if>
+	<li class="mui-table-view-cell sponserTitle">招募人数 </li>
+	<li class="mui-table-view-cell sponserContent"><span class="hireCount">${data.num}人</span> </li>
+	
+	<li class="mui-table-view-cell sponserTitle">工作要求</li>
+	<li class="mui-table-view-cell sponserContent">
+		<dl class="workList">
+			<#list data.require as item>
+				<dd>${item.key}：${item.value}</dd>
+			</#list>
+		</dl>
+	</li>
+
+	<li class="mui-table-view-cell sponserTitle">工作回报</li>
+	<li class="mui-table-view-cell sponserContent">
+		<p>${data.return_desc}</p>
+	</li>
+
+	<li class="mui-table-view-cell sponserTitle">工作内容</li>
+	<li class="mui-table-view-cell sponserContent">
+		<p>${data.desc}</p>
+	</li>
+	
+</ul>
+
+<div class="mui-table-view-cell mt10">
+	<a href="${data.index_url}"> 你可能感兴趣的工作 <span class="rightArrow"></span></a>
+</div>
+
+<div class="slideBox">
+	<ul class="slider" id="slider">
+		<#list data.recommends as job>
+			<li class="slideItem">
+				<a href="${job.url}">
+					<!-- <span class="hire">${job.title}</span> -->
+					<img src="${job.banner}" alt="" class="background">
+					<div class="info">
+						<h4 class="title">${job.name}</h4>
+						<span class="endDate jobs">${job.time_end} 截止</span>
+					</div>					
+				</a>				
+			</li>
+		</#list>
+	</ul>
+</div>
+<div class="mui-btn-box">
+	<#if (data.status == 5)>
+		<a class="mui-btn mui-btn-350" href="${data.index_url}"> 已报名 </a>
+	</#if>
+	<#if (data.status == 0)>
+		<a class="mui-btn mui-btn-350" href="${data.index_url}"> 未找到 </a>
+	</#if>
+	<#if (data.status == 1)>
+	<a class="mui-btn mui-btn-350" href="${data.apply_url}"> 立即报名 </a>
+	</#if>
+	<#if (data.status == 2)>
+		<a class="mui-btn mui-btn-350" href="${data.index_url}"> 报名已撤销 </a>
+	</#if>
+	<#if (data.status == 3)>
+		<a class="mui-btn mui-btn-350" href="${data.index_url}"> 报名未开始 </a>
+	</#if>
+	<#if (data.status == 4)>
+		<a class="mui-btn mui-btn-350" href="${data.index_url}"> 报名已结束 </a>
+	</#if>
+</div>

@@ -69,7 +69,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -87,7 +87,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -101,13 +101,13 @@ body {
   height: 100%; }
 
 p {
-  margin: 0.1rem 0.08rem; }
+  margin: 0.08533rem 0.06827rem; }
 
 .mui-table-view-radio .mui-table-view-cell.mui-disabled {
   cursor: not-allowed; }
 
 .mui-btn-block {
-  margin: 0.2rem auto;
+  margin: 0.17067rem auto;
   width: 90%;
   display: block;
   -webkit-tap-highlight-color: transparent; }
@@ -127,22 +127,22 @@ p {
   visibility: hidden; }
 
 .tags {
-  padding: 0.2rem 0.2rem 0.3rem;
-  min-height: 2.5rem;
+  padding: 0.17067rem 0.17067rem 0.256rem;
+  min-height: 2.13333rem;
   margin-right: -3%; }
 
 .tags li {
   display: inline-block;
   float: left;
-  margin: 0 2% 0.1rem 0;
+  margin: 0 2% 0.08533rem 0;
   background: #fff;
   border-width: 1px;
-  padding: 0.05rem 0.02rem;
+  padding: 0.04267rem 0.01707rem;
   width: 31%;
   text-align: center;
-  border-radius: 0.02rem;
-  line-height: 0.2rem;
-  height: 0.3rem; }
+  border-radius: 0.01707rem;
+  line-height: 0.17067rem;
+  height: 0.256rem; }
 
 .tags span {
   text-overflow: ellipsis;
@@ -160,9 +160,9 @@ p {
   content: "\e472";
   font-family: Muiicons;
   position: absolute;
-  bottom: -0.04rem;
-  right: -0.17rem;
-  font-size: 0.4rem;
+  bottom: -0.03413rem;
+  right: -0.14507rem;
+  font-size: 0.34133rem;
   text-shadow: 0 0 1px #fff; }
 
 .mui-toast-container {

@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
     var jssdk = require("common/share/jssdk");
+    var lazyload = require("kit/util/asyncModule");
+    var header = require('common/slogon/js/index');
     var platform;
     var share_url;
     var signedRequest = null;
@@ -154,6 +156,13 @@ define(function(require, exports, module) {
                 return;
             }
         });
+        // 延迟加载 tabbar
+        lazyload.load("common/tabbar/js/index", function(ret) {
+            ret.setData(opts.tabbar);
+            ret.setActiveTab(1);
+            tabbar = ret;
+        });
+        header.init();
         if( platform === 'weibo' ){
             runShare.createAgentIframe();
         };
@@ -165,6 +174,10 @@ define(function(require, exports, module) {
         // WeiboJS = null;
         // wx = null;
         // runShare = null;
+        header.destroy();
+        if (tabbar) {
+            tabbar.destroy();
+        }
     }
     var that = {
         init: init,

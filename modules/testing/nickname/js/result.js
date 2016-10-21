@@ -85,7 +85,7 @@ define(function(require, exports, module) {
         if(pageData.num>=3){
             mui.alert('亲,每天只能免费测3次呦，请明天再来吧','提示','我知道了');
         }else{
-            location.href=url;
+            SCRM.pjax(url);
         }
     }
 
@@ -112,7 +112,7 @@ define(function(require, exports, module) {
     function init(opts) {
         lazyload.load("common/tabbar/js/index", function(dialog){
             dialog.setData(opts.tabbar);
-            dialog.setActiveTab(2);
+            dialog.setActiveTab(1);
         });   
         pageData=opts;
         opts.score>=70 && initRandomText();

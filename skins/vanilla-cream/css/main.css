@@ -69,7 +69,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -87,7 +87,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -444,6 +444,20 @@ header.mui-bar h1.mui-title {
   border: none;
   box-shadow: none; }
 
+.mui-btn-box, .mui-btn-box-350 {
+  display: flex;
+  -webkit-display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.08533rem; }
+
+.mui-btn-box {
+  flex-direction: column; }
+
+.mui-btn-box {
+  flex-direction: row; }
+
 .mui-btn {
   display: inline-block;
   border: none;
@@ -451,22 +465,22 @@ header.mui-bar h1.mui-title {
   background: #fbbd06;
   color: white;
   padding: 0;
-  width: 1.35rem;
-  height: 0.33rem;
-  line-height: 0.33rem;
+  width: 1.152rem;
+  height: 0.2816rem;
+  line-height: 0.2816rem;
   text-align: center;
-  font-size: 0.14rem; }
+  font-size: 0.11947rem; }
 
 .mui-btn.mui-btn-350 {
-  width: 1.75rem;
-  height: 0.33rem;
-  line-height: 0.33rem;
-  font-size: 0.14rem; }
+  width: 1.49333rem;
+  height: 0.2816rem;
+  line-height: 0.2816rem;
+  font-size: 0.11947rem; }
 
 .mui-btn.mui-btn-secondary {
   background: #bfbfbf;
   color: #ffffff;
-  font-size: 0.14rem; }
+  font-size: 0.11947rem; }
 
 .mui-btn.mui-btn-disabled, .mui-btn.mui-btn-disable {
   color: #999;

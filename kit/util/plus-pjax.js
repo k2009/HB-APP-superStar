@@ -8,6 +8,7 @@ define(function(require, exports, module) {
 			sys.route = $storage('route');
 			var a = sys.route;
 			var data;
+			path = path.replace('http://91hong.com.cn','')
 			for (var i = 0; i < a.length; i++) {
 				if ($.trim(a[i].path) == $.trim(path)) {
 					data = a[i].data.default_data.modules[0];
@@ -56,6 +57,7 @@ define(function(require, exports, module) {
 		},
 		urlJump: function(url, title) {
 			if(!url)return;
+			url = decodeURIComponent(url);
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
 			if (!data) {
@@ -100,7 +102,8 @@ define(function(require, exports, module) {
 			};
 
 			//数据重载来规避多页面打开的事儿
-			if (data.module_id == "st_modules_h5_home") {
+			console.log('2222222data:'+JSON.stringify(data))
+			if ((data.module_id == "st_modules_h5_home")||(data.module_id == "st_modules_start_home")) {
 				mui.openWindow({
 					id: 'index_box.html',
 					url: '_www/modules/h5/index/index_box.html',

@@ -1,0 +1,814 @@
+{
+	"@platforms": [
+		"android",
+		"iPhone",
+		"iPad"
+	],
+	"id": "com.91hong.wanghong",/*应用的标识，创建应用时自动生成，勿手动修改*/
+	"name": "网红城堡",/*应用名称，程序桌面图标名称*/
+	"version": {
+		"name": "1.1.5",/*应用版本名称*/
+		"code": ""
+	},
+	"description": "",/*应用描述信息*/
+	"icons": {
+		"72": "icon.png"
+	},
+	"launch_path": "modules/login/login-weibo.html",/*应用的入口页面，默认为根目录下的index.html；支持网络地址，必须以http://或https://开头*/
+	"developer": {
+		"name": "",/*开发者名称*/
+		"email": "",/*开发者邮箱地址*/
+		"url": ""
+	},
+	"permissions": {
+		"Accelerometer": {
+			"description": "访问加速度感应器"
+		},
+		"Audio": {
+			"description": "访问麦克风"
+		},
+
+		"Cache": {
+			"description": "管理应用缓存"
+		},
+		"Camera": {
+			"description": "访问摄像头"
+		},
+		"Console": {
+			"description": "跟踪调试输出日志"
+		},
+		"Contacts": {
+			"description": "访问系统联系人信息"
+		},
+		"Device": {
+			"description": "访问设备信息"
+		},
+		"Downloader": {
+			"description": "文件下载管理"
+		},
+		"Events": {
+			"description": "应用扩展事件"
+		},
+		"File": {
+			"description": "访问本地文件系统"
+		},
+		"Gallery": {
+			"description": "访问系统相册"
+		},
+		"Geolocation": {
+			"description": "访问位置信息"
+		},
+		"Invocation": {
+			"description": "使用Native.js能力"
+		},
+		"Orientation": {
+			"description": "访问方向感应器"
+		},
+		"Proximity": {
+			"description": "访问距离感应器"
+		},
+		"Storage": {
+			"description": "管理应用本地数据"
+		},
+
+		"Uploader": {
+			"description": "管理文件上传任务"
+		},
+		"Runtime": {
+			"description": "访问运行期环境"
+		},
+		"XMLHttpRequest": {
+			"description": "跨域网络访问"
+		},
+		"Zip": {
+			"description": "文件压缩与解压缩"
+		},
+		"Barcode": {
+			"description": "管理二维码扫描插件"
+		},
+		"Maps": {
+			"description": "管理地图插件"
+		},
+		"Speech": {
+			"description": "管理语音识别插件"
+		},
+		"Webview": {
+			"description": "窗口管理"
+		},
+		"NativeUI": {
+			"description": "原生UI控件"
+		},
+		"Navigator": {
+			"description": "浏览器信息"
+		},
+		"NativeObj": {
+			"description": "原生对象"
+		},
+		"OAuth": {},
+		"Share": {},"Push":{}
+	},
+	"plus": {
+		"splashscreen": {
+			"autoclose": true,/*是否自动关闭程序启动界面，true表示应用加载应用入口页面后自动关闭；false则需调plus.navigator.closeSplashscreen()关闭*/
+			"waiting": true
+		},
+		"popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，"none"为无侧滑返回功能，"hide"为侧滑隐藏Webview窗口。参考http://ask.dcloud.net.cn/article/102*/
+		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
+		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
+		"distribute": {
+			"plugins": {"push":{"igexin":{"appid":"JiJDdoA8iG8H7GRHtE24w","appkey":"mHOEf1CmgQALVWOy0CcS22","appsecret":"epf01sLhP0AgXVNhx6O3F5"}},
+				"share": {
+					"sina": {
+						"appkey": "1702650425",
+						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
+						"redirect_uri": "https://api.weibo.com/oauth2/default.html",
+						"description": "可选，新浪微博分享"
+					},"weixin":{"appid":"wxf3a784e270495bcb","appsecret":"c30ad3b50145ede63955fb72182578ba","description":"可选，微信分享"}
+				},
+				"oauth": {
+					"sina": {
+						"appkey": "1702650425",
+						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
+						"redirect_uri": "https://api.weibo.com/oauth2/default.html"
+					}
+				}
+			},
+			"apple": {
+				"appid": "",/*iOS应用标识，苹果开发网站申请的appid，如io.dcloud.HelloH5*/
+				"StatusBarBackground":"#f7f7f7",
+				"mobileprovision": "",/*iOS应用打包配置文件*/
+				"password": "",/*iOS应用打包个人证书导入密码*/
+				"p12": "",/*iOS应用打包个人证书，打包配置文件关联的个人证书*/
+				"devices": "universal",/*iOS应用支持的设备类型，可取值iphone/ipad/universal*/
+				"frameworks": []
+			},
+			"google": {
+				"packagename": "",/*Android应用包名，如io.dcloud.HelloH5*/
+				"keystore": "",/*Android应用打包使用的密钥库文件*/
+				"password": "",/*Android应用打包使用密钥库中证书的密码*/
+				"aliasname": "",/*Android应用打包使用密钥库中证书的别名*/
+				"permissions": ["<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>","<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>","<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>","<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>","<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>","<uses-permission android:name=\"android.permission.GET_TASKS\"/>","<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>","<uses-permission android:name=\"android.permission.VIBRATE\"/>","<uses-permission android:name=\"android.permission.READ_LOGS\"/>","<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>","<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>","<uses-permission android:name=\"android.permission.CALL_PHONE\"/>","<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>","<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>","<uses-feature android:name=\"android.hardware.camera.autofocus\"/>","<uses-feature android:name=\"android.hardware.camera\"/>","<uses-permission android:name=\"android.permission.WRITE_CONTACTS\"/>","<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>","<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>","<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>","<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>","<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>","<uses-permission android:name=\"android.permission.CAMERA\"/>"]
+			},
+			"orientation": [
+				"portrait-primary"
+			],/*应用支持的方向，portrait-primary：竖屏正方向；portrait-secondary：竖屏反方向；landscape-primary：横屏正方向；landscape-secondary：横屏反方向*/
+			"icons": {
+				"ios": {
+					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
+					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
+					"iphone": {
+						"normal": "unpackage/res/icons/57x57.png", /*iPhone3/3GS程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png", /*iPhone4程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png", /*iPhone4S/5/6程序图标，分辨率：120x120*/
+						"retina8": "unpackage/res/icons/180x180.png", /*iPhone6 Plus程序图标，分辨率：180x180*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone3/3GS Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone4 Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png", /*iPhone4S/5/6 Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone4设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png", /*iPhone4S/5/6设置页面程序图标，分辨率：58x58*/
+						"settings-retina8": "unpackage/res/icons/87x87.png"
+					},
+					"ipad": {
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
+					}
+				},
+				"android": {
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png"
+				}
+			},
+			"splashscreen": {
+				"ios": {
+					"iphone": {
+						"default": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/320x568pt@2x.png", /*iPhone3启动图片选，分辨率：320x480*/
+						"retina35": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*4.0 英寸设备(iPhone5/iPhone5s)启动图片，分辨率：640x1136*/
+						"retina47": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*4.7 英寸设备(iPhone6)启动图片，分辨率：750x1334*/
+						"retina55": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png",/*5.5 英寸设备(iPhone6 Plus)启动图片，分辨率：1242x2208*/
+						"retina55l": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png"
+					},
+					"ipad": {
+						"portrait": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "/Users/xiaok/Desktop/81DB32754511D45A45B36A98991FCF69.png"
+					}
+				},
+				"android": {
+					"mdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*普通屏启动图片，分辨率：240x282*/
+					"ldpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*大屏启动图片，分辨率：320x442*/
+					"hdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "/Users/xiaok/socialTouch/superStar UI图/logo/launch img/414x736pt@3x.png"
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"css/index.css",
+					"mui_css/mui.min.css",
+					"img/1.png",
+					"js/mui.min.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [
+					"compose.html",
+					"html/setting.html"
+				],
+				"priority": 0
+			},
+			"compose.html": {
+				"resources": [
+					"mui_css/mui.min.css",
+					"css/compose.css",
+					"js/mui.min.js",
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"html/setting.html": {
+				"resources": [
+					"images/logo.png",
+					"js/feedback.js",
+					"js/mui.view.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/setting/setting.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"libs/mui/js/mui.view.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/mui/js/feedback.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/login/login-weibo.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-oauth.js",
+					"kit/util/plus-storage.js",
+					"libs/mui/js/mui.min.js",
+					"modules/login/login.js",
+					"modules/index/css/index.css",
+					"kit/util/deBug-setCookie.js",
+					"libs/mui/js/mui.js",
+					"modules/h5/index/css/index.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/index/images/lesson.png",
+					"modules/h5/index/images/dna.png",
+					"modules/h5/index/images/pos.png",
+					"modules/h5/index/images/invite.png",
+					"kit/util/plus-update.js",
+					"kit/util/plus-netChange.js",
+					"modules/login/login.css",
+					"libs/seajs/app_3.0/sea.js"
+				],
+				"refer": [
+					"modules/index/index.html",
+					"modules/h5/index/index.html",
+					"modules/tabbar.html"
+				],
+				"priority": 0
+			},
+			"modules/index/index.html": {
+				"resources": [
+					"modules/index/images/dna.png",
+					"modules/index/index.js",
+					"modules/index/images/pos.png",
+					"kit/util/plus-update.js",
+					"modules/index/images/lesson.png",
+					"kit/util/plus-netChange.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/weiboTags/weiboTags.html": {
+				"resources": [
+					"modules/h5/weiboTags/js/index.js",
+					"modules/h5/weiboTags/css/index.css",
+					"modules/h5/weiboTags/template/index.html",
+					"modules/h5/weiboTags/js/weiboTags.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/index/index.html": {
+				"resources": [
+					"modules/h5/index/images/dna.png",
+					"modules/h5/index/images/lesson.png",
+					"kit/util/plus-update.js",
+					"modules/h5/index/images/invite.png",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"kit/util/plus-netChange.js",
+					"modules/h5/index/images/pos.png",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/index/index.js",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js",
+					"modules/h5/index/template/index.html",
+					"modules/h5/index/images/today-news.png",
+					"modules/h5/index/css/index.css",
+					"kit/util/plus-pjax.js",
+					"modules/h5/index/images/icons.png"
+				],
+				"refer": [
+					"modules/h5/weiboTags/weiboTags.html",
+					"modules/h5/lessionList/lessionList.html",
+					"modules/h5/signup/signup.html",
+					"modules/h5/memberCenter/memberCenter.html",
+					"modules/h5/inviteLanding/inviteLanding.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/lessionDetail/lessionDetail.html": {
+				"resources": [
+					"modules/h5/lessionDetail/js/index.js",
+					"modules/h5/lessionDetail/template/index.html",
+					"modules/h5/lessionDetail/js/lessionDetail.js",
+					"modules/h5/lessionDetail/images/icon.png",
+					"modules/h5/lessionDetail/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionContent/lessionContent.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/lessionContent/lessionContent.html": {
+				"resources": [
+					"modules/h5/lessionContent/template/index.html",
+					"modules/h5/lessionContent/css/index.css",
+					"modules/h5/lessionContent/js/index.js",
+					"modules/h5/lessionContent/js/lessionContent.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/lessionList/lessionList.html": {
+				"resources": [
+					"modules/h5/lessionList/js/lessionList.js",
+					"modules/h5/lessionList/template/index.html",
+					"modules/h5/lessionList/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/lessionList/images/icon.png",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/lessionList/js/index.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionDetail/lessionDetail.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/signup/signup.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/js/mui.min.js",
+					"kit/util/construction.js",
+					"modules/h5/signup/images/bg_btn.png",
+					"modules/h5/signup/images/bg.png",
+					"kit/util/easyTemplate.js",
+					"modules/h5/signup/images/bg_wh.png",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/signup/js/index.js",
+					"modules/h5/signup/images/bg_header.png",
+					"kit/util/plus-storage.js",
+					"modules/h5/signup/css/index.css",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/signup/template/index.html",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/signup/js/signup.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/personalInfo/personalInfo.html": {
+				"resources": [
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/personalInfo/js/personalInfo.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/personalInfo/css/index.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/personalInfo/js/index.js",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/personalInfo/template/index.html",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/memberCenter/memberCenter.html": {
+				"resources": [
+					"modules/h5/memberCenter/template/index.html",
+					"modules/h5/memberCenter/css/index.css",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"modules/h5/memberCenter/js/index.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/memberCenter/js/memberCenter.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/personalInfo/personalInfo.html",
+					"modules/h5/myLessons/myLessons.html",
+					"modules/h5/inviteList/inviteList.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/inviteLanding/inviteLanding.html": {
+				"resources": [
+					"modules/h5/inviteLanding/js/inviteLanding.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"modules/h5/inviteLanding/js/index.js",
+					"modules/h5/inviteLanding/template/index.html",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"modules/h5/inviteLanding/css/index.css",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/myLessons/myLessons.html": {
+				"resources": [
+					"modules/h5/myLessons/js/index.js",
+					"modules/h5/myLessons/css/index.css",
+					"modules/h5/myLessons/template/index.html",
+					"modules/h5/myLessons/js/myLessons.js",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/lessionDetail/lessionDetail.html"
+				],
+				"priority": 0
+			},
+			"modules/h5/inviteFriend/inviteFriend.html": {
+				"resources": [
+					"modules/h5/inviteFriend/template/index.html",
+					"modules/h5/inviteFriend/js/inviteFriend.js",
+					"modules/h5/inviteFriend/js/index.js",
+					"modules/h5/inviteFriend/css/index.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/h5/inviteList/inviteList.html": {
+				"resources": [
+					"modules/h5/inviteList/css/index.css",
+					"modules/h5/inviteList/js/index.js",
+					"modules/h5/inviteList/template/index.html",
+					"libs/seajs/3.0.0/sea.js",
+					"libs/mui/css/mui.min.css",
+					"kit/util/plus-storage.js",
+					"kit/util/construction.js",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf",
+					"modules/h5/inviteList/js/inviteList.js",
+					"libs/jquery/3.0.0/jquery-3.0.0.min.js",
+					"kit/util/easyTemplate.js"
+				],
+				"refer": [
+					"modules/h5/inviteFriend/inviteFriend.html"
+				],
+				"priority": 0
+			},
+			"modules/tabbar.html": {
+				"resources": [
+					"kit/util/urlToJson.js",
+					"common/tabbar/css/index.css",
+					"common/tabbar/fonts/iconfont.woff"
+				],
+				"refer": [
+					"modules/index.html"
+				],
+				"priority": 0
+			},
+			"modules/index.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"modules/index_content.html",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"modules/index_content.html": {
+				"resources": [
+					"modules/h5/memberCenter/css/index.css",
+					"modules/h5/memberCenter/app_js/index.js",
+					"kit/util/plus-pjax.js",
+					"modules/h5/testing/images/icon.png",
+					"kit/util/construction.js",
+					"modules/h5/testing/js/mark.js",
+					"modules/h5/testing/js/index.js",
+					"common/tabbar/js/index.js",
+					"libs/seajs/app_3.0/sea.js",
+					"kit/util/easyTemplate.js",
+					"common/slogon/js/index.js",
+					"kit/util/urlToJson.js",
+					"modules/h5/memberCenter/template/index.html",
+					"kit/util/plus-oauth.js",
+					"kit/util/asyncModule.js",
+					"kit/util/plus_ajax_hack.js",
+					"modules/h5/memberCenter/js/index.js",
+					"kit/util/plus-storage.js",
+					"libs/mui/js/mui.js",
+					"socialtouch/app_seed.js",
+					"modules/h5/testing/css/index.css",
+					"kit/util/compatible.js",
+					"modules/h5/testing/template/index.html",
+					"modules/testing/weiboDNA/js/wordCloud.js",
+					"skins/vanilla-cream/css/main.css",
+					"libs/jquery/3.0.0/jquery-3.0.0.js",
+					"common/share/tips/js/index.js",
+					"modules/h5/lessionList/css/index.css",
+					"common/util/loadMUI.js",
+					"modules/h5/lessionList/template/index.html",
+					"modules/h5/lessionList/js/index.js",
+					"modules/h5/task/app_js/task.js",
+					"kit/util/plus-share/shareUI.js",
+					"kit/util/plus-image.js",
+					"modules/h5/taskResult/app_js/index.js",
+					"modules/h5/task/template/index.html",
+					"modules/h5/lessionDetail/template/index.html",
+					"modules/h5/task/app_js/index.js",
+					"modules/h5/taskResult/css/index.css",
+					"common/share/jssdk.js",
+					"modules/h5/lessionDetail/css/index.css",
+					"modules/h5/task/css/index.css",
+					"modules/h5/taskResult/js/index.js",
+					"modules/h5/lessionDetail/js/index.js",
+					"modules/h5/taskResult/template/index.html",
+					"modules/h5/inviteFriend/template/index.html",
+					"modules/h5/homeworkList/css/index.css",
+					"modules/h5/personalInfo/css/index.css",
+					"modules/h5/inviteFriend/app_js/index.js",
+					"modules/h5/homeworkList/js/index.js",
+					"modules/h5/inviteFriend/js/index.js",
+					"modules/h5/homeworkList/template/index.html",
+					"modules/h5/inviteFriend/css/index.css",
+					"modules/h5/personalInfo/template/index.html",
+					"modules/h5/personalInfo/js/index.js",
+					"modules/h5/inviteFriend/images/two.jpg",
+					"modules/h5/inviteFriend/images/three.jpg",
+					"modules/h5/inviteFriend/images/one.jpg",
+					"libs/mui/fonts/mui.ttf",
+					"libs/mui/css/mui.min.css",
+					"modules/h5/weiboTags/css/index.css",
+					"modules/h5/weiboTags/js/index.js",
+					"modules/h5/weiboTags/template/index.html",
+					"modules/testing/business/images/ico_king.png",
+					"modules/testing/business/images/leaf.png",
+					"modules/testing/business/images/orangeRight.png",
+					"modules/testing/business/css/result.css",
+					"modules/testing/business/template/result.html",
+					"modules/testing/business/app_js/result.js",
+					"modules/testing/business/template/topList.html",
+					"modules/testing/business/css/topList.css",
+					"kit/util/plus-share/img/icon_weixin_friend.png",
+					"kit/util/plus-share/img/icon_weibo.png",
+					"kit/util/plus-share/share.css",
+					"kit/util/plus-share/img/icon_weixin.png",
+					"kit/util/plus-share/share.html"
+				],
+				"refer": [
+					"modules/index.html",
+					"modules/webView.html"
+				],
+				"priority": 0
+			},
+			"modules/webView.html": {
+				"resources": [
+					"libs/mui/css/mui.min.css",
+					"libs/mui/js/mui.min.js",
+					"libs/mui/fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"modules/h5/index/images/price.png",
+				"libs/mui/css/mui.picker.all.css",
+				"libs/mui/js/95516.js",
+				"modules/h5/lessionContent/sass/index.css",
+				"modules/setting/images/60x60.gif",
+				"libs/mui/js/mui.pullToRefresh.js",
+				"modules/h5/lessionContent/html/index.html",
+				"modules/h5/memberCenter/html/index.html",
+				"modules/h5/memberCenter/sass/index.css",
+				"modules/h5/inviteFriend/images/share_tips.png",
+				"libs/mui/css/mui.poppicker.css",
+				"libs/mui/js/mui.picker.all.js",
+				"libs/mui/js/update.js",
+				"libs/mui/css/mui.picker.css",
+				"modules/h5/myLessons/html/index.html",
+				"modules/h5/inviteFriend/sass/index.css",
+				"libs/mui/js/city.data.js",
+				"modules/h5/index/js/index.js",
+				"modules/h5/task/images/share_tips.png",
+				"libs/mui/css/mui.listpicker.css",
+				"libs/mui/js/arttmpl.js",
+				"modules/h5/contactUs/css/index.css",
+				"modules/h5/task/sass/index.css",
+				"libs/mui/js/mui.imageViewer.js",
+				"modules/h5/contactUs/template/index.html",
+				"libs/mui/css/app.css",
+				"modules/h5/signup/sass/index.css",
+				"modules/h5/contactUs/sass/index.css",
+				"sass/_include-media.scss",
+				"modules/h5/contactUs/images/finger.gif",
+				"libs/mui/js/beecloud.js",
+				"modules/h5/lessionList/html/index.html",
+				"libs/mui/js/mui.pullToRefresh.material.js",
+				"modules/h5/lessionContent/images/icon.png",
+				"libs/mui/js/city.data-3.js",
+				"modules/h5/task/js/index.js",
+				"modules/h5/index/sass/index.css",
+				"modules/h5/signup/images/erweima.gif",
+				"kit/util/plus-share.js",
+				"modules/h5/lessionList/html/schedule.html",
+				"modules/compose/compose.css",
+				"libs/mui/css/login.css",
+				"libs/vue/vue.min.js",
+				"libs/mui/js/mui.previewimage.js",
+				"modules/h5/myLessons/sass/index.css",
+				"modules/h5/inviteLanding/sass/index.scss",
+				"modules/h5/contactUs/images/qrcode.jpg",
+				"modules/h5/index/html/index.html",
+				"libs/mui/css/mui.indexedlist.css",
+				"sass/mobile-base.scss",
+				"libs/mui/css/mui.imageviewer.css",
+				"modules/h5/inviteList/html/index.html",
+				"modules/h5/inviteFriend/html/index.html",
+				"modules/h5/task/html/index.html",
+				"libs/mui/img/1.png",
+				"libs/mui/js/mui.dtpicker.js",
+				"libs/mui/css/feedback.css",
+				"modules/h5/weiboTags/html/index.html",
+				"libs/mui/js/mui.poppicker.js",
+				"modules/setting/images/iconfont-tianjia.png",
+				"modules/h5/inviteLanding/html/index.html",
+				"libs/mui/js/mui.zoom.js",
+				"modules/h5/personalInfo/html/index.html",
+				"modules/login/login.html",
+				"modules/h5/personalInfo/sass/index.css",
+				"modules/h5/signup/images/share_tips.png",
+				"libs/mui/js/mui.listpicker.js",
+				"modules/compose/compose.html",
+				"modules/h5/signup/html/index.html",
+				"modules/h5/weiboTags/sass/index.scss",
+				"modules/h5/contactUs/contactUs.html",
+				"modules/h5/contactUs/js/contactUs.js",
+				"libs/mui/js/mui.lazyload.js",
+				"modules/h5/signup/sass/index.scss",
+				"modules/h5/contactUs/html/index.html",
+				"libs/mui/js/mui.lazyload.img.js",
+				"modules/setting/images/muwu.jpg",
+				"libs/mui/css/mui.dtpicker.css",
+				"modules/h5/lessionList/sass/index.scss",
+				"modules/h5/task/task.html",
+				"modules/h5/contactUs/js/index.js",
+				"libs/mui/css/mui.picker.min.css",
+				"libs/mui/js/ad.js",
+				"modules/h5/lessionDetail/sass/index.scss",
+				"modules/h5/lessionDetail/html/index.html",
+				"css/mobile-base.css",
+				"modules/compose/compose.scss",
+				"libs/mui/js/mui.picker.js",
+				"libs/vue/vue.js",
+				"modules/h5/task/js/task.js",
+				"untitled.css",
+				"libs/mui/js/app.js",
+				"libs/mui/js/mui.indexedlist.js",
+				"modules/h5/weiboTags/html/ajax.json",
+				"libs/mui/js/mui.enterfocus.js",
+				"modules/h5/inviteList/sass/index.css",
+				"libs/mui/js/mui.locker.js",
+				"libs/mui/js/mui.picker.min.js"
+			]
+		}
+	},
+	"unpackage": [
+		"css/compose.scss",
+		"css/index.scss",
+		"images/60x60.gif",
+		"images/cbd.jpg",
+		"images/iconfont-tianjia.png",
+		"images/login-1.png",
+		"images/muwu.jpg",
+		"images/qrcode.png",
+		"images/shuijiao.jpg",
+		"images/yuantiao.jpg",
+		"js/95516.js",
+		"js/ad.js",
+		"js/arttmpl.js",
+		"js/beecloud.js",
+		"js/city.data-3.js",
+		"js/city.data.js",
+		"js/mui.dtpicker.js",
+		"js/mui.imageViewer.js",
+		"js/mui.indexedlist.js",
+		"js/mui.js",
+		"js/mui.lazyload.img.js",
+		"js/mui.lazyload.js",
+		"js/mui.listpicker.js",
+		"js/mui.locker.js",
+		"js/mui.picker.all.js",
+		"js/mui.picker.js",
+		"js/mui.picker.min.js",
+		"js/mui.poppicker.js",
+		"js/mui.previewimage.js",
+		"js/mui.pullToRefresh.js",
+		"js/mui.pullToRefresh.material.js",
+		"js/mui.zoom.js",
+		"js/update.js",
+		"mui_css/app.css",
+		"mui_css/feedback.css",
+		"mui_css/mui.dtpicker.css",
+		"mui_css/mui.imageviewer.css",
+		"mui_css/mui.indexedlist.css",
+		"mui_css/mui.listpicker.css",
+		"mui_css/mui.picker.all.css",
+		"mui_css/mui.picker.css",
+		"mui_css/mui.picker.min.css",
+		"mui_css/mui.poppicker.css"
+	],
+	"fullscreen": false
+}

@@ -15,7 +15,15 @@ define(function(require, exports, module) {
             var cfg = {
                 'static_path': '../../../',
                 "time": new Date().getTime(),
-                "domain": "static.91hong.com.cn",
+                // "domain": "static.91hong.com.cn",
+                "domain":function(){
+                    if(plus.storage.getItem("domain") == 'http://91hong.com.cn'){
+                        return "static.91hong.com.cn"
+                    }else{
+                        return "wh1.code4js.com"
+                    }
+                    
+                }(),
                 "version": 100
             };
             var fn1 = {
@@ -58,6 +66,12 @@ define(function(require, exports, module) {
             a_click:function(event) {
                 var url = this.getAttribute('href');
                 var title = $(this).html();
+                if(title.length>13){
+                    if($(this).find('p').text().length>=3){
+                        title=$(this).find('p').text()
+                    }
+
+                }
                 $pjax(url,title);
             }
         },
@@ -139,6 +153,8 @@ define(function(require, exports, module) {
 
                 if(!data){
                     data = [];
+                }else if(data.constructor !== Array){
+                    data = [];
                 }else{
                     d = getMemory('all')
                     i = d.index;
@@ -148,10 +164,10 @@ define(function(require, exports, module) {
                     data.splice(i, 1)
                 }
 
+				console.log(JSON.stringify(data));
                 json.cacheTime = mui.now();
                 json.data = value;
                 data.unshift(json);
-
                 if(data.length>=cont){
                     data.splice( cont, (data.length-cont) )
                 }
@@ -234,6 +250,8 @@ define(function(require, exports, module) {
                         if(callback)callback();
                         sys.closeLoading()
                     }else{
+                        console.log(sys.ajax_url)
+                        console.log(JSON.stringify(sys.ajax_data))
                         mui.toast(data.message||data.msg)
                     }
                 },
@@ -254,6 +272,7 @@ define(function(require, exports, module) {
                 if(type_debug)console.log('数据传入出错,跳出执行区'+"line:253");
                 return;
             }
+            // console.log(id)
             window.page_data.real_data[id] = data;
             window.pageData = data;
             data._extra = window.CONFIG;
@@ -270,11 +289,24 @@ define(function(require, exports, module) {
                 console.log($tmp(sys.tmp,data))
             }
             document.getElementById(id).innerHTML = $tmp(sys.tmp,data);
+
+            //不这么改就得加班了 之后再改吧
+            $('body').find('a').each(function(){
+                if($(this).html() == '返回'){
+                    $(this).remove();
+                }
+                if($(this).html() == '重新测试'){
+                    $(this).remove();
+                }
+            })
+            //不这么改就得加班了
+
+
             $loding.addClass('hide');
             setTimeout(function(){
                 $loding.remove();
             },400)
-            $('.mui-bar').remove();
+            // $('.mui-bar').remove();
             $('.container').css('top', '0');
             sys.fn_index.init(data);
         }

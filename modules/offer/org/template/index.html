@@ -1,0 +1,37 @@
+<div class="mui-table-view-cell grayLink">
+	<a href="#" onclick="return false;">品牌机构
+		<!--<span class="rightArrow"></span>-->
+	</a>
+</div>
+<div class="orgList">
+	<#list data.top3 as org >
+	<div class="org" style="background-image: url(${org.image_bg})">
+		<div class="info">
+			<span class="logo" style="background-image: url(${org.logo})"></span>
+			<br>${org.name}
+			<br>
+			<span class="title">${org.intro}</span>
+		</div>
+	</div>
+	</#list>
+</div>
+
+<#list data.others as group>
+<div class="mui-table-view-cell grayLink">
+	<a href="#" onclick="return false;">${group.name}<!-- <span class="rightArrow"></span> --></a>
+</div>
+<div class="brandList">
+	<#list group.organizes as org>
+	<div class="brand">
+		<div class="logoBox">
+			<img src="${org.logo}" alt="" class="brandBackground">
+		</div>
+		<div class="info">
+			<span class="title">${org.name}</span>
+			<br>
+			<span class="describe">${org.intro}</span>
+		</div>
+	</div>
+	</#list>
+</div>
+</#list>

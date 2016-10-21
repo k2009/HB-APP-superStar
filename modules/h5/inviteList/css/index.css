@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -100,35 +100,38 @@ body {
   height: 100%; }
 
 .empty, .invite-tip {
-  margin: 0.25rem 0 0.2rem;
-  font-size: 0.14rem;
+  margin: 0.21333rem 0 0.17067rem;
+  font-size: 0.11947rem;
   text-align: center; }
 
 .empty {
-  padding-top: 1rem;
+  padding-top: 0.85333rem;
   background: none; }
 
 .mui-table-view .mui-media-object {
-  width: 0.5rem;
-  height: 0.5rem;
-  max-width: 0.5rem;
-  line-height: 0.5rem;
-  border-radius: 0.5rem; }
+  width: 0.42667rem;
+  height: 0.42667rem;
+  max-width: 0.42667rem;
+  line-height: 0.42667rem;
+  border-radius: 0.42667rem; }
 
 .mui-table-view .mui-media-object.mui-pull-left {
-  margin: 0.1rem 0.15rem 0.1rem 0; }
+  margin: 0.08533rem 0.128rem 0.08533rem 0; }
 
 .friend, .from, .mui-ellipsis {
-  margin: 0 0 0.05rem 0; }
+  margin: 0 0 0.04267rem 0; }
 
 .friend-name {
-  font-size: 0.14rem;
-  line-height: 0.24rem; }
+  font-size: 0.11947rem;
+  line-height: 0.2048rem; }
+
+.mui-content-padded p {
+  text-align: center; }
 
 .mui-btn-block {
-  margin: 0.5rem auto;
-  height: 0.4rem;
-  line-height: 0.4rem;
+  margin: 0.42667rem auto;
+  height: 0.34133rem;
+  line-height: 0.34133rem;
   padding: 0;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   width: 70%; }

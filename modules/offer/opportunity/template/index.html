@@ -1,0 +1,182 @@
+<#list data.top_5 as offer>
+<a href="${offer.url}" pjax="1">
+<div class="head">
+	<span class="hire">${offer.work_type}</span>
+	<img src="${offer.banner}" alt="" class="background">
+	<div class="info">
+		<h4 class="title">
+			${offer.name} | <span class="company">${offer.offical_name}</span>
+		</h4>
+		<span class="endDate">${offer.time_end} 截止</span>
+	</div>
+</div>
+</a>
+</#list>
+<div class="mui-table-view-cell offerType" style="background-image:url(${data.top_type_1.logo})">
+	<p class="content">${data.top_type_1.name}</p>
+	<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
+	<p class="arrow"></p>
+</div>
+<#if (data.top_type_1.works.length > 0)>
+<div class="slideBox">
+	<ul class="slider" node="slider">
+		<#list data.top_type_1.works as work>
+		<li class="slideItem">
+			<a href="${work.url}" pjax="1">
+			<span class="hire">${work.work_type}</span>
+			<img src="${work.banner}" alt="" class="background">
+			<div class="info">
+				<h4 class="title">${work.name}</h4>
+			</div>
+			</a>
+		</li>
+		</#list>
+	</ul>
+</div>
+</#if>
+<#list data.top_1 as work>
+<a href="${work.url}" pjax="1">
+<div class="head">
+	<span class="hire">${work.work_type}</span>
+	<img src="${work.banner}" alt="" class="background">
+	<div class="info">
+		<h4 class="title">
+			${work.name} | <span class="company">${work.offical_name}</span>
+		</h4>
+		<div class="top1-detail">
+			<span class="endDate">${work.time_end} 截止</span>
+			<span class="price">${work.return_amount == 0 ? "面议" : "￥" + work.return_amount}</span>
+			<span class="location"> ${work.city}</span>
+		</div>
+	</div>
+</div>
+</a>
+</#list>
+<div class="mui-table-view-cell offerType">
+	<a href="${data.top_org_1.url}" pjax="1">
+	<p class="content" style="background-image:url(${data.top_org_1.logo})">${data.top_org_1.name}</p>
+	</a>
+	<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
+</div>
+<div class="mui-table-view-cell grayLink">
+	<a href="#" onclick="return false;"> 全部 <!-- <span class="rightArrow"></span> --></a>
+</div>
+<ul>
+	<#list data.works as work >
+	<li class="mui-table-view-cell">
+		<a href="${work.url}" pjax="1">
+			<div class="leftInfo">	
+				<h4 class="title ellipsis">	
+						${work.name}
+				</h4>
+ 				<h5 class="describe ellipsis">
+						${work.offical_name}
+				</h5>
+				<div class="detail">	
+						<span class="endDate">${work.time_end} 截止	</span>
+						<span class="price">${work.return_amount == 0 ? "面议" : "￥" + work.return_amount}</span>
+						<span class="location"> ${work.city}</span>
+				</div>
+			</div>
+			<div class="rightImg">	
+				<img src="${work.banner}" alt="">
+				<div class="type">${work.work_type == null ? "" : work.work_type}</div>
+			</div>
+		</a>
+	</li>
+	</#list>
+	<!-- <li class="mui-table-view-cell">
+		<a href="">
+			<div class="leftInfo">	
+				<h4 class="title ellipsis">	
+						混凝土官方音乐节合作代言
+				</h4>
+				<h5 class="describe ellipsis">	
+						混凝土官方媒体
+				</h5>
+				<div class="detail">	
+						<span class="endDate">12.33截止	</span>
+						<span class="price">	￥2000/人</span>
+						<span class="location"> 北京	</span>
+				</div>
+			</div>
+			<div class="rightImg">	
+				<img src="../images/test.png" alt="">
+			</div>
+		</a>
+	</li>
+
+	<li class="mui-table-view-cell">
+		<a href="">
+			<div class="leftInfo">	
+				<h4 class="title ellipsis">	
+						混凝土官方音乐节合作代言
+				</h4>
+				<h5 class="describe ellipsis">	
+						混凝土官方媒体
+				</h5>
+				<div class="detail">	
+						<span class="endDate">12.33截止	</span>
+						<span class="price">	￥2000/人</span>
+						<span class="location"> 北京	</span>
+				</div>
+			</div>
+			<div class="rightImg">	
+				<img src="../images/test.png" alt="">
+			</div>
+		</a>
+	</li> -->
+</ul>
+
+<!-- <div class="mui-table-view-cell grayLink">
+	<a href="">合作机构<span class="rightArrow"></span></a>
+</div>
+
+<div class="slideBox">
+	<ul class="slider" node="slider">
+		<li class="brandSlideItem">
+			<img src="../images/test.png" alt="" class="background">
+			<div class="info">
+				<h4 class="title">品牌机构</h4>
+			</div>
+		</li>
+		<li class="brandSlideItem">
+			<img src="../images/test.png" alt="" class="background">
+			<div class="info">
+				<h4 class="title">品牌机构</h4>
+			</div>
+		</li>
+		<li class="brandSlideItem">
+			<img src="../images/test.png" alt="" class="background">
+			<div class="info">
+				<h4 class="title">品牌机构</h4>
+			</div>
+		</li>
+		<li class="brandSlideItem">
+			<img src="../images/test.png" alt="" class="background">
+			<div class="info">
+				<h4 class="title">品牌机构</h4>
+			</div>
+		</li>
+		<li class="brandSlideItem">
+			<img src="../images/test.png" alt="" class="background">
+			<div class="info">
+				<h4 class="title">品牌机构</h4>
+			</div>
+		</li>
+	</ul>
+</div>
+
+<div class="mui-table-view-cell grayLink">
+	<a href="">自有品牌<span class="rightArrow"></span></a>
+</div>
+
+<div class="head">
+	<img src="../images/test.png" alt="" class="background">
+	<div class="info">
+		<h4 class="title">
+			《独一无二》MV女主角征集 | <span class="company">索尼唱片</span>
+		</h4>
+		<span class="endDate">02.10截止</span>
+	</div>
+</div> -->

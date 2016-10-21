@@ -65,7 +65,7 @@ define(function(require, exports, module) {
 		// 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
         	ret.setData(opts.tabbar);
-            ret.setActiveTab(3);
+            ret.setActiveTab(4);
             tabbar = ret;
         });
         // 公共头部

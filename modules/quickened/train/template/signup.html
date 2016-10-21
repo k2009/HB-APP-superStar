@@ -1,0 +1,29 @@
+	<div class="mainBox">
+		<p>${data.info.content}</p>
+		<ul>
+			<li><span>主讲老师：</span><p>${data.info.teacher}</p></li>
+			<li><span>讲师风采：</span><p>${data.info.teacherinfo}</p></li>
+		</ul>
+		<ul>
+			<li><span>培训时间：</span><p>${data.info.coursetime}</p></li>
+			<li><span>培训地点：</span><p>${data.info.adress}</p></li>
+			<li><span>参加人数：</span><p>${data.info.number}</p></li>
+		</ul>
+	</div>
+
+	<div class="mainBox_2">
+		<ul class="input_list">
+			<li>
+				<input type="text" class="name" value="<#if (data.enlistsInfo.name)>${data.enlistsInfo.name}</#if>" data-validate="name" placeholder="请输入姓名">
+			</li>
+			<li>
+				<input type="text" class="tel" value="<#if (data.enlistsInfo.telephone)>${data.enlistsInfo.telephone}</#if>" data-validate="telephone" placeholder="请输入手机号">
+			</li>
+			<li>
+				<input type="text" class="job" value="<#if (data.enlistsInfo.profession)>${data.enlistsInfo.profession}</#if>" data-validate="profession" placeholder="请输入职业">
+			</li>
+		</ul>
+		<div class="btn_box">
+			<a href="JavaScript:;" class="btn" id="submit">我要参加</a>
+		</div>
+	</div>

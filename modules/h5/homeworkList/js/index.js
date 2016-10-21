@@ -90,7 +90,7 @@ define(function(require, exports, module) {
         lazyload.load("common/tabbar/js/index", function(ret){
             ret.setData(opts.tabbar);
             tabbar = ret;
-            ret.setActiveTab(3);
+            ret.setActiveTab(4);
         });
         if( !$homeworkList.length ){
             return;

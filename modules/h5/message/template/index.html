@@ -1,0 +1,18 @@
+<#if (data.messages.length == 0) >
+	<div class="empty">您没有消息通知</div>
+<#else>
+<ul>
+	<#list data.messages as msg >
+	<li class="message border-1px">
+		<span class="icon"></span>
+		<div class="item">
+			<div class="clearfix">
+				<p class="title">${msg.title}</p>
+				<span class="time">${msg.time}</span>
+			</div>
+			<p class="content">${msg.content}</p>
+		</div>
+	</li>
+	</#list>
+</ul>
+</#if>

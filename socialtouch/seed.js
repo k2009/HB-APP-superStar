@@ -24,6 +24,8 @@
 	var pageInfo = {};
 	//模板缓存
 	var useIDBCache=false;
+	//pjax锁
+	var pendingMap={};
 
 	window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 	window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
@@ -405,8 +407,10 @@
 					}
 					// 如果这个 css 已经加载了
 					if(url == path){
-						callback();
-						callback = null;
+						setTimeout(function(){
+							callback();
+							callback = null;
+						},0);
 						return;
 					}
 				}
@@ -429,16 +433,20 @@
 				link.addEventListener('load', function() {
 					// output("addEventListener 监听 load 事件【有效】");
 					if(typeof callback == "function"){
-						callback();
-						callback = null;
+						setTimeout(function(){
+							callback();
+							callback = null;
+						},0);
 					}
 				}, false);
 			} else {
 				link.onload = function () {
 					// output('onload 【有效】');
 					if(typeof callback == "function"){
-						callback();
-						callback = null;
+						setTimeout(function(){
+							callback();
+							callback = null;
+						},0);
 					}
 				};
 			}
@@ -449,8 +457,10 @@
 					link.onreadystatechange = null;
 					// output("onreadystatechange 监听加载【有效】");
 					if(typeof callback == "function"){
-						callback();
-						callback = null;
+						setTimeout(function(){
+							callback();
+							callback = null;
+						},0);
 					}
 				}
 			};

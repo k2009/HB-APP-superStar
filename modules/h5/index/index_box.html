@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>网红城堡</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	</head>
+	<body>
+
+		<script src="../../../libs/mui/js/mui.min.js"></script>
+		<!-- 初始化加载 公共JS结束 --> 
+
+		
+		<script>
+	        mui.plusReady(function() {
+	        	plus.webview.currentWebview().setStyle({popGesture:'none'});	//禁止侧滑关闭
+	        })
+            mui.init({
+                subpages: [{
+                    url: './index.html', //子页面HTML地址，支持本地地址和网络地址
+                    id: 'index.html', //子页面标志
+                    styles: {
+                        top: "0px",
+                        bottom: '49px', //新页面底部位置
+						bounce: 'vertical',
+						background:'transparent'
+                    }
+                }, {
+					id: 'tabbar',
+					url: '../../tabbar.html',
+					styles: {
+						bottom: '0px', //新页面底部位置
+						height: '49px', //新页面高度，默认为100%
+						// background:'#fff'
+					},
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						// aniShow:,//页面显示动画，默认为”slide-in-right“；
+					},
+                }]
+            });
+		</script>
+	</body>
+
+</html>

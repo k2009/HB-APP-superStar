@@ -69,7 +69,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -87,7 +87,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -157,11 +157,11 @@ body {
   .btn_box .btn {
     display: block;
     width: 1.49333rem;
-    height: 0.29867rem;
+    height: 0.2816rem;
     margin: 0 auto;
     text-align: center;
     font-size: 0.128rem;
-    line-height: 0.29867rem;
+    line-height: 0.2816rem;
     background: #fbbd06;
     border-radius: 0.04267rem;
     color: #fff; }

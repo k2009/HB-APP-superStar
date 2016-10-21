@@ -3,7 +3,7 @@
 	<h1 class="mui-title">课程列表</h1>
 </header> -->
 <div class="mui-content">
-	<div class="topContainer notStart" id="notStart">
+	<!-- <div class="topContainer notStart" id="notStart">
 		<div  class="tc_text">
 			<div>hi 目前你的课程尚未开启，快来学习你的网红养成计划第一节课吧！</div>
 			<div class="tc_go">GO!</div>
@@ -28,7 +28,14 @@
 				
 			</div>
 		</div>
+	</div> -->
+	<div class="test-card">
+		<a class="test-card-item test-card-nick" href="${data.nick_test_url}" pjax="1"></a>
+		<a class="test-card-item test-card-biz" href="${data.biz_test_url}" pjax="1"></a>
 	</div>
+	<p class="sub-title">业界资讯</p>
+	<div><a class="news" href="${data.news.url}" pjax="1">${data.news.title}</a></div>
+	<p class="sub-title">我的课程</p>
 	<ul class="mui-table-view">
 		<#if (data.lessons.length==0)>
 			<li class="mui-table-view-cell mui-media list-empty">
@@ -42,14 +49,14 @@
 							<#elseif (lesson.status_value==2)><span class="box done" data-text="已完成">已完成</span>
 							<#else><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
 							</#if>
-					<a class="lessonInfo" pjax="1" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"
+					<a class="lessonInfo" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"
 					<#elseif (lesson.lesson_count==0)>href="javascript:;" action="empty"
-					<#else>href="${lesson.url}"</#if> >
-						<div class="mui-subtitle lessonText">${lesson.name}
+					<#else> pjax="1" href="${lesson.url}"</#if> >
+						<div class="mui-subtitle lessonText">${lesson.name}</div>
+						<div class="lessonDescribe">主讲人：${lesson.teacher_name}</div>
+						<div class="finish">
 							<span class="doneText">已完成 ${lesson.finish_count || 0}/${lesson.count} 节</span> 
 						</div>
-						<br>
-						<div class="lessonDescribe">主讲人：${lesson.teacher_name}</div>
 						<#if (lesson.status_value == 1 || lesson.status_value == 2)>
 							<div class="percentRate" node="percent" percent="${lesson.percent}％">	
 								<span class="percentRateBar" node="percentRateBar"></span>

@@ -129,7 +129,9 @@ define(function(require, exports, module) {
         ])[parseInt(Math.random()*5)];
 
         SHARE_URL = 'http://'+document.domain+ opts.share_url;
-
+        if(platform == 'weibo'){
+            $('[action=share]').attr('href','sinaweibo://compose?content='+TITLE+' '+SHARE_URL);
+        }
         // 初始化 JSSDK
         jssdk.init(platform, opts.jssdk, function(){
             // 如果初始化失败，就什么都不做

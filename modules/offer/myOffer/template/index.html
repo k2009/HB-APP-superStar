@@ -1,0 +1,38 @@
+<#if (data.myworks.length == 0) >
+
+	<div class="container clearfix">
+		<!-- 模块 -->
+		<div id="st_modules_error" class="module"><!--userlist start-->
+			<div class="statusImg_2"></div>
+			<p class="tipsInfo">您还没有参与赚钱哦</p>
+			<p class="code"></p>
+			<a href="/castle/wap/works" class="btnIndex">知道了</a>
+		</div>
+	</div>
+<#else>
+	<#list data.myworks as item>
+		<#if (item.name != "") >
+		<li class="mui-table-view-cell">
+			<a href="${item.url}">
+				<div class="leftInfo">
+					<h4 class="title ellipsis">
+							${item.name}
+					</h4>
+					<h5 class="describe ellipsis">
+							${item.offical_name}
+					</h5>
+					<div class="detail">
+							<span class="endDate">${item.time_end}截止	</span>
+							<span class="price">	${item.return_amount == 0 ? "面议" : "￥" + item.return_amount}</span>
+							<span class="location"> ${item.city}	</span>
+					</div>
+				</div>
+				<div class="rightImg">
+					<img src="${item.banner}" alt="">
+					<div class="type">${item.work_type == null ? "" : item.work_type}</div>
+				</div>
+			</a>
+		</li>
+		</#if>
+	</#list>
+</#if>

@@ -26,7 +26,7 @@ define(function(require, exports, module) {
 	}
 
 	Tips.prototype.show = function(opts) {
-		var opts=opts||{};
+		opts = opts||{};
 		var html = SCRM.easyTemplate('<#macro userlist data>' +  this.template, {
 			id:  this.dialog_id,
 			title: TITLE,
@@ -34,9 +34,13 @@ define(function(require, exports, module) {
 		}).toString();
 
 		$('body').append(html);
-		var $this=$('#' + this.dialog_id)
+		var $this = $('#' + this.dialog_id);
+		var that = this;
 		$this.on(event_type, '.mui-icon-closeempty',function(e){
-			$this.off().remove();
+			$this.find(".mask").addClass("hide");
+			$this.find(".share-tip").addClass("hide");
+			setTimeout(function(){that.hide();}, 400);
+			// $this.off().remove();
 			//e.stopPropagation();
 			return false;//阻止移动端事件穿透
 		});
@@ -46,16 +50,14 @@ define(function(require, exports, module) {
 	};
 	Tips.prototype.hide = function() {
 		console.log("dialog destroy");
-		var did=this.dialog_id;
-		setTimeout(function(){
-			$('#' + did).off().remove();
-		},50);
+		var did = this.dialog_id;
+		$('#' + did).off().remove();
 	};
 	Tips.prototype.destroy = Tips.prototype.hide;
 
 	Tips.prototype.getNode=function(){
 		return $('#' + this.dialog_id);
-	}
+	};
 
 	function init(html, callback) {
 		// 模块先加载自己依赖的 HTML 模板和 CSS

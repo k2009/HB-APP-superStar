@@ -1,0 +1,18 @@
+	<div class="mainBox">
+		<ul>
+<!-- 			<li>
+				<img src="http://${data._extra.domain}/modules/quickened/beauty/images/bg_img.jpg">
+				<h5>伊美尔整形美容集团</h5>
+				<p>伊美尔集团专注于女性整形美容，企业成立至今已有18年历史，目前在北京、上海、天津、西安、哈尔滨、沈阳、济南、青岛等地拥有近三十家分支机构。每年近20余万女性提供各种医疗美容和健康管理服务。</p>
+				<a href="JavaScript:;" class="btn">我要变美</a>
+			</li> -->
+			<#list data.list as list>
+				<li>
+					<img src="${list.image}">
+					<h5>${list.name}</h5>
+					<p>${list.content}</p>
+					<a href="${data.submit_url}?id=${list.id}" class="btn" pjax="1">我要变美</a>
+				</li>
+			</#list>
+		</ul>
+	</div>

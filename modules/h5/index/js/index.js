@@ -1,59 +1,70 @@
 define(function(require, exports, module) {
-
 	var jssdk = require("common/share/jssdk");
-	var lazyload = require("kit/util/asyncModule");
+	require('libs/jquery/plugins/jquery.swipe.min');
+    var $body = $(document.body);
+    var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
-	var mark = require('modules/h5/testing/js/mark');
-	var tabbar;
+    var pindex = 0;
+    var winWidth = $(window).width();
+    var aniInterval;
+    var swipeLock = false;
+    var tabbar;
 
-	function showCharts(data){
-		if(data == null){
-			return;
-		}
-		var result = [];
-		for (var i = 0, count = data.length; i < count; i++) {
-			var item = data[i];
-			result.push({
-				x: item.x.substr(4),
-				y: item.y
-			});
-		}
-		mark.draw(data);
-	}
+    var initSwipe=function(){
+        var pics=$('#pics');
+        var count=pics.find('li').length;
+        pics.swipe({
+            swipe:function(event,direction){
+                if(swipeLock){return;}
+                swipeLock=true;
+                setTimeout(function(){
+                    swipeLock=false;
+                },300);
+                if(pindex ==0 && direction=='right' || pindex>=count-1 && direction=='left'){return;}
+                direction=='left'?pindex++:pindex--;
+                pics.css('left',-winWidth*pindex+'px');
+                $('#points').find('.point').removeClass('cur').eq(pindex).addClass('cur');
+                clearInterval(aniInterval);
+                initPics(true);
+            }
+        })
+    }
 
-	function init(opts) {
+    var initPics=function(onlyInterval){        
+        var pics=$('#pics');
+        
+        var count=pics.find('li').css('width',winWidth+'px').length;
+        if(!onlyInterval){
+            pics.css('width',winWidth*count);
+            $('#points').find('.point').eq(0).addClass('cur');
+        }
+        aniInterval=setInterval(function(){
+            pindex++;
+            if(pindex>=count){
+                pindex=0;
+            }
+            pics.css('left',-winWidth*pindex+'px');
+            $('#points').find('.point').removeClass('cur').eq(pindex).addClass('cur');
+        },5000);
+    }
 
-		var platform = opts.platform;
-
-		// 延迟加载 tabbar
+    function init(opts) {
+        initPics();
+        initSwipe();
         lazyload.load("common/tabbar/js/index", function(ret){
-        	ret.setData(opts.tabbar);
-            ret.setActiveTab(0);
             tabbar = ret;
+            tabbar.setData(opts.tabbar);
+            tabbar.setActiveTab(0);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });
-
-		// 初始化 JSSDK
-		jssdk.init(platform, opts.jssdk, function(){
-			// 如果初始化失败，就什么都不做
-			if(arguments.length > 0){
-				return;
-			}
-		});
-		// 如果完成的课程数大于 0
-		if(opts.my_score.finished > 0){
-			showCharts(opts.my_score.chat);
-		}
-
-		// 公共头部
-        header.init();
-		// $.getScript("http://172.17.72.151:8080/target/target-script-min.js#anonymous");
-	}
+    }
 
 	function destroy(opts) {
-		if(tabbar){
-			tabbar.destroy();
-		}
-		header.destroy();
+        pindex = 0;
+        clearInterval(aniInterval);
+        swipeLock = false;
+        if(tabbar){
+            tabbar.destroy();
+        }
 	}
 	var that = {
 		init: init,

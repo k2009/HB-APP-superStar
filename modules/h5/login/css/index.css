@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -101,32 +101,32 @@ body {
 
 .weibo-tip, h3 {
   color: #666;
-  margin: 0.6rem 0 0.1rem; }
+  margin: 0.512rem 0 0.08533rem; }
 
 .weibo-tip {
-  font-size: 0.16rem; }
+  font-size: 0.13653rem; }
 
 .profile {
   text-align: center;
   margin-top: 0;
-  padding-top: 0.15rem; }
+  padding-top: 0.128rem; }
 
 .profile img {
-  width: 0.9rem;
-  border-radius: 0.9rem;
+  width: 0.768rem;
+  border-radius: 0.768rem;
   border: 1px solid #ddd;
-  box-shadow: 0 0.025rem 0.05rem rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.1rem; }
+  box-shadow: 0 0.02133rem 0.04267rem rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.08533rem; }
 
 .profile .nick {
-  font-size: 0.16rem;
-  padding: 0.05rem; }
+  font-size: 0.13653rem;
+  padding: 0.04267rem; }
 
 .mui-bar-nav ~ .mui-content {
-  padding-top: 0.15rem; }
+  padding-top: 0.128rem; }
 
 .mui-btn-block {
-  margin: 0.2rem auto;
+  margin: 0.17067rem auto;
   padding: 0;
   z-index: 999;
   display: block; }
@@ -136,58 +136,58 @@ body {
 
 .left {
   float: left;
-  font-size: 0.5rem;
-  width: 0.5rem;
-  height: 0.75rem;
+  font-size: 0.42667rem;
+  width: 0.42667rem;
+  height: 0.64rem;
   position: absolute;
   top: 0;
-  height: 1rem; }
+  height: 0.85333rem; }
 
 .right {
   text-align: left;
   position: absolute;
-  left: 0.5rem;
-  right: 0.05rem; }
+  left: 0.42667rem;
+  right: 0.04267rem; }
 
 .right .title {
   color: #333;
-  padding: 0.05rem 0;
-  font-size: 0.14rem; }
+  padding: 0.04267rem 0;
+  font-size: 0.11947rem; }
 
 .text {
-  font-size: 0.12rem; }
+  font-size: 0.1024rem; }
 
 .block {
   background: #fff;
-  padding: 0.05rem 0;
-  border-radius: 0.05rem;
+  padding: 0.04267rem 0;
+  border-radius: 0.04267rem;
   position: relative;
-  height: 1rem;
-  box-shadow: 0 0.075rem 0.15rem rgba(0, 0, 0, 0.1); }
+  height: 0.85333rem;
+  box-shadow: 0 0.064rem 0.128rem rgba(0, 0, 0, 0.1); }
 
 .screen_name {
   color: #E88353; }
 
 .weixin-tip {
-  line-height: 0.13rem;
-  margin: 0.1rem 0; }
+  line-height: 0.11093rem;
+  margin: 0.08533rem 0; }
 
 .weixin-tip span {
   display: inline-block;
   vertical-align: top;
-  margin-right: 0.05rem;
-  width: 0.13rem;
-  height: 0.13rem;
+  margin-right: 0.04267rem;
+  width: 0.11093rem;
+  height: 0.11093rem;
   background: url(../images/tips.png) no-repeat;
-  background-size: 0.13rem 0.13rem; }
+  background-size: 0.11093rem 0.11093rem; }
 
 .bottom-desc {
   position: fixed;
-  bottom: 0.1rem; }
+  bottom: 0.08533rem; }
 
 .change-account {
   color: #3790f2;
-  margin-top: 0.8rem; }
+  margin-top: 0.68267rem; }
 
 p {
-  font-size: 0.12rem; }
+  font-size: 0.1024rem; }

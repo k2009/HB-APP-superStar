@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -105,13 +105,13 @@ body {
 
 .topTitle {
   padding: 10px 15px;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   background: white;
   box-shadow: 0 0 10px #CCC;
   position: relative; }
 
 .content {
-  padding: 15px;
+  padding: 0.128rem 0.128rem 0;
   background: white;
   color: #555;
   margin-top: 20px; }
@@ -126,13 +126,32 @@ body {
 
 .tc_text {
   text-align: center;
-  margin: 10px; }
+  padding: 0 0.08533rem 0.128rem;
+  background-color: #fff; }
 
 .bottomNotice {
-  margin: 0.1rem; }
+  margin: 0.08533rem; }
 
 .mui-bar {
   position: static; }
 
 .mui-bar-nav ~ .mui-content {
   margin: 0; }
+
+.not-user {
+  background-color: #fff;
+  background-image: url(../images/not-user.png);
+  background-repeat: no-repeat;
+  height: 2.13333rem;
+  background-size: 2.92267rem 1.87307rem;
+  background-position: center 0;
+  position: relative;
+  padding-bottom: 0.17067rem; }
+  .not-user .buttons {
+    position: absolute;
+    bottom: 0.128rem;
+    text-align: center;
+    width: 100%; }
+  .not-user .mui-btn {
+    display: block;
+    margin: 0 auto 0; }

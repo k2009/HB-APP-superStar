@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -102,15 +102,15 @@ body {
 @UIwidth : 750;
 .wanghong-standard-header {
   background: #fff5e4;
-  height: 0.3rem;
-  line-height: 0.3rem;
-  font-size: 0.13rem;
+  height: 0.256rem;
+  line-height: 0.256rem;
+  font-size: 0.11093rem;
   color: #1c1c1c;
-  padding-left: 0.05rem; }
+  padding-left: 0.04267rem; }
   .wanghong-standard-header .logo {
     display: inline-block;
-    width: 0.18rem;
-    height: 0.18rem;
+    width: 0.1536rem;
+    height: 0.1536rem;
     vertical-align: top;
     border-radius: 100%;
-    margin: 0.07rem 0.05rem 0; }
+    margin: 0.05973rem 0.04267rem 0; }

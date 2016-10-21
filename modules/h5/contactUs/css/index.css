@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -100,37 +100,37 @@ body {
   height: 100%; }
 
 .desc {
-  margin: 0.15rem 0.2rem; }
+  margin: 0.128rem 0.17067rem; }
 
 .desc span, .desc a {
   color: #e88353; }
 
 .title {
   text-align: center;
-  font-size: 0.18rem;
-  margin: 0.2rem 0 0.1rem; }
+  font-size: 0.1536rem;
+  margin: 0.17067rem 0 0.08533rem; }
 
 .weixin {
-  width: 2.5rem;
-  height: 1.29rem;
+  width: 2.13333rem;
+  height: 1.1008rem;
   background: #fff url(../images/finger.gif) no-repeat top right;
-  margin: 0.05rem auto;
-  background-size: 2.5rem; }
+  margin: 0.04267rem auto;
+  background-size: 2.13333rem; }
 
 .weixin img {
-  width: 1.29rem;
-  height: 1.29rem; }
+  width: 1.1008rem;
+  height: 1.1008rem; }
 
 .weibo {
   text-align: center; }
 
 .weibo img {
-  width: 1.2rem;
-  border-radius: 0.9rem;
+  width: 1.024rem;
+  border-radius: 0.768rem;
   border: 1px solid #ddd; }
 
 .weibo button {
-  min-width: 1rem; }
+  min-width: 0.85333rem; }
 
 .qrcode_tip {
   text-align: center; }
@@ -138,5 +138,5 @@ body {
 .split {
   border-top: 1px dashed #999;
   text-align: center;
-  margin: 0.15rem 0;
+  margin: 0.128rem 0;
   color: #ccc; }

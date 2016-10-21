@@ -69,7 +69,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -87,7 +87,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -135,19 +135,27 @@ body {
     color: #e5711d; }
 
 .mui-btn-block {
+  display: block;
+  width: 1.49333rem;
+  height: 0.2816rem;
   margin: 0.128rem auto;
-  display: block; }
+  text-align: center;
+  font-size: 0.128rem;
+  line-height: 0.2816rem;
+  background: #fbbd06;
+  border-radius: 0.04267rem;
+  color: #fff; }
 
 .content-box {
-  margin: 0.064rem;
   background: #fff;
-  border: 0.00427rem solid #d5d3b1;
+  box-shadow: 1px 1px 2px #eeeeec;
+  margin-bottom: 0.128rem;
   position: relative; }
 
 .headPic {
   width: 0.64rem;
   height: 0.64rem;
-  margin: 0.128rem auto;
+  margin: 0 auto 0.128rem;
   overflow: hidden;
   border-radius: 50%; }
   .headPic img {

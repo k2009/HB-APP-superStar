@@ -11,8 +11,13 @@ define(function(require, exports, module) {
 	var TAB_HTML = 
 	'<#list data.tabs as tab>' +
 	'<a href="${tab.url}" pjax="1" class="tabbar-item ${tab.isCurrent ? \'current\' : \'\' }" data-index="0">' +
-		'<span class="tabbar-icon ${tab.icon}"></span>' +
-		'<span class="tabbar-text">${tab.name}</span>' +
+		'<span class="tabbar-icon ${tab.icon}">' +
+			'<#if (tab.unread == true ) >' +
+				'<span class="dot"></span>' +
+			'</#if>' +
+		'</span>' +
+		'<span class="tabbar-text">${tab.name}' +
+		'</span>' +
 	'</a>' +
 	'</#list>';
 
@@ -34,26 +39,31 @@ define(function(require, exports, module) {
 			Tabbar.setActiveTab(id);
 		},
 		"setData": function (tabbar) {
+			if(tabbar == null){return;}
 			tabbarArray = [];
 			for(var i = 0, count = tabbar.length; i < count; i ++){
 				var tab = tabbar[i];
 				var tabInfo = {
 					"name" : tab.name,
 					"url": tab.url,
-					"isCurrent": Tabbar.current == i
+					"isCurrent": Tabbar.current == i,
+					"unread": (typeof tab.unread != "undefined" && tab.unread > 0)
 				};
 				switch(i) {
 					case 0:
 						tabInfo.icon = "icon-home";
 						break;
 					case 1:
-						tabInfo.icon = "icon-lesson";
+						tabInfo.icon = "icon-learn";
 						break;
 					case 2:
-						tabInfo.icon = "icon-test";
+						tabInfo.icon = "icon-jiasu";
 						break;
 					case 3:
-						tabInfo.icon = "icon-me";
+						tabInfo.icon = "icon-money";
+						break;
+					case 4:
+						tabInfo.icon = "icon-mine";
 						break;
 				}
 				tabbarArray.push(tabInfo);
@@ -103,12 +113,13 @@ define(function(require, exports, module) {
 			},
 			"fail": function(){
 			},
-			"cachecss": true
+			"cachecss": false
 		});
 	}
 
 	function destroy(opts) {
 		// 逐一调用子模块的 destroy 方法
+		Tabbar.destroy();
 	}
 	var that = {
 		init: init,

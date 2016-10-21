@@ -1,0 +1,31 @@
+<div class="picBox">
+	<ul class="pics" id="pics">
+		<#list data.slidenewslist.list as s>
+			<li class="pic">
+				<a href="${s.url}"></a>
+				<img src="${s.c_image}" alt="">
+			</li>
+		</#list>
+	</ul>
+	<ul class="points" id="points">
+		<#list data.slidenewslist.list as s>
+			<li class="point <#if (s_index==0)>cur</#if>"></li>
+		</#list>
+	</ul>
+</div>
+<ul class="detailBox" id="listBox">
+	<#list data.newslist.list as info>
+		<li class="mui-table-view-cell">
+			<a href="${info.url}">
+				<div class="sponser">
+					<img src="${info.image}" alt="" class="headpic">
+					<div class="sponserInfo">
+						<span class="sponserName">${info.title}</span>
+						<br>
+						<span class="sponserDate">${info.ctime}</span>
+					</div>
+				</div>				
+			</a>			
+		</li>
+	</#list>
+</ul>

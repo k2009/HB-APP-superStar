@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -109,17 +109,17 @@ body {
 
 .title {
   color: #333;
-  font-size: 0.18rem;
+  font-size: 0.1536rem;
   text-align: center;
-  line-height: 0.36rem;
+  line-height: 0.3072rem;
   border-top: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0; }
 
 .arrowRight {
   float: right;
-  line-height: 0.36rem;
+  line-height: 0.3072rem;
   color: #CCC;
-  margin-right: 0.125rem; }
+  margin-right: 0.10667rem; }
 
 .chapterItem {
   margin: 0;
@@ -145,15 +145,15 @@ body {
   float: right;
   font-size: 18px;
   color: white;
-  right: 0.05rem;
-  top: 0.025rem;
+  right: 0.04267rem;
+  top: 0.02133rem;
   display: inline-block;
   width: 16px;
   height: 16px;
   position: absolute; }
 
 .mui-table-view {
-  margin: 0.1rem;
+  margin: 0.08533rem;
   overflow: hidden; }
 
 .colorGray {
@@ -162,7 +162,7 @@ body {
 
 .sectionIntro {
   color: #666666;
-  margin: 0.15rem; }
+  margin: 0.128rem; }
 
 .platform {
   width: 100%;
@@ -274,22 +274,22 @@ body {
 
 .topTip {
   display: inline-block;
-  line-height: 0.26rem;
+  line-height: 0.22187rem;
   width: 100%;
-  height: 0.26rem;
-  font-size: 0.12rem;
+  height: 0.22187rem;
+  font-size: 0.1024rem;
   background: #fff5e4;
   color: #d6a44c; }
 
 .topTipIcon {
   display: inline-block;
   background: url(../images/icon.png) no-repeat;
-  background-size: 0.18rem;
+  background-size: 0.1536rem;
   float: left;
-  width: 0.18rem;
-  height: 0.195rem;
-  background-position: 0 -0.2rem;
-  margin: 0 0.1rem; }
+  width: 0.1536rem;
+  height: 0.1664rem;
+  background-position: 0 -0.17067rem;
+  margin: 0 0.08533rem; }
 
 .lastUpdate {
   margin-top: 10px;
@@ -301,14 +301,14 @@ body {
 
 .nicknameScore {
   text-align: center;
-  margin: 0.25rem;
-  font-size: 0.18rem; }
+  margin: 0.21333rem;
+  font-size: 0.1536rem; }
 
 .nicknameDetail {
   display: inline-block;
   width: 50%;
   text-align: center;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   border: 1px solid #9e6401;
   padding: 5px 15px;
   border-radius: 5px;

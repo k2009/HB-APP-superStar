@@ -72,11 +72,11 @@ define(function(require, exports, module) {
                 // msg.content += "；";          //微博单独加链接
             }
             share.send(msg, function() {
-                success(msg);
+                if(success)success(msg);
                 sys.hide();
                 mui.toast("分享到\"" + share.description + "\"成功！ ");
             }, function(e) {
-                error(msg);
+                if(error)error(msg);
                 mui.toast("分享到\"" + share.description + "\"失败 ");
                 console.log(JSON.stringify(e))
             });

@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -99,14 +99,60 @@ body {
 .container {
   height: 100%; }
 
+.tutor {
+  position: relative;
+  min-height: 1.23307rem;
+  background: #fff; }
+  .tutor .head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.192rem 0 0 0.128rem; }
+    .tutor .head img {
+      width: 0.59733rem;
+      height: 0.59733rem;
+      border-radius: 100%; }
+  .tutor .info {
+    padding-left: 0.896rem; }
+    .tutor .info .name {
+      color: #1a1a1a;
+      font-size: 0.13653rem;
+      padding-top: 0.17067rem; }
+    .tutor .info .tutor-intro {
+      color: #646464;
+      font-size: 0.11093rem;
+      padding: 0.08533rem 0.08533rem 0 0;
+      white-space: normal;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; }
+    .tutor .info .tutor-show {
+      -webkit-line-clamp: inherit; }
+  .tutor .tutor-folder {
+    background: url(../images/arrow.png) no-repeat center center;
+    background-size: 0.1664rem 0.0896rem;
+    height: 0.256rem;
+    margin: 0.04267rem 0;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+  .tutor .tutor-on {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+
 .topTitle {
   padding: 10px 15px;
-  font-size: 0.12rem;
+  font-size: 0.1024rem;
   background: white;
   box-shadow: 0 0 10px #CCC;
   position: relative; }
 
-.content {
+.audio {
+  text-align: center;
+  padding-bottom: 0.04267rem; }
+
+.mui-bar-nav ~ .mui-content {
   padding: 15px;
   background: white;
   color: #555;
@@ -114,11 +160,11 @@ body {
 
 .content p {
   text-align: left;
-  line-height: 0.2rem; }
+  line-height: 0.17067rem; }
 
 .content img {
   max-width: 100%;
-  margin: 0.1rem auto;
+  margin: 0.08533rem auto;
   display: block;
   box-shadow: 4px 4px 4px #ccc; }
 
@@ -127,7 +173,7 @@ body {
   margin: 10px; }
 
 .bottomNotice {
-  margin: 0.1rem; }
+  margin: 0.08533rem; }
 
 .mui-bar {
   position: static; }

@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -156,7 +156,7 @@ body {
   position: static;
   color: #555;
   margin: 0;
-  font-size: 0.12rem; }
+  font-size: 0.1024rem; }
 
 .btnBox {
   text-align: center; }
@@ -178,7 +178,7 @@ body {
   max-width: 96px; }
 
 body {
-  padding-bottom: 110px; }
+  padding-bottom: 50px; }
 
 .btnBox.fixedBottom {
   position: fixed;
@@ -200,11 +200,12 @@ body {
   box-shadow: 0 0 3px #999; }
 
 .bottomTitle {
-  margin: 10px;
+  margin: 18px;
   width: auto;
   white-space: inherit;
   text-align: left;
-  line-height: 30px; }
+  line-height: 22px;
+  font-size: 0.11093rem; }
 
 .selectBox {
   margin: 10px 0; }
@@ -216,7 +217,7 @@ body {
 .selectItem {
   display: inline-block;
   overflow: hidden;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #e5e5e5;
   border-radius: 5px;
   font-size: 14px;
   color: #333;

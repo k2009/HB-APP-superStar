@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -103,40 +103,40 @@ body {
   position: absolute; }
 
 .mui-bar-nav ~ .mui-content {
-  padding-top: 0.6rem; }
+  padding-top: 0.512rem; }
 
 .mui-badge {
   background: none; }
 
 .mui-btn-block {
-  margin: 0.2rem auto;
+  margin: 0.17067rem auto;
   width: 94%;
-  padding: 0.05rem 0; }
+  padding: 0.04267rem 0; }
 
 .mui-right {
   position: absolute;
-  right: 0.175rem; }
+  right: 0.14933rem; }
 
 .mui-right input[type=tel], .mui-right input[type=number] {
-  width: 0.75rem;
-  height: 0.2rem;
+  width: 0.64rem;
+  height: 0.17067rem;
   vertical-align: top;
   border-radius: 3px; }
 
 .mui-right input[type=tel].phone {
-  width: 1.51rem; }
+  width: 1.28853rem; }
 
 /*.phone{ width: r(360); height: r(40); vertical-align: top; border-radius: 3px; }
 .smscode{ width: r(200); height: r(40); vertical-align: top; border-radius: 3px; }*/
 .inline-button {
   display: inline-block;
-  padding: 0 0.05rem;
-  height: 0.2rem;
-  line-height: 0.2rem;
-  margin-left: 0.05rem;
+  padding: 0 0.04267rem;
+  height: 0.17067rem;
+  line-height: 0.17067rem;
+  margin-left: 0.04267rem;
   background: #eee;
   border: 1px solid #eee;
-  border-radius: 0.02rem; }
+  border-radius: 0.01707rem; }
 
 .mui-navigate-right:after, .mui-push-right:after {
   content: ''; }

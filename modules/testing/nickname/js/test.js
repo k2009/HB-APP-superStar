@@ -142,14 +142,14 @@ define(function(require, exports, module) {
 		// 延迟加载 tabbar
 		lazyload.load("common/tabbar/js/index", function(ret) {
             ret.setData(opts.tabbar);
-            ret.setActiveTab(2);
+            ret.setActiveTab(1);
             tabbar = ret;
 		});
 		header.init();
 		$('#st_modules_h5_nicenameTest').on('touchend', '#startTest', function() {
 			var weibo_nick_name = $.trim($('.nicknameInput').val()),
-				reg = /^[0-9a-zA-Z\u4e00-\u9fa5_-]{1,30}$/;
-			if (!reg.test(weibo_nick_name)) {
+				reg = /^[0-9a-zA-Z\u4e00-\u9fa5_-]{4,30}$/;
+			if (!reg.test(weibo_nick_name.replace(/[^\x00-\xff]/g,"aa"))) {
 				Alert('请输入正确微博昵称');
 				return;
 			}
@@ -157,8 +157,9 @@ define(function(require, exports, module) {
 				Alert('亲，每天只能免费测试三次哟，请明天再来吧~');
 				return;
 			}
-//			SCRM.pjax(opts.next_url + weibo_nick_name);
-            window.location.href = opts.next_url + weibo_nick_name;
+            // alert(opts.next_url + weibo_nick_name)
+			SCRM.pjax(opts.next_url + weibo_nick_name);
+            // window.location.href = opts.next_url + weibo_nick_name;
 		})
 	}
 

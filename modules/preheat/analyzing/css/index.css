@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -163,7 +163,7 @@ html, body, .container, .module {
 .swiper {
   position: relative;
   overflow: hidden;
-  margin: 0.192rem auto;
+  margin: 0.192rem auto 0.128rem;
   height: 3.54133rem; }
   .swiper .card {
     background: #fff;

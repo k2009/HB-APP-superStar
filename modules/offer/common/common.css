@@ -1,0 +1,176 @@
+body{
+	padding-bottom: 60px;
+}
+.mui-table-view-cell{
+	background: white;
+	border-bottom: 1px solid #f0f0f0;
+}
+.mui-table-view-cell:after{
+	display: none;
+}
+.leftInfo{
+	width: 60%;
+	height: r(150);
+	float:left;
+	display: flex;
+    display:-webkit-flex;
+    justify-content: space-around;
+    flex-direction: column;
+    -webkit-flex-direction:column;
+}
+.title{
+	font-size: r(32);
+	font-weight: 400;
+
+}
+.describe{
+	font-size:r(28);
+	font-weight: 200;
+}
+
+.detail{
+	font-size: r(24);
+	color: #999;
+	display: flex;
+    display:-webkit-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    -webkit-flex-direction:row;
+    align-items: center;
+    -webkit-align-items:center;
+}
+
+.endDate{
+	color:#fbbd06;
+}
+.location{
+	background: url(../images/location.png) left center no-repeat;
+	background-size: r(16);
+	padding-left: r(20);
+}
+.rightImg{
+	width: r(200);
+	padding-bottom: r(150);
+	float:right;
+	position: relative;
+	overflow:hidden;
+}
+.rightImg img{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.ellipsis{
+	overflow:hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/* 滑动列表 */
+.slideBox{
+	width: 100%;
+	overflow-x: scroll;
+	position: relative;
+
+}
+
+.slider{
+	padding:r(20);
+	display: none;
+	overflow: hidden;
+	position: static;
+}
+
+.slideItem{
+	margin-right: r(15);
+	float: left;
+	width: r(280);
+	padding-bottom: r(210);
+	position: relative;
+}
+.slideItem .background{
+	position: absolute;
+	left:0;top:0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.slideItem .info{
+	z-index: 1;
+	font-size: r(28);
+	position: absolute;
+	color:white;
+	bottom:0;
+	top:0%;
+	padding-top: 30%;
+	left:0;right:0;
+	height: 100%;
+	text-align: center;
+	background: rgba(0,0,0,0.4);
+}
+
+.slideItem .title{
+	font-size: r(28);
+	line-height: r(38);
+	overflow: hidden;
+	margin-top: r(20);
+	padding:0 r(20);
+	height: r(76);
+}
+.slideItem .company{
+	color:white;
+	font-size: r(24);
+}
+
+.rightArrow{
+	float: right;
+	display: inline-block;
+	width: r(16);
+	height: r(26);
+	background: url(../../common/rightArrow.png) no-repeat;
+	background-size: r(16);
+}
+
+.brandSlideItem{
+	float:left;
+	margin-right: r(15);
+	width: r(280);
+	height: r(280);
+	padding:0;
+	position: relative;
+	box-shadow: 0 2px 2px #CCC;
+}
+
+.brandSlideItem .background{
+	position: absolute;
+	left:0;top:0;
+	width: 100%;
+	height: 70%;
+
+}
+.brandSlideItem .info{
+	z-index: 1;
+	font-size: r(24);
+	position: absolute;
+	color:#333;
+	bottom:0;
+	left:0;right:0;
+	height: 30%;
+	
+	text-align: center;
+	background: white;
+	display: flex;
+	display:-webkit-flex;
+	justify-content: center;
+	flex-direction: column;
+	-webkit-flex-direction:column;
+	align-items: center;
+	-webkit-align-items:center;
+}
+
+.mui-content{
+	background: white;
+	padding:r(10) 0;
+}

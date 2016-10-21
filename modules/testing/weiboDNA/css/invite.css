@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -132,22 +132,22 @@ body {
 
 .topTip {
   display: inline-block;
-  line-height: 0.26rem;
+  line-height: 0.22187rem;
   width: 100%;
-  height: 0.26rem;
-  font-size: 0.12rem;
+  height: 0.22187rem;
+  font-size: 0.1024rem;
   background: #fff5e4;
   color: #d6a44c; }
 
 .topTipIcon {
   display: inline-block;
   background: url(../images/icon.png) no-repeat;
-  background-size: 0.18rem;
+  background-size: 0.1536rem;
   float: left;
-  width: 0.18rem;
-  height: 0.195rem;
-  background-position: 0 -0.2rem;
-  margin: 0 0.1rem; }
+  width: 0.1536rem;
+  height: 0.1664rem;
+  background-position: 0 -0.17067rem;
+  margin: 0 0.08533rem; }
 
 .topBox {
   text-align: center; }
@@ -165,7 +165,7 @@ body {
   color: #555; }
 
 .describe {
-  padding: 0.15rem;
+  padding: 0.128rem;
   background: white;
   line-height: 30px;
   overflow: hidden;

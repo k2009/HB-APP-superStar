@@ -1,0 +1,47 @@
+<div class="status-bg">
+	<div class="status-icon status-icon-success"></div>
+</div>
+<!-- 机遇报名状态 0:未找到 1:报名成功  2:未开始 3:已结束  4:已报名 5:未通过 -->
+<#if (data.status == 1) >
+<div class="success">
+	<p>恭喜你已经拥有初选资格！</p>
+	<p>请静候佳音！</p>
+	<a href="${data.index_url}" pjax="1" class="mui-btn">好的呢</a>
+</div>
+</#if>
+<#if (data.status == 4) >
+<div class="success">
+	<p>恭喜你已经拥有初选资格！</p>
+	<p>请静候佳音！</p>
+	<a href="${data.index_url}" pjax="1" class="mui-btn mui-btn-secondary">已报名</a>
+</div>
+</#if>
+<#if (data.status == 2) >
+	<div class="success">
+		<p>十分抱歉！</p>
+		<p></p>
+		<a href="${data.index_url}" pjax="1" class="mui-btn mui-btn-secondary">报名未开始</a>
+	</div>
+</#if>
+<#if (data.status == 3) >
+	<div class="success">
+		<p>十分抱歉！</p>
+		<p></p>
+		<a href="${data.index_url}" pjax="1" class="mui-btn mui-btn-secondary">报名已结束</a>
+	</div>
+</#if>
+<#if (data.status == 5) >
+<div class="error">
+	<p>十分抱歉，您有以下条件没有达成：</p>
+	<ul>
+		<#list data.learns as reason>
+		<li>
+			<span class="dot"></span> ${reason.require_name}
+			<#if (reason.url != "") > 
+			<a href="${reason.url}">${reason.button_text}</a>
+			</#if>
+		</li>
+		</#list>
+	</ul>
+</div>
+</#if>

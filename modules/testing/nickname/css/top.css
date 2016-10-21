@@ -68,7 +68,7 @@ em, i {
 
 a {
   text-decoration: none;
-  webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent; }
 
 a:focus {
   outline: 0; }
@@ -86,7 +86,7 @@ input[type="text"], input[type="button"], input[type="submit"], input[type="tel"
   border-radius: 0; }
 
 input, textarea {
-  webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-modify: read-write-plaintext-only; }
 
 body {
@@ -108,7 +108,7 @@ body {
   margin: 0; }
 
 .btnBox {
-  margin-top: 0.1rem;
+  margin-top: 0.08533rem;
   text-align: center;
   display: flex;
   display: -webkit-flex;
@@ -124,22 +124,22 @@ body {
 
 .topTip {
   display: inline-block;
-  line-height: 0.26rem;
+  line-height: 0.22187rem;
   width: 100%;
-  height: 0.26rem;
-  font-size: 0.12rem;
+  height: 0.22187rem;
+  font-size: 0.1024rem;
   background: #fff5e4;
   color: #d6a44c; }
 
 .topTipIcon {
   display: inline-block;
   background: url(../images/icon.png) no-repeat;
-  background-size: 0.18rem;
+  background-size: 0.1536rem;
   float: left;
-  width: 0.18rem;
-  height: 0.195rem;
-  background-position: 0 -0.2rem;
-  margin: 0 0.1rem; }
+  width: 0.1536rem;
+  height: 0.1664rem;
+  background-position: 0 -0.17067rem;
+  margin: 0 0.08533rem; }
 
 .topText {
   width: 100%;
@@ -214,7 +214,7 @@ body {
   top: 40%;
   left: 0;
   right: 0;
-  font-size: 0.18rem; }
+  font-size: 0.1536rem; }
 
 .headPicImg {
   background: url(../images/headpic.jpg) no-repeat;
@@ -245,29 +245,29 @@ body {
   transition: width 0.5s;
   -webkit-transition: width 0.5s;
   color: #666;
-  font-size: 0.1rem; }
+  font-size: 0.08533rem; }
 
 .structText .arcIcon {
   display: inline-block;
-  width: 0.2rem;
-  height: 0.2rem;
-  border: 0.05rem solid red;
+  width: 0.17067rem;
+  height: 0.17067rem;
+  border: 0.04267rem solid red;
   border-bottom-color: transparent;
   border-top-color: transparent;
   border-right-color: transparent;
   border-radius: 50px;
-  margin-top: -0.04rem;
+  margin-top: -0.03413rem;
   transform: rotate(90deg);
   transform-origin: left;
   float: left; }
 
 .mui-content {
-  padding: 0.075rem;
+  padding: 0.064rem;
   background: white; }
 
 .nickname {
   text-align: center;
-  font-size: 0.16rem;
+  font-size: 0.13653rem;
   color: #333;
   margin: 25px; }
 
@@ -281,11 +281,11 @@ body {
 .mui-table-view-cell {
   text-align: left;
   padding: 5px 15px;
-  line-height: 0.25rem; }
+  line-height: 0.21333rem; }
 
 .mui-table-view-cell .td1 {
   display: inline-block;
-  font-size: 0.14rem;
+  font-size: 0.11947rem;
   text-align: left;
   color: #333; }
 
@@ -298,22 +298,22 @@ body {
   margin-left: 20px; }
 
 .diffStar {
-  margin: 0 0.05rem;
+  margin: 0 0.04267rem;
   display: inline-block;
-  width: 0.15rem;
-  height: 0.14rem;
+  width: 0.128rem;
+  height: 0.11947rem;
   background: url(../images/star.png) no-repeat;
-  background-size: 0.15rem;
+  background-size: 0.128rem;
   vertical-align: middle;
   transform: scale(1.5);
   -webkit-transform: scale(1.5); }
 
 .diffStar.empty {
-  background-position: 0 -0.15rem; }
+  background-position: 0 -0.128rem; }
 
 .mui-content {
   text-align: center;
-  line-height: 0.3rem; }
+  line-height: 0.256rem; }
 
 .platform {
   position: relative;
