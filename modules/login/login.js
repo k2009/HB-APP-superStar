@@ -15,12 +15,13 @@ define(function(require, exports, module) {
 
 				// 
 				    plus.push.addEventListener( "receive", function( msg ) {
+				    	plus.runtime.setBadgeNumber(0);
 				        if ( msg.aps ) {  // Apple APNS message
 				            // alert(JSON.stringify(msg))
 				        } else {
 				            // alert(JSON.stringify(msg))
-
 				        }
+				        plus.push.clear()
 				    }, false );
 				// 
 
@@ -85,6 +86,10 @@ define(function(require, exports, module) {
 
 		app_update: function() {
 
+		    plus.runtime.getProperty(plus.runtime.appid,function(inf){
+		        console.log('进行版本检查..当前版本号'+inf.version)
+		    });
+			
 			$netChange.NetChange(fn_upDate());
 
 			function fn_upDate() {

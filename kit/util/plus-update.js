@@ -106,9 +106,10 @@ define(function(require, exports, module){
 		    sys.waiting("安装wgt文件...");
 		    plus.runtime.install(path,{},function(){
 		        plus.nativeUI.closeWaiting();
-		        sys.alert("应用资源更新完成！",function(){
-		            plus.runtime.restart();
-		        });
+		        alert('应用资源更新完成!退出后重新打开即可使用最新版本啦');
+		        setTimeout(function(){
+		        	plus.runtime.restart();
+		        },3000)
 		    },function(e){
 		        sys.alert("安装wgt文件失败["+e.code+"]："+e.message);
 		    });

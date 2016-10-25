@@ -12,6 +12,10 @@ define(function(require, exports, module) {
     var sys = {
         cacheTime:300000,
         init:function(config,callback){
+            plus.runtime.getProperty(plus.runtime.appid,function(inf){
+                sys.version = inf.version;
+            });
+            
             var cfg = {
                 'static_path': '../../../',
                 "time": new Date().getTime(),
@@ -65,13 +69,23 @@ define(function(require, exports, module) {
         event:{
             a_click:function(event) {
                 var url = this.getAttribute('href');
-                var title = $(this).html();
-                if(title.length>13){
-                    if($(this).find('p').text().length>=3){
-                        title=$(this).find('p').text()
-                    }
-
+                var title = $(this).text();
+                console.log('title:'+title)
+                console.log('html:'+$(this).html())
+                if($(this).find('p,h1,h2,h3,span').length>0){
+                    +function($obj){
+                        var text;
+                        for (var i = 0; i < $obj.length; i++) {
+                            text = $obj.eq(i).text();
+                            if(text.length>=3){
+                                title=text;
+                                console.log('title:'+text);
+                                return
+                            }
+                        }
+                    }($(this).find('p,h1,h2,h3,span'))
                 }
+                console.log("pjax-url:"+url)
                 $pjax(url,title);
             }
         },

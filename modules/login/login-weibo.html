@@ -47,7 +47,26 @@
 		<script src="../../libs/jquery/3.0.0/jquery-3.0.0.js"></script>
 		<!-- 初始化加载 公共JS结束 --> 
 
-		<script>seajs.use("modules/login/login");</script>
+		<script>
+
+
+			mui.plusReady(function(){
+
+	            plus.runtime.getProperty(plus.runtime.appid,function(inf){
+	            	var v = inf.version.split('.').join('_')
+	            	plus.storage.setItem("appVersion",v)
+
+	            	seajs.config({
+						map:[
+							['.js','.js?v='+v],//映射规则
+							['.css','.css?v='+v],//映射规则
+							['.html','.html?v='+v],//映射规则
+						]
+	            	})
+					seajs.use("modules/login/login");
+	            })
+			})
+		</script>
 	</body>
 
 </html>

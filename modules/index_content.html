@@ -54,6 +54,16 @@
 			mui.plusReady(function(){
 				var this_view,pageData,ajax_url,ajax_data,data;
 
+            	var v = plus.storage.getItem("appVersion")
+
+            	seajs.config({
+					map:[
+						['.js','.js?v='+v],//映射规则
+						['.css','.css?v='+v],//映射规则
+						['.html','.html?v='+v],//映射规则
+					]
+            	})
+
 				this_view = plus.webview.currentWebview();
 				plus.navigator.setStatusBarBackground("#f7f7f7");
 				pageData = this_view.pageData;
@@ -62,9 +72,10 @@
 				data = {};
 				data[pageData.id] = pageData.data;
 				window.pageURL = pageData.pageURL;
+
 				seajs.use(pageData.css[0]);
 
-				seajs.use([pageData.app_script||pageData.script,pageData.template[0],'kit/util/construction'],function($fn,tmp,$get){
+				seajs.use([pageData.app_script||pageData.script,pageData.template[0],'kit/util/construction.js'],function($fn,tmp,$get){
 					$('.container').html('<div id="'+pageData.id+'" class="module"><div class="fakeloader"><div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><div class="text">数据加载中...</div></div><div>')
 				    var cfg = {
 				        id: pageData.id,
@@ -78,8 +89,6 @@
 				    $get(cfg);
 				});
 				seajs.use(pageData.template[0].replace('template/index.html','app_js/index.js'));
-
-
 			})
 
 		</script>
