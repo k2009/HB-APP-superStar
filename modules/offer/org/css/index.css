@@ -318,10 +318,16 @@ body {
   font-size: 0.1024rem; }
 
 .grayLink {
-  padding: 10px 15px;
+  padding: 0.08533rem 0.128rem;
   background: white;
   border-top: 10px solid #f0f0f0;
-  border-bottom: none; }
+  border-bottom: 1px solid #eeeeec;
+  font-size: 0.13653rem; }
+
+.mui-table-view-cell > a:not(.mui-btn) {
+  margin: 0;
+  padding: 0;
+  color: #1a1a1a; }
 
 .brandList {
   width: 100%;
@@ -333,11 +339,12 @@ body {
   /*center;*/
   flex-direction: row;
   -webkit-flex-direction: row;
-  background: #fff; }
+  background: #fff;
+  padding-left: 0.0768rem; }
 
 .brand {
   width: 28%;
-  margin: 0.08533rem;
+  margin: 0.128rem 0.06827rem 0;
   position: relative;
   flex: 0 0 auto; }
 
@@ -364,7 +371,8 @@ body {
 
 .brandList .title {
   color: #1a2a1a;
-  font-size: 0.11947rem; }
+  font-size: 0.11947rem;
+  line-height: 0.24747rem; }
 
 .brandList .describe {
   color: #999;

@@ -216,9 +216,9 @@ define(function(require, exports, module) {
             }
 
             var data = { vote: val };
-            if(platform == 'weibo'){
-                data.shouquanid = signedRequest || "";
-            }
+            // if(platform == 'weibo'){
+            //     data.shouquanid = signedRequest || "";
+            // }
 
             $.ajax({
                 type: 'get',
@@ -243,9 +243,9 @@ define(function(require, exports, module) {
                 choose = $this.attr('choose'),
                 num = +$this.html()+1,
                 data = { vote: choose };
-            if(platform == 'weibo'){
-                data.shouquanid = signedRequest || "";
-            }
+            // if(platform == 'weibo'){
+            //     data.shouquanid = signedRequest || "";
+            // }
             $.ajax({
                 type: 'get',
                 url: submit_url,

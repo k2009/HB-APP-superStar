@@ -1,3 +1,9 @@
 <div class="news-title">${data.title}</div>
 <div class="news-time">${data.time}</div>
+<#if (data.desc)>
+<div class="news-describe" id="describe" style="display: none;">
+	<font color="#1a1a1a">解读：</font>
+	${data.desc}
+</div>
+</#if>
 <div class="news-content">${data.content}</div>

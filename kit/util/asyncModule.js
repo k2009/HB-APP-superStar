@@ -83,20 +83,6 @@ define(function(require, exports, module) {
 	}
 
 	function load(opts, callback) {
-		// console.log("异步加载子模块");
-		// console.log(opts);
-		var info;
-		if(typeof opts == "string"){
-			info = {
-				"js": opts,
-				'success': callback
-			};
-		} else {
-			info = opts;
-		}
-
-		var module = new Module(info);
-		// return module.id;
 	}
 
 	function destroy(opts) {

@@ -59,11 +59,10 @@ define(function(require, exports, module) {
             sys.cacheTime = config.cacheTime||sys.cacheTime;
 
             mui.plusReady(function(){
+                mui(document).on('tap', 'a', sys.event.a_click);
                 sys.storage_init();
                 sys.listener();
-                mui('body').on('tap', 'a', sys.event.a_click);
                 window.APP_construction = sys;
-                return sys;
             })
         },
         event:{
@@ -305,7 +304,6 @@ define(function(require, exports, module) {
             }
             document.getElementById(id).innerHTML = $tmp(sys.tmp,data);
 
-            //不这么改就得加班了 之后再改吧
             $('body').find('a').each(function(){
                 if($(this).html() == '返回'){
                     $(this).remove();
@@ -314,9 +312,6 @@ define(function(require, exports, module) {
                     $(this).remove();
                 }
             })
-            //不这么改就得加班了
-
-
             $loding.addClass('hide');
             setTimeout(function(){
                 $loding.remove();

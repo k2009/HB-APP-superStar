@@ -3,8 +3,15 @@ define(function(require, exports, module) {
     var $body = $(document.body);
     var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
+    var ID = "#st_modules_h5_lessionContent";
     var initData;
     var finishTip;
+
+    // 展开收起导师区域
+    function folder(){
+        $(ID).find(".tutor-intro").toggleClass("tutor-show");
+        $(ID).find(".tutor-folder").toggleClass("tutor-on");
+    }
 
     // 王硕，你先别改这个了
     var showDialog=function(){
@@ -27,7 +34,7 @@ define(function(require, exports, module) {
                             // 如果有下一节，就输出下一节按钮
                             + '<a href="' + initData.next_lesson_url + '" pjax="1" class="mui-btn tc_go" id="finish">进入下一课</a>'
                                 +'<br/><br/>'
-                            +'<a style="color:#007aff;" href="' + initData.prev_url + '" pjax="1">休息一下</a>'
+                            +'<a class="back-webview" style="color:#0f65c9" pjax="1">休息一下</a>'
                         +'</div>',
             '       </div>',
             '           <span class="mui-icon mui-icon-closeempty"></span>',
@@ -60,13 +67,22 @@ define(function(require, exports, module) {
         // mui.alert(initData.next_lesson_status_info,'','我知道了');
     }
 
+    function bindEvent(){
+        $(ID).on('tap','.tutor-folder', folder);
+    }
+
+    function releaseEvent(){
+        $(ID).off('tap','.tutor-folder', folder);
+    }
+
     function init(opts) {
+        bindEvent();
         $("#div1").remove();
         $body.on('tap','a[action=stop]',stop);
         $body.on('tap',".mui-icon-closeempty" ,function(){
             $("#div1").remove();
         }).on('tap',".back-webview",function(){
-            plus.webview.close( ("st_modules_"+plus.webview.currentWebview().id),"auto")
+            plus.webview.close(plus.webview.currentWebview().parent(),"auto")
         })
         $('#finish').bind('tap',showDialog);
         initData=opts;

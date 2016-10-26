@@ -159,6 +159,17 @@ define(function(require, exports, module) {
         }
     };
 
+    var checkRepeat = function( self , tiems ){
+        var repeat = self.data( 'repeat' ),
+            tiems = tiems ? tiems : 2000;
+        if( repeat ){
+            return true;
+        }
+        self.data( 'repeat', true );
+        setTimeout( function(){ self.data( 'repeat', '' ) }, tiems );
+        return false;
+    }
+
 	function init(opts) {
 		platform = opts.platform;
 		appid = opts.jssdk.appid;
@@ -187,6 +198,9 @@ define(function(require, exports, module) {
 		header.init();
 
 		$('#st_modules_quickened_vipSignup').on('touchend', '#submit', function() {
+            if( checkRepeat($(this)) ){
+                return;
+            }
             var validateItem = $( '[data-validate]' ),
                 validateStatus = true,
                 ajaxData = {

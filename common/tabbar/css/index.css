@@ -132,7 +132,7 @@ body {
       line-height: 0.29867rem;
       background-size: 0.21333rem 0.21333rem;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: center 0.04267rem;
       /*background-color: #0f0;*/
       position: relative; }
       .tabbar .tabbar-item .tabbar-icon .dot {
@@ -147,7 +147,7 @@ body {
     .tabbar .tabbar-item .tabbar-text {
       display: block;
       height: 0.17067rem;
-      line-height: 0.128rem;
+      line-height: 0.14507rem;
       font-size: 0.1024rem; }
   .tabbar .current {
     color: #fbbd06; }

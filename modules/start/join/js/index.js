@@ -7,6 +7,7 @@ define(function(require, exports, module) {
     var queryToJson=require('kit/extra/queryToJson');
     var channel;
     var tabbar;
+    var ajaxlock=false;
 
     var switchCurrent=function(e){
         var $this=$(this);
@@ -15,6 +16,9 @@ define(function(require, exports, module) {
     };
 
     var submit=function(){
+        if($('#submit').hasClass('mui-btn-disabled')){
+            return;
+        }
         var inputs=$('#form').find('input');
         for(var i =0,len=inputs.length;i<len;i++){
             if(!inputs[i].value){
@@ -24,12 +28,14 @@ define(function(require, exports, module) {
         }
         var data=queryToJson($('#form').serialize());
         data.channel=$('#box').find('td.cur').attr('channel');
+        $('#submit').addClass('mui-btn-disabled').innerHTML='提交中...';
         $.ajax({
             url:'/castle/wap/joins/ajaxsaveinfo',
             data:data,
             dataType:'json',
-            success:function(json){
+            success:function(json){                
                 if(json.code != 0){
+                    $('#submit').removeClass('mui-btn-disabled').innerHTML='提交';
                     return mui.alert(json.message,'提示');
                 }
                 showNotice('success',function(){
@@ -37,6 +43,7 @@ define(function(require, exports, module) {
                 });
             },
             error: function(err){
+                $('#submit').removeClass('mui-btn-disabled').innerHTML='提交';
                 if(typeof err != "undefined" && typeof err.status != "undefined" && err.status == 0){
                     showNotice('fail');
                 } else {
@@ -93,7 +100,7 @@ define(function(require, exports, module) {
         if(tabbar){
             tabbar.destroy();
         }
-        $('#submitNotice').remove();
+        // $('#submitNotice').remove();
 	}
 	var that = {
 		init: init,

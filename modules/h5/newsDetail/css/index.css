@@ -112,6 +112,14 @@ body {
   font-size: 0.11093rem;
   padding: 0 0.128rem; }
 
+.news-describe {
+  color: #656565;
+  font-size: 0.11093rem;
+  padding: 0.17067rem 0.128rem;
+  border-bottom: 1px solid #e5e5e5; }
+  .news-describe img {
+    max-width: 100%; }
+
 .news-content {
   color: #1a1a1a;
   font-size: 0.11093rem;

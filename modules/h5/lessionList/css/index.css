@@ -204,7 +204,7 @@ body {
   color: #1c1c1c;
   padding: 0.08533rem 0.128rem 0.08533rem;
   font-size: 0.11947rem;
-  border-bottom: 0.00427rem solid #f2f2f2; }
+  border-bottom: 1px solid #f2f2f2; }
 
 .list-empty {
   text-align: center;

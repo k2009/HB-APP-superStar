@@ -105,7 +105,7 @@ define(function(require, exports, module) {
         setTimeout(function(){
             initPics();
             initSwipe();
-        },1000);
+        },500);
         $(window).bind('scroll',lazyload);
         nextUrl=opts.interface_url;
 
