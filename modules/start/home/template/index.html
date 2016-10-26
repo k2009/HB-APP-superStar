@@ -5,16 +5,16 @@
 
 <ul class="detailBox">
 	<li class="mui-table-view-cell detailTitle">
-		<a href="${data.mainpage_starting.more_url}" pjax="1">
+		<a href="${data.mainpage_starting.more_url}">
 			入门知识
-			<span class="yellow">努力成为小公举</span>
+			<span class="yellow">免费教你如何当网红</span>
 			<span class="rightArrow"></span>
 		</a>		
 	</li>
 
 	<#list data.mainpage_starting.knowledge as k>
 		<li class="mui-table-view-cell">
-			<a href="${k.url}" pjax="1">
+			<a href="${k.url}">
 				<div class="sponser">
 					<img src="${k.banner}" alt="${k.title}" class="headpic">
 				<div class="sponserInfo pl20">
@@ -29,49 +29,9 @@
 
 <ul class="detailBox">
 	<li class="mui-table-view-cell detailTitle">
-		<a href="" onclick="return false;">
-			智能助手<span class="yellow">就要你红</span>
-		</a>		
-	</li>
-	<li class="mui-table-view-cell">
-		<div class="helperBox">
-			<div class="helper">
-				<a href="${data.mainpage_Intelligent_assistant.links.release}">
-					<span class="helperIcon icon1"></span>
-					<br>
-					<span class="helperText">智发布</span>
-				</a>				
-			</div>
-			<div class="helper">
-				<a href="${data.mainpage_Intelligent_assistant.links.interaction}">
-					<span class="helperIcon icon2"></span>
-					<br>
-					<span class="helperText">智互动</span>
-				</a>
-			</div>
-			<div class="helper">
-				<a href="${data.mainpage_Intelligent_assistant.links.monitoring}">
-					<span class="helperIcon icon3"></span>
-					<br>
-					<span class="helperText">智舆情</span>
-				</a>	
-			</div>
-			<div class="helper">
-				<a href="${data.mainpage_Intelligent_assistant.links.sentiment}">
-					<span class="helperIcon icon4"></span>
-					<br>
-					<span class="helperText">智监测</span>
-				</a>
-			</div>
-		</div>
-	</li>
-</ul>
-
-<ul class="detailBox">
-	<li class="mui-table-view-cell detailTitle">
 		<a href="${data.mainpage_news.more_url}">
 			业界资讯
-			<span class="yellow">深入网红内幕</span>
+			<span class="yellow">了解行业最新动态</span>
 			<span class="rightArrow"></span>
 		</a>		
 	</li>
@@ -88,7 +48,7 @@
 		</ul>
 		<ul class="points" id="points">
 			<#list data.mainpage_news.image_news as n>
-				<li class="point"></li>
+				<li class="point <#if (n_index==0)>cur</#if>"></li>
 			</#list>			
 		</ul>
 	</div>
@@ -132,19 +92,64 @@
 
 <ul class="detailBox">
 	<li class="mui-table-view-cell detailTitle">
+		<a href="" onclick="return false;">
+			智能助手<span class="yellow">人工智能帮你赚钱</span>
+		</a>		
+	</li>
+	<li class="mui-table-view-cell">
+		<div class="helperBox">
+			<div class="helper">
+				<a href="${data.mainpage_Intelligent_assistant.links.release}">
+					<span class="helperIcon icon1"></span>
+					<br>
+					<span class="helperText">智发布</span>
+				</a>				
+			</div>
+			<div class="helper">
+				<a href="${data.mainpage_Intelligent_assistant.links.interaction}">
+					<span class="helperIcon icon2"></span>
+					<br>
+					<span class="helperText">智互动</span>
+				</a>
+			</div>
+			<div class="helper">
+				<a href="${data.mainpage_Intelligent_assistant.links.monitoring}">
+					<span class="helperIcon icon3"></span>
+					<br>
+					<span class="helperText">智舆情</span>
+				</a>	
+			</div>
+			<div class="helper">
+				<a href="${data.mainpage_Intelligent_assistant.links.sentiment}">
+					<span class="helperIcon icon4"></span>
+					<br>
+					<span class="helperText">智监测</span>
+				</a>
+			</div>
+		</div>
+	</li>
+</ul>
+
+<ul class="detailBox">
+	<li class="mui-table-view-cell detailTitle">
 		<a href="${data.mainpage_org.more_url}">
 			合作伙伴
-			<span class="yellow">超级品牌邀你变红</span>
+			<span class="yellow">一站式提供合作机会</span>
 			<span class="rightArrow"></span>
 		</a>
 	</li>
 	<#list data.mainpage_org.orgs as o>
 		<li class="mui-table-view-cell">
 			<a href="${o.url}">
-				<div class="sponser partner">
-					<img src="${o.logo}" alt="" class="headpic">
-				<div class="sponserInfo pl20">
-					<span class="sponserDescribe">${o.title}</span>
+				<div class="partner">
+					<div class="headpicBox">
+						<img src="${o.logo}" alt="" class="headpic">
+					</div>
+					
+					<div class="partnerInfo">
+						<#if (o.name)><span class="partnerTitle">${o.name}</span></#if>						
+						<span class="partnerDescribe">${o.title}</span>
+					</div>
 				</div>
 			</a>
 		</li>
@@ -152,17 +157,17 @@
 </ul>
 
 <ul class="detailBox">
-	<li class="mui-table-view-cell detailTitle">加盟入口<span class="yellow">共享生态资源</span></li>
+	<li class="mui-table-view-cell detailTitle">加盟入口<span class="yellow">共同建立网红生态圈</span></li>
 	<table class="mui-table">
 		<tr class="cooperateLine">
 			<td class="cooperate">
-				<a href="${data.mainpage_join.ad_join_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_join_url}">
 					<span class="coIcon icon1"></span>
 					<span>我是广告主</span><br><span class="gray">请网红发广告</span>
 				</a>	
 			</td>
 			<td class="cooperate c2">
-				<a href="${data.mainpage_join.ad_star_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_star_url}">
 					<span class="coIcon icon2"></span>
 					<span>我是明星/经纪人</span><br><span class="gray">我要当高端网红</span>
 				</a>			
@@ -170,25 +175,25 @@
 		</tr>
 		<tr class="cooperateLine">
 			<td class="cooperate c3">
-				<a href="${data.mainpage_join.ad_supply_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_supply_url}">
 					<span class="coIcon icon3"></span>
 					<span>我是供货商</span><br><span class="gray">请网红卖货</span>
 				</a>
 			</td>
 			<td class="cooperate c4">
-				<a href="${data.mainpage_join.ad_service_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_service_url}">
 					<span class="coIcon icon4"></span>
 					<span>我是服务商</span><br><span class="gray">请网红卖货</span></a>
 			</td>
 		</tr>
 		<tr class="cooperateLine">
 			<td class="cooperate c5">
-				<a href="${data.mainpage_join.ad_net_star_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_net_star_url}">
 					<span class="coIcon icon5"></span>
 					<span>我是网红经纪</span><br><span class="gray">我要签约优秀网红</span></a>
 			</td>
 			<td class="cooperate c6">
-				<a href="${data.mainpage_join.ad_investment_url}" pjax="1">
+				<a href="${data.mainpage_join.ad_investment_url}">
 					<span class="coIcon icon6"></span>
 					<span>我是投资公司</span><br><span class="gray">投资优秀网红和团队</span></a>
 			</td>
@@ -196,19 +201,25 @@
 	</table>
 </ul>
 
-<ul class="detailBox">
-	<li class="mui-table-view-cell detailTitle">关于我们<span class="yellow">十年专业推手</span></li>
+<!-- <ul class="detailBox">
+	<li class="mui-table-view-cell detailTitle">关于我们<span class="yellow">社交＋营销丰富资源</span></li>
 	<table class="mui-table">
 		<tr>
 			<td class="about c1" colspan="2">
-				<span class="aboutTitle">不生产求打赏女主播</span>
-				<br>
-				<span class="gray">专注扶持电商网红</span>
+				<a class="aboutHref" href="${data.aboutus.link_1}">
+					<span class="aboutTitle">不生产求打赏女主播</span>
+					<br>
+					<span class="gray">专注扶持电商网红</span>
+				</a>				
 			</td>
 		</tr>
 		<tr>
-			<td class="about c3">富有经验的导师团队</td>
-			<td class="about c4">一站式网红服务</td>
+			<td class="about c3">
+				<a class="aboutHref" href="${data.aboutus.link_2}">富有经验的导师团队</a>
+			</td>
+			<td class="about c4">
+				<a class="aboutHref" href="${data.aboutus.link_3}">一站式网红服务</a>
+			</td>
 		</tr>
 	</table>
-</ul>
+</ul> -->

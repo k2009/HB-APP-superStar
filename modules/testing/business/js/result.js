@@ -129,14 +129,14 @@ define(function(require, exports, module) {
 
     var scoreTpl = {
         normal: '<div class="bg-line">\
-        <span class="status_1" style="left:${data.left}%"><strong>30</strong><em>正常界限</em></span>\
-        <span class="status_2" style="left:${data.right}%"><strong>160</strong><em>正常界限</em></span>\
+        <span class="status_1" style="left:${data.left}%"><strong>30</strong><em>下限</em></span>\
+        <span class="status_2" style="left:${data.right}%"><strong>160</strong><em>上限</em></span>\
         <p id="scale" class="score-slow" style="width:${data.that_scale}%">\
             <span class="mui-badge mui-badge-purple score-slow"><strong>${data.score}</strong><em></em><img src="${data.profile_image}"></span>\
         </p>\
         </div>',
         low: '<div class="bg-line">\
-        <span class="status_1" style="left:${data.left}%"><strong>30</strong><em>正常界限</em></span>\
+        <span class="status_1" style="left:${data.left}%"><strong>30</strong><em>下限</em></span>\
         <p id="scale" class="score-slow" style="width:${data.that_scale}%">\
             <span class="mui-badge mui-badge-purple score-slow"><strong>${data.score}</strong><em></em><img src="${data.profile_image}"></span>\
         </p>\
@@ -218,7 +218,7 @@ define(function(require, exports, module) {
         var request = setInterval(function(){
             $.ajax({
                 type: 'get',
-                url: window.location.href + '?islook=1&pjax=1',
+                url: window.pageURL + '?islook=1&pjax=1',
                 dataType: 'json',
                 success: function(msg) {
                     if( msg.code != 0 ){
@@ -229,7 +229,7 @@ define(function(require, exports, module) {
                     clearInterval(request );
 
                     $('.orange-box, .mui-popup-backdrop').remove();
-                    SCRM.pjax( window.location.href );
+                    SCRM.pjax( window.pageURL );
 
                 }
 

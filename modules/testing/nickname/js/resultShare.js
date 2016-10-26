@@ -13,7 +13,7 @@ define(function(require, exports, module) {
             var items = {
                 shareToWeibo: {
                     title: "分享到微博",
-                    scheme: "sinaweibo://compose?content=" + TITLE + '：' + SHARE_URL,
+                    scheme: "sinaweibo://compose?content=" + TITLE + ' ' + SHARE_URL,
                     code: 1001
                 }/*,
                 follow: {
@@ -103,7 +103,7 @@ define(function(require, exports, module) {
         },
         // 绑定事件
         "bindEvent": function(){
-            $body.on("click", "[action=share]", Tools.showMask);
+            $body.on("tap", "[action=share]", Tools.showMask);
         },
         // 释放事件
         "releaseEvent": function(){

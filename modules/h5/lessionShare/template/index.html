@@ -1,15 +1,33 @@
-<!-- <header class="mui-bar mui-bar-nav">
-	<a href="javascript:history.back();" node="DOCUMENT_REFERRER" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	<h1 class="mui-title">课程内容</h1>
-</header> -->
+<#if (data.author != null)>
+<div class="tutor">
+	<div class="head">
+		<img src="${data.author.img}?imageView2/1/w/200/h/200" alt="">
+	</div>
+	<div class="info">
+		<h2 class="name">${data.author.name}</h2>
+		<p class="tutor-intro">${data.author.desc}</p>
+	</div>
+	<#if (120 <= data.author.desc.replace(/[^\x00-\xff]/g, "##").length)>
+	<div class="tutor-folder" action="folder"></div>
+	</#if>
+</div>
+</#if>
 <header class="mui-bar mui-bar-nav">	
 	<h1 class="mui-title">${data.name}</h1>
 </header>
 	<!-- <div class="mui-media-body subTitle">帮助网红快速学会独立创作微博，找准定位</div> -->
 <div class="mui-content content">
+	<#if (data.audio != null && data.audio != "")>
+	<div class="audio">
+		<audio controls autoplay>
+	       <source src="${data.audio}" type="audio/wav" />
+	       Your browser does not support the &lt;audio&gt; element.
+		</audio>
+	</div>
+	</#if>
 	${data.content}
 </div>
-<#if (data.iswhusr != 1) >
+<#if (data.iswhusr != 1)>
 <div class="not-user">
 	<div class="buttons">
 	<a href="${data.join_url}" pjax="1" class="mui-btn">立即加入</a>
@@ -17,8 +35,8 @@
 </div>
 <#else>
 <div  class="tc_text">
-	<a href="javascript:;" class="mui-btn tc_go" id="finish">	
-			学习下一节
+	<a href="${data.home}" class="mui-btn tc_go" backup_id="finish">	
+			进入网红城堡
 	</a>
 </div>
 </#if>

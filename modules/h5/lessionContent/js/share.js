@@ -12,7 +12,7 @@ define(function(require, exports, module) {
             var items = {
                 shareToWeibo: {
                     title: "分享到微博",
-                    scheme: "sinaweibo://compose?content=" + TITLE + '：' + SHARE_URL,
+                    scheme: "sinaweibo://compose?content=%23网红城堡%23" + TITLE + ' ' + SHARE_URL,
                     code: 1001
                 }/*,
                 follow: {
@@ -36,7 +36,7 @@ define(function(require, exports, module) {
             WeiboJS.setSharingContent({
                 external:{
                     title: opts.dialog_title || opts.name,
-                    icon: "http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg",
+                    icon: "http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg",
                     desc: TITLE
                 }
             });
@@ -60,7 +60,7 @@ define(function(require, exports, module) {
             wx.onMenuShareTimeline({
                 title: TITLE, // 分享标题
                 link: url, // 分享链接
-                imgUrl: 'http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg', // 分享图标
+                imgUrl: 'http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg', // 分享图标
                 success: function () {
                     // 用户确认分享后执行的回调函数
                     // $( '.mui-popup-backdrop' ).remove();
@@ -74,7 +74,7 @@ define(function(require, exports, module) {
                 title: opts.dialog_title || opts.name, // 分享标题
                 desc: TITLE, // 分享描述
                 link: url, // 分享链接
-                imgUrl: 'http://ww2.sinaimg.cn/large/0060lm7Tgw1f5tevi6q7qj303c03cjrc.jpg', // 分享图标
+                imgUrl: 'http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg', // 分享图标
                 type: '', // 分享类型,music、video或link，不填默认为link
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
@@ -102,7 +102,7 @@ define(function(require, exports, module) {
         },
         // 绑定事件
         "bindEvent": function(){
-            $body.on("click", "[action=invite]", Tools.showMask);
+            $body.on("tap", "[action=invite]", Tools.showMask);
         },
         // 释放事件
         "releaseEvent": function(){

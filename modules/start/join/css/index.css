@@ -229,13 +229,13 @@ body {
   float: right;
   display: inline-block;
   height: 0.128rem;
-  background: url(../../common/rightArrow.png) right 1px no-repeat;
+  width: 0.128rem;
+  background: url(../../common/images/rightArrow.png) no-repeat;
   background-size: 0.06827rem;
   text-align: left;
-  padding-right: 0.11093rem;
   font-size: 0.1024rem;
   color: #999;
-  margin-top: 3px; }
+  margin-top: 5px; }
 
 .brandSlideItem {
   float: left;
@@ -392,7 +392,7 @@ input {
 
 .inputOuter {
   display: inline-block;
-  width: 80%;
+  width: 100%;
   text-align: center; }
 
 .inputOuter .mui-input-row {
@@ -451,3 +451,6 @@ input {
 
 .submitNotice.fail .failText {
   display: block; }
+
+.mui-btn {
+  margin-top: 0.128rem; }

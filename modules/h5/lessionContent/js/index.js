@@ -6,6 +6,7 @@ define(function(require, exports, module) {
     var header = require('common/slogon/js/index');
     var initData;
     var finishTip;
+    var tabbar;
 
     var ID = "#st_modules_h5_lessionContent";
 
@@ -44,15 +45,15 @@ define(function(require, exports, module) {
     }
 
     function bindEvent(){
-        $(ID).on('click','.tutor-folder', folder);
+        $(ID).on('tap','.tutor-folder', folder);
     }
 
     function releaseEvent(){
-        $(ID).off('click','.tutor-folder', folder);
+        $(ID).off('tap','.tutor-folder', folder);
     }
 
     function init(opts) {
-        $('#finish').bind('click',showDialog);
+        $('#finish').bind('tap',showDialog);
         
         initData=opts;
         $share.init(opts);
@@ -60,9 +61,10 @@ define(function(require, exports, module) {
 
         // 公共头部
         header.init();          
-        lazyload.load("common/tabbar/js/index", function(dialog){
-            dialog.setData(opts.tabbar);
-            dialog.setActiveTab(1);
+        lazyload.load("common/tabbar/js/index", function(ret){
+            tabbar = ret;
+            tabbar.setData(opts.tabbar);
+            tabbar.setActiveTab(1);
         });       
     }
 
@@ -72,6 +74,9 @@ define(function(require, exports, module) {
         releaseEvent();
         if(finishTip){
             finishTip.hide();
+        }
+        if(tabbar){
+            tabbar.destroy();
         }
     }
     var that = {

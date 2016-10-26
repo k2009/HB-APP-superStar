@@ -202,6 +202,13 @@ body {
   background: #f0f0f0;
   padding-bottom: 100px; }
 
+.mui-table-view-cell.topTitle {
+  font-size: 0.11947rem;
+  color: #1a1a1a;
+  margin-bottom: 0.064rem;
+  line-height: 1.1;
+  padding: 10px 15px; }
+
 .headPic {
   width: 100%;
   padding-bottom: 50%;
@@ -285,7 +292,7 @@ body {
 
 .mui-table-view-cell .td1 {
   display: inline-block;
-  font-size: 0.11947rem;
+  font-size: 0.13653rem;
   text-align: left;
   color: #333; }
 

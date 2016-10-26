@@ -177,6 +177,8 @@ body {
     font-size: 0.1024rem;
     line-height: 0.17067rem;
     text-align: center; }
+    .mainBox p a {
+      color: #646464; }
   .mainBox .mod {
     padding: 0.08533rem 0; }
   .mainBox .up {
@@ -199,8 +201,9 @@ body {
         top: 0;
         text-align: center;
         line-height: 0.80213rem;
-        font-size: 0.11947rem;
-        color: #fff; }
+        font-size: 0.13653rem;
+        color: #fff;
+        text-shadow: 1px 1px 2px #333; }
       .mainBox .up li p {
         font-size: 0.09387rem;
         line-height: 0.128rem;
@@ -267,11 +270,11 @@ body {
   .btn_box .btn {
     display: block;
     width: 1.49333rem;
-    height: 0.29867rem;
+    height: 0.2816rem;
     margin: 0 auto;
     text-align: center;
     font-size: 0.128rem;
-    line-height: 0.29867rem;
+    line-height: 0.2816rem;
     background: #fbbd06;
     border-radius: 0.04267rem;
     color: #fff; }

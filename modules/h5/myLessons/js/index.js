@@ -8,13 +8,13 @@ define(function(require, exports, module) {
 	var ID = "#st_modules_h5_myLessons";
 	var LOCK_MSG = '别着急，请按建议时间学习前面的课程并完成课程作业，就可以解锁这一课啦';
 	// 根据有没有 MUI，决定绑定的事件是什么
-	var event_type = window.mui ? 'tap' : 'click';
+	var event_type = window.mui ? 'tap' : 'tap';
 	var isPopShow = false;		// 加锁，防止 mui.alert 执行两次
 	var Tools = {
 		"activeTab": null,
 		"activeContainer": null,
 		"bindEvent": function(){
-			event_type = window.mui ? 'tap' : 'click';
+			event_type = window.mui ? 'tap' : 'tap';
 			console.log(event_type);
 			// tab 切换
 			$(ID).on(event_type, "[action=tab]", Tools.changeTab);

@@ -6,7 +6,7 @@ define(function(require, exports, module) {
 
 	// var lazyload = require("kit/util/asyncModule");
 	// 根据有没有 MUI，决定绑定的事件是什么
-	var event_type = window.mui ? 'tap' : 'click';
+	var event_type = window.mui ? 'tap' : 'tap';
 	var timer = null;
 	var percent = 0;
 	var swiperIndex = 0, swiperCount = 0, swiperData = [];

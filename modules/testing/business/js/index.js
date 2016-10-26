@@ -7,6 +7,7 @@ define(function(require, exports, module) {
     var signedRequest = null;
     var WeiboJS, wx, appid;
     var staticDomain;
+    var tabbar;
     var runShare = {
         titleIco: function(){
             var title = ['如何在微博里更好地赚钱?测测这个,结果也许会惊讶掉你的下巴！',

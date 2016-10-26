@@ -27,7 +27,7 @@ define(function(require, exports, module) {
     
 
     function init(opts) {
-        $('#finish').bind('click',showDialog);
+        $('#finish').bind('tap',showDialog);
         initData=opts;
         opts.dna.finished && DNA.draw(opts.dna.tags);
         opts.biz.finished && mark.draw(opts.biz.chat);

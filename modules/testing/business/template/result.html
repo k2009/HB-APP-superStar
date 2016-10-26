@@ -7,12 +7,13 @@
 		<#else>
 			<h5 class="status-word">你的微博电商属性评分</h5>
 			<div class="score-box" id="score-box">
-	<!--             <div class="bg-line">
-	            	<span class="status_1"><strong>300</strong><em>正常界限</em></span>
-	            	<span class="status_2"><strong>160</strong><em>正常界限</em></span>
+<!-- 	            <div class="bg-line">
+	            	<span class="status_1"><strong>30</strong><em>下限</em></span>
+	            	<span class="status_2"><strong>160</strong><em>上限</em></span>
 	            	<p id="scale" style="width:49%"><span class="mui-badge mui-badge-purple"><strong>145</strong><em></em><img src="../images/share_ico_1.jpg"></span></p>
 	            </div> -->
 	        </div>
+	        <p class="score_tips">经过我们对大量顶级网红研究发现，微博电商属性评分在30~160分之间属于较好水平。<a href="${data.top_webred_url}">向顶级网红学习>></a></p>
 		</#if>
 	</div>
 
@@ -28,19 +29,24 @@
 				</div>
 			</#if>
 			<h6>改进建议</h6>
-			<div class="advices">${data.advices}</div>
+			<div class="advices">${data.advices}
+			<p class="more_tips">更加详细内容，可以到课程里去学习哟，<a href="${data.goto_url}">去学习>></a></p>
+			</div>
 <!-- 			<p>1、博客地址：博客地址可以填写淘宝地址，是向淘宝店铺导流的一个通道</p>
 			<p>2、微博内容：80%的网红都会提及到的关键词有促销、优惠券、上新、抽奖，可以看出需要在微博多多做促销活动，所以经常发些促销信息可能会提高销量呦</p> -->
 
 			<#if (data.isfrist != 1)>
-				<a href="JavaScript:;" class="line-link" id="openTestData">点击查看已参加的测试记录 </a>
+				<div class="link_box">
+					<a href="JavaScript:;" class="line-link-2" id="openTestData">点击查看已参加的测试记录>></a>
+					<!-- <a href="${data.top_webred_url}" pjax="1" class="line-link-2">看看那些顶级网红的评分>></a> -->
+				</div>
 			</#if>
 
 		</div>
 	</div>
-	<div class="content-box">
+<!-- 	<div class="content-box">
 		<a href="${data.top_webred_url}" pjax="1" class="line-link link-king">看看那些顶级网红的评分>></a>
-	</div>
+	</div> -->
 
 	<#if (data.is_join)>
 <!-- 		<div class="content-box">
@@ -52,9 +58,9 @@
 			<a href="JavaScript:;" id="shareTips" class="btn_com">邀请好友测试</a>
 		</#if>
 	<#else>
-		<div class="content-box">
-			<p class="pad30">微博电商属性仅是网红的指标之一<br>更多关于成为网红秘籍的免费课程<br>尽在网红城堡</p>
-		</div>
+		<!-- <div class="content-box">
+			<p class="pad30">微博电商属性仅是网红的指标之一，更多关于成为网红秘籍的免费课程，尽在网红城堡。</p>
+		</div> -->
 		<a href="${data.join_us}" pjax="1" class="btn_com">加入网红城堡</a>
 
 	</#if>
@@ -62,7 +68,7 @@
 	<a href="JavaScript:;" id="retry" class="btn_com_grey">重新测试</a>
 
 	<#if (!data.is_join)>
-		<div class="content-box">
+		<div class="content-box11">
 			<ul class="info-box">
 				<li>
 					<h6>网红城堡是做什么的?</h6>

@@ -106,7 +106,7 @@ define(function(require, exports, module) {
                         return;
                     }
                     $( '#submit' ).text( '提交成功' );
-                    //window.location.href = opts.next_url;
+                    //window.pageURL = opts.next_url;
                     serverIds = [];
                     runImage.WXshare( msg.data );
                 },
@@ -127,12 +127,12 @@ define(function(require, exports, module) {
                 imgUrl: 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg', // 分享图标
                 success: function () {
                     // 用户确认分享后执行的回调函数
-                    //window.location.href = data.next_url;
+                    //window.pageURL = data.next_url;
                     SCRM.pjax( window.location.origin + data.next_url, '课后作业-测试验收' );
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
-                    //window.location.href = data.next_url;
+                    //window.pageURL = data.next_url;
                     SCRM.pjax( data.next_url, '课后作业-测试验收' );
                 }
             });
@@ -145,13 +145,13 @@ define(function(require, exports, module) {
                 dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
                 success: function () {
                     // 用户确认分享后执行的回调函数
-                    //window.location.href = data.next_url;
+                    //window.pageURL = data.next_url;
                     SCRM.pjax( data.next_url, '课后作业-测试验收' );
                 },
                 cancel: function () {
                     // 用户取消分享后执行的回调函数
                     $( '.mui-popup-backdrop' ).remove();
-                    //window.location.href = data.next_url;
+                    //window.pageURL = data.next_url;
                     SCRM.pjax( data.next_url, '课后作业-测试验收' );
                 }
             });
@@ -215,7 +215,7 @@ define(function(require, exports, module) {
                     }
                     $( '#submit' ).removeClass( 'ing' ).text( '问问朋友的意见' );
                     runImage.WBshare( msg.data );
-                    //window.location.href = opts.next_url;
+                    //window.pageURL = opts.next_url;
                 },
                 error: function(){
                     $( '#submit' ).removeClass( 'ing' ).text( '问问朋友的意见' );
@@ -268,7 +268,7 @@ define(function(require, exports, module) {
             });
             dialogTips.show();
             setTimeout(function(){
-                    window.location.href = data.next_url;
+                    window.pageURL = data.next_url;
             }, 5000 );
         },
         WBopenImage: function( param ){

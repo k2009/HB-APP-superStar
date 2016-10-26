@@ -99,6 +99,48 @@ body {
 .container {
   height: 100%; }
 
+.tutor {
+  position: relative;
+  min-height: 0.93867rem;
+  background: #fff; }
+  .tutor .head {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0.192rem 0 0 0.128rem; }
+    .tutor .head img {
+      width: 0.59733rem;
+      height: 0.59733rem;
+      border-radius: 100%; }
+  .tutor .info {
+    padding-left: 0.896rem; }
+    .tutor .info .name {
+      color: #1a1a1a;
+      font-size: 0.13653rem;
+      padding-top: 0.17067rem; }
+    .tutor .info .tutor-intro {
+      color: #646464;
+      font-size: 0.11093rem;
+      padding: 0.08533rem 0.08533rem 0 0;
+      white-space: normal;
+      display: -webkit-box;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical; }
+    .tutor .info .tutor-show {
+      -webkit-line-clamp: inherit; }
+  .tutor .tutor-folder {
+    background: url(../images/arrow.png) no-repeat center center;
+    background-size: 0.1664rem 0.0896rem;
+    height: 0.256rem;
+    margin: 0.04267rem 0;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg); }
+  .tutor .tutor-on {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+
 .topLogo {
   background: url(../images/topLogo.png) center top no-repeat !important;
   padding-top: 150px !important; }
@@ -109,6 +151,13 @@ body {
   background: white;
   box-shadow: 0 0 10px #CCC;
   position: relative; }
+
+.audio {
+  text-align: center;
+  padding-bottom: 0.04267rem; }
+
+.mui-bar-nav ~ .mui-content {
+  padding: 15px; }
 
 .content {
   padding: 0.128rem 0.128rem 0;

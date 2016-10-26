@@ -11,12 +11,12 @@
 </div>
 
 <ul class="detailBox">
-	<#if (data.offical.length != 0) >
+	<#if (data.offical.length != 0)>
 		<li class="mui-table-view-cell sponserTitle">主办方</li>
 		<li class="mui-table-view-cell">
 			<#list data.offical as item>
 				<div class="sponser">
-					<img src="${item.image_bg}" alt="${item.name}" class="headpic">
+					<img src="${item.logo}" alt="${item.name}" class="headpic">
 					<div class="sponserInfo">
 						<span class="sponserName">${item.name}</span>
 						<br>
@@ -61,7 +61,7 @@
 				<a href="${job.url}">
 					<!-- <span class="hire">${job.title}</span> -->
 					<img src="${job.banner}" alt="" class="background">
-					<div class="info">
+					<div class="info fixedInfo">
 						<h4 class="title">${job.name}</h4>
 						<span class="endDate jobs">${job.time_end} 截止</span>
 					</div>					

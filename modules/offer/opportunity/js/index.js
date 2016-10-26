@@ -11,9 +11,8 @@ define(function(require, exports, module) {
     		var $slider=$(item);
 	    	var childs=$slider.find('li').length;
             var w=$slider.find('li').eq(0).width();
-	    	$slider.css('width', childs* (w+15)+'px').css('display','block');
-    	});
-    	
+	    	$slider.css('width', childs* (w+10)+'px').css('display','block');
+    	});    	
     };
     
 	function init(opts) {

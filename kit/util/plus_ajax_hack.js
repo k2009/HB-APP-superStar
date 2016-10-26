@@ -3,6 +3,7 @@ mui.plusReady(function(){
 (function(){
     console.log("开始劫持")
 	var old_ajax = $.ajax;
+    
     $.ajax = function(e){
 		var error = e.error;
         var url = e.url;

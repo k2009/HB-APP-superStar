@@ -34,6 +34,7 @@ define(function(require, exports, module) {
     var initSwipe=function(){
         var pics=$('#pics');
         var count=pics.find('li').length;
+        if(count<=1){return;}
         pics.swipe({
             swipe:function(event,direction){
                 if(swipeLock){return;}
@@ -43,7 +44,9 @@ define(function(require, exports, module) {
                 },300);
                 if(pindex==0 && direction=='right' || pindex>=count-1 && direction=='left'){return;}
                 direction=='left'?pindex++:pindex--;
-                pics.css('left',-winWidth*pindex+'px');
+                if(pindex<0){pindex=0;}
+                if(pindex>=count-1){pindex=count-1;}
+                pics.css('margin-left',-winWidth*pindex+'px');
                 $('#points').find('.point').removeClass('cur').eq(pindex).addClass('cur');
                 clearInterval(aniInterval);
                 initPics(true);
@@ -56,16 +59,20 @@ define(function(require, exports, module) {
         
         var count=pics.find('li').css('width',winWidth+'px').length;
         
-        !onlyInterval && pics.css('width',winWidth*count);
+        if(!onlyInterval){
+            pics.css('width',winWidth*count).css('display','block');
+        }
 
-        aniInterval=setInterval(function(){
-            pindex++;
-            if(pindex>=count){
-                pindex=0;
-            }
-            pics.css('left',-winWidth*pindex+'px');
-            $('#points').find('.point').removeClass('cur').eq(pindex).addClass('cur');
-        },5000);
+        if(count>1){
+            aniInterval=setInterval(function(){
+                pindex++;
+                if(pindex>=count){
+                    pindex=0;
+                }
+                pics.css('margin-left',-winWidth*pindex+'px');
+                $('#points').find('.point').removeClass('cur').eq(pindex).addClass('cur');
+            },5000);
+        }        
     }
 
     var lazyload=function(){   
@@ -95,8 +102,10 @@ define(function(require, exports, module) {
     }
 
     function init(opts) {
-        initPics();
-        initSwipe();
+        setTimeout(function(){
+            initPics();
+            initSwipe();
+        },1000);
         $(window).bind('scroll',lazyload);
         nextUrl=opts.interface_url;
 

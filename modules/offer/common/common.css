@@ -9,7 +9,7 @@ body{
 	display: none;
 }
 .leftInfo{
-	width: 60%;
+	width: 66%;
 	height: r(150);
 	float:left;
 	display: flex;
@@ -80,10 +80,11 @@ body{
 	display: none;
 	overflow: hidden;
 	position: static;
+	box-sizing: content-box;
 }
 
 .slideItem{
-	margin-right: r(15);
+	margin-right: 10px;
 	float: left;
 	width: r(280);
 	padding-bottom: r(210);
@@ -117,7 +118,14 @@ body{
 	overflow: hidden;
 	margin-top: r(20);
 	padding:0 r(20);
-	height: r(76);
+	height: r(73);
+	color:white;
+	white-space: normal;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .slideItem .company{
 	color:white;

@@ -116,3 +116,5 @@ body {
   color: #1a1a1a;
   font-size: 0.11093rem;
   padding: 0.17067rem 0.128rem; }
+  .news-content img {
+    max-width: 100%; }

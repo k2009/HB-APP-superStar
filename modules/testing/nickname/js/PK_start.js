@@ -159,7 +159,7 @@ define(function(require, exports, module) {
 				return;
 			};
             //SCRM.pjax( opts.pk_url + weibo_nick_name );
-            window.location.href = opts.pk_url + weibo_nick_name;
+            window.pageURL = opts.pk_url + weibo_nick_name;
         })
     }
     function destroy(opts) {

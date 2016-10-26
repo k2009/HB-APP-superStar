@@ -57,6 +57,7 @@ define(function(require, exports, module) {
 		},
 		urlJump: function(url, title) {
 			if(!url)return;
+			var pjaxURL = url;
 			url = decodeURIComponent(url);
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
@@ -67,7 +68,7 @@ define(function(require, exports, module) {
 			if(!data.module_data){
 				data.module_data = {};
 			}
-			data.module_data.pageURL = plus.storage.getItem("domain") + url;
+			data.module_data.pageURL = plus.storage.getItem("domain") + pjaxURL;
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',
@@ -102,7 +103,6 @@ define(function(require, exports, module) {
 			};
 
 			//数据重载来规避多页面打开的事儿
-			console.log('2222222data:'+JSON.stringify(data))
 			if ((data.module_id == "st_modules_h5_home")||(data.module_id == "st_modules_start_home")) {
 				mui.openWindow({
 					id: 'index_box.html',

@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     require("common/util/loadMUI");
     var jssdk = require("common/share/jssdk");
     // 根据有没有 MUI，决定绑定的事件是什么
-    var event_type = (typeof window.mui != "undefined") ? 'tap' : 'click';
+    var event_type = (typeof window.mui != "undefined") ? 'tap' : 'tap';
 
     var Tools = {
         "bindEvent": function(){
@@ -29,7 +29,7 @@ define(function(require, exports, module) {
                     case 0:
                         try{
                         mui.toast('保存成功');
-                        window.location.href = next_url;
+                        window.pageURL = next_url;
                         }catch(e){}
                         break;
                     default:

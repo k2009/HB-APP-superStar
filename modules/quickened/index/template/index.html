@@ -2,7 +2,7 @@
 		<img src="http://${data._extra.domain}/modules/quickened/index/images/banner_1.jpg">
 		<!-- <img src="${data.banner}"> -->
 	</div>
-	<p class="tips">以下工具只对毕业阶段学员开放  </p>
+	<p class="tips">智能工具需要学满20章课后开放，快去学习吧</p>
 
 	<div class="mainBox">
 		<h3 class="no_border">智能辅助经营效率提升软件工具</h3>
@@ -36,17 +36,17 @@
 
 	<div class="mainBox">
 		<h3><a href="${data.advert_url}">智能广告投放</a></h3>
-		<p class="mod">广告内容评估及投放策略自动化优化智能管理系统</p>
+		<p class="mod"><a href="${data.advert_url}">广告内容评估及投放策略自动化优化智能管理系统</a></p>
 	</div>
 
 	<div class="mainBox">
 		<h3><a href="${data.dsyygj_url}">电商运营工具</a></h3>
-		<p class="mod">连接电商网店与微博平台的高效运营工具，把粉丝买家合二为一</p>
+		<p class="mod"><a href="${data.dsyygj_url}">连接电商网店与微博平台的高效运营工具，把粉丝买家合二为一</a></p>
 	</div>
 
-	<div class="mainBox">
+	<div class="mainBox" style="display: ${ data.recommend.length == 0 ? 'none' : '' };"><!-- 临时屏蔽，根据线下课程有没有数据来决定显示与否 -->
 		<h3>快速提升自己</h3>
-		<ul class="up">
+		<ul class="up" style="display: none;"><!-- 暂时屏蔽入口 -->
 			<li class="full">
 				<a href="${data.dsyy_url}">
 					<img src="http://${data._extra.domain}/modules/quickened/index/images/img_1.jpg">
@@ -66,43 +66,45 @@
 				</a>
 			</li>
 		</ul>
-		<h4>推荐培训</h4>
-		<ul class="join">
-<!-- 			<li>
-				<div class="tit">
-					<h6 class="left">皇家礼仪培训<span>（线下）</span></h6>
-					<span>时长：2小时</span>
-				</div>
-				<div class="info">
-					<div class="left">难度
-						<div class="star_bg">
-							<div class="star_color num_1"></div>
-						</div>
-					</div>
-					<strong>¥198/人</strong>
-				</div>
-				<div class="btn_box">
-					<a href="JavaScript:;" class="btn">报名参加</a>
-				</div>
-			</li> -->
-			<#list data.recommend as list>
-				<li>
+		<#if (data.recommend.length)>
+			<h4>推荐培训</h4>
+			<ul class="join">
+				<!--<li>
 					<div class="tit">
-						<h6 class="left">${list.name}<span>（<#if (list.isonline==1)>线上<#else>线下</#if>）</span></h6>
-						<span>时长：${list.usetime}</span>
+						<h6 class="left">皇家礼仪培训<span>（线下）</span></h6>
+						<span>时长：2小时</span>
 					</div>
 					<div class="info">
 						<div class="left">难度
 							<div class="star_bg">
-								<div class="star_color num_${list.difficults}"></div>
+								<div class="star_color num_1"></div>
 							</div>
 						</div>
-						<strong>${list.cost}</strong>
+						<strong>¥198/人</strong>
 					</div>
 					<div class="btn_box">
-						<a href="${data.submit_url}?id=${list.id}" class="btn" pjax="1"><#if (list.isEnlist==1)>已报名<#else>报名参加</#if></a>
+						<a href="JavaScript:;" class="btn">报名参加</a>
 					</div>
-				</li>
-			</#list>
-		</ul>
+				</li> -->
+				<#list data.recommend as list>
+					<li>
+						<div class="tit">
+							<h6 class="left">${list.name}<span>（<#if (list.isonline==1)>线上<#else>线下</#if>）</span></h6>
+							<span>时长：${list.usetime}</span>
+						</div>
+						<div class="info">
+							<div class="left">难度
+								<div class="star_bg">
+									<div class="star_color num_${list.difficults}"></div>
+								</div>
+							</div>
+							<strong>${list.cost}</strong>
+						</div>
+						<div class="btn_box">
+							<a href="${data.submit_url}?id=${list.id}" class="btn" pjax="1"><#if (list.isEnlist==1)>已报名<#else>报名参加</#if></a>
+						</div>
+					</li>
+				</#list>
+			</ul>
+		</#if>
 	</div>

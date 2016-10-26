@@ -94,7 +94,7 @@ define(function(require){
 		$canvas.attr('width',$outer.width()).attr('height',120);
 		initXY();
 		drawLine();
-		$outer.on('click','[markerTip]',markerTip);
+		$outer.on('tap','[markerTip]',markerTip);
 	}
 
 	return {

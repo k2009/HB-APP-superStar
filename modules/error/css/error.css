@@ -102,7 +102,7 @@ body {
 body {
   background: #f2f2f2; }
 
-.statusImg_1, .statusImg_2 {
+.statusImg_1, .statusImg_2, .statusImg_3 {
   width: 3.2rem;
   height: 2.38933rem;
   background: url(../images/status_1.png) no-repeat center center;
@@ -110,6 +110,10 @@ body {
 
 .statusImg_2 {
   background: url(../images/status_2.png) no-repeat center center;
+  background-size: 2.816rem 2.13333rem; }
+
+.statusImg_3 {
+  background: url(../images/status_3.png) no-repeat center center;
   background-size: 2.816rem 2.13333rem; }
 
 .tipsInfo, .code {

@@ -107,7 +107,7 @@ define(function(require, exports, module) {
 		},
 		// 绑定事件
 		"bindEvent": function(){
-			$(NODE_ID).on("click", "[action=invite]", Tools.showMask);
+			$(NODE_ID).on("tap", "[action=invite]", Tools.showMask);
 		},
 		// 释放事件
 		"releaseEvent": function(){

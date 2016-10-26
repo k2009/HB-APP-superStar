@@ -111,7 +111,7 @@ body {
   display: none; }
 
 .leftInfo {
-  width: 60%;
+  width: 66%;
   height: 0.64rem;
   float: left;
   display: flex;
@@ -174,10 +174,11 @@ body {
   padding: 0.08533rem;
   display: none;
   overflow: hidden;
-  position: static; }
+  position: static;
+  box-sizing: content-box; }
 
 .slideItem {
-  margin-right: 0.064rem;
+  margin-right: 10px;
   float: left;
   width: 1.19467rem;
   padding-bottom: 0.896rem;
@@ -210,7 +211,14 @@ body {
   overflow: hidden;
   margin-top: 0.08533rem;
   padding: 0 0.08533rem;
-  height: 0.32427rem; }
+  height: 0.31147rem;
+  color: white;
+  white-space: normal;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; }
 
 .slideItem .company {
   color: white;
@@ -277,15 +285,18 @@ body {
 .orgList .org {
   width: 100%;
   height: 0;
-  padding-bottom: 27%;
+  padding-bottom: 75%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background-position: center center;
+  background-size: 100% 100%; }
 
 .orgList .orgBackground {
   width: 100%;
   vertical-align: middle; }
 
 .orgList .info {
+  display: none;
   color: white;
   text-align: center;
   padding-top: 5%;
@@ -325,38 +336,47 @@ body {
   background: #fff; }
 
 .brand {
-  width: 30%;
+  width: 28%;
   margin: 0.08533rem;
-  position: relative; }
+  position: relative;
+  flex: 0 0 auto; }
 
 .logoBox {
   position: relative;
   text-align: center;
   width: 100%;
   height: 0;
-  padding-bottom: 100%; }
+  padding-bottom: 100%;
+  border: 1px solid #e5e5e5; }
 
 .logoBox img {
   position: absolute;
   left: 0;
-  top: 0;
   right: 0;
-  bottom: 0;
+  top: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  bottom: 0; }
 
 .brandList .info {
   background: white;
   text-align: center; }
 
 .brandList .title {
-  color: #555;
+  color: #1a2a1a;
   font-size: 0.11947rem; }
 
 .brandList .describe {
   color: #999;
   font-size: 0.1024rem;
-  overflow: hidden; }
+  overflow: hidden;
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 0.128rem;
+  height: 0.256rem;
+  text-overflow: ellipsis; }
 
 .rightArrow {
   background-size: 0.0512rem;

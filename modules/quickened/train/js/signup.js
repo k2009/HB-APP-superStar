@@ -187,7 +187,6 @@ define(function(require, exports, module) {
 		header.init();
 
 		$('#st_modules_quickened_vipSignup').on('touchend', '#submit', function() {
-            mui.toast("提交中...请稍后")
             var validateItem = $( '[data-validate]' ),
                 validateStatus = true,
                 ajaxData = {
@@ -219,8 +218,8 @@ define(function(require, exports, module) {
                     }
                     Alert("报名成功", function(){
                         setTimeout(function(){
-                            SCRM.pjax( opts.next_url );
-                            // window.location.href = opts.next_url;
+                            //SCRM.pjax( opts.next_url );
+                            window.pageURL = opts.next_url;
                         },2000);
                     });
                 },

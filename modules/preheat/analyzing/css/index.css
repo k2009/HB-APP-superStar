@@ -309,7 +309,7 @@ html, body, .container, .module {
       font-size: 0.11947rem;
       letter-spacing: 0.00853rem;
       border-radius: 0.04267rem;
-      background: #fbbd06;
+      /*background: $main-bg-color;*/
       padding: 0.256rem 0.256rem;
       -webkit-box-shadow: 0 0 0 2.13333rem rgba(0, 0, 0, 0.6);
       -moz-box-shadow: 0 0 0 2.13333rem rgba(0, 0, 0, 0.6);
@@ -321,7 +321,8 @@ html, body, .container, .module {
         height: 0.2688rem;
         font-size: 0.11093rem;
         line-height: 0.2688rem;
-        text-align: center;
+        /*text-align: center;*/
+        padding-left: 0.512rem;
         margin: 0.128rem auto 0;
         /*background: url(../images/item-bg.png) no-repeat;*/
         background-size: 100%;
@@ -393,3 +394,7 @@ html, body, .container, .module {
     .pop-container .buttons .mui-icon-close:before {
       line-height: 0.256rem;
       font-size: 0.42667rem; }
+
+.pop-tips .content {
+  background: #fff url(../images/xiaobao.png) no-repeat bottom right;
+  background-size: 0.6656rem 1.02827rem; }

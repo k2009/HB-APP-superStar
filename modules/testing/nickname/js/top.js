@@ -96,8 +96,8 @@ define(function(require, exports, module) {
         wordCloud.draw(keys,null,{
             node:'#keyCanvasBox',
             colorBase:['00b5bd','f66f17','ffcc00'],
-            maxWordCount:42,
-            maxFontSize:28,
+            maxWordCount:20,
+            maxFontSize:36,
             minFontSize:12
         });
     }

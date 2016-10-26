@@ -85,7 +85,7 @@ define(function(require, exports, module) {
         if(pageData.num>=3){
             mui.alert('亲,每天只能免费测3次呦，请明天再来吧','提示','我知道了');
         }else{
-            SCRM.pjax(url);
+            window.pageURL=url;
         }
     }
 
@@ -122,7 +122,7 @@ define(function(require, exports, module) {
         initSimular(opts);
         parseCounts();
         $share.init(opts);
-        $body.delegate('[action=retest]','click',retest);
+        $body.delegate('[action=retest]','tap',retest);
 
         // 公共头部
         header.init();

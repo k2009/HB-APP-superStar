@@ -11,8 +11,9 @@ define(function(require, exports, module) {
 
     var initSlider=function(){
     	var $slider=$('#slider');
-    	var childs=$slider.find('li').length;
-    	$slider.css('width',childs*(300/200)+0.2+'rem').css('display','block');
+        var childs=$slider.find('li').length;
+        var w=$slider.find('li').eq(0).width();
+        $slider.css('width', childs* (w+10)+'px').css('display','block');
     }
     
 	function init(opts) {

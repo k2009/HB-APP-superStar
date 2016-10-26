@@ -85,7 +85,8 @@ define(function(require, exports, module) {
                         }
                     }($(this).find('p,h1,h2,h3,span'))
                 }
-                console.log("pjax-url:"+url)
+                console.log("pjax-url:"+url);
+                title = title.split(">").join('');
                 $pjax(url,title);
             }
         },

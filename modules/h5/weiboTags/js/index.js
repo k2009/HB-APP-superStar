@@ -14,13 +14,13 @@ define(function(require, exports, module) {
 	var Tools = {
 		// 绑定事件
 		"bindEvent": function(){
-			$("#st_modules_h5_weiboTags").on("click", "[action=tag]", Tools.tagSelect);
-			$("#st_modules_h5_weiboTags").on("click", "[action=submit]", Tools.submit);
+			$("#st_modules_h5_weiboTags").on("tap", "[action=tag]", Tools.tagSelect);
+			$("#st_modules_h5_weiboTags").on("tap", "[action=submit]", Tools.submit);
 		},
 		// 释放事件
 		"releaseEvent": function(){
-			$("#st_modules_h5_weiboTags").off("click", "[action=tag]", Tools.tagSelect);
-			$("#st_modules_h5_weiboTags").off("click", "[action=submit]", Tools.submit);
+			$("#st_modules_h5_weiboTags").off("tap", "[action=tag]", Tools.tagSelect);
+			$("#st_modules_h5_weiboTags").off("tap", "[action=submit]", Tools.submit);
 		},
 		'isEditable': function(){
 			var result = true;

@@ -1,7 +1,9 @@
 <div class="mui-content">
-	<div class="content-box">
-			<div class="headPic"><img src="${data.profile_image_url}"></div>
+	<div class="content-box clearfix">
+		<div class="headPic">
+			<img src="${data.profile_image_url}">
 			<h5 class="status-word">${data.name}</h5>
+		</div>
 		<div class="mark">
 			<strong>${data.scoretotal}分</strong>
 		</div>
@@ -14,4 +16,15 @@
 		</div>
 	</div>
 </div>
-<a href="${data.back_url}" pjax="1" class="mui-btn mui-btn-block">返回</a>
+
+<div class="btn_box">
+	<#if (data.prev_url)>
+		<a href="${data.prev_url}" pjax="1" class="btn">上一个</a>
+	</#if>
+	<#if (data.next_url)>
+		<a href="${data.next_url}" pjax="1" class="btn">下一个</a>
+	</#if>
+</div>
+<p class="link_back">
+	<a href="${data.back_url}" pjax="1">返回>></a>
+</p>

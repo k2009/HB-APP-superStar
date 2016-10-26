@@ -108,11 +108,12 @@ body {
   background: #fff;
   -webkit-box-shadow: 0px 0px 0.01707rem 0px #ddd;
   box-shadow: 0px 0px 0.01707rem 0px #ddd;
-  display: flex;
-  display: -webkit-flex; }
+  display: table;
+  width: 100%;
+  padding: 0.08533rem 0.04267rem; }
   .test-card .test-card-item {
-    flex: 1;
-    display: inline-block;
+    width: 50%;
+    display: table-cell;
     width: 1.408rem;
     height: 0.59733rem;
     background-size: 1.408rem 0.59733rem;

@@ -263,6 +263,19 @@ p.status-word {
   margin: 0.064rem auto;
   padding: 0.04267rem 0; }
 
+.mui-btn-block {
+  display: block;
+  width: 1.49333rem;
+  height: 0.2816rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.128rem;
+  line-height: 0.2816rem;
+  background: #fbbd06;
+  border-radius: 0.04267rem;
+  color: #fff;
+  padding: 0; }
+
 .orange-box {
   width: 100%;
   height: 0.34133rem;

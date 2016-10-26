@@ -3,7 +3,7 @@ define(function(require, exports, module) {
     var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
 	var platform;
-	var share_url = window.location.href;
+	var share_url = window.pageURL;
 	var signedRequest = null;
 	var WeiboJS, wx, appid;
 	var tabbar;
@@ -230,7 +230,7 @@ define(function(require, exports, module) {
                         Alert( msg.message );
                         return;
                     }
-                    window.location.href = msg.data.next_url;
+                    window.pageURL = msg.data.next_url;
                    // SCRM.pjax( msg.data.next_url );
                 },
                 error: function(){
@@ -258,14 +258,14 @@ define(function(require, exports, module) {
                     }
                     $this.addClass( 'done' ).html( num );
                     $('[choose]').removeAttr('choose');
-                    window.location.href = msg.data.next_url;
+                    window.pageURL = msg.data.next_url;
                     //SCRM.pjax( msg.data.next_url );
                 },
                 error: function(){
                     Alert( '网络错误，请刷新页面或稍后重试' );
                 }
             });
-        }).on('click', '#imgList img', function(){
+        }).on('tap', '#imgList img', function(){
             var thisSrc = $( this ).data( 'bigimg' ),
                 url = thisSrc,
                 $img = $('#imgList img'),

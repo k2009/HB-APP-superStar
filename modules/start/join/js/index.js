@@ -5,8 +5,7 @@ define(function(require, exports, module) {
     var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
     var queryToJson=require('kit/extra/queryToJson');
-    var channel = location.search.replace(/^.*channel=(\d+).*$/,'$1');
-    channel = channel || 1;
+    var channel;
     var tabbar;
 
     var switchCurrent=function(e){
@@ -31,18 +30,17 @@ define(function(require, exports, module) {
             dataType:'json',
             success:function(json){
                 if(json.code != 0){
-                    return mui.toast(json.message);
+                    return mui.alert(json.message,'提示');
                 }
                 showNotice('success',function(){
-                    console.log(json.data.goToUrl)
-                    SCRM.pjax(json.data.goToUrl);
+                    window.pageURL=json.data.goToUrl;
                 });
             },
             error: function(err){
                 if(typeof err != "undefined" && typeof err.status != "undefined" && err.status == 0){
                     showNotice('fail');
                 } else {
-                    mui.toast('系统错误，请稍后重试');
+                    mui.alert('系统错误，请稍后重试','提示');
                 }
             }
         });
@@ -76,6 +74,8 @@ define(function(require, exports, module) {
     }
     
     function init(opts) {
+        channel = window.pageURL.replace(/^.*\?(.*)$/,'$1').replace(/^.*channel=(\d+).*$/,'$1');
+        channel = channel || 1;
         $('#box').find('td.cooperate.c'+channel).addClass('cur');
         $body.delegate('a[index]','tap',switchCurrent);
         $body.find('input').bind('input propertychange',filterInput);
@@ -83,15 +83,13 @@ define(function(require, exports, module) {
             tabbar.setData(opts.tabbar);
             tabbar.setActiveTab(0);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });
-
-
-        $('body').on('tap','#submit',submit);
+        $('#submit').bind('tap',submit);
     }
 
 	function destroy(opts) {
         channel = 1;
         $body.undelegate('a[index]','tap');
-        $('body').unbind('tap','#submit',submit);
+        $('#submit').unbind('tap',submit);
         if(tabbar){
             tabbar.destroy();
         }

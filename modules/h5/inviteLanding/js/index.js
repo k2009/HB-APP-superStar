@@ -3,9 +3,7 @@ define(function(require, exports, module) {
     var jssdk = require("common/share/jssdk");
     
     function init(opts) {
-        // body...
-	    console.log("example init");
-
+        var platform = opts.platform;
         // 初始化 JSSDK
         jssdk.init(platform, opts.jssdk, function(){
             // 如果初始化失败，就什么都不做

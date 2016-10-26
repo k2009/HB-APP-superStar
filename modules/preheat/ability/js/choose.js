@@ -41,7 +41,7 @@ define(function(require, exports, module) {
             dataType:'json',
             success:function(json){
                 if(json.code==0){
-                    location.href=pageData.next_url;
+                    window.pageURL=pageData.next_url;
                 }else{
                     alert('保存失败，请重试');
                 }                
@@ -52,8 +52,8 @@ define(function(require, exports, module) {
     function init(opts) {
        pageData=opts;
        setTimeout(initTopText,100);
-       $body.delegate('[selectItem]','click',selectItem);
-       $('#done').bind('click',done);
+       $body.delegate('[selectItem]','tap',selectItem);
+       $('#done').bind('tap',done);
     }
 
     function destroy(opts) {

@@ -1,5 +1,5 @@
 define(function(require, exports, module) {
-
+    var $share = require('modules/start/home/js/share');
 	var jssdk = require("common/share/jssdk");
 	var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
@@ -18,6 +18,8 @@ define(function(require, exports, module) {
     
 	function init(opts) {
 		initSlider();
+        opts.share_url=opts.share_url || '/castle/wap/works/organize';
+        $share.init(opts);
 
 		// 延迟加载 tabbar
         lazyload.load("common/tabbar/js/index", function(ret){
@@ -30,6 +32,7 @@ define(function(require, exports, module) {
 	}
 
 	function destroy(opts) {
+        $share.destroy();
 		if(tabbar){
             tabbar.destroy();
         }

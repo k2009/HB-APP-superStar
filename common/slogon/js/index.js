@@ -9,7 +9,7 @@ define(function(require, exports, module) {
 
 	function showHeader(html){
 		if($(".wanghong-standard-header").length == 0){
-			$("body").prepend(html);
+			$(".container").prepend(html);
 		}
 	}
 

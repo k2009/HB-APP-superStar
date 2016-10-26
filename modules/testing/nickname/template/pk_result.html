@@ -1,7 +1,7 @@
 <div class="header">
 	<div class="user-left">
 		<#if (data.victory)><span class="king"></span></#if>
-		<img src="${data.self.profile_image}" class="profile-image" >
+		<img src="<#if (data.user.profile_image)>${data.user.profile_image}<#else>http://${data._extra.domain}/modules/testing/nickname/images/deafult_headpic.png</#if>" class="profile-image" >
 		<div class="nick">${data.self.screen_name}</div>
 	</div>
 	<div class="pk-area">

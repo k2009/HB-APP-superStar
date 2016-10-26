@@ -12,11 +12,14 @@
 </div>
 </a>
 </#list>
-<div class="mui-table-view-cell offerType" style="background-image:url(${data.top_type_1.logo})">
-	<p class="content">${data.top_type_1.name}</p>
-	<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
-	<p class="arrow"></p>
-</div>
+<#if (data.top_type_1.name)>
+	<div class="mui-table-view-cell offerType" style="background-image:url(${data.top_type_1.logo})">
+		<p class="content">${data.top_type_1.name}</p>
+		<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
+		<p class="arrow"></p>
+	</div>
+</#if>
+
 <#if (data.top_type_1.works.length > 0)>
 <div class="slideBox">
 	<ul class="slider" node="slider">
@@ -52,12 +55,18 @@
 </div>
 </a>
 </#list>
-<div class="mui-table-view-cell offerType">
-	<a href="${data.top_org_1.url}" pjax="1">
-	<p class="content" style="background-image:url(${data.top_org_1.logo})">${data.top_org_1.name}</p>
-	</a>
-	<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
-</div>
+<#if (data.top_org_1.name)>
+	<div class="mui-table-view-cell offerType">
+		<a href="${data.top_org_1.url}" pjax="1">
+		<p class="content" style="background-image:url(${data.top_org_1.image_bg});background-position: center center;background-size: 100%;">
+			合作机构
+			<!-- ${data.top_org_1.name} -->
+		</p>
+		</a>
+		<!-- <a href=""> 分销代理 <span class="rightArrow"></span></a> -->
+	</div>
+</#if>
+
 <div class="mui-table-view-cell grayLink">
 	<a href="#" onclick="return false;"> 全部 <!-- <span class="rightArrow"></span> --></a>
 </div>

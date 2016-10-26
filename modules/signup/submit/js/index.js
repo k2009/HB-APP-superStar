@@ -102,13 +102,13 @@ define(function(require, exports, module) {
 				success:function(msg){
 					if( msg.code != 0 ){
 						if( msg.code == 502 ){
-							window.location.href = msg.url;
+							window.pageURL = msg.url;
 							return;
 						}
 						alert( msg.message );
 						return;
 					}
-					window.location.href = page_data.default_data.modules[0].data.next_url;
+					window.pageURL = page_data.default_data.modules[0].data.next_url;
 				},
 				error:function(){
 					alert('网络错误，请刷新页面或稍后重试')

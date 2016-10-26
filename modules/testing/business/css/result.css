@@ -181,7 +181,7 @@ p.status-word {
   .comment-box h4 {
     line-height: 0.256rem;
     font-size: 0.1792rem;
-    color: #f5d009;
+    color: #1a1a1a;
     padding: 0.128rem 0;
     font-weight: normal; }
 
@@ -191,13 +191,14 @@ p.status-word {
   line-height: 0.256rem; }
 
 .comment-box p {
-  line-height: 0.18773rem; }
+  line-height: 0.18773rem;
+  color: #646464; }
 
 .pad30 {
   padding: 0.128rem; }
 
 .score-box {
-  padding: 0.42667rem 0 0.34133rem;
+  padding: 0.42667rem 0 0.256rem;
   margin: 0 0.21333rem;
   overflow-x: hidden; }
 
@@ -277,7 +278,8 @@ p.status-word {
 
 .status_1 em, .status_2 em {
   position: absolute;
-  width: 0.46933rem;
+  width: 0.34133rem;
+  text-align: center;
   font-style: normal;
   line-height: 0.128rem;
   left: -0.128rem;
@@ -293,12 +295,18 @@ p.status-word {
   width: 0.384rem;
   text-align: center; }
 
-.line-link {
+.link_box {
+  padding: 0.128rem 0 0; }
+
+.line-link, .line-link-2 {
   display: block;
   padding: 0.08533rem 0;
   line-height: 0.1024rem;
   text-align: center;
   color: #666; }
+
+.line-link-2 {
+  color: #3e62f5; }
 
 .link-king {
   background: url(../images/ico_king.png) no-repeat 0.512rem center;
@@ -329,9 +337,12 @@ p.status-word {
   line-height: 0.1792rem; }
 
 .info-box h6 {
-  color: #ff5676;
+  color: #646464;
   font-size: 0.11947rem;
   padding: 0.03413rem 0; }
+
+.info-box li p {
+  color: #a3a2a2; }
 
 .detail-echarts {
   height: 2.048rem;
@@ -544,7 +555,7 @@ p.status-word {
   display: block;
   width: 1.49333rem;
   height: 0.2816rem;
-  margin: 0.08533rem auto;
+  margin: 0.21333rem auto 0;
   text-align: center;
   font-size: 0.128rem;
   line-height: 0.2816rem;
@@ -553,4 +564,16 @@ p.status-word {
   color: #fff; }
 
 .btn_com_grey {
-  background: #bfbfbf; }
+  background: #bfbfbf;
+  margin: 0.128rem auto 0.21333rem; }
+
+.score_tips {
+  padding: 0.08533rem 0.17067rem;
+  color: #646464; }
+  .score_tips a {
+    color: #3e62f5; }
+
+.more_tips {
+  padding-top: 0.08533rem; }
+  .more_tips a {
+    color: #3e62f5; }

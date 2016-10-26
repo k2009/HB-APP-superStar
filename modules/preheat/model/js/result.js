@@ -4,6 +4,12 @@ define(function(require, exports, module) {
             // 基于准备好的dom，初始化echarts实例
             var myChart = echarts.init(document.getElementById('modelCharts'));
             // 使用刚指定的配置项和数据显示图表。
+            opts.charts.radar.axisLabel = {
+                show: true,
+                textStyle: {
+                    color: '#ccc'
+                }
+            };
             myChart.setOption( opts.charts );
         });
     }

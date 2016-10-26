@@ -114,34 +114,35 @@ body {
 .message {
   background: #fff;
   border-bottom: 1px solid #e8e8e8;
-  position: relative;
-  /*	.icon {
-		position: absolute;
-		left: 0;
-		top: 0;
-		display: inline-block;
-		width: r(95);
-		height: r(80);
-		background: url(../images/icon.png) no-repeat r(25) r(20);
-		background-size: r(47) r(47);
-	}*/ }
-  .message .item {
-    padding-left: 0.08533rem; }
-    .message .item .clearfix {
-      padding: 0.06827rem 0 0.04267rem; }
-    .message .item .title {
-      color: #1a1a1a;
-      font-size: 0.11947rem;
-      float: left; }
-    .message .item .time {
-      color: #a3a1a2;
-      font-size: 0.1024rem;
-      float: right;
-      padding-right: 0.08533rem; }
-    .message .item .content {
-      color: #646464;
-      font-size: 0.1024rem;
-      padding: 0 0.08533rem 0.06827rem 0; }
+  position: relative; }
+  .message .icon {
+    display: inline-block;
+    width: 0.29867rem;
+    height: 0.29867rem;
+    background: url(../images/icon.png) no-repeat 0.10667rem 0.08533rem;
+    background-position: center;
+    background-size: 0.20053rem 0.20053rem;
+    vertical-align: top; }
+  .message .item .clearfix {
+    padding: 0.06827rem 0 0.04267rem;
+    display: inline-block;
+    width: 70%; }
+  .message .item .title {
+    color: #1a1a1a;
+    font-size: 0.11947rem;
+    float: left;
+    word-break: break-all; }
+  .message .content {
+    color: #646464;
+    font-size: 0.1024rem;
+    padding: 0 0.08533rem 0.06827rem 0.29867rem;
+    word-break: break-all; }
+  .message .time {
+    color: #a3a1a2;
+    font-size: 0.1024rem;
+    position: absolute;
+    top: 0.064rem;
+    right: 0.08533rem; }
 
 .empty {
   text-align: center;

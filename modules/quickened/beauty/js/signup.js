@@ -228,7 +228,7 @@ define(function(require, exports, module) {
                     Alert("报名成功", function(){
                         setTimeout(function(){
                             //SCRM.pjax( opts.next_url );
-                            window.location.href = opts.next_url;
+                            window.pageURL = opts.next_url;
                         },2000);
                     });
                 },

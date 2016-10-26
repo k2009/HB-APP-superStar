@@ -107,7 +107,7 @@ define(function(require, exports, module) {
         },
         // 绑定事件
         "bindEvent": function(){
-            $body.on("click", "[action=invite]", Tools.showMask);
+            $body.on("tap", "[action=invite]", Tools.showMask);
         },
         // 释放事件
         "releaseEvent": function(){
@@ -133,19 +133,19 @@ define(function(require, exports, module) {
         if(now-initData.next_time*1000<dueTime){
             mui.alert('亲，你最近才测试过，短时间内微博DNA图谱是不会有太大变化的，请7天后再来测试吧','','好的');
         }else{
-            location.href=initData.result_url;
+            window.pageURL=initData.result_url;
         }
         
     }
 
     function init(opts) {
         initData=opts;
-        $body.delegate('[reTest]','click',reTest);
+        $body.delegate('[reTest]','tap',reTest);
         TITLE =([
             'Guys，你确定真的了解我么？点开，也许你会发现不一样的我哟~',
             '邀请你的好友一起参加微博DNA测试，也许你自己都会惊呆了呢~',
             '其实我还有很多八卦哟，比如...想知道么？那就进来看看吧~',
-            '超前卫的智能化分析体验尽在时趣网红城堡，带你走进哈利波特的奇幻世界~',
+            '超前卫的智能化分析体验尽在网红城堡，带你走进哈利波特的奇幻世界~',
             '好东西一定会分享给你们，特别是这么新鲜好玩的东东哟~快到碗里来吧~'
         ])[parseInt(Math.random()*5)];
 

@@ -1,37 +1,39 @@
-<div class="mui-table-view-cell grayLink">
+<!-- <div class="mui-table-view-cell grayLink">
 	<a href="#" onclick="return false;">品牌机构
-		<!--<span class="rightArrow"></span>-->
+		<span class="rightArrow"></span>
 	</a>
-</div>
+</div> -->
 <div class="orgList">
-	<#list data.top3 as org >
-	<div class="org" style="background-image: url(${org.image_bg})">
+	<div class="org" style="background-image: url(${data.top3[0].image_bg})">
 		<div class="info">
-			<span class="logo" style="background-image: url(${org.logo})"></span>
-			<br>${org.name}
-			<br>
-			<span class="title">${org.intro}</span>
+			<!-- <span class="logo" style="background-image: url(${data.top3[0].logo})"></span> -->
+<!-- 			<br>${data.top3[0].name}
+<br>
+<span class="title">${data.top3[0].intro}</span> -->
 		</div>
 	</div>
-	</#list>
 </div>
 
 <#list data.others as group>
 <div class="mui-table-view-cell grayLink">
 	<a href="#" onclick="return false;">${group.name}<!-- <span class="rightArrow"></span> --></a>
 </div>
-<div class="brandList">
-	<#list group.organizes as org>
-	<div class="brand">
-		<div class="logoBox">
-			<img src="${org.logo}" alt="" class="brandBackground">
-		</div>
-		<div class="info">
-			<span class="title">${org.name}</span>
-			<br>
-			<span class="describe">${org.intro}</span>
-		</div>
-	</div>
+	<#list group.organizes as org>	
+		<#if (org_index%3==0)>
+			<div class="brandList">
+		</#if>		
+				<div class="brand">
+					<div class="logoBox">
+						<img src="${org.logo}" alt="" class="brandBackground">
+					</div>
+					<div class="info">
+						<span class="title">${org.name}</span>
+						<!-- <br>
+						<span class="describe">${org.intro}</span> -->
+					</div>
+				</div>
+		<#if (org_index%3==2 || org_index==group.organizes.length-1)>
+			</div>
+		</#if>
 	</#list>
-</div>
 </#list>

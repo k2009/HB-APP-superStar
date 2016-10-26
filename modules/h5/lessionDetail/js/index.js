@@ -2,6 +2,7 @@ define(function(require, exports, module) {
     require("common/util/loadMUI");
     var $body=$(document.body);
     var lazyload = require("kit/util/asyncModule");
+    var header = require('common/slogon/js/index');
 
     var initDifficulty=function (argument) {
         $('[difficulty]').each(function (index,item) {
@@ -25,7 +26,7 @@ define(function(require, exports, module) {
         setTimeout(function (argument) {
             document.body.appendChild(style);
         },100)
-    }
+    };
 
     // var slide=function(e) {
     //     var $this=$(e.target);
@@ -39,14 +40,19 @@ define(function(require, exports, module) {
         //$tap(window,slide);
         initDifficulty();
         //initPercent();
-         lazyload.load("common/tabbar/js/index", function(tabbar){
+         lazyload.load("common/tabbar/js/index", function(ret){
+            tabbar = ret;
             tabbar.setData(opts.tabbar);
             tabbar.setActiveTab(1);    // 设置哪个 tabbar 高亮，参数是 tabbar 的下标，0 开始
         });
+        header.init();
     }
 
     function destroy(opts) {
-        
+        if(tabbar){
+            tabbar.destroy();
+        }
+        header.destroy();
     }
     var that = {
         init: init,
