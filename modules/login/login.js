@@ -49,7 +49,7 @@ define(function(require, exports, module) {
 				if (!plus.storage.getItem("domain")) plus.storage.setItem('domain', host_domain)
 
 				$.ajax({
-					url: host_domain + '/castle/wap/route/list',
+					url: '_www/route/route.json',
 					type: "get",
 					dataType: "json",
 					success: function(d) {

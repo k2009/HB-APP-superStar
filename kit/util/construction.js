@@ -178,14 +178,14 @@ define(function(require, exports, module) {
                     data.splice(i, 1)
                 }
 
-				console.log(JSON.stringify(data));
+				// console.log(JSON.stringify(data));
                 json.cacheTime = mui.now();
                 json.data = value;
                 data.unshift(json);
                 if(data.length>=cont){
                     data.splice( cont, (data.length-cont) )
                 }
-
+                // console.log('storage-data:'+JSON.stringify(data))
                 $storage(sys.id,data);
             }
 
