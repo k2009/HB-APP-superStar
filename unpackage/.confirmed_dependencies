@@ -11,18 +11,32 @@
       "modules/login/login.js",
       "libs/mui/js/mui.js",
       "modules/login/login.css",
-      "libs/seajs/app_3.0/sea.js"
+      "libs/seajs/app_3.0/sea.js",
+      "route/route.json"
     ],
     "refer": [
       "modules/tabbar.html",
-      "modules/h5/index/index.html"
+      "modules/h5/index/index.html",
+      "modules/h5/index/index_box.html"
     ]
   },
   "modules/tabbar.html": {
     "resources": [
       "kit/util/urlToJson.js",
       "common/tabbar/css/index.css",
-      "common/tabbar/fonts/iconfont.woff"
+      "common/tabbar/fonts/iconfont.woff",
+      "common/tabbar/images/home-highlight.png",
+      "common/tabbar/images/mine.png",
+      "common/tabbar/images/jiasu.png",
+      "common/tabbar/images/home.png",
+      "common/tabbar/images/learn.png",
+      "common/tabbar/images/money.png",
+      "common/tabbar/images/learn-highlight.png",
+      "common/tabbar/images/jiasu-highlight.png",
+      "common/tabbar/images/mine-highlight.png",
+      "common/tabbar/images/money-highlight.png",
+      "libs/jquery/3.0.0/jquery-3.0.0.js",
+      "libs/mui/js/mui.min.js"
     ],
     "refer": [
       "modules/index.html"
@@ -38,9 +52,16 @@
       "modules/h5/index/index.js",
       "modules/h5/index/images/icons.png",
       "kit/util/easyTemplate.js",
-      "modules/h5/index/template/index.html"
+      "modules/h5/index/template/index.html",
+      "modules/h5/index/images/joinIcon.png",
+      "kit/util/urlToJson.js",
+      "modules/h5/index/images/testBg.jpg",
+      "modules/h5/index/images/testIcon.png",
+      "modules/h5/index/images/helperIcon.png"
     ],
-    "refer": []
+    "refer": [
+      "modules/index.html"
+    ]
   },
   "modules/index.html": {
     "resources": [
@@ -130,7 +151,58 @@
       "kit/util/plus-share/img/icon_weibo.png",
       "kit/util/plus-share/share.css",
       "kit/util/plus-share/img/icon_weixin.png",
-      "kit/util/plus-share/share.html"
+      "kit/util/plus-share/share.html",
+      "modules/quickened/index/template/index.html",
+      "modules/login/img/login_bgi.png",
+      "modules/quickened/index/images/ico_item_1.png",
+      "modules/quickened/index/images/ico_item_4.png",
+      "modules/quickened/index/images/ico_item_2.png",
+      "modules/offer/opportunity/css/index.css",
+      "modules/offer/opportunity/template/index.html",
+      "modules/quickened/index/js/index.js",
+      "modules/h5/lessionList/images/nick.png",
+      "modules/h5/lessionList/images/biz.png",
+      "modules/quickened/index/images/ico_item_3.png",
+      "modules/offer/opportunity/js/index.js",
+      "modules/offer/opportunity/images/location.png",
+      "modules/quickened/index/css/index.css",
+      "modules/h5/lessionContent/template/index.html",
+      "modules/h5/lessionContent/css/index.css",
+      "modules/h5/lessionContent/app_js/index.js",
+      "modules/h5/lessionContent/app_js/lessionContent.js",
+      "modules/h5/lessionContent/js/share.js",
+      "modules/h5/myLessons/js/index.js",
+      "modules/h5/myLessons/css/index.css",
+      "modules/h5/myLessons/template/index.html",
+      "modules/quickened/module/template/interaction.html",
+      "modules/quickened/module/images/ico_item_5.png",
+      "modules/quickened/module/images/bg_bottom.png",
+      "modules/quickened/module/images/ico_item_8.png",
+      "modules/quickened/module/images/logo.png",
+      "modules/quickened/module/css/common.css",
+      "modules/quickened/module/images/ico_item_7.png",
+      "modules/quickened/module/images/ico_item_6.png",
+      "modules/quickened/module/js/common.js",
+      "modules/h5/message/images/icon.png",
+      "modules/h5/message/css/index.css",
+      "modules/h5/message/template/index.html",
+      "modules/h5/homeworkList/images/status_none.png",
+      "modules/quickened/module/images/ico_item_3.png",
+      "modules/quickened/module/template/introduced.html",
+      "modules/quickened/module/images/ico_item_2.png",
+      "modules/quickened/module/images/ico_item_4.png",
+      "modules/quickened/module/images/ico_item_1.png",
+      "modules/offer/org/css/index.css",
+      "modules/offer/org/js/index.js",
+      "modules/offer/org/template/index.html",
+      "modules/start/home/js/share.js",
+      "modules/h5/industryInfo/js/index.js",
+      "modules/h5/industryInfo/template/index.html",
+      "modules/h5/industryInfo/css/index.css",
+      "libs/jquery/plugins/jquery.swipe.min.js",
+      "modules/h5/newsDetail/js/index.js",
+      "modules/h5/newsDetail/template/index.html",
+      "modules/h5/newsDetail/css/index.css"
     ],
     "refer": [
       "modules/index.html",
@@ -142,6 +214,83 @@
       "libs/mui/css/mui.min.css",
       "libs/mui/js/mui.min.js",
       "libs/mui/fonts/mui.ttf"
+    ],
+    "refer": []
+  },
+  "modules/h5/index/index_box.html": {
+    "resources": [
+      "libs/mui/js/mui.min.js",
+      "modules/h5/index/index.html",
+      "common/tabbar/images/home-highlight.png",
+      "common/tabbar/images/mine.png",
+      "common/tabbar/images/jiasu.png",
+      "common/tabbar/images/learn.png",
+      "common/tabbar/css/index.css",
+      "common/tabbar/images/money.png",
+      "common/tabbar/images/home.png",
+      "common/tabbar/images/learn-highlight.png",
+      "common/tabbar/images/jiasu-highlight.png",
+      "common/tabbar/images/money-highlight.png",
+      "common/tabbar/images/mine-highlight.png",
+      "libs/jquery/3.0.0/jquery-3.0.0.js"
+    ],
+    "refer": [
+      "modules/tabbar.html",
+      "modules/h5/index/index.html",
+      "modules/index_content.html",
+      "modules/index_sub.html"
+    ]
+  },
+  "modules/index_sub.html": {
+    "resources": [
+      "modules/quickened/index/template/index.html",
+      "modules/login/img/login_bgi.png",
+      "modules/h5/memberCenter/css/index.css",
+      "modules/h5/memberCenter/app_js/index.js",
+      "kit/util/construction.js",
+      "kit/util/plus-pjax.js",
+      "kit/util/easyTemplate.js",
+      "common/slogon/js/index.js",
+      "modules/quickened/index/images/ico_item_1.png",
+      "kit/util/urlToJson.js",
+      "modules/h5/memberCenter/template/index.html",
+      "kit/util/plus_ajax_hack.js",
+      "kit/util/asyncModule.js",
+      "modules/quickened/index/images/ico_item_4.png",
+      "modules/quickened/index/images/ico_item_2.png",
+      "modules/offer/opportunity/css/index.css",
+      "modules/h5/memberCenter/js/index.js",
+      "libs/mui/fonts/mui.ttf",
+      "modules/offer/opportunity/template/index.html",
+      "modules/quickened/index/js/index.js",
+      "socialtouch/app_seed.js",
+      "modules/h5/lessionList/js/index.js",
+      "modules/h5/lessionList/images/nick.png",
+      "modules/h5/lessionList/css/index.css",
+      "kit/util/compatible.js",
+      "common/share/jssdk.js",
+      "common/util/loadMUI.js",
+      "skins/vanilla-cream/css/main.css",
+      "modules/h5/lessionList/images/biz.png",
+      "modules/h5/lessionList/template/index.html",
+      "modules/quickened/index/images/ico_item_3.png",
+      "modules/offer/opportunity/js/index.js",
+      "modules/offer/opportunity/images/location.png",
+      "modules/quickened/index/css/index.css",
+      "modules/offer/org/css/index.css",
+      "modules/offer/org/js/index.js",
+      "modules/start/home/js/share.js",
+      "modules/testing/weiboDNA/js/wordCloud.js",
+      "modules/offer/org/template/index.html",
+      "libs/seajs/app_3.0/sea.js",
+      "kit/util/plus-oauth.js",
+      "kit/util/plus-storage.js",
+      "libs/mui/js/mui.js",
+      "libs/mui/css/mui.min.css",
+      "libs/jquery/3.0.0/jquery-3.0.0.js"
+    ],
+    "refer": [
+      "modules/index.html"
     ]
   }
 }

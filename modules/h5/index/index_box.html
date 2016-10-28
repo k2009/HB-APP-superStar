@@ -8,41 +8,219 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	</head>
-	<body>
 
+		<link rel="stylesheet" href="../../../common/tabbar/css/index.css">
 		<script src="../../../libs/mui/js/mui.min.js"></script>
+		<script src="../../../libs/jquery/3.0.0/jquery-3.0.0.js"></script>
 		<!-- 初始化加载 公共JS结束 --> 
 
 		
 		<script>
-	        mui.plusReady(function() {
-	        	plus.webview.currentWebview().setStyle({popGesture:'none'});	//禁止侧滑关闭
-	        })
-            mui.init({
-                subpages: [{
-                    url: './index.html', //子页面HTML地址，支持本地地址和网络地址
-                    id: 'index.html', //子页面标志
-                    styles: {
-                        top: "0px",
-                        bottom: '49px', //新页面底部位置
-						bounce: 'vertical',
-						background:'transparent'
-                    }
-                }, {
-					id: 'tabbar',
-					url: '../../tabbar.html',
-					styles: {
-						bottom: '0px', //新页面底部位置
-						height: '49px', //新页面高度，默认为100%
-						// background:'#fff'
-					},
-					show: {
-						autoShow: true, //页面loaded事件发生后自动显示，默认为true
-						// aniShow:,//页面显示动画，默认为”slide-in-right“；
-					},
-                }]
-            });
+mui.init({
+	swipeBack:false,
+	keyEventBind: {
+		backbutton: false  //关闭back按键监听
+	}
+})
+mui.plusReady(function() {
+	plus.webview.currentWebview().setStyle({
+		popGesture: 'none'
+	}); //禁止侧滑关闭
+
+	plus.key.addEventListener("backbutton",function(){
+		return false;
+	});
+
+
+	var webview_ids = [
+		"st_modules_start_home",
+		"st_modules_h5_lessionList", //学习
+		"st_modules_h5_quickenedIndex", //加速
+		'st_modules_h5_works_organize', //赚钱
+		'st_modules_h5_memberCenter', //我
+	];
+	plus.storage.setItem("index_route",JSON.stringify(webview_ids))
+	function getModulesData(d, path) {
+		var json =  {
+			url: '../../index_sub.html', //子页面HTML地址，支持本地地址和网络地址
+			id: d.id, //学习
+			styles: {
+				top: "0px",
+				bottom: '49px', //新页面底部位置
+				bounce: 'vertical',
+				background:'transparent'
+			},
+			createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: false, //页面loaded事件发生后自动显示，默认为true
+			},
+			extras: {
+				ajax_url: (plus.storage.getItem("domain") + path),
+				pageData: d
+			}
+		};
+		return json;
+	}
+
+	function setPreloadPages() {
+		var attr,
+			a,
+			preloadPagesData,
+			arr_webview_ids;
+
+		preloadPagesData = [];
+		arr_webview_ids = [];
+		setTimeout(function(){
+
+
+			var route = JSON.parse(plus.storage.getItem('route'));
+
+			for (var i = 1; i < webview_ids.length; i++) {
+				for (attr in route) {
+					if (!route[attr].data.default_data.modules[0]) {
+						continue;
+					}
+					if (route[attr].data.default_data.modules[0].id == webview_ids[i]) {
+						arr_webview_ids[i] = mui.preload(getModulesData(route[attr].data.default_data.modules[0], route[attr].path));
+						break;
+					}
+				}
+			}
+		},400)
+		arr_webview_ids[0] = mui.preload({
+			url: './index.html', //子页面HTML地址，支持本地地址和网络地址
+			id: 'st_modules_start_home', //学习
+			styles: {
+				top: "0px",
+				bottom: '49px', //新页面底部位置
+				bounce: 'vertical',
+				background:'transparent'
+			},
+			createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+			show: {
+				autoShow: true, //页面loaded事件发生后自动显示，默认为true
+			}
+		})
+		return arr_webview_ids;
+	}
+	var webviews = setPreloadPages();
+	webviews[0].addEventListener('loaded', function() {
+			webviews[0].show();
+	});
+
+	var $a = $('.tabbar-item');
+	var timer = null;
+	var t = 0;
+	var speed = mui.os.ios?100:400;
+	$('.tabbar').on('tap','a',function(){
+
+		if(!mui.os.ios){
+			if( (mui.now()-t)<400 ){
+				t = mui.now()
+				return;
+			}
+
+			clearTimeout(timer)
+
+		}
+		t = mui.now()
+		var oldIndex = $a.index($('.tabbar-item.current'));
+		
+		$a.removeClass('current')
+		var index = $a.index($(this).addClass('current'));
+		var hideBox = [];
+		// console.log(index+$(this).html())
+		// plus.webview.show(webview_ids[i]);
+		for (var i = 0; i < webviews.length; i++) {
+			if(webviews[i].id == webview_ids[index]){
+				if(index>oldIndex){
+					webviews[i].show("slide-in-right",speed);
+				}else{
+					webviews[i].show("slide-in-left",speed);
+				}
+			}else{
+				hideBox.push(webviews[i]);
+			}
+		}
+
+		if(mui.os.ios){
+
+			for (var i = 0; i < hideBox.length; i++) {
+				if(index>oldIndex){
+					hideBox[i].hide("slide-out-left",speed);
+				}else{
+					hideBox[i].hide("slide-out-right",speed);
+				}
+			}
+		}else{
+			timer = setTimeout(function(){
+
+				for (var i = 0; i < hideBox.length; i++) {
+					hideBox[i].hide();
+				}
+
+			},400)
+
+		}
+		return false;
+	})
+
+
+
+    window.addEventListener('viewChange',function(e){
+
+		if( (mui.now()-t)<1000 ){
+			return;
+		}
+
+    	var viewID = e.detail.viewID;
+		$a.removeClass('current')
+		for (var i = 0; i < webviews.length; i++) {
+			if(webviews[i].id != viewID){
+				webviews[i].hide();
+			}
+		}
+    	for (i = 0; i < webview_ids.length; i++) {
+    		if(webview_ids[i] == viewID){
+    			$a.eq(i).addClass('current')
+    			return;
+    		}
+    	}
+
+    });
+
+})
 		</script>
+	<body>
+
+		<style type="text/css">
+			.tabbar .tabbar-item ,nav.tabbar{
+			    height: 48px !important;
+			}
+		</style>
+		<nav class="border-1px tabbar" style="font-size: 0;">
+			<a href="javascript:;" pjax="1" class="tabbar-item current" data-index="0">
+				<span class="tabbar-icon icon-home"></span>
+				<span class="tabbar-text">开始</span>
+			</a>
+			<a href="javascript:;" pjax="1" class="tabbar-item" data-index="1">
+				<span class="tabbar-icon icon-learn"></span>
+				<span class="tabbar-text">学习</span>
+			</a>
+			<a href="javascript:;" pjax="1" class="tabbar-item" data-index="2">
+				<span class="tabbar-icon icon-jiasu"></span>
+				<span class="tabbar-text">加速</span>
+			</a>
+			<a href="javascript:;" pjax="1" class="tabbar-item" data-index="3">
+				<span class="tabbar-icon icon-money"></span>
+				<span class="tabbar-text">赚钱</span>
+			</a>
+			<a href="javascript:;" pjax="1" class="tabbar-item" data-index="3">
+				<span class="tabbar-icon icon-mine"></span>
+				<span class="tabbar-text">我</span>
+			</a>
+		</nav>
+		<div class="tabbar-block"></div>
 	</body>
 
 </html>

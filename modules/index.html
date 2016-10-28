@@ -20,8 +20,10 @@
 		<script>
 			mui.plusReady(function(){
 				var pageData = plus.webview.currentWebview().pageData;
-				document.querySelector('.mui-title').innerHTML = pageData.title;
+
 				pageData.id = pageData.id.replace('st_modules_','');
+				document.querySelector('.mui-title').innerHTML = pageData.title;
+
 //				console.log(JSON.stringify(pageData))
 				mui.init({
 					subpages: [pageData]

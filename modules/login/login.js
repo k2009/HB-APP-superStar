@@ -11,51 +11,54 @@ define(function(require, exports, module) {
 	var sys = {
 		init: function($) {
 			$.plusReady(function() {
-
-
-				// 
-				    plus.push.addEventListener( "receive", function( msg ) {
-				    	plus.runtime.setBadgeNumber(0);
-				        if ( msg.aps ) {  // Apple APNS message
-				            // alert(JSON.stringify(msg))
-				        } else {
-				            // alert(JSON.stringify(msg))
-				        }
-				        plus.push.clear()
-				    }, false );
-				// 
-
-
-
-
-				var oauth = $storage('oauth_weibo');
-				sys.app_update();
-				host_domain = plus.storage.getItem("domain") || host_domain;
-				if (oauth) {
-					// if(oauth.outTime<new Date().getTime()){
-					//     console.log('执行后补微博登录!')
-					// // sys.fn_oauth();
-					// }
-					console.log(JSON.stringify(oauth))
-					sys.app_login(oauth)
-					// sys.fn_next();
-				} else {
-					$('.fakeloader')[0].remove();
-				}
-				sys.event();
-				//测试代码,用于获得权限
-				var $sq = require('kit/util/deBug-setCookie');
-				// $sq('http://30681.biz.dev.social-touch.com');
-				if (!plus.storage.getItem("domain")) plus.storage.setItem('domain', host_domain)
-
+				console.log('请求路由表')
 				$.ajax({
-					url: '_www/route/route.json',
+					url: '../../route/route.json',
 					type: "get",
 					dataType: "json",
 					success: function(d) {
 						plus.storage.setItem('route', JSON.stringify(d));
+
+						var oauth = $storage('oauth_weibo');
+						sys.app_update();
+						host_domain = plus.storage.getItem("domain") || host_domain;
+						if (oauth) {
+							// if(oauth.outTime<new Date().getTime()){
+							//     console.log('执行后补微博登录!')
+							// // sys.fn_oauth();
+							// }
+							console.log(JSON.stringify(oauth))
+							sys.app_login(oauth)
+							// sys.fn_next();
+						} else {
+							$('.fakeloader')[0].remove();
+						}
+						sys.event();
+						//测试代码,用于获得权限
+						var $sq = require('kit/util/deBug-setCookie');
+						// $sq('http://30681.biz.dev.social-touch.com');
+						if (!plus.storage.getItem("domain")) plus.storage.setItem('domain', host_domain)
+					},
+					error:function(e){
+						console.log(JSON.stringify(e))
 					}
 				})
+				// 
+			    plus.push.addEventListener( "receive", function( msg ) {
+			    	plus.runtime.setBadgeNumber(0);
+			        if ( msg.aps ) {  // Apple APNS message
+			            // alert(JSON.stringify(msg))
+			        } else {
+			            // alert(JSON.stringify(msg))
+			        }
+			        plus.push.clear()
+			    }, false );
+				// 
+
+
+
+
+
 			})
 		},
 		app_login:function(oauth){

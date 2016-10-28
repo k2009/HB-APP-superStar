@@ -94,6 +94,7 @@ define(function(require, exports, module) {
                 $(window).scrollTop(0);
                 $('#'+sys.id).html('<div class="fakeloader"><div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div><div class="text">数据加载中...</div></div>');
                 if(e.detail.ajax_data)sys.ajax_data = e.detail.ajax_data;
+                sys.fn_index.destroy&&sys.fn_index.destroy();
                 sys.storage_init();
             });
         },

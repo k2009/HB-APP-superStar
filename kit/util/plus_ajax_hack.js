@@ -10,8 +10,8 @@ mui.plusReady(function(){
 		if(!e)return;
 		if(!e.url)return;
     		// console.log("开始执行劫持函数")
-        if(e.url.indexOf("http")<0&&e.data){
-            url = e.url = plus.storage.getItem("domain")+e.url;
+        if( ((e.url.indexOf("http")<0)&&e.data)||(e.url[0]=='/')  ){
+            url = e.url = (plus.storage.getItem("domain")+e.url);
         }
         e.error = function(e){
         	if(e.readyState == 4){

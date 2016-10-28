@@ -61,6 +61,9 @@ define(function(require, exports, module) {
 			url = decodeURIComponent(url);
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
+
+			var index_route = JSON.parse(plus.storage.getItem("index_route"))
+
 			if (!data) {
 				sys.jumpToWebView(url,title);
 				return;
