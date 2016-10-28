@@ -1974,7 +1974,7 @@
                 "modules": [
                     {
                         "id": "st_modules_h5_nicenameTest",
-                        "title": "昵称测试首页",
+                        "title": "昵称测试",
                         "data": {
                             "platform": "weibo还是weixin",
                             "jssdk": {

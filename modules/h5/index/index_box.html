@@ -112,7 +112,7 @@ mui.plusReady(function() {
 	var timer = null;
 	var t = 0;
 	var speed = mui.os.ios?100:400;
-	$('.tabbar').on('tap','a',function(){
+	function getViewChange(){
 
 		if(!mui.os.ios){
 			if( (mui.now()-t)<400 ){
@@ -163,10 +163,22 @@ mui.plusReady(function() {
 
 		}
 		return false;
+	}
+	$('.tabbar').on('tap','a',getViewChange)
+
+
+	window.addEventListener('viewShow',function(e){
+
+    	var viewID = e.detail.viewID;
+    	for (i = 0; i < webview_ids.length; i++) {
+    		if(webview_ids[i] == viewID){
+    			$a.eq(i).addClass('current');
+    			getViewChange.call($a.eq(i));
+    			return;
+    		}
+    	}
+
 	})
-
-
-
     window.addEventListener('viewChange',function(e){
 
 		if( (mui.now()-t)<1000 ){

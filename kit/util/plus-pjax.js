@@ -62,7 +62,6 @@ define(function(require, exports, module) {
 			var d = $urlToJson(url);
 			var data = sys.getLocalPath(d.url);
 
-			var index_route = JSON.parse(plus.storage.getItem("index_route"))
 
 			if (!data) {
 				sys.jumpToWebView(url,title);
@@ -106,20 +105,18 @@ define(function(require, exports, module) {
 			};
 
 			//数据重载来规避多页面打开的事儿
-			if ((data.module_id == "st_modules_h5_home")||(data.module_id == "st_modules_start_home")) {
-				mui.openWindow({
-					id: 'index_box.html',
-					url: '_www/modules/h5/index/index_box.html',
-					// styles: {
-					//     top: "0px",
-					//     bottom: '56px', //新页面底部位置
-					// },
-					show: {
-						autoShow: true, //页面loaded事件发生后自动显示，默认为true
-						aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+
+			var index_route = JSON.parse(plus.storage.getItem("index_route"));
+			for (var i = 0; i < index_route.length; i++) {
+				if(index_route[i] == data.module_id){
+					var ws = plus.webview.getWebviewById('index_box.html');
+					if(ws){
+						ws.show();
+						mui.fire(ws, 'viewShow', {
+							pageID: data.module_id
+						}); //数据重载方法,可多页面调用
 					}
-				});
-				return;
+				}
 			}
 			var other_this_view = plus.webview.getWebviewById(data.module_id.replace('st_modules_', ''));
 			if (other_this_view && (!$.isEmptyObject(d.data))) {
