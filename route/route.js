@@ -1,4 +1,4 @@
-[
+var route = [
     {
         "path": "/castle/wap/course/course-list",
         "data": {
@@ -480,7 +480,8 @@
                     {
                         "id": "st_modules_h5_lessionContent",
                         "title": "课程详情",
-                        "loading_show": true,
+                        // "loading_show": true,
+                        "share": true,
                         "data": {
                             "name": "标题加载中...",
                             "content": "加载中...",
@@ -1160,7 +1161,7 @@
                 "modules": [
                     {
                         "id": "st_modules_h5_businessIndex",
-                        "title": "电商属性测试首页",
+                        "title": "电商属性测试",
                         "data": {
                             "platform": "weibo还是weixin",
                             "jssdk": {
@@ -1447,7 +1448,7 @@
                 "modules": [
                     {
                         "id": "st_modules_h5_businessWait",
-                        "title": "电商属性测试-等待界面",
+                        "title": "电商属性测试",
                         "data": {
                             "platform": "weibo还是weixin",
                             "jssdk": {
@@ -2900,6 +2901,7 @@
                     {
                         "id": "st_modules_h5_newsDetail",
                         "title": "新闻详情",
+                        "share": true,
                         "data": {
                             "platform": "weibo还是weixin",
                             "jssdk": {
@@ -2918,7 +2920,8 @@
                         "css": [
                             "modules/h5/newsDetail/css/index.css"
                         ],
-                        "script": "modules/h5/newsDetail/js/index.js"
+                        "script": "modules/h5/newsDetail/js/index.js",
+                        "app_script": "modules/h5/newsDetail/app_js/index.js"
                     }
                 ]
             }

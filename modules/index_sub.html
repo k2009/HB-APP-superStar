@@ -51,7 +51,7 @@
 			display: none;
 		}
 		body{
-			background: #fff;
+			/*background: #fff;*/
 			padding-bottom: 0px !important;
 			margin-bottom: 0px !important;
 		}
@@ -70,13 +70,18 @@
 				}
 			})
 			mui.plusReady(function(){
+				plus.webview.currentWebview().setStyle({
+					popGesture: 'none'
+				}); //禁止侧滑关闭
+
+				plus.key.addEventListener("backbutton",function(){
+					return false;
+				});
 				var this_view,pageData,ajax_url,ajax_data,data;
 
             	var v = plus.storage.getItem("appVersion")
 
-						plus.webview.currentWebview().setStyle({
-							popGesture: 'none'
-						}); //禁止侧滑关闭
+
 						// plus.key.addEventListener("backbutton",function(){
 						// 	return false;
 						// });

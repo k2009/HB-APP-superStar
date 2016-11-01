@@ -102,11 +102,11 @@ body {
 
 /*$chrome-color:  rgba(247,247,247,.98) !default;*/
 body {
-  background-color: #f6f6f6;
+  background-color: #f2f2f2;
   color: #808080; }
 
 .mui-content {
-  background-color: #f6f6f6;
+  background-color: #f2f2f2;
   -webkit-overflow-scrolling: touch; }
 
 a {
@@ -218,7 +218,7 @@ select.mui-btn {
   color: #808080; }
 
 .mui-table-view, .mui-popover .mui-table-view {
-  background-color: #f6f6f6; }
+  background-color: #f2f2f2; }
 
 .mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after {
   color: #ccc; }
@@ -231,7 +231,7 @@ select.mui-btn {
 
 .mui-table-view-divider {
   color: #808080;
-  background-color: #f6f6f6; }
+  background-color: #f2f2f2; }
 
 .mui-table-view-divider:before, .mui-table-view-divider:after {
   background-color: #ccc; }
@@ -268,12 +268,12 @@ select.mui-btn {
   border-color: #ccc; }
 
 .mui-popover {
-  background-color: #f6f6f6;
+  background-color: #f2f2f2;
   -webkit-box-shadow: 0 0 15px rgba(218, 174, 99, 0.7);
   box-shadow: 0 0 15px rgba(218, 174, 99, 0.7); }
 
 .mui-popover .mui-popover-arrow:after {
-  background-color: #f6f6f6; }
+  background-color: #f2f2f2; }
 
 .mui-popover .mui-table-view .mui-table-view-cell:first-child, .mui-popover .mui-table-view .mui-table-view-cell:first-child > a:not(.mui-btn) {
   color: #808080; }
@@ -294,10 +294,10 @@ select.mui-btn {
 
 .mui-grid-view.mui-grid-9 {
   background-color: #f2f2f2;
-  border-color: #f6f6f6; }
+  border-color: #f2f2f2; }
 
 .mui-grid-view.mui-grid-9 .mui-table-view-cell {
-  border-color: #f6f6f6; }
+  border-color: #f2f2f2; }
 
 .mui-switch {
   border-color: #ccc; }
@@ -344,7 +344,7 @@ select.mui-btn {
   background-color: #f0ad4e; }
 
 .mui-input-range .mui-tooltip {
-  background-color: #f6f6f6;
+  background-color: #f2f2f2;
   border: 1px solid #daae63; }
 
 .mui-input-range input[type=range]::-webkit-slider-thumb {
@@ -415,7 +415,7 @@ select.mui-btn {
   color: white; }
 
 header.mui-bar {
-  background: #f6f6f6;
+  background: #f2f2f2;
   border: none;
   box-shadow: none; }
 

@@ -15,20 +15,36 @@
 		<header class="mui-bar mui-bar-nav" style="display: block;">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 			<h1 class="mui-title">title</h1>
+			<a class="mui-icon mui-icon-redo mui-pull-right" style="display: none"></a>
 		</header>
 		<script src="../libs/mui/js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			mui.plusReady(function(){
 				var pageData = plus.webview.currentWebview().pageData;
+				var share_tmp = '';
 
 				pageData.id = pageData.id.replace('st_modules_','');
 				document.querySelector('.mui-title').innerHTML = pageData.title;
+				console.log(JSON.stringify(pageData.extras.pageData))
+				if(pageData.extras.pageData.share){
+					+function($){
 
+						document.querySelector('.mui-pull-right').style.display = 'inline-block';
+
+						$(document).on('tap', '.mui-pull-right', function(event) {
+							var ws = plus.webview.getWebviewById(pageData.id);
+							
+							mui.fire(ws, 'share', {
+								share:true
+							}); //数据重载方法,可多页面调用
+						});
+
+					}(mui)
+				}
 //				console.log(JSON.stringify(pageData))
 				mui.init({
 					subpages: [pageData]
 				})
-
 			})
 		</script>
 	</body>

@@ -288,7 +288,8 @@
 					"kit/util/plus-netChange.js",
 					"modules/login/login.css",
 					"libs/seajs/app_3.0/sea.js",
-					"route/route.json"
+					"route/route.json",
+					"route/route.js"
 				],
 				"refer": [
 					"modules/index/index.html",
@@ -704,7 +705,16 @@
 					"libs/jquery/plugins/jquery.swipe.min.js",
 					"modules/h5/newsDetail/js/index.js",
 					"modules/h5/newsDetail/template/index.html",
-					"modules/h5/newsDetail/css/index.css"
+					"modules/h5/newsDetail/css/index.css",
+					"common/share/tips/images/tips.png",
+					"common/share/tips/css/index.css",
+					"kit/extra/queryToJson.js",
+					"modules/start/join/images/logo.png",
+					"modules/start/join/css/index.css",
+					"modules/start/join/images/joinIcon.png",
+					"modules/start/join/template/index.html",
+					"modules/start/join/js/index.js",
+					"modules/h5/newsDetail/app_js/index.js"
 				],
 				"refer": [
 					"modules/index.html"

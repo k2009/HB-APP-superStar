@@ -5,6 +5,7 @@ define(function(require, exports, module) {
 	var $oauth = require("kit/util/plus-oauth"); //第三方登录模块
 	var $upDate = require("kit/util/plus-update"); //应用更新模块
 	var $netChange = require("kit/util/plus-netChange"); //网络监测模块
+	require("route/route.js"); //网络监测模块
 
 	var host_domain = 'http://91hong.com.cn';
 	var loginURL = "/castle/app/v1/user/wblogin"
@@ -12,37 +13,29 @@ define(function(require, exports, module) {
 		init: function($) {
 			$.plusReady(function() {
 				console.log('请求路由表')
-				$.ajax({
-					url: '../../route/route.json',
-					type: "get",
-					dataType: "json",
-					success: function(d) {
-						plus.storage.setItem('route', JSON.stringify(d));
+				plus.storage.setItem('route', JSON.stringify(route));
 
-						var oauth = $storage('oauth_weibo');
-						sys.app_update();
-						host_domain = plus.storage.getItem("domain") || host_domain;
-						if (oauth) {
-							// if(oauth.outTime<new Date().getTime()){
-							//     console.log('执行后补微博登录!')
-							// // sys.fn_oauth();
-							// }
-							console.log(JSON.stringify(oauth))
-							sys.app_login(oauth)
-							// sys.fn_next();
-						} else {
-							$('.fakeloader')[0].remove();
-						}
-						sys.event();
-						//测试代码,用于获得权限
-						var $sq = require('kit/util/deBug-setCookie');
-						// $sq('http://30681.biz.dev.social-touch.com');
-						if (!plus.storage.getItem("domain")) plus.storage.setItem('domain', host_domain)
-					},
-					error:function(e){
-						console.log(JSON.stringify(e))
-					}
-				})
+				var oauth = $storage('oauth_weibo');
+				sys.app_update();
+				host_domain = plus.storage.getItem("domain") || host_domain;
+				if (oauth) {
+					// if(oauth.outTime<new Date().getTime()){
+					//     console.log('执行后补微博登录!')
+					// // sys.fn_oauth();
+					// }
+					console.log(JSON.stringify(oauth))
+					sys.app_login(oauth)
+						// sys.fn_next();
+				} else {
+					$('.fakeloader')[0].remove();
+				}
+				sys.event();
+
+				//测试代码,用于获得权限
+				var $sq = require('kit/util/deBug-setCookie');
+				// $sq('http://30681.biz.dev.social-touch.com');
+
+				if (!plus.storage.getItem("domain")) plus.storage.setItem('domain', host_domain)
 				// 
 			    plus.push.addEventListener( "receive", function( msg ) {
 			    	plus.runtime.setBadgeNumber(0);
@@ -54,12 +47,8 @@ define(function(require, exports, module) {
 			        plus.push.clear()
 			    }, false );
 				// 
-
-
-
-
-
 			})
+
 		},
 		app_login:function(oauth){
 

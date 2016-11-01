@@ -23,8 +23,9 @@ define(function(require, exports, module) {
             var random = Math.random();
             return {
                 title: title[ Math.floor( random*title.length ) ],
-                ico: ico[ Math.floor( random*title.length ) ]
+                ico: ico
             }
+
         }
     };
 
@@ -203,15 +204,10 @@ define(function(require, exports, module) {
             waitHandle(opts.query_url);
             return;
         }
-
+        
         score( opts );//得分轴
 
-        // 延迟加载微信分享的 tips
-        lazyload.load("common/share/tips/js/index", function(dialog){
-            dialogTips = new dialog({
-                title: '好了，现在招呼你的朋友帮你提提意见!'
-            });
-        });
+        $('.mui-content').css('padding-bottom','0.21333rem').html()
 
         seajs.use('http://' + opts._extra.domain + '/libs/echarts/3.1.10/echarts.min.js',function(weixinSDK){
             if( !opts.score ){
@@ -230,12 +226,20 @@ define(function(require, exports, module) {
             testDataChart( opts.chart.x, opts.chart.y );
         }).on('touchend', '#shareTips', function(){
             // 分享接口
+        console.log(JSON.stringify({
+            msg:{
+                href : share_url,
+                title : runShare.titleIco().title,
+                content : runShare.titleIco().title,
+                thumbs : runShare.titleIco().ico
+            }
+        }))
             $share({
                 msg:{
                     href : share_url,
                     title : runShare.titleIco().title,
                     content : runShare.titleIco().title,
-                    thumbs : [runShare.titleIco().ico]
+                    thumbs : runShare.titleIco().ico
                 }
             });
         }).on('touchend', '#retry', function(){

@@ -87,6 +87,13 @@
 		
 		<script>
 			mui.plusReady(function(){
+			plus.webview.currentWebview().setStyle({
+				popGesture: 'none'
+			}); //禁止侧滑关闭
+
+			plus.key.addEventListener("backbutton",function(){
+				return false;
+			});
 				mui.back = function(){
 				}
             	var v = plus.storage.getItem("appVersion")

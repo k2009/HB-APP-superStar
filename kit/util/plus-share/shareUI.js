@@ -11,15 +11,16 @@ define(function(require, exports, module) {
     var reg = /https?\:\/\//i;
     var sys = {
         init:function(){
+            if($('.plus-bottom-share').length){
+                $('.plus-bottom-share').remove();
+            }
             sys.htmlInit();
             sys.getShares();
             return sys.share;
         },
         htmlInit:function(){
-            var $box = sys.$box = $($tmp);
-            sys.hide();
+            var $box = sys.$box = $($($tmp).addClass('plus-share-hide'));
             $('body').append($box);
-
             sys.event();
         },
         getShares:function(){
@@ -59,9 +60,15 @@ define(function(require, exports, module) {
         },
 
         shareMessage:function(share, ex, msg, success, error) {
-            if (!ex && (!reg.test(msg.content))) {
-                console.log('检测到是微博分享,增加url')
-                msg.content += msg.href;
+            if ( (!ex) && (!reg.test(msg.content)) ) {
+                msg.href = decodeURIComponent(msg.href);
+                if(mui.os.ios){
+                    console.log('检测到是微博分享,增加url')
+                    msg.content = msg.title;
+                    msg.content += msg.href;
+                    msg.title = null;
+                    msg.href = null;
+                }
             }
             mui.toast("分享到\"" + share.description + "\"中...请稍后");
 
@@ -77,8 +84,12 @@ define(function(require, exports, module) {
                 mui.toast("分享到\"" + share.description + "\"成功！ ");
             }, function(e) {
                 if(error)error(msg);
-                mui.toast("分享到\"" + share.description + "\"失败 ");
-                console.log(JSON.stringify(e))
+                if(e.code == -100){
+                    console.log("用户取消发送")
+                }else{
+                    mui.toast("分享到\"" + share.description + "\"失败 ");    
+                    console.log(JSON.stringify(e));
+                }
             });
         },
         fn:{
@@ -107,12 +118,16 @@ define(function(require, exports, module) {
             $(document).find('input,textarea').each(function(){
                 this.blur();
             });
+            if(!mui.os.ios){
+                sys.$box&&sys.$box.remove();
+            }
             if(!$('.plus-bottom-share').length){
                 sys.htmlInit();
             }
             sys.shareConfig = config;
-
-            sys.show();
+            setTimeout(function(){
+                sys.show();
+            },0)
         }
     }
 

@@ -31,7 +31,6 @@ mui.plusReady(function() {
 		return false;
 	});
 
-
 	var webview_ids = [
 		"st_modules_start_home",
 		"st_modules_h5_lessionList", //学习
@@ -113,16 +112,16 @@ mui.plusReady(function() {
 	var t = 0;
 	var speed = mui.os.ios?100:400;
 	function getViewChange(){
-
+		var TimeDelay=50;
 		if(!mui.os.ios){
-			if( (mui.now()-t)<400 ){
-				t = mui.now()
-				return;
-			}
-
-			clearTimeout(timer)
-
+			TimeDelay=400
 		}
+		if( (mui.now()-t)<TimeDelay ){
+			t = mui.now()
+			return;
+		}
+
+		clearTimeout(timer)
 		t = mui.now()
 		var oldIndex = $a.index($('.tabbar-item.current'));
 		
@@ -203,7 +202,7 @@ mui.plusReady(function() {
 
 })
 		</script>
-	<body>
+	<body style="background: #f2f2f2">
 
 		<style type="text/css">
 			.tabbar .tabbar-item ,nav.tabbar{

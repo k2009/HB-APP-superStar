@@ -1,9 +1,7 @@
 define(function(require, exports, module) {
-    var $share = require('modules/h5/lessionContent/js/share');
     var $body = $(document.body);
-    var lazyload = require("kit/util/asyncModule");
-    var header = require('common/slogon/js/index');
     var ID = "#st_modules_h5_lessionContent";
+    var $shareUI = require("kit/util/plus-share/shareUI"); //分享
     var initData;
     var finishTip;
 
@@ -76,6 +74,7 @@ define(function(require, exports, module) {
     }
 
     function init(opts) {
+
         bindEvent();
         $("#div1").remove();
         $body.on('tap','a[action=stop]',stop);
@@ -86,14 +85,18 @@ define(function(require, exports, module) {
         })
         $('#finish').bind('tap',showDialog);
         initData=opts;
-        $share.init(opts);
+        window.addEventListener('share',function(e){
+            var TITLE='想不想在人群中脱颖而出，成为坐拥百万粉丝的红人？快快加入网红城堡，众多业内大佬带你开启圆梦之旅~~';
 
-        // 公共头部
-        header.init();          
-        lazyload.load("common/tabbar/js/index", function(dialog){
-            dialog.setData(opts.tabbar);
-            dialog.setActiveTab(1);
-        });       
+            $shareUI({
+                msg:{
+                    href : (plus.storage.getItem("domain")+ opts.share_url),
+                    title : opts.name,
+                    content : TITLE,
+                    thumbs : ['http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg']
+                }
+            });
+        });
     }
 
     function destroy(opts) {
@@ -101,7 +104,6 @@ define(function(require, exports, module) {
         $body.unbind();
         $('#finish').unbind();
         $share.destroy();
-        header.destroy();
         if(finishTip){
             finishTip.hide();
         }
