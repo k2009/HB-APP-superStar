@@ -4,6 +4,7 @@
 define(function(require, exports, module) {
 	"use strict";
 	var $storage = require("kit/util/plus-storage"); //本地存储模块
+	var $fn = require("modules/h5/index/js/index.js"); //fn
 	mui.init({
 		swipeBack:false,
 		keyEventBind: {
@@ -16,6 +17,7 @@ define(function(require, exports, module) {
 	    var cfg = {
 	        id:'st_modules_h5_home',
 	        tmp:tmp,
+	        fn:$fn,
 	        url:plus.storage.getItem('domain')+'/castle/wap/user/index?pjax=1',
 	        data:{
 		        'st_modules_h5_home': {

@@ -21,7 +21,7 @@
 	<#if (data.audio != null && data.audio != "")>
 	<div class="audio">
 		<audio controls autoplay>
-	       <source src="${data.audio}" type="audio/wav" />
+	       <source src="${data.audio}" type="audio/mp3" />
 	       Your browser does not support the &lt;audio&gt; element.
 		</audio>
 	</div>
@@ -30,13 +30,13 @@
 </div>
 <div  class="tc_text">
 	<#if (data.is_test!=0)>
-		<a href="${data.next_url}" class="mui-btn tc_go">				
+		<a href="${data.next_url}" class="mui-btn mui-btn-350 tc_go">				
 			<#if (data.is_test==2)>查看课后作业<#else>我学完了,去做作业</#if>
 		</a>
 		<div class="bottomNotice">学完每节课程，成长值<span style="color:#ea5504;">+10</span>;完成每节作业，成长值<span style="color:#ea5504;">+20</span></div>
 	<#else>
 		<!-- <a href="${data.prev_url}" class="mui-btn tc_go">	 -->			
-		<a href="javascript:;" class="mui-btn tc_go" id="finish">	
+		<a href="javascript:;" class="mui-btn mui-btn-350 tc_go" id="finish">	
 			我学完了
 		</a>
 		<div class="bottomNotice">学完每节课程，成长值<span style="color:#ea5504;">+10</span></div>

@@ -7,7 +7,7 @@
 	"id": "com.91hong.wanghong",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "网红城堡",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.1.5",/*应用版本名称*/
+		"name": "1.1.6.1",/*应用版本名称*/
 		"code": ""
 	},
 	"description": "",/*应用描述信息*/
@@ -289,7 +289,9 @@
 					"modules/login/login.css",
 					"libs/seajs/app_3.0/sea.js",
 					"route/route.json",
-					"route/route.js"
+					"route/route.js",
+					"modules/login/img/gsbg.png",
+					"modules/login/img/bg.png"
 				],
 				"refer": [
 					"modules/index/index.html",
@@ -350,7 +352,8 @@
 					"modules/h5/index/images/testBg.jpg",
 					"kit/util/plus-pjax.js",
 					"modules/h5/index/images/testIcon.png",
-					"modules/h5/index/images/helperIcon.png"
+					"modules/h5/index/images/helperIcon.png",
+					"modules/start/common/images/rightArrow.png"
 				],
 				"refer": [
 					"modules/h5/weiboTags/weiboTags.html",
@@ -714,7 +717,20 @@
 					"modules/start/join/images/joinIcon.png",
 					"modules/start/join/template/index.html",
 					"modules/start/join/js/index.js",
-					"modules/h5/newsDetail/app_js/index.js"
+					"modules/h5/newsDetail/app_js/index.js",
+					"modules/start/join/images/submitIcon.png",
+					"modules/testing/business/css/index.css",
+					"modules/testing/business/template/index.html",
+					"modules/testing/business/js/index.js",
+					"modules/testing/nickname/js/test.js",
+					"modules/testing/nickname/css/test.css",
+					"modules/testing/nickname/template/test.html",
+					"modules/testing/business/images/leaf.png",
+					"modules/testing/business/images/orangeRight.png",
+					"modules/testing/business/css/result.css",
+					"modules/testing/business/template/result.html",
+					"modules/testing/business/app_js/result.js",
+					"modules/testing/business/images/share_ico_2.jpg"
 				],
 				"refer": [
 					"modules/index.html"
@@ -767,7 +783,8 @@
 					"kit/util/plus-storage.js",
 					"libs/mui/js/mui.js",
 					"libs/mui/css/mui.min.css",
-					"libs/jquery/3.0.0/jquery-3.0.0.js"
+					"libs/jquery/3.0.0/jquery-3.0.0.js",
+					"modules/quickened/index/images/ico_tips.png"
 				],
 				"refer": [
 					"modules/index.html"

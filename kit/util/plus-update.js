@@ -3,7 +3,6 @@
 
 define(function(require, exports, module){
     "use strict";
-	var $netChange=require("kit/util/plus-netChange");		//网络监测模块
 	var $storage = require("kit/util/plus-storage");		//本地存储模块
 	var sys = {
 		silent:true,								// 是否静默检查
@@ -105,11 +104,12 @@ define(function(require, exports, module){
 		installWgt:function(path){
 		    sys.waiting("安装wgt文件...");
 		    plus.runtime.install(path,{},function(){
+		    	sys.waiting("安装成功!");
 		        plus.nativeUI.closeWaiting();
-		        alert('应用资源更新完成!退出后重新打开即可使用最新版本啦');
-		        setTimeout(function(){
-		        	plus.runtime.restart();
-		        },3000)
+//		        alert('应用资源更新完成!退出后重新打开即可使用最新版本啦');
+//		        setTimeout(function(){
+//		        	plus.runtime.restart();
+//		        },3000)
 		    },function(e){
 		        sys.alert("安装wgt文件失败["+e.code+"]："+e.message);
 		    });

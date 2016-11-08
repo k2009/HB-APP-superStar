@@ -1,6 +1,12 @@
 <div class="head">
+	<#if (data.mainpage_banners.url != null && data.mainpage_banners.url != "")>
+	<a href="${data.mainpage_banners.url}">
+	</#if>
 	<img src="${data.mainpage_banners.banner}" alt="" class="background">
 	<div class="playButton" style="display: none;"></div>
+	<#if (data.mainpage_banners.url != "")>
+	</a>
+	</#if>
 </div>
 
 <ul class="detailBox">

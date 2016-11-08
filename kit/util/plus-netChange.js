@@ -8,10 +8,6 @@ define(function(require, exports, module){
 			var nt = plus.networkinfo.getCurrentType();
 			var type = 0;
 			switch ( nt ) {
-				case plus.networkinfo.CONNECTION_ETHERNET:
-				case plus.networkinfo.CONNECTION_WIFI:
-				type = 1; //wifi
-				break; 
 				case plus.networkinfo.CONNECTION_CELL2G:
 				type = 2; //蜂窝2G
 				break; 
@@ -21,9 +17,18 @@ define(function(require, exports, module){
 				case plus.networkinfo.CONNECTION_CELL4G:
 				type = 4; //蜂窝4G
 				break; 
+				case plus.networkinfo.CONNECTION_WIFI:
+				type = 5; //wifi
+				break; 
+				case plus.networkinfo.CONNECTION_ETHERNET:
+				type = 6; //以太网
+				break; 
 				default:
 				type = 0; //无网络
 				break;
+			}
+			if(mui.os.ios&&(type==2)){
+				type = 7	//ios只能判断是否为蜂窝
 			}
 			return type;
 		},

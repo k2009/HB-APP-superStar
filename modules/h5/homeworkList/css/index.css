@@ -107,13 +107,13 @@ body {
   margin-top: 0.128rem;
   color: #919191; }
   .homeworkList li h6 {
-    font-size: 0.13653rem;
+    font-size: 0.14507rem;
     line-height: 0.37547rem;
     border-bottom: 1px solid #e8e8e8; }
     .homeworkList li h6 a {
       display: block;
       padding: 0 0.128rem;
-      color: #1c1c1c;
+      color: #1a1a1a;
       position: relative; }
     .homeworkList li h6 a:after {
       font-family: Muiicons;
@@ -132,11 +132,16 @@ body {
   .homeworkList li p {
     line-height: 0.17067rem;
     padding: 0.03413rem 0.128rem;
+    font-size: 0.13653rem;
+    color: #646464; }
+  .homeworkList li .p2 {
+    line-height: 0.17067rem;
+    padding: 0.03413rem 0.128rem;
     font-size: 0.11947rem; }
   .homeworkList li .bottom {
     font-size: 0.1024rem;
     text-align: right;
-    color: #bfbfbf; }
+    color: #a3a2a2; }
     .homeworkList li .bottom span {
       float: left; }
 

@@ -168,7 +168,8 @@ body {
       font-weight: normal;
       margin: 0;
       font-size: 0.11093rem;
-      line-height: 0.21333rem; }
+      line-height: 0.21333rem;
+      padding: 0; }
     .owner .info p {
       color: #bfbfbf; }
 

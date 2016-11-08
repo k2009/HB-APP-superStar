@@ -15,7 +15,6 @@ define(function(require, exports, module) {
         // body...
 	    // 延迟加载 tabbar
        // opts.desc && setDescribe(opts.desc);
-       console.log(JSON.stringify(opts))
         window.addEventListener('share',function(e){
             var TITLE='想不想在人群中脱颖而出，成为坐拥百万粉丝的红人？快快加入网红城堡，众多业内大佬带你开启圆梦之旅~~';
             $shareUI({
@@ -23,7 +22,7 @@ define(function(require, exports, module) {
                     href : window.pageURL,
                     title : opts.title,
                     content : TITLE,
-                    thumbs : [(opts.image||'http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg')]
+                    thumbs : [(opts.image||'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg')]
                 }
             });
         });

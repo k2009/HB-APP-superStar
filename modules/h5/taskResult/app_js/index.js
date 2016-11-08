@@ -29,8 +29,8 @@ define(function(require, exports, module) {
                         title: runImage.title(),
                         desc: runImage.title(),
                         content: runImage.title(),
-                        imgUrl: 'http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg', // 分享图标
-                        thumbs: ['http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg']
+                        imgUrl: 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg', // 分享图标
+                        thumbs: ['http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg']
                     },
                     success: function(e) {
                         window.APP_construction.urlJump(msg.data.next_url)

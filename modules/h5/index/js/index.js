@@ -1,4 +1,5 @@
 define(function(require, exports, module) {
+    var $share = require('modules/start/home/js/share');
 	var jssdk = require("common/share/jssdk");
 	require('libs/jquery/plugins/jquery.swipe.min');
     var $body = $(document.body);
@@ -9,6 +10,7 @@ define(function(require, exports, module) {
     var aniInterval;
     var swipeLock = false;
     var tabbar;
+    var picTimer = null;
 
     var initSwipe=function(){
         var pics=$('#pics');
@@ -53,10 +55,12 @@ define(function(require, exports, module) {
     }
 
     function init(opts) {
+        opts.share_url=opts.share_url || '/castle/wap/user/index';
+        $share.init(opts);
 
         var platform = opts.platform;
 
-        setTimeout(function(){
+        picTimer = setTimeout(function(){
             initPics();
             initSwipe();
         },1000);
@@ -79,7 +83,9 @@ define(function(require, exports, module) {
 
 	function destroy(opts) {
         pindex = 0;
+        $share.destroy();
         clearInterval(aniInterval);
+        clearInterval(picTimer);
         swipeLock = false;
         if(tabbar){
             tabbar.destroy();

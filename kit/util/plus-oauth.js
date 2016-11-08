@@ -32,6 +32,7 @@ define(function(require, exports, module){
 				if(opt.type == 'logout'){
                     console.log("检测为登出模式");
 					s.logout(opt.success,opt.error)
+					console.log(JSON.stringify(s.logout))
 					return
 				}
 				if (!s.authResult) {

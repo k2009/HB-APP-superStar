@@ -3,6 +3,7 @@ define(function(require, exports, module) {
     var $body=$(document.body);
     var lazyload = require("kit/util/asyncModule");
     var header = require('common/slogon/js/index');
+    var tabbar;
 
     var initDifficulty=function (argument) {
         $('[difficulty]').each(function (index,item) {

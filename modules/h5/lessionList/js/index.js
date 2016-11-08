@@ -145,6 +145,22 @@ define(function(require, exports, module) {
 	//         scrollTop:top+'px'
 	//     })
 	// }
+	// 
+	function changeTab(){
+		var tabId = $(this).attr("action-data");
+		switch(tabId) {
+			case "1":
+				$(".lesson-list").show();
+				$(".tutors").hide();
+				break;
+			case "2":
+				$(".lesson-list").hide();
+				$(".tutors").show();
+				break;
+		}
+		$(".tab-item").removeClass("current");
+		$(this).addClass("current");
+	}
 
 	function init(opts) {
 		// if(opts.is_start){    
@@ -170,6 +186,7 @@ define(function(require, exports, module) {
 		// $body.delegate('[action=leftDaysHelp]','tap',leftDaysHelp);
 		$body.delegate('[action=forbidden]','tap',forbidden);
 		$body.delegate('[action=empty]','tap',empty);
+		$body.delegate('[action=tab]','tap', changeTab);
 		lazyload.load("common/tabbar/js/index", function(ret){
 			tabbar = ret;
 			tabbar.setData(opts.tabbar);
@@ -186,6 +203,7 @@ define(function(require, exports, module) {
 		// $body.undelegate('[action=leftDaysHelp]','tap');
 		$body.undelegate('[action=forbidden]','tap');
 		$body.undelegate('[action=empty]','tap',empty);
+		$body.undelegate('[action=tab]','tap', changeTab);
 		$('.mui-popup,.mui-popup-backdrop').remove();
 		header.destroy(); 
 		if(tabbar){

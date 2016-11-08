@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="../../../common/tabbar/css/index.css">
 		<script src="../../../libs/mui/js/mui.min.js"></script>
 		<script src="../../../libs/jquery/3.0.0/jquery-3.0.0.js"></script>
+		<!-- <script src="html5plus://ready"/> -->
 		<!-- 初始化加载 公共JS结束 --> 
 
 		
@@ -112,7 +113,7 @@ mui.plusReady(function() {
 	var t = 0;
 	var speed = mui.os.ios?100:400;
 	function getViewChange(){
-		var TimeDelay=50;
+		var TimeDelay=100;
 		if(!mui.os.ios){
 			TimeDelay=400
 		}
@@ -178,17 +179,30 @@ mui.plusReady(function() {
     	}
 
 	})
+	plus.webview.currentWebview().addEventListener( "show", function(e){
+		setTimeout(function(){
+			if( (mui.now()-t)<1000 ){
+				return;
+			}else{
+				webviews[0].show();
+    			$a.eq(0).addClass('current')
+			}
+
+		},400)
+	}, false );
     window.addEventListener('viewChange',function(e){
 
 		if( (mui.now()-t)<1000 ){
 			return;
 		}
-
+		t = mui.now();
     	var viewID = e.detail.viewID;
 		$a.removeClass('current')
 		for (var i = 0; i < webviews.length; i++) {
 			if(webviews[i].id != viewID){
 				webviews[i].hide();
+			}else{
+				webviews[i].show();
 			}
 		}
     	for (i = 0; i < webview_ids.length; i++) {
@@ -207,6 +221,12 @@ mui.plusReady(function() {
 		<style type="text/css">
 			.tabbar .tabbar-item ,nav.tabbar{
 			    height: 48px !important;
+			}
+			/**{ pointer-events: none; }*/
+			.tabbar{
+				/*-webkit-user-select: none !important;
+				user-select: none !important;
+				pointer-events: none;*/
 			}
 		</style>
 		<nav class="border-1px tabbar" style="font-size: 0;">

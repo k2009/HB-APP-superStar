@@ -302,8 +302,8 @@ var route = [
                                 "screen_name": "昵称",
                                 "profile_image": "头像地址"
                             },
-                            "times": "时间",
-                            "content": "内容",
+                            "times": "...",
+                            "content": "...",
                             "images": [
                                 "url"
                             ],
@@ -2016,6 +2016,7 @@ var route = [
                         "pretreatment": false,
                         "data": {
                             "platform": "weibo还是weixin",
+                            "name":"加载中",
                             "jssdk": {
                                 "appId": "必填，公众号的唯一标识",
                                 "timestamp": "必填，生成签名的时间戳",
@@ -2028,7 +2029,7 @@ var route = [
                                 "profile_image": "头像地址"
                             },
                             "nickname": "昵称",
-                            "score": "总得分",
+                            "score": "?",
                             "structScore": "昵称结构得分",
                             "keyScore": "关键字得分",
                             "top_url": "顶级网红页url",
@@ -2580,7 +2581,7 @@ var route = [
                 "modules": [
                     {
                         "id": "st_modules_h5_message",
-                        "title": "个人中心-消息通知",
+                        "title": "消息通知",
                         "data": {
                             "platform": "weibo还是weixin",
                             "jssdk": {
@@ -2910,9 +2911,9 @@ var route = [
                                 "nonceStr": "必填，生成签名的随机串",
                                 "signature": "必填，签名，见附录1"
                             },
-                            "title": "新闻标题",
-                            "time": "新闻事件",
-                            "content": "新闻内容"
+                            "title": "加载中,请稍后...",
+                            "time": "...",
+                            "content": "..."
                         },
                         "template": [
                             "modules/h5/newsDetail/template/index.html"

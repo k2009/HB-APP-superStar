@@ -437,7 +437,12 @@ body {
 
 .sponserName {
   color: #222;
-  font-size: 0.13653rem; }
+  font-size: 0.14507rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block; }
 
 .sponserDescribe {
   color: #777;
@@ -470,6 +475,7 @@ body {
   padding-left: 0.08533rem; }
 
 .helperBox {
+  margin-top: 8px;
   display: flex;
   -webkit-display: flex;
   flex-direction: row;
@@ -495,7 +501,9 @@ body {
   width: 0.256rem;
   height: 0.29867rem;
   background: url(../images/helperIcon.png) no-repeat;
-  background-size: 0.256rem 1.28rem; }
+  background-size: 0.256rem 1.28rem;
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2); }
 
 .helperIcon.icon2 {
   background-position: 0 -0.32853rem; }
@@ -510,7 +518,8 @@ body {
 .picBox {
   width: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 1.024rem; }
 
 .pics {
   display: none;
@@ -524,7 +533,8 @@ body {
   position: relative; }
 
 .pic img {
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 .points {
   position: absolute;
@@ -587,7 +597,8 @@ body {
 .testIcons {
   display: inline-block;
   background: url(../images/testIcon.png) no-repeat;
-  background-size: 0.192rem; }
+  background-size: 0.192rem;
+  font-size: 0.11947rem; }
 
 .nicknameLeftIcon, .commercialLeftIcon {
   position: absolute;
@@ -639,6 +650,7 @@ body {
   align-items: flex-start; }
 
 .partner .partnerTitle {
+  font-size: 0.11947rem;
   color: #1a1a1a;
   white-space: nowrap;
   overflow: hidden;
@@ -653,7 +665,8 @@ body {
   text-overflow: ellipsis;
   overflow: hidden;
   line-height: 1;
-  height: 27px; }
+  height: 27px;
+  font-size: 0.11093rem; }
 
 /* 加盟入口，关于我们*/
 .cooperate, .about {
@@ -667,11 +680,12 @@ body {
   padding-left: 0.128rem; }
 
 .cooperate .gray {
-  padding-left: 0.21333rem; }
+  font-size: 0.11093rem;
+  padding-left: 0.256rem; }
 
 .coIcon {
   display: inline-block;
-  width: 0.17067rem;
+  width: 0.21333rem;
   height: 0.17067rem;
   background: url(../images/joinIcon.png) no-repeat;
   background-size: 0.42667rem;

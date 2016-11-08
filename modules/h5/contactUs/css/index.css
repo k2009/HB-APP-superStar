@@ -99,6 +99,9 @@ body {
 .container {
   height: 100%; }
 
+.container p, .container .desc, .container .qrcode_tip {
+  color: #1a1a1a; }
+
 .desc {
   margin: 0.128rem 0.17067rem; }
 
@@ -119,7 +122,9 @@ body {
 
 .weixin img {
   width: 1.1008rem;
-  height: 1.1008rem; }
+  height: 1.1008rem;
+  box-sizing: content-box;
+  padding-right: 50%; }
 
 .weibo {
   text-align: center; }

@@ -59,14 +59,21 @@ define(function(require, exports, module) {
 		});
 		mui("body").on("tap", "a.mui-btn", function() {
 			plus.storage.clear();
-			$oauth({
-				type: "logout",
-				success: function(e) {
-					console.log(JSON.stringify(e));
-					alert('退出成功!');
-					plus.runtime.restart();
+			var index = 0;
+
+			plus.nativeUI.confirm( "确定退出吗?", function(e){
+				if(e.index == 0){
+
+					$oauth({
+						type: "logout",
+						success: function(e) {
+							mui.alert('退出成功!');
+							plus.runtime.restart();
+						}
+					})
 				}
-			})
+			}, "提示", ["退出","取消"] );
+
 		})
 	});
 

@@ -43,9 +43,9 @@ define(function(require, exports, module) {
 
 	return {
 		init: function () {
-			if(/(android|iphone)/i.test(navigator.userAgent)){
-				return;
-			}
+			// if(/(android|iphone)/i.test(navigator.userAgent)){
+			// 	return;
+			// }
 			var tree = $(ID).find(".slider");
 			$.each(tree, function(key, value){
 				domtree.push(value.outerHTML);

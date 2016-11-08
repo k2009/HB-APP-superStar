@@ -102,7 +102,8 @@ body {
 .picBox {
   width: 100%;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 1.024rem; }
 
 .pics {
   display: none;
@@ -116,7 +117,8 @@ body {
   position: relative; }
 
 .pic img {
-  width: 100%; }
+  width: 100%;
+  display: block; }
 
 .points {
   position: absolute;
@@ -145,38 +147,60 @@ body {
   font-size: 0.11947rem; }
 
 .sponser {
-  overflow: hidden;
-  margin: 0.064rem 0; }
+  /*overflow: hidden;*/
+  margin: 0;
+  display: flex;
+  display: -webkit-flex;
+  /*width: 100%;*/ }
+  .sponser img, .sponser .sponserInfo {
+    /*flex: 1;*/ }
+  .sponser .sponserInfo {
+    vertical-align: top;
+    /*width: 100%;*/
+    padding-left: 0.08533rem;
+    flex: 1; }
 
 .sponser .headpic {
-  float: left;
-  width: 0.54613rem;
-  height: 0.4096rem; }
+  /*float:left;*/
+  width: 0.4096rem;
+  min-width: 0.4096rem;
+  height: 0.4096rem;
+  /*border-radius: r(4);*/
+  /*margin-right: r(20);*/ }
 
 .sponserInfo {
   font-size: 0.11947rem;
-  width: 70%;
+  width: auto;
   height: 0.4096rem;
-  float: left;
+  /*float:left;*/
   line-height: 0.128rem;
-  margin-left: 0.08533rem;
+  /*margin-left:r(20);*/
   position: relative; }
 
 .sponserDate {
   position: absolute;
-  left: 0;
+  left: 0.08533rem;
   bottom: 0;
   font-size: 0.1024rem;
   color: #a3a1a2; }
 
 .sponserName {
   color: #333;
-  font-size: 0.11093rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  font-size: 0.13653rem;
+  white-space: normal;
+  padding-top: 0rem;
+  height: 0.17067rem;
+  line-height: 0.1792rem;
+  /*text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 101%;*/
+  /*display: block;*/
+  display: -webkit-box;
   overflow: hidden;
-  width: 101%;
-  display: inline-block; }
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical; }
 
 .sponserDescribe {
   font-size: 0.1024rem;
@@ -189,3 +213,16 @@ body {
 .notice {
   text-align: center;
   padding: 0.08533rem 0; }
+
+.mui-table-view-cell {
+  padding: 0.08533rem; }
+  .mui-table-view-cell a {
+    padding: 0rem; }
+
+.mui-table-view-cell > a:not(.mui-btn) {
+  margin: 0;
+  padding: 0; }
+
+.mui-table-view-cell:after {
+  left: 0;
+  background-color: #eeeeec; }

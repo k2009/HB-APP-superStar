@@ -1,71 +1,145 @@
-<!-- <header class="mui-bar mui-bar-nav">
-	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-	<h1 class="mui-title">课程列表</h1>
-</header> -->
 <div class="mui-content">
-	<!-- <div class="topContainer notStart" id="notStart">
-		<div  class="tc_text">
-			<div>hi 目前你的课程尚未开启，快来学习你的网红养成计划第一节课吧！</div>
-			<div class="tc_go">GO!</div>
-		</div>
-	</div>
-	<div class="mui-content topContainer scheduleList" id="schedule">
-		<div class="schedule" id="chapter">
-			<canvas class="scheduleChart" node="chart" ></canvas>
-		</div>
-		<div class="scheduleCard">
-			<div>
-				<div class="cardText">
-					距离小学毕业还有<span class="largeNumber"> ${data.left_days} </span> 天
-					 <span class="mui-icon mui-icon-help" action='leftDaysHelp'></span>
-				</div>
-				
-			</div>
-			<div>
-				<div class="cardText">
-					已完成作业数<span class="largeNumber"> ${data.finish_lessons} </span>个
-				</div>
-				
-			</div>
-		</div>
-	</div> -->
-	<div class="test-card">
+<!--	<div class="test-card">
 		<a class="test-card-item test-card-nick" href="${data.nick_test_url}"></a>
 		<a class="test-card-item test-card-biz" href="${data.biz_test_url}" pjax="1"></a>
 	</div>
-	<p class="sub-title">业界资讯</p>
-	<div><a class="news" href="${data.news.url}" pjax="1">${data.news.title}</a></div>
-	<p class="sub-title">我的课程</p>
-	<ul class="mui-table-view">
-		<#if (data.lessons.length==0)>
-			<li class="mui-table-view-cell mui-media list-empty">
-				当前章节列表为空
-			</li>
-		<#else>
-			<#list data.lessons as lesson>
-				<li class="mui-table-view-cell mui-media-body mui-media" ${lesson.status_value!=2 && "scrollTarget=true"}>
-					<#if (lesson.status_value==3)><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
-							<#elseif (lesson.status_value==1)><span class="box doing" data-text="学习中" scrollTarget="true">学习中</span>
-							<#elseif (lesson.status_value==2)><span class="box done" data-text="已完成">已完成</span>
-							<#else><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
-							</#if>
-					<a class="lessonInfo" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"
-					<#elseif (lesson.lesson_count==0)>href="javascript:;" action="empty"
-					<#else> pjax="1" href="${lesson.url}"</#if> >
-						<div class="mui-subtitle lessonText">${lesson.name}</div>
-						<div class="lessonDescribe">主讲人：${lesson.teacher_name}</div>
-						<div class="finish">
-							<span class="doneText">已完成 ${lesson.finish_count || 0}/${lesson.count} 节</span> 
-						</div>
-						<#if (lesson.status_value == 1 || lesson.status_value == 2)>
-							<div class="percentRate" node="percent" percent="${lesson.percent}％">	
-								<span class="percentRateBar" node="percentRateBar"></span>
-								<span class="percentRateTip" node="percentTip"></span>
-							</div>
-						</#if>
-					</a>
+ 	<p class="sub-title">业界资讯</p>
+	<div><a class="news" href="${data.news.url}" pjax="1">${data.news.title}</a></div> 
+	<p class="sub-title">我的课程</p>-->
+	<div class="tab">
+		<div class="tab-item current" action="tab" action-data="1">我的课程</div>
+		<div class="tab-item" action="tab" action-data="2">导师列表</div>
+	</div>
+	<div class="lesson-list" style="display: no1ne">
+		<ul class="mui-table-view">
+			<#if (data.lessons.length==0)>
+				<li class="mui-table-view-cell mui-media list-empty">
+					当前章节列表为空
 				</li>
+			<#else>
+				<#list data.lessons as lesson>
+					<li class="mui-table-view-cell mui-media-body mui-media" ${lesson.status_value!=2 && "scrollTarget=true"}>
+						<#if (lesson.status_value==3)><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
+								<#elseif (lesson.status_value==1)><span class="box doing" data-text="学习中" scrollTarget="true">学习中</span>
+								<#elseif (lesson.status_value==2)><span class="box done" data-text="已完成">已完成</span>
+								<#else><span class="box wait" data-text="待学习" scrollTarget="true">待学习</span>
+								</#if>
+						<a class="lessonInfo" <#if (lesson.status_value==4)>href="javascript:;" action="forbidden"
+						<#elseif (lesson.lesson_count==0)>href="javascript:;" action="empty"
+						<#else> pjax="1" href="${lesson.url}"</#if> >
+							<div class="mui-subtitle lessonText">${lesson.name}</div>
+							<div class="lessonDescribe">主讲人：${lesson.teacher_name}</div>
+							<div class="finish">
+								<span class="doneText">已完成 ${lesson.finish_count || 0}/${lesson.count} 节</span> 
+							</div>
+							<#if (lesson.status_value == 1 || lesson.status_value == 2)>
+								<div class="percentRate" node="percent" percent="${lesson.percent}％">	
+									<span class="percentRateBar" node="percentRateBar"></span>
+									<span class="percentRateTip" node="percentTip"></span>
+								</div>
+							</#if>
+						</a>
+					</li>
+				</#list>
+			</#if>		
+		</ul>
+		<div class="nomore">亲，请先学完以上课程呦</div>
+	</div>
+	<ul class="tutors" style="display: none;">
+		<!-- <#if (data.teacher_list.length==0)>
+				<li class="mui-table-view-cell mui-media list-empty">
+					当前导师列表为空
+				</li>
+			<#else>
+			<#list data.teacher_list as tutor>
+			<li class="tutor">
+				<div class="profile"><img src="${tutor.head_url_medium}" alt="" class="head"></div>
+				<div class="info">
+					<div class="name">${tutor.name}<span class="intro">${tutor.name}</span></div>
+					<div class="desc">${tutor.desc}</div>
+				</div>
+			</li>
 			</#list>
-		</#if>		
+		</#if> -->
+		<!-- 张锐 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/0.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">张锐<span class="intro">社交营销领军者，时趣互动CEO</span></div>
+				<div class="desc">2006年创建社交平台Mosh，2011年创建社交营销平台时趣互动，为数百家知名品牌提供全方位社交营销服务，湖畔大学二期学员。</div>
+			</div>
+		</li>
+		<!-- 李明升 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/1.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">李明升<span class="intro">微博首位产品设计负责人</span></div>
+				<div class="desc">从立项开始负责微博产品设计团队，微博用户0~3亿阶段产品负责人，深刻理解微博体系；现担任网红城堡CEO，帮助电商网红成长。</div>
+			</div>
+		</li>
+		<!-- 王啸林 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/2.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">王啸林<span class="intro">O2O电商专家、红人设计师</span></div>
+				<div class="desc">曾在微博、去哪儿网、寻医问药网、时趣互动从事产品、研发工作，具有丰富的社交、电商、供应链和营销经验，与多家经纪公司合作，在业界具备良好的合作资源。</div>
+			</div>
+		</li>
+		<!-- 边微 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/3.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">边微<span class="intro">微博营销专家、曾就职微博商学院</span></div>
+				<div class="desc">英国莱斯特大学硕士，主修广告营销学，辅修新媒体专业。曾任职微博商学院，为数百家知名机构培训过微博营销技巧。</div>
+			</div>
+		</li>
+		<!-- 朱建鑫 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/4.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">朱建鑫<span class="intro">微博创始成员、负责核心产品研发</span></div>
+				<div class="desc">微博创始成员，从2009-2015年负责微博核心模块研发，熟悉微博相关逻辑与算法（例如阅读数、粉丝数、防作弊）。</div>
+			</div>
+		</li>
+		<!-- 钟岱琳 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/5.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">钟岱琳<span class="intro">资深媒体人、新浪娱乐十年运营经验</span></div>
+				<div class="desc">曾就职新浪娱乐十年，精通媒体运作、娱乐产业，曾独立负责新浪娱乐论坛、客户端新闻运营工作以及微博东北地区业务。</div>
+			</div>
+		</li>
+		<!-- 庄梦颖 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/6.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">庄梦颖<span class="intro">新媒体专家、互联网资深BD</span></div>
+				<div class="desc">四年电视媒体经验，五年营销广告积累，从内容生产到传播扩散、从渠道选择到客户服务，积累了丰富经验，拥有国内数十家主流媒体和数百家新媒体资源。</div>
+			</div>
+		</li>
+		<!-- 李栋 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/7.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">李栋<span class="intro">社交广告专家、知名网红操盘手</span></div>
+				<div class="desc">时趣互动社交广告团队负责人，多年微博、微信广告投放经验，客户包括国内外众多知名品牌以及电商网红，精通微博广告优化技巧。</div>
+			</div>
+		</li>
+		<!-- 刘佳 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/8.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">刘佳<span class="intro">电商专家、曾就职阿里巴巴</span></div>
+				<div class="desc">电商运营专家，曾就职阿里巴巴，负责海淘运营；曾就职蓝色光标电商运营团队，负责宝洁多个品牌电商运营及CRM营销策划。</div>
+			</div>
+		</li>
+		<!-- 刘洁 -->
+		<li class="tutor">
+			<div class="profile"><img src="http://${data._extra.domain}/modules/h5/lessionList/images/9.jpg" alt="" class="head"></div>
+			<div class="info">
+				<div class="name">刘洁<span class="intro">微博广告高级培训师</span></div>
+				<div class="desc">曾任职艺龙旅行网、arvato等公司，负责客户关系管理以及在线营销工作，现担任时趣互动社交广告事业部微博广告业务高级培训师。</div>
+			</div>
+		</li>
 	</ul>
 </div>

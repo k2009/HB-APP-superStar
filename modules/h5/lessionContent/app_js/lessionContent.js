@@ -93,7 +93,7 @@ define(function(require, exports, module) {
                     href : (plus.storage.getItem("domain")+ opts.share_url),
                     title : opts.name,
                     content : TITLE,
-                    thumbs : ['http://ww3.sinaimg.cn/mw690/a0bb4f55gw1f95gezp2p9j203c03c0sk.jpg']
+                    thumbs : ['http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg']
                 }
             });
         });
@@ -103,7 +103,6 @@ define(function(require, exports, module) {
         $body.undelegate('[action=stop]','tap',stop);
         $body.unbind();
         $('#finish').unbind();
-        $share.destroy();
         if(finishTip){
             finishTip.hide();
         }

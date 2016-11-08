@@ -70,24 +70,45 @@ define(function(require, exports, module) {
                     msg.href = null;
                 }
             }
+
+            // if((ex)&&mui.os.ios){
+            //     //http://tva4.sinaimg.cn/crop.0.1.631.631.1024/6f4dd669jw1en23w6skilj20hs0hntb0.jpg
+            //     for (var i = msg.thumbs.length - 1; i >= 0; i--) {
+            //         if((msg.thumbs[i].indexOf('.jpg')<0)&&(msg.thumbs[i].indexOf('.png')<0)){
+            //             msg.thumbs = ["http://tva4.sinaimg.cn/crop.0.1.631.631.1024/6f4dd669jw1en23w6skilj20hs0hntb0.jpg"];
+            //             break;
+            //         }
+            //     }
+            // }
+
             mui.toast("分享到\"" + share.description + "\"中...请稍后");
 
             msg.extra = {
                 scene: ex
             }
-            if (~share.id.indexOf('weibo')) {
-                // msg.content += "；";          //微博单独加链接
+            if (share.id == ('weixin')) {
+                console.log('检测到是微信分享,打印opt');
+                for (var i = msg.thumbs.length - 1; i >= 0; i--) {
+                    msg.thumbs[i]+="?imageView2/1/w/60/h/60";
+                }
             }
+            // alert(JSON.stringify(msg))
             share.send(msg, function() {
                 if(success)success(msg);
                 sys.hide();
                 mui.toast("分享到\"" + share.description + "\"成功！ ");
             }, function(e) {
+                // alert(JSON.stringify(e))
                 if(error)error(msg);
                 if(e.code == -100){
                     console.log("用户取消发送")
                 }else{
-                    mui.toast("分享到\"" + share.description + "\"失败 ");    
+                    if(e.message){
+                        mui.toast(e.message);    
+
+                    }else{
+                        mui.toast("分享到\"" + share.description + "\"失败 ");
+                    }    
                     console.log(JSON.stringify(e));
                 }
             });
@@ -96,7 +117,7 @@ define(function(require, exports, module) {
             fn_click:function(e){
                 var share_id = $(this).data('id');
                 var share_ex = $(this).data('ex');
-                var cfg = sys.shareConfig;
+                var cfg = $.extend(true,{},sys.shareConfig);
 
                 var share = sys.shares[share_id];
                 if (share) {

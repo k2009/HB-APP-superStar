@@ -34,7 +34,7 @@ mui.plusReady(function(){
         	}else{
                 if(url.indexOf("file:")>=0)return;
                 console.log("打印网络错误代码:\n"+JSON.stringify(e)+"打印URL\n"+url)
-    			mui.toast('您的网络不稳定,请修复后重试!');
+    			// mui.toast('您的网络不稳定,请修复后重试!');
         	}
         	
         	if(error){

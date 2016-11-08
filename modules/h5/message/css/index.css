@@ -135,7 +135,7 @@ body {
   .message .content {
     color: #646464;
     font-size: 0.1024rem;
-    padding: 0 0.08533rem 0.06827rem 0.29867rem;
+    padding: 0 0.08533rem 0.06827rem 0.08533rem;
     word-break: break-all; }
   .message .time {
     color: #a3a1a2;

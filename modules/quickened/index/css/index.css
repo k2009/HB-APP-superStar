@@ -106,19 +106,28 @@ body {
   display: block;
   width: 100%; }
 
-.tips {
-  height: 0.34133rem;
-  line-height: 0.34133rem;
-  font-size: 0.1024rem;
+p.tips {
+  height: 0.256rem;
+  background: #fff5e4;
+  line-height: 0.256rem;
+  font-size: 0.11093rem;
   color: #646464;
-  padding: 0 0.128rem; }
+  padding: 0 0 0 0.128rem; }
+  p.tips .icon {
+    display: inline-block;
+    width: 0.128rem;
+    height: 0.128rem;
+    vertical-align: top;
+    margin: 0.064rem 0.064rem 0 0;
+    background: url(../images/ico_tips.png) no-repeat;
+    background-size: 100% 100%; }
 
 .mainBox {
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   background: #fff;
   /*padding-bottom: r(20);*/
-  margin-bottom: 0.128rem; }
+  margin-bottom: 0.08533rem; }
   .mainBox h3, .mainBox h4 {
     height: 0.384rem;
     font-size: 0.13653rem;
@@ -132,6 +141,7 @@ body {
   .mainBox .no_border {
     border: none; }
   .mainBox h4 {
+    font-size: 0.14507rem;
     text-align: left;
     padding-left: 0.1024rem; }
   .mainBox .tool_list {
@@ -146,7 +156,8 @@ body {
       .mainBox .tool_list li h6 {
         font-size: 0.11947rem;
         line-height: 0.21333rem;
-        margin: 0; }
+        margin: 0;
+        color: #1a1a1a; }
       .mainBox .tool_list li p {
         font-size: 0.09387rem;
         line-height: 0.128rem;
@@ -159,19 +170,19 @@ body {
       height: 0;
       width: 0;
       background: url(../images/ico_item_1.png) no-repeat;
-      background-size: 0.14507rem 0.14507rem;
+      background-size: 100% 100%;
       position: relative;
       top: 0.02987rem;
       margin-right: 0.03413rem; }
     .mainBox .tool_list li:nth-child(2) span {
       background: url(../images/ico_item_2.png) no-repeat;
-      background-size: 0.14507rem 0.14507rem; }
+      background-size: 100% 100%; }
     .mainBox .tool_list li:nth-child(3) span {
       background: url(../images/ico_item_3.png) no-repeat;
-      background-size: 0.14507rem 0.14507rem; }
+      background-size: 100% 100%; }
     .mainBox .tool_list li:nth-child(4) span {
       background: url(../images/ico_item_4.png) no-repeat;
-      background-size: 0.14507rem 0.14507rem; }
+      background-size: 100% 100%; }
   .mainBox p {
     color: #646464;
     font-size: 0.1024rem;

@@ -103,7 +103,7 @@ body {
   background: #f2f2f2; }
 
 .mui-active {
-  background: white !important; }
+  background: transparent !important; }
 
 .topTitle {
   position: static;
@@ -111,7 +111,7 @@ body {
 
 .subTitle {
   font-size: 0.11947rem;
-  color: #1a1a1a;
+  /*color: #1a1a1a;*/
   white-space: normal;
   display: -webkit-box;
   overflow: hidden;
@@ -121,7 +121,8 @@ body {
 
 .table-item {
   display: inline-block;
-  font-size: 0.1024rem; }
+  font-size: 0.1024rem;
+  color: #eeeeec; }
 
 .mui-table-view-cell:after {
   display: none; }
@@ -157,7 +158,7 @@ body {
   position: relative; }
 
 .sectionTitle {
-  font-size: 0.11093rem;
+  font-size: 0.11947rem;
   color: #555;
   line-height: 0.21333rem; }
 
@@ -235,16 +236,24 @@ body {
   background: white;
   overflow: hidden; }
 
+.bgColor {
+  background: none;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4); }
+
 .top-box {
   overflow: hidden;
-  position: relative; }
+  position: relative;
+  background: rgba(0, 0, 0, 0.4) url(../images/bg.jpg) no-repeat;
+  background-size: 3.61813rem 2.41067rem;
+  /*padding: r(80) 0;*/ }
 
 .top-title {
   padding: 0.128rem;
   font-weight: normal;
-  color: #1a1a1a;
-  background: #fff;
-  font-size: 0.13653rem; }
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  font-size: 0.14507rem; }
 
 .top-img-box {
   width: 30%;
@@ -265,11 +274,12 @@ body {
 
 .colorGray {
   font-size: 0.11947rem;
-  color: #646464; }
+  /*color: #646464;*/ }
   .colorGray .percent {
     padding: 0.04267rem 0 0.08533rem;
-    font-size: 0.1024rem;
-    color: #a3a1a2; }
+    font-size: 0.1024rem; }
+    .colorGray .percent .table-item {
+      color: #DCDADA; }
     .colorGray .percent .count {
       color: #ea5504; }
 

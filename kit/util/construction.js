@@ -12,6 +12,7 @@ define(function(require, exports, module) {
     var sys = {
         cacheTime:300000,
         init:function(config,callback){
+            window.sys = sys;
             plus.runtime.getProperty(plus.runtime.appid,function(inf){
                 sys.version = inf.version;
             });
@@ -113,21 +114,21 @@ define(function(require, exports, module) {
             }
             if(id_data){
                 sys.default_data[sys.id] = $.extend(true,sys.default_data[sys.id],id_data);
-            }
-            +function(){
-                if(sys.default_data[sys.id].pretreatment === false){
-                    btn = true;
-                    return;
-                }
-                try{
-                    sys.initSomeThing(sys.id,sys.default_data[sys.id]);
-                }catch(e){
-                    if(type_debug){
-                        console.log('模板引入发生错误'+sys.id+JSON.stringify(e)+"line:161");
-                        console.log(sys.id+JSON.stringify(sys.default_data[sys.id]));
+                +function(){
+                    if(sys.default_data[sys.id].pretreatment === false){
+                        btn = true;
+                        return;
                     }
-                }
-            }()
+                    try{
+                        sys.initSomeThing(sys.id,sys.default_data[sys.id]);
+                    }catch(e){
+                        if(type_debug){
+                            console.log('模板引入发生错误'+sys.id+JSON.stringify(e)+"line:161");
+                            console.log(sys.id+JSON.stringify(sys.default_data[sys.id]));
+                        }
+                    }
+                }()
+            }
 
             if(sys.loading){
                 $(".mui-content").css('position','relative')

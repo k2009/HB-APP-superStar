@@ -1,6 +1,12 @@
 <div class="head">
+	<#if (data.mainpage_banners.url != null && data.mainpage_banners.url != "")>
+	<a href="${data.mainpage_banners.url}">
+	</#if>
 	<img src="${data.mainpage_banners.banner}" alt="" class="background">
 	<div class="playButton" style="display: none;"></div>
+	<#if (data.mainpage_banners.url != "")>
+	</a>
+	</#if>
 </div>
 
 <ul class="detailBox">
@@ -9,7 +15,7 @@
 			入门知识
 			<span class="yellow">免费教你如何当网红</span>
 			<span class="rightArrow"></span>
-		</a>		
+		</a>
 	</li>
 
 	<#list data.mainpage_starting.knowledge as k>
@@ -17,10 +23,11 @@
 			<a href="${k.url}">
 				<div class="sponser">
 					<img src="${k.banner}" alt="${k.title}" class="headpic">
-				<div class="sponserInfo pl20">
-					<span class="sponserName">${k.title}</span>
-					<br>
-					<span class="sponserDescribe">${k.desc}</span>
+					<div class="sponserInfo pl20">
+						<span class="sponserName startingName">${k.title}</span>
+						<br>
+						<span class="sponserDescribe">${k.desc}</span>
+					</div>
 				</div>
 			</a>
 		</li>

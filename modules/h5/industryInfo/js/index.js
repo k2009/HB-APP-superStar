@@ -112,7 +112,7 @@ define(function(require, exports, module) {
         // 延迟加载 tabbar
         asyncModule.load("common/tabbar/js/index", function(ret){
             ret.setData(opts.tabbar);
-            ret.setActiveTab(1);
+            ret.setActiveTab(0);
             tabbar = ret;
         });
         // 公共头部

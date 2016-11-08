@@ -1,9 +1,27 @@
 <div class="news-title">${data.title}</div>
 <div class="news-time">${data.time}</div>
+<#if (data.source != null && data.source != "")>
+<div class="news-source">来源：${data.source}</div>
+</#if>
 <#if (data.desc)>
-<div class="news-describe" id="describe" style="display: none;">
+<div class="news-describe" id="describe">
 	<font color="#1a1a1a">解读：</font>
 	${data.desc}
 </div>
 </#if>
 <div class="news-content">${data.content}</div>
+
+<#if (data.platform == "weibo")>
+<div class="weibo">
+	<a href="sinaweibo://userinfo?uid=6049556736"><img src="http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg" alt=""></a>
+	<p><a href="sinaweibo://userinfo?uid=6049556736">点击关注网红城堡官方微博</a></p>
+	<p><a href="sinaweibo://userinfo?uid=6049556736">@网红城堡 了解更多资讯</a></p>
+</div>
+</#if>
+<#if (data.platform == "weixin")>
+<div class="weixin">
+	<img src="http://${data._extra.domain}/modules/h5/contactUs/images/qrcode.jpg" alt="">
+	<p>长按二维码关注公众号</p>
+	<p>@时趣微电商 了解更多资讯</p>
+	</div>
+</#if>

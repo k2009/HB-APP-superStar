@@ -101,16 +101,27 @@ body {
 
 body {
   background-color: #fff; }
+  body p {
+    color: #1a1a1a;
+    line-height: 0.17067rem; }
 
 .news-title {
   color: #1c1c1c;
-  font-size: 0.13653rem;
+  font-size: 0.1536rem;
+  font-weight: 600;
   padding: 0.17067rem 0.128rem; }
 
 .news-time {
   color: #a3a1a2;
   font-size: 0.11093rem;
-  padding: 0 0.128rem; }
+  padding: 0 0.128rem;
+  display: inline-block; }
+
+.news-source {
+  color: #a3a1a2;
+  font-size: 0.11093rem;
+  padding: 0;
+  display: inline-block; }
 
 .news-describe {
   color: #656565;
@@ -126,3 +137,24 @@ body {
   padding: 0.17067rem 0.128rem; }
   .news-content img {
     max-width: 100%; }
+
+.weixin, .weibo {
+  margin: 0 0.21333rem;
+  padding: 0.128rem 0;
+  text-align: center;
+  border-top: 1px solid #f2f2f2; }
+  .weixin p, .weibo p {
+    color: #a3a1a2;
+    font-size: 0.1024rem; }
+
+.weixin img {
+  width: 1.024rem;
+  height: 1.024rem; }
+
+.weibo img {
+  width: 0.81067rem;
+  height: 0.81067rem; }
+
+.weibo a, .weibo p {
+  color: #a3a1a2;
+  font-size: 0.1024rem; }

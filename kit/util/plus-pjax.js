@@ -70,13 +70,18 @@ define(function(require, exports, module) {
 			if(!data.module_data){
 				data.module_data = {};
 			}
-			data.module_data.pageURL = plus.storage.getItem("domain") + pjaxURL;
+	        if( (pjaxURL.indexOf("http")<0)||(pjaxURL[0]=='/')  ){
+				data.module_data.pageURL = plus.storage.getItem("domain") + pjaxURL;
+				d.url = plus.storage.getItem("domain") + d.url
+	        }else{
+	        	data.module_data.pageURL = pjaxURL;
+	        }
 			var pageData = {
 				id: data.module_id,
 				url: '_www/modules/index_content.html',
 				extras: {
 					ajax_data: d.data,
-					ajax_url: plus.storage.getItem("domain") + d.url,
+					ajax_url: d.url,
 					pageData: data.module_data
 				},
 				styles: {
@@ -112,6 +117,7 @@ define(function(require, exports, module) {
 					var ws = plus.webview.getWebviewById('index_box.html');
 					if(ws){
 						ws.show();
+						console.log('fire:'+data.module_id)
 						mui.fire(ws, 'viewShow', {
 							pageID: data.module_id
 						}); //数据重载方法,可多页面调用
@@ -125,7 +131,6 @@ define(function(require, exports, module) {
 				}); //数据重载方法,可多页面调用
 			}
 			mui.openWindow(view_data);
-
 		},
 	}
 	if(window.SCRM){

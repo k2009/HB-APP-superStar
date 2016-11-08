@@ -16,7 +16,7 @@ define(function(require, exports, module) {
                 '想在微博里月入上万？那就来测测你现在的属性吧！',
                 '做网红也是一门学问，尤其是电商网红，测测你现在符合电商网红么？'];
             var ico = [];
-            ico.push( 'http://' + staticDomain + '/modules/testing/business/images/ico_share.png' );
+            ico.push( 'http://tva1.sinaimg.cn/crop.22.48.463.463.180/0068YUDSjw8f7nd3fwmj0j30e80e8weu.jpg' );
             var random = Math.random();
             return {
                 title: title[ Math.floor( random*title.length ) ],

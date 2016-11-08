@@ -100,7 +100,7 @@ define(function(require, exports, module) {
         if(tabbar){
             tabbar.destroy();
         }
-        // $('#submitNotice').remove();
+        $('#submitNotice').remove();
 	}
 	var that = {
 		init: init,
