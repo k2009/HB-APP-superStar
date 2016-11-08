@@ -230,7 +230,7 @@ body {
   display: inline-block;
   height: 0.128rem;
   width: 0.128rem;
-  background: url(../../common/images/rightArrow.png) no-repeat;
+  background: url(../../../start/common/images/rightArrow.png) no-repeat;
   background-size: 0.06827rem;
   text-align: left;
   font-size: 0.1024rem;
