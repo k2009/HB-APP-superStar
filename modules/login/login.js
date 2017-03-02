@@ -12,6 +12,7 @@ define(function(require, exports, module) {
 	var sys = {
 		init: function($) {
 			$.plusReady(function() {
+				var fakeLayer = $('.fakeloader')[0];
 				console.log('请求路由表')
 				plus.storage.setItem('route', JSON.stringify(route));
 
@@ -19,6 +20,7 @@ define(function(require, exports, module) {
 				sys.app_update();
 				host_domain = plus.storage.getItem("domain") || host_domain;
 				if (oauth) {
+					console.log('有oauth')
 					// if(oauth.outTime<new Date().getTime()){
 					//     console.log('执行后补微博登录!')
 					// // sys.fn_oauth();
@@ -27,7 +29,8 @@ define(function(require, exports, module) {
 					sys.app_login(oauth)
 						// sys.fn_next();
 				} else {
-					$('.fakeloader')[0].remove();
+					console.log('没有oauth')
+					fakeLayer.parentNode.removeChild(fakeLayer);
 				}
 				sys.event();
 

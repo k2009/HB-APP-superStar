@@ -7,7 +7,7 @@
 	"id": "com.91hong.wanghong",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "网红城堡",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.1.6.1",/*应用版本名称*/
+		"name": "1.1.6.2",/*应用版本名称*/
 		"code": ""
 	},
 	"description": "",/*应用描述信息*/
@@ -105,7 +105,7 @@
 			"description": "原生对象"
 		},
 		"OAuth": {},
-		"Share": {},"Push":{}
+		"Share": {},"Push":{},"Payment":{}
 	},
 	"plus": {
 		"splashscreen": {
@@ -116,14 +116,14 @@
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
-			"plugins": {"push":{"igexin":{"appid":"fByJuCGi2H7cNFc4VleGg2","appkey":"hU2rHTdL6DA7dH4pyYgMw2","appsecret":"KkKdo3RZwl8PKby9uT4Jn5"}},
+			"plugins": {"payment":{"alipay":{"description":"阿里支付","scheme":""}},"push":{"igexin":{"appid":"fByJuCGi2H7cNFc4VleGg2","appkey":"hU2rHTdL6DA7dH4pyYgMw2","appsecret":"KkKdo3RZwl8PKby9uT4Jn5"}},
 				"share": {
 					"sina": {
 						"appkey": "1702650425",
 						"appsecret": "6f62422f7f4da3c3b2c11de0ee2871d6",
 						"redirect_uri": "https://api.weibo.com/oauth2/default.html",
 						"description": "可选，新浪微博分享"
-					},"weixin":{"appid":"wxf3a784e270495bcb","appsecret":"c30ad3b50145ede63955fb72182578ba","description":"可选，微信分享"}
+					},"weixin":{"appid":"wxb4b95d290e1ab7aa","appsecret":"19104e0b78a4186ffb1402688fcf332d","description":"可选，微信分享"}
 				},
 				"oauth": {
 					"sina": {

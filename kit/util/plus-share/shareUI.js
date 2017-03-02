@@ -107,8 +107,8 @@ define(function(require, exports, module) {
                         mui.toast(e.message);    
 
                     }else{
-                        mui.toast("分享到\"" + share.description + "\"失败 ");
-                    }    
+                        mui.toast("分享到\"" + share.description + "\"失败 "+JSON.stringify(e));
+                    }
                     console.log(JSON.stringify(e));
                 }
             });
