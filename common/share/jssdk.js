@@ -21,6 +21,7 @@ define(function(require, exports, module) {
 				var info = {
 					debug: false,
 					jsApiList: [
+						
 						'onMenuShareTimeline',
 						'onMenuShareAppMessage',
 						'onMenuShareQQ',
